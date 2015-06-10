@@ -1,8 +1,8 @@
 comment: """
 
-  	TODO:
-  	* syntax types, tuple types, union
-  	* take out ::Type
+    TODO:
+    * syntax types, tuple types, union
+    * take out ::Type
 
 """
 fileTypes: [
@@ -311,6 +311,7 @@ repository:
           "0":
             name: "punctuation.definition.string.end.julia"
         name: "string.interpolated.julia"
+        comment: "This is called string.quoted.backtick.julia in tpoisot"
         patterns: [
           {
             include: "#string_escaped_char"
@@ -359,6 +360,7 @@ repository:
       {
         match: "(?<![a-zA-Z0-9:<]:):[a-zA-Z_][a-zA-Z0-9_]*\\b"
         name: "constant.other.symbol.julia"
+        comment: "This is string.quoted.symbol.julia in tpoisot's package"
       }
     ]
   type_decl:
