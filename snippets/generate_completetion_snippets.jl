@@ -1,7 +1,7 @@
 function write_symbolln(buf::IOBuffer, k, v)
-    write(buf, "'$k':\n    ")
-    write(buf, "'prefix': '\\\\$k'\n    ")
-    write(buf, "'body': '$v'")
+    write(buf, "'$(strip(k, ':'))':\n    ")
+    write(buf, "prefix: '\\\\$k'\n    ")
+    write(buf, "body: '$v'")
     write(buf, "\n  ")
 end
 

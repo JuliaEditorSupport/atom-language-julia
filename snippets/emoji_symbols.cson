@@ -1,2489 +1,2488 @@
 '.source.julia':
-  ':ghost:':
-    'prefix': '\\:ghost:'
-    'body': '👻'
-  ':metro:':
-    'prefix': '\\:metro:'
-    'body': '🚇'
-  ':children_crossing:':
-    'prefix': '\\:children_crossing:'
-    'body': '🚸'
-  ':rooster:':
-    'prefix': '\\:rooster:'
-    'body': '🐓'
-  ':shaved_ice:':
-    'prefix': '\\:shaved_ice:'
-    'body': '🍧'
-  ':clock9:':
-    'prefix': '\\:clock9:'
-    'body': '🕘'
-  ':cake:':
-    'prefix': '\\:cake:'
-    'body': '🍰'
-  ':chicken:':
-    'prefix': '\\:chicken:'
-    'body': '🐔'
-  ':white_circle:':
-    'prefix': '\\:white_circle:'
-    'body': '⚪'
-  ':no_good:':
-    'prefix': '\\:no_good:'
-    'body': '🙅'
-  ':mens:':
-    'prefix': '\\:mens:'
-    'body': '🚹'
-  ':crescent_moon:':
-    'prefix': '\\:crescent_moon:'
-    'body': '🌙'
-  ':person_frowning:':
-    'prefix': '\\:person_frowning:'
-    'body': '🙍'
-  ':izakaya_lantern:':
-    'prefix': '\\:izakaya_lantern:'
-    'body': '🏮'
-  ':athletic_shoe:':
-    'prefix': '\\:athletic_shoe:'
-    'body': '👟'
-  ':octopus:':
-    'prefix': '\\:octopus:'
-    'body': '🐙'
-  ':relaxed:':
-    'prefix': '\\:relaxed:'
-    'body': '☺'
-  ':small_orange_diamond:':
-    'prefix': '\\:small_orange_diamond:'
-    'body': '🔸'
-  ':white_large_square:':
-    'prefix': '\\:white_large_square:'
-    'body': '⬜'
-  ':candy:':
-    'prefix': '\\:candy:'
-    'body': '🍬'
-  ':womens:':
-    'prefix': '\\:womens:'
-    'body': '🚺'
-  ':facepunch:':
-    'prefix': '\\:facepunch:'
-    'body': '👊'
-  ':syringe:':
-    'prefix': '\\:syringe:'
-    'body': '💉'
-  ':taurus:':
-    'prefix': '\\:taurus:'
-    'body': '♉'
-  ':boot:':
-    'prefix': '\\:boot:'
-    'body': '👢'
-  ':skin-tone-2:':
-    'prefix': '\\:skin-tone-2:'
-    'body': '🏻'
-  ':open_mouth:':
-    'prefix': '\\:open_mouth:'
-    'body': '😮'
-  ':corn:':
-    'prefix': '\\:corn:'
-    'body': '🌽'
-  ':wc:':
-    'prefix': '\\:wc:'
-    'body': '🚾'
-  ':clipboard:':
-    'prefix': '\\:clipboard:'
-    'body': '📋'
-  ':white_flower:':
-    'prefix': '\\:white_flower:'
-    'body': '💮'
-  ':six_pointed_star:':
-    'prefix': '\\:six_pointed_star:'
-    'body': '🔯'
-  ':smiling_imp:':
-    'prefix': '\\:smiling_imp:'
-    'body': '😈'
-  ':kiss:':
-    'prefix': '\\:kiss:'
-    'body': '💋'
-  ':microphone:':
-    'prefix': '\\:microphone:'
-    'body': '🎤'
-  ':ring:':
-    'prefix': '\\:ring:'
-    'body': '💍'
-  ':blue_book:':
-    'prefix': '\\:blue_book:'
-    'body': '📘'
-  ':pig_nose:':
-    'prefix': '\\:pig_nose:'
-    'body': '🐽'
-  ':swimmer:':
-    'prefix': '\\:swimmer:'
-    'body': '🏊'
-  ':phone:':
-    'prefix': '\\:phone:'
-    'body': '☎'
-  ':chart:':
-    'prefix': '\\:chart:'
-    'body': '💹'
-  ':waning_crescent_moon:':
-    'prefix': '\\:waning_crescent_moon:'
-    'body': '🌘'
-  ':footprints:':
-    'prefix': '\\:footprints:'
-    'body': '👣'
-  ':fire:':
-    'prefix': '\\:fire:'
-    'body': '🔥'
-  ':video_game:':
-    'prefix': '\\:video_game:'
-    'body': '🎮'
-  ':trident:':
-    'prefix': '\\:trident:'
-    'body': '🔱'
-  ':clock1130:':
-    'prefix': '\\:clock1130:'
-    'body': '🕦'
-  ':cold_sweat:':
-    'prefix': '\\:cold_sweat:'
-    'body': '😰'
-  ':bouquet:':
-    'prefix': '\\:bouquet:'
-    'body': '💐'
-  ':clock2:':
-    'prefix': '\\:clock2:'
-    'body': '🕑'
-  ':clock7:':
-    'prefix': '\\:clock7:'
-    'body': '🕖'
-  ':older_man:':
-    'prefix': '\\:older_man:'
-    'body': '👴'
-  ':earth_africa:':
-    'prefix': '\\:earth_africa:'
-    'body': '🌍'
-  ':top:':
-    'prefix': '\\:top:'
-    'body': '🔝'
-  ':european_post_office:':
-    'prefix': '\\:european_post_office:'
-    'body': '🏤'
-  ':vs:':
-    'prefix': '\\:vs:'
-    'body': '🆚'
-  ':rice:':
-    'prefix': '\\:rice:'
-    'body': '🍚'
-  ':kimono:':
-    'prefix': '\\:kimono:'
-    'body': '👘'
-  ':feet:':
-    'prefix': '\\:feet:'
-    'body': '🐾'
-  ':star:':
-    'prefix': '\\:star:'
-    'body': '⭐'
-  ':cow2:':
-    'prefix': '\\:cow2:'
-    'body': '🐄'
-  ':a:':
-    'prefix': '\\:a:'
-    'body': '🅰'
-  ':hotel:':
-    'prefix': '\\:hotel:'
-    'body': '🏨'
-  ':currency_exchange:':
-    'prefix': '\\:currency_exchange:'
-    'body': '💱'
-  ':battery:':
-    'prefix': '\\:battery:'
-    'body': '🔋'
-  ':smile_cat:':
-    'prefix': '\\:smile_cat:'
-    'body': '😸'
-  ':tangerine:':
-    'prefix': '\\:tangerine:'
-    'body': '🍊'
-  ':birthday:':
-    'prefix': '\\:birthday:'
-    'body': '🎂'
-  ':cl:':
-    'prefix': '\\:cl:'
-    'body': '🆑'
-  ':restroom:':
-    'prefix': '\\:restroom:'
-    'body': '🚻'
-  ':skull:':
-    'prefix': '\\:skull:'
-    'body': '💀'
-  ':white_medium_small_square:':
-    'prefix': '\\:white_medium_small_square:'
-    'body': '◽'
-  ':abc:':
-    'prefix': '\\:abc:'
-    'body': '🔤'
-  ':fried_shrimp:':
-    'prefix': '\\:fried_shrimp:'
-    'body': '🍤'
-  ':large_blue_diamond:':
-    'prefix': '\\:large_blue_diamond:'
-    'body': '🔷'
-  ':cocktail:':
-    'prefix': '\\:cocktail:'
-    'body': '🍸'
-  ':wheelchair:':
-    'prefix': '\\:wheelchair:'
-    'body': '♿'
-  ':green_heart:':
-    'prefix': '\\:green_heart:'
-    'body': '💚'
-  ':white_small_square:':
-    'prefix': '\\:white_small_square:'
-    'body': '▫'
-  ':passport_control:':
-    'prefix': '\\:passport_control:'
-    'body': '🛂'
-  ':free:':
-    'prefix': '\\:free:'
-    'body': '🆓'
-  ':yen:':
-    'prefix': '\\:yen:'
-    'body': '💴'
-  ':dragon_face:':
-    'prefix': '\\:dragon_face:'
-    'body': '🐲'
-  ':ok:':
-    'prefix': '\\:ok:'
-    'body': '🆗'
-  ':persevere:':
-    'prefix': '\\:persevere:'
-    'body': '😣'
-  ':pineapple:':
-    'prefix': '\\:pineapple:'
-    'body': '🍍'
-  ':mountain_railway:':
-    'prefix': '\\:mountain_railway:'
-    'body': '🚞'
-  ':tea:':
-    'prefix': '\\:tea:'
-    'body': '🍵'
-  ':crossed_flags:':
-    'prefix': '\\:crossed_flags:'
-    'body': '🎌'
-  ':broken_heart:':
-    'prefix': '\\:broken_heart:'
-    'body': '💔'
-  ':snake:':
-    'prefix': '\\:snake:'
-    'body': '🐍'
-  ':low_brightness:':
-    'prefix': '\\:low_brightness:'
-    'body': '🔅'
-  ':smile:':
-    'prefix': '\\:smile:'
-    'body': '😄'
-  ':arrow_double_down:':
-    'prefix': '\\:arrow_double_down:'
-    'body': '⏬'
-  ':cupid:':
-    'prefix': '\\:cupid:'
-    'body': '💘'
-  ':hourglass:':
-    'prefix': '\\:hourglass:'
-    'body': '⌛'
-  ':worried:':
-    'prefix': '\\:worried:'
-    'body': '😟'
-  ':clock430:':
-    'prefix': '\\:clock430:'
-    'body': '🕟'
-  ':minidisc:':
-    'prefix': '\\:minidisc:'
-    'body': '💽'
-  ':vhs:':
-    'prefix': '\\:vhs:'
-    'body': '📼'
-  ':carousel_horse:':
-    'prefix': '\\:carousel_horse:'
-    'body': '🎠'
-  ':congratulations:':
-    'prefix': '\\:congratulations:'
-    'body': '㊗'
-  ':steam_locomotive:':
-    'prefix': '\\:steam_locomotive:'
-    'body': '🚂'
-  ':black_medium_square:':
-    'prefix': '\\:black_medium_square:'
-    'body': '◼'
-  ':violin:':
-    'prefix': '\\:violin:'
-    'body': '🎻'
-  ':incoming_envelope:':
-    'prefix': '\\:incoming_envelope:'
-    'body': '📨'
-  ':anchor:':
-    'prefix': '\\:anchor:'
-    'body': '⚓'
-  ':hear_no_evil:':
-    'prefix': '\\:hear_no_evil:'
-    'body': '🙉'
-  ':keycap_ten:':
-    'prefix': '\\:keycap_ten:'
-    'body': '🔟'
-  ':microscope:':
-    'prefix': '\\:microscope:'
-    'body': '🔬'
-  ':clock4:':
-    'prefix': '\\:clock4:'
-    'body': '🕓'
-  ':purse:':
-    'prefix': '\\:purse:'
-    'body': '👛'
-  ':lock_with_ink_pen:':
-    'prefix': '\\:lock_with_ink_pen:'
-    'body': '🔏'
-  ':toilet:':
-    'prefix': '\\:toilet:'
-    'body': '🚽'
-  ':bell:':
-    'prefix': '\\:bell:'
-    'body': '🔔'
-  ':joy:':
-    'prefix': '\\:joy:'
-    'body': '😂'
-  ':gift:':
-    'prefix': '\\:gift:'
-    'body': '🎁'
-  ':u7981:':
-    'prefix': '\\:u7981:'
-    'body': '🈲'
-  ':ear:':
-    'prefix': '\\:ear:'
-    'body': '👂'
-  ':arrow_heading_down:':
-    'prefix': '\\:arrow_heading_down:'
-    'body': '⤵'
-  ':egg:':
-    'prefix': '\\:egg:'
-    'body': '🍳'
-  ':barber:':
-    'prefix': '\\:barber:'
-    'body': '💈'
-  ':shell:':
-    'prefix': '\\:shell:'
-    'body': '🐚'
-  ':clock130:':
-    'prefix': '\\:clock130:'
-    'body': '🕜'
-  ':cancer:':
-    'prefix': '\\:cancer:'
-    'body': '♋'
-  ':family:':
-    'prefix': '\\:family:'
-    'body': '👪'
-  ':gift_heart:':
-    'prefix': '\\:gift_heart:'
-    'body': '💝'
-  ':left_luggage:':
-    'prefix': '\\:left_luggage:'
-    'body': '🛅'
-  ':round_pushpin:':
-    'prefix': '\\:round_pushpin:'
-    'body': '📍'
-  ':christmas_tree:':
-    'prefix': '\\:christmas_tree:'
-    'body': '🎄'
-  ':pear:':
-    'prefix': '\\:pear:'
-    'body': '🍐'
-  ':angel:':
-    'prefix': '\\:angel:'
-    'body': '👼'
-  ':newspaper:':
-    'prefix': '\\:newspaper:'
-    'body': '📰'
-  ':horse_racing:':
-    'prefix': '\\:horse_racing:'
-    'body': '🏇'
-  ':point_up_2:':
-    'prefix': '\\:point_up_2:'
-    'body': '👆'
-  ':ambulance:':
-    'prefix': '\\:ambulance:'
-    'body': '🚑'
-  ':nose:':
-    'prefix': '\\:nose:'
-    'body': '👃'
-  ':truck:':
-    'prefix': '\\:truck:'
-    'body': '🚚'
-  ':vertical_traffic_light:':
-    'prefix': '\\:vertical_traffic_light:'
-    'body': '🚦'
-  ':heavy_multiplication_x:':
-    'prefix': '\\:heavy_multiplication_x:'
-    'body': '✖'
-  ':8ball:':
-    'prefix': '\\:8ball:'
-    'body': '🎱'
-  ':o:':
-    'prefix': '\\:o:'
-    'body': '⭕'
-  ':u55b6:':
-    'prefix': '\\:u55b6:'
-    'body': '🈺'
-  ':unlock:':
-    'prefix': '\\:unlock:'
-    'body': '🔓'
-  ':roller_coaster:':
-    'prefix': '\\:roller_coaster:'
-    'body': '🎢'
-  ':beginner:':
-    'prefix': '\\:beginner:'
-    'body': '🔰'
-  ':u5272:':
-    'prefix': '\\:u5272:'
-    'body': '🈹'
-  ':apple:':
-    'prefix': '\\:apple:'
-    'body': '🍎'
-  ':hamster:':
-    'prefix': '\\:hamster:'
-    'body': '🐹'
-  ':no_mouth:':
-    'prefix': '\\:no_mouth:'
-    'body': '😶'
-  ':white_square_button:':
-    'prefix': '\\:white_square_button:'
-    'body': '🔳'
-  ':baby_chick:':
-    'prefix': '\\:baby_chick:'
-    'body': '🐤'
-  ':surfer:':
-    'prefix': '\\:surfer:'
-    'body': '🏄'
-  ':door:':
-    'prefix': '\\:door:'
-    'body': '🚪'
-  ':clock11:':
-    'prefix': '\\:clock11:'
-    'body': '🕚'
-  ':clapper:':
-    'prefix': '\\:clapper:'
-    'body': '🎬'
-  ':small_blue_diamond:':
-    'prefix': '\\:small_blue_diamond:'
-    'body': '🔹'
-  ':light_rail:':
-    'prefix': '\\:light_rail:'
-    'body': '🚈'
-  ':radio:':
-    'prefix': '\\:radio:'
-    'body': '📻'
-  ':see_no_evil:':
-    'prefix': '\\:see_no_evil:'
-    'body': '🙈'
-  ':closed_umbrella:':
-    'prefix': '\\:closed_umbrella:'
-    'body': '🌂'
-  ':confetti_ball:':
-    'prefix': '\\:confetti_ball:'
-    'body': '🎊'
-  ':bookmark_tabs:':
-    'prefix': '\\:bookmark_tabs:'
-    'body': '📑'
-  ':dvd:':
-    'prefix': '\\:dvd:'
-    'body': '📀'
-  ':exclamation:':
-    'prefix': '\\:exclamation:'
-    'body': '❗'
-  ':hand:':
-    'prefix': '\\:hand:'
-    'body': '✋'
-  ':rowboat:':
-    'prefix': '\\:rowboat:'
-    'body': '🚣'
-  ':checkered_flag:':
-    'prefix': '\\:checkered_flag:'
-    'body': '🏁'
-  ':high_brightness:':
-    'prefix': '\\:high_brightness:'
-    'body': '🔆'
-  ':koko:':
-    'prefix': '\\:koko:'
-    'body': '🈁'
-  ':saxophone:':
-    'prefix': '\\:saxophone:'
-    'body': '🎷'
-  ':snowflake:':
-    'prefix': '\\:snowflake:'
-    'body': '❄'
-  ':bangbang:':
-    'prefix': '\\:bangbang:'
-    'body': '‼'
-  ':sweat_drops:':
-    'prefix': '\\:sweat_drops:'
-    'body': '💦'
-  ':information_desk_person:':
-    'prefix': '\\:information_desk_person:'
-    'body': '💁'
-  ':page_facing_up:':
-    'prefix': '\\:page_facing_up:'
-    'body': '📄'
-  ':disappointed:':
-    'prefix': '\\:disappointed:'
-    'body': '😞'
-  ':sos:':
-    'prefix': '\\:sos:'
-    'body': '🆘'
-  ':book:':
-    'prefix': '\\:book:'
-    'body': '📖'
-  ':beer:':
-    'prefix': '\\:beer:'
-    'body': '🍺'
-  ':speech_balloon:':
-    'prefix': '\\:speech_balloon:'
-    'body': '💬'
-  ':anger:':
-    'prefix': '\\:anger:'
-    'body': '💢'
-  ':pager:':
-    'prefix': '\\:pager:'
-    'body': '📟'
-  ':id:':
-    'prefix': '\\:id:'
-    'body': '🆔'
-  ':clock230:':
-    'prefix': '\\:clock230:'
-    'body': '🕝'
-  ':loud_sound:':
-    'prefix': '\\:loud_sound:'
-    'body': '🔊'
-  ':melon:':
-    'prefix': '\\:melon:'
-    'body': '🍈'
-  ':blossom:':
-    'prefix': '\\:blossom:'
-    'body': '🌼'
-  ':fish_cake:':
-    'prefix': '\\:fish_cake:'
-    'body': '🍥'
-  ':massage:':
-    'prefix': '\\:massage:'
-    'body': '💆'
-  ':u6709:':
-    'prefix': '\\:u6709:'
-    'body': '🈶'
-  ':gun:':
-    'prefix': '\\:gun:'
-    'body': '🔫'
-  ':small_red_triangle:':
-    'prefix': '\\:small_red_triangle:'
-    'body': '🔺'
-  ':statue_of_liberty:':
-    'prefix': '\\:statue_of_liberty:'
-    'body': '🗽'
-  ':dizzy:':
-    'prefix': '\\:dizzy:'
-    'body': '💫'
-  ':ice_cream:':
-    'prefix': '\\:ice_cream:'
-    'body': '🍨'
-  ':purple_heart:':
-    'prefix': '\\:purple_heart:'
-    'body': '💜'
-  ':clock830:':
-    'prefix': '\\:clock830:'
-    'body': '🕣'
-  ':left_right_arrow:':
-    'prefix': '\\:left_right_arrow:'
-    'body': '↔'
-  ':water_buffalo:':
-    'prefix': '\\:water_buffalo:'
-    'body': '🐃'
-  ':clock930:':
-    'prefix': '\\:clock930:'
-    'body': '🕤'
-  ':mute:':
-    'prefix': '\\:mute:'
-    'body': '🔇'
-  ':heartbeat:':
-    'prefix': '\\:heartbeat:'
-    'body': '💓'
-  ':ant:':
-    'prefix': '\\:ant:'
-    'body': '🐜'
-  ':innocent:':
-    'prefix': '\\:innocent:'
-    'body': '😇'
-  ':clock3:':
-    'prefix': '\\:clock3:'
-    'body': '🕒'
-  ':neutral_face:':
-    'prefix': '\\:neutral_face:'
-    'body': '😐'
-  ':bullettrain_side:':
-    'prefix': '\\:bullettrain_side:'
-    'body': '🚄'
-  ':couple:':
-    'prefix': '\\:couple:'
-    'body': '👫'
-  ':abcd:':
-    'prefix': '\\:abcd:'
-    'body': '🔡'
-  ':lipstick:':
-    'prefix': '\\:lipstick:'
-    'body': '💄'
-  ':rabbit2:':
-    'prefix': '\\:rabbit2:'
-    'body': '🐇'
-  ':name_badge:':
-    'prefix': '\\:name_badge:'
-    'body': '📛'
-  ':football:':
-    'prefix': '\\:football:'
-    'body': '🏈'
-  ':ballot_box_with_check:':
-    'prefix': '\\:ballot_box_with_check:'
-    'body': '☑'
-  ':hearts:':
-    'prefix': '\\:hearts:'
-    'body': '♥'
-  ':musical_score:':
-    'prefix': '\\:musical_score:'
-    'body': '🎼'
-  ':bank:':
-    'prefix': '\\:bank:'
-    'body': '🏦'
-  ':hammer:':
-    'prefix': '\\:hammer:'
-    'body': '🔨'
-  ':-1:':
-    'prefix': '\\:-1:'
-    'body': '👎'
-  ':postal_horn:':
-    'prefix': '\\:postal_horn:'
-    'body': '📯'
-  ':man_with_gua_pi_mao:':
-    'prefix': '\\:man_with_gua_pi_mao:'
-    'body': '👲'
-  ':aquarius:':
-    'prefix': '\\:aquarius:'
-    'body': '♒'
-  ':guitar:':
-    'prefix': '\\:guitar:'
-    'body': '🎸'
-  ':small_red_triangle_down:':
-    'prefix': '\\:small_red_triangle_down:'
-    'body': '🔻'
-  ':email:':
-    'prefix': '\\:email:'
-    'body': '✉'
-  ':smirk_cat:':
-    'prefix': '\\:smirk_cat:'
-    'body': '😼'
-  ':peach:':
-    'prefix': '\\:peach:'
-    'body': '🍑'
-  ':clock10:':
-    'prefix': '\\:clock10:'
-    'body': '🕙'
-  ':flushed:':
-    'prefix': '\\:flushed:'
-    'body': '😳'
-  ':hospital:':
-    'prefix': '\\:hospital:'
-    'body': '🏥'
-  ':boom:':
-    'prefix': '\\:boom:'
-    'body': '💥'
-  ':point_down:':
-    'prefix': '\\:point_down:'
-    'body': '👇'
-  ':raising_hand:':
-    'prefix': '\\:raising_hand:'
-    'body': '🙋'
-  ':tractor:':
-    'prefix': '\\:tractor:'
-    'body': '🚜'
-  ':curly_loop:':
-    'prefix': '\\:curly_loop:'
-    'body': '➰'
-  ':ribbon:':
-    'prefix': '\\:ribbon:'
-    'body': '🎀'
-  ':cool:':
-    'prefix': '\\:cool:'
-    'body': '🆒'
-  ':beers:':
-    'prefix': '\\:beers:'
-    'body': '🍻'
-  ':mag_right:':
-    'prefix': '\\:mag_right:'
-    'body': '🔎'
-  ':crystal_ball:':
-    'prefix': '\\:crystal_ball:'
-    'body': '🔮'
-  ':clock330:':
-    'prefix': '\\:clock330:'
-    'body': '🕞'
-  ':european_castle:':
-    'prefix': '\\:european_castle:'
-    'body': '🏰'
-  ':chart_with_upwards_trend:':
-    'prefix': '\\:chart_with_upwards_trend:'
-    'body': '📈'
-  ':shirt:':
-    'prefix': '\\:shirt:'
-    'body': '👕'
-  ':clubs:':
-    'prefix': '\\:clubs:'
-    'body': '♣'
-  ':rugby_football:':
-    'prefix': '\\:rugby_football:'
-    'body': '🏉'
-  ':dancer:':
-    'prefix': '\\:dancer:'
-    'body': '💃'
-  ':smirk:':
-    'prefix': '\\:smirk:'
-    'body': '😏'
-  ':u5408:':
-    'prefix': '\\:u5408:'
-    'body': '🈴'
-  ':raised_hands:':
-    'prefix': '\\:raised_hands:'
-    'body': '🙌'
-  ':calendar:':
-    'prefix': '\\:calendar:'
-    'body': '📆'
-  ':house:':
-    'prefix': '\\:house:'
-    'body': '🏠'
-  ':lock:':
-    'prefix': '\\:lock:'
-    'body': '🔒'
-  ':dog:':
-    'prefix': '\\:dog:'
-    'body': '🐶'
-  ':ocean:':
-    'prefix': '\\:ocean:'
-    'body': '🌊'
-  ':nail_care:':
-    'prefix': '\\:nail_care:'
-    'body': '💅'
-  ':heart_decoration:':
-    'prefix': '\\:heart_decoration:'
-    'body': '💟'
-  ':black_nib:':
-    'prefix': '\\:black_nib:'
-    'body': '✒'
-  ':kissing_smiling_eyes:':
-    'prefix': '\\:kissing_smiling_eyes:'
-    'body': '😙'
-  ':baby_symbol:':
-    'prefix': '\\:baby_symbol:'
-    'body': '🚼'
-  ':non-potable_water:':
-    'prefix': '\\:non-potable_water:'
-    'body': '🚱'
-  ':clock530:':
-    'prefix': '\\:clock530:'
-    'body': '🕠'
-  ':hocho:':
-    'prefix': '\\:hocho:'
-    'body': '🔪'
-  ':speaker:':
-    'prefix': '\\:speaker:'
-    'body': '🔈'
-  ':cyclone:':
-    'prefix': '\\:cyclone:'
-    'body': '🌀'
-  ':musical_keyboard:':
-    'prefix': '\\:musical_keyboard:'
-    'body': '🎹'
-  ':airplane:':
-    'prefix': '\\:airplane:'
-    'body': '✈'
-  ':pouch:':
-    'prefix': '\\:pouch:'
-    'body': '👝'
-  ':registered:':
-    'prefix': '\\:registered:'
-    'body': '®'
-  ':mag:':
-    'prefix': '\\:mag:'
-    'body': '🔍'
-  ':blush:':
-    'prefix': '\\:blush:'
-    'body': '😊'
-  ':high_heel:':
-    'prefix': '\\:high_heel:'
-    'body': '👠'
-  ':wedding:':
-    'prefix': '\\:wedding:'
-    'body': '💒'
-  ':arrow_double_up:':
-    'prefix': '\\:arrow_double_up:'
-    'body': '⏫'
-  ':wavy_dash:':
-    'prefix': '\\:wavy_dash:'
-    'body': '〰'
-  ':train2:':
-    'prefix': '\\:train2:'
-    'body': '🚆'
-  ':ship:':
-    'prefix': '\\:ship:'
-    'body': '🚢'
-  ':computer:':
-    'prefix': '\\:computer:'
-    'body': '💻'
-  ':tent:':
-    'prefix': '\\:tent:'
-    'body': '⛺'
-  ':euro:':
-    'prefix': '\\:euro:'
-    'body': '💶'
-  ':monkey:':
-    'prefix': '\\:monkey:'
-    'body': '🐒'
-  ':frog:':
-    'prefix': '\\:frog:'
-    'body': '🐸'
-  ':ng:':
-    'prefix': '\\:ng:'
-    'body': '🆖'
-  ':skin-tone-5:':
-    'prefix': '\\:skin-tone-5:'
-    'body': '🏾'
-  ':flashlight:':
-    'prefix': '\\:flashlight:'
-    'body': '🔦'
-  ':star2:':
-    'prefix': '\\:star2:'
-    'body': '🌟'
-  ':meat_on_bone:':
-    'prefix': '\\:meat_on_bone:'
-    'body': '🍖'
-  ':put_litter_in_its_place:':
-    'prefix': '\\:put_litter_in_its_place:'
-    'body': '🚮'
-  ':u6307:':
-    'prefix': '\\:u6307:'
-    'body': '🈯'
-  ':full_moon:':
-    'prefix': '\\:full_moon:'
-    'body': '🌕'
-  ':clock8:':
-    'prefix': '\\:clock8:'
-    'body': '🕗'
-  ':blue_car:':
-    'prefix': '\\:blue_car:'
-    'body': '🚙'
-  ':leo:':
-    'prefix': '\\:leo:'
-    'body': '♌'
-  ':wolf:':
-    'prefix': '\\:wolf:'
-    'body': '🐺'
-  ':package:':
-    'prefix': '\\:package:'
-    'body': '📦'
-  ':fireworks:':
-    'prefix': '\\:fireworks:'
-    'body': '🎆'
-  ':b:':
-    'prefix': '\\:b:'
-    'body': '🅱'
-  ':hamburger:':
-    'prefix': '\\:hamburger:'
-    'body': '🍔'
-  ':church:':
-    'prefix': '\\:church:'
-    'body': '⛪'
-  ':rice_cracker:':
-    'prefix': '\\:rice_cracker:'
-    'body': '🍘'
-  ':fountain:':
-    'prefix': '\\:fountain:'
-    'body': '⛲'
-  ':sweet_potato:':
-    'prefix': '\\:sweet_potato:'
-    'body': '🍠'
-  ':pensive:':
-    'prefix': '\\:pensive:'
-    'body': '😔'
-  ':dolls:':
-    'prefix': '\\:dolls:'
-    'body': '🎎'
-  ':telescope:':
-    'prefix': '\\:telescope:'
-    'body': '🔭'
-  ':joy_cat:':
-    'prefix': '\\:joy_cat:'
-    'body': '😹'
-  ':rage:':
-    'prefix': '\\:rage:'
-    'body': '😡'
-  ':dolphin:':
-    'prefix': '\\:dolphin:'
-    'body': '🐬'
-  ':confounded:':
-    'prefix': '\\:confounded:'
-    'body': '😖'
-  ':baby:':
-    'prefix': '\\:baby:'
-    'body': '👶'
-  ':volcano:':
-    'prefix': '\\:volcano:'
-    'body': '🌋'
-  ':factory:':
-    'prefix': '\\:factory:'
-    'body': '🏭'
-  ':notebook_with_decorative_cover:':
-    'prefix': '\\:notebook_with_decorative_cover:'
-    'body': '📔'
-  ':vibration_mode:':
-    'prefix': '\\:vibration_mode:'
-    'body': '📳'
-  ':closed_lock_with_key:':
-    'prefix': '\\:closed_lock_with_key:'
-    'body': '🔐'
-  ':mask:':
-    'prefix': '\\:mask:'
-    'body': '😷'
-  ':ok_woman:':
-    'prefix': '\\:ok_woman:'
-    'body': '🙆'
-  ':arrows_clockwise:':
-    'prefix': '\\:arrows_clockwise:'
-    'body': '🔃'
-  ':wrench:':
-    'prefix': '\\:wrench:'
-    'body': '🔧'
-  ':arrow_right_hook:':
-    'prefix': '\\:arrow_right_hook:'
-    'body': '↪'
-  ':rice_scene:':
-    'prefix': '\\:rice_scene:'
-    'body': '🎑'
-  ':heavy_dollar_sign:':
-    'prefix': '\\:heavy_dollar_sign:'
-    'body': '💲'
-  ':revolving_hearts:':
-    'prefix': '\\:revolving_hearts:'
-    'body': '💞'
-  ':cinema:':
-    'prefix': '\\:cinema:'
-    'body': '🎦'
-  ':chocolate_bar:':
-    'prefix': '\\:chocolate_bar:'
-    'body': '🍫'
-  ':sob:':
-    'prefix': '\\:sob:'
-    'body': '😭'
-  ':end:':
-    'prefix': '\\:end:'
-    'body': '🔚'
-  ':angry:':
-    'prefix': '\\:angry:'
-    'body': '😠'
-  ':heavy_minus_sign:':
-    'prefix': '\\:heavy_minus_sign:'
-    'body': '➖'
-  ':tophat:':
-    'prefix': '\\:tophat:'
-    'body': '🎩'
-  ':mushroom:':
-    'prefix': '\\:mushroom:'
-    'body': '🍄'
-  ':grapes:':
-    'prefix': '\\:grapes:'
-    'body': '🍇'
-  ':moon:':
-    'prefix': '\\:moon:'
-    'body': '🌔'
-  ':womans_clothes:':
-    'prefix': '\\:womans_clothes:'
-    'body': '👚'
-  ':cactus:':
-    'prefix': '\\:cactus:'
-    'body': '🌵'
-  ':fallen_leaf:':
-    'prefix': '\\:fallen_leaf:'
-    'body': '🍂'
-  ':oncoming_bus:':
-    'prefix': '\\:oncoming_bus:'
-    'body': '🚍'
-  ':speedboat:':
-    'prefix': '\\:speedboat:'
-    'body': '🚤'
-  ':sweat:':
-    'prefix': '\\:sweat:'
-    'body': '😓'
-  ':bread:':
-    'prefix': '\\:bread:'
-    'body': '🍞'
-  ':post_office:':
-    'prefix': '\\:post_office:'
-    'body': '🏣'
-  ':green_apple:':
-    'prefix': '\\:green_apple:'
-    'body': '🍏'
-  ':large_orange_diamond:':
-    'prefix': '\\:large_orange_diamond:'
-    'body': '🔶'
-  ':grin:':
-    'prefix': '\\:grin:'
-    'body': '😁'
-  ':wine_glass:':
-    'prefix': '\\:wine_glass:'
-    'body': '🍷'
-  ':mans_shoe:':
-    'prefix': '\\:mans_shoe:'
-    'body': '👞'
-  ':clock730:':
-    'prefix': '\\:clock730:'
-    'body': '🕢'
-  ':credit_card:':
-    'prefix': '\\:credit_card:'
-    'body': '💳'
-  ':sagittarius:':
-    'prefix': '\\:sagittarius:'
-    'body': '♐'
-  ':honey_pot:':
-    'prefix': '\\:honey_pot:'
-    'body': '🍯'
-  ':yum:':
-    'prefix': '\\:yum:'
-    'body': '😋'
-  ':dash:':
-    'prefix': '\\:dash:'
-    'body': '💨'
-  ':tennis:':
-    'prefix': '\\:tennis:'
-    'body': '🎾'
-  ':rotating_light:':
-    'prefix': '\\:rotating_light:'
-    'body': '🚨'
-  ':railway_car:':
-    'prefix': '\\:railway_car:'
-    'body': '🚃'
-  ':older_woman:':
-    'prefix': '\\:older_woman:'
-    'body': '👵'
-  ':arrow_left:':
-    'prefix': '\\:arrow_left:'
-    'body': '⬅'
-  ':herb:':
-    'prefix': '\\:herb:'
-    'body': '🌿'
-  ':womans_hat:':
-    'prefix': '\\:womans_hat:'
-    'body': '👒'
-  ':bear:':
-    'prefix': '\\:bear:'
-    'body': '🐻'
-  ':tomato:':
-    'prefix': '\\:tomato:'
-    'body': '🍅'
-  ':ledger:':
-    'prefix': '\\:ledger:'
-    'body': '📒'
-  ':bridge_at_night:':
-    'prefix': '\\:bridge_at_night:'
-    'body': '🌉'
-  ':new_moon:':
-    'prefix': '\\:new_moon:'
-    'body': '🌑'
-  ':seat:':
-    'prefix': '\\:seat:'
-    'body': '💺'
-  ':pouting_cat:':
-    'prefix': '\\:pouting_cat:'
-    'body': '😾'
-  ':sake:':
-    'prefix': '\\:sake:'
-    'body': '🍶'
-  ':u6e80:':
-    'prefix': '\\:u6e80:'
-    'body': '🈵'
-  ':city_sunset:':
-    'prefix': '\\:city_sunset:'
-    'body': '🌆'
-  ':taxi:':
-    'prefix': '\\:taxi:'
-    'body': '🚕'
-  ':arrow_heading_up:':
-    'prefix': '\\:arrow_heading_up:'
-    'body': '⤴'
-  ':oncoming_police_car:':
-    'prefix': '\\:oncoming_police_car:'
-    'body': '🚔'
-  ':question:':
-    'prefix': '\\:question:'
-    'body': '❓'
-  ':whale2:':
-    'prefix': '\\:whale2:'
-    'body': '🐋'
-  ':baggage_claim:':
-    'prefix': '\\:baggage_claim:'
-    'body': '🛄'
-  ':unamused:':
-    'prefix': '\\:unamused:'
-    'body': '😒'
-  ':hushed:':
-    'prefix': '\\:hushed:'
-    'body': '😯'
-  ':waxing_crescent_moon:':
-    'prefix': '\\:waxing_crescent_moon:'
-    'body': '🌒'
-  ':umbrella:':
-    'prefix': '\\:umbrella:'
-    'body': '☔'
-  ':arrow_backward:':
-    'prefix': '\\:arrow_backward:'
-    'body': '◀'
-  ':bar_chart:':
-    'prefix': '\\:bar_chart:'
-    'body': '📊'
-  ':diamond_shape_with_a_dot_inside:':
-    'prefix': '\\:diamond_shape_with_a_dot_inside:'
-    'body': '💠'
-  ':scroll:':
-    'prefix': '\\:scroll:'
-    'body': '📜'
-  ':shower:':
-    'prefix': '\\:shower:'
-    'body': '🚿'
-  ':heart_eyes_cat:':
-    'prefix': '\\:heart_eyes_cat:'
-    'body': '😻'
-  ':leaves:':
-    'prefix': '\\:leaves:'
-    'body': '🍃'
-  ':sparkle:':
-    'prefix': '\\:sparkle:'
-    'body': '❇'
-  ':suspension_railway:':
-    'prefix': '\\:suspension_railway:'
-    'body': '🚟'
-  ':sparkler:':
-    'prefix': '\\:sparkler:'
-    'body': '🎇'
-  ':mouse:':
-    'prefix': '\\:mouse:'
-    'body': '🐭'
-  ':black_large_square:':
-    'prefix': '\\:black_large_square:'
-    'body': '⬛'
-  ':icecream:':
-    'prefix': '\\:icecream:'
-    'body': '🍦'
-  ':jeans:':
-    'prefix': '\\:jeans:'
-    'body': '👖'
-  ':dress:':
-    'prefix': '\\:dress:'
-    'body': '👗'
-  ':file_folder:':
-    'prefix': '\\:file_folder:'
-    'body': '📁'
-  ':ok_hand:':
-    'prefix': '\\:ok_hand:'
-    'body': '👌'
-  ':eggplant:':
-    'prefix': '\\:eggplant:'
-    'body': '🍆'
-  ':bee:':
-    'prefix': '\\:bee:'
-    'body': '🐝'
-  ':aerial_tramway:':
-    'prefix': '\\:aerial_tramway:'
-    'body': '🚡'
-  ':smiley:':
-    'prefix': '\\:smiley:'
-    'body': '😃'
-  ':electric_plug:':
-    'prefix': '\\:electric_plug:'
-    'body': '🔌'
-  ':panda_face:':
-    'prefix': '\\:panda_face:'
-    'body': '🐼'
-  ':twisted_rightwards_arrows:':
-    'prefix': '\\:twisted_rightwards_arrows:'
-    'body': '🔀'
-  ':love_hotel:':
-    'prefix': '\\:love_hotel:'
-    'body': '🏩'
-  ':clock5:':
-    'prefix': '\\:clock5:'
-    'body': '🕔'
-  ':date:':
-    'prefix': '\\:date:'
-    'body': '📅'
-  ':dart:':
-    'prefix': '\\:dart:'
-    'body': '🎯'
-  ':dragon:':
-    'prefix': '\\:dragon:'
-    'body': '🐉'
-  ':performing_arts:':
-    'prefix': '\\:performing_arts:'
-    'body': '🎭'
-  ':clock12:':
-    'prefix': '\\:clock12:'
-    'body': '🕛'
-  ':heartpulse:':
-    'prefix': '\\:heartpulse:'
-    'body': '💗'
-  ':balloon:':
-    'prefix': '\\:balloon:'
-    'body': '🎈'
-  ':runner:':
-    'prefix': '\\:runner:'
-    'body': '🏃'
-  ':link:':
-    'prefix': '\\:link:'
-    'body': '🔗'
-  ':no_entry:':
-    'prefix': '\\:no_entry:'
-    'body': '⛔'
-  ':hotsprings:':
-    'prefix': '\\:hotsprings:'
-    'body': '♨'
-  ':two_women_holding_hands:':
-    'prefix': '\\:two_women_holding_hands:'
-    'body': '👭'
-  ':x:':
-    'prefix': '\\:x:'
-    'body': '❌'
-  ':white_medium_square:':
-    'prefix': '\\:white_medium_square:'
-    'body': '◻'
-  ':mortar_board:':
-    'prefix': '\\:mortar_board:'
-    'body': '🎓'
-  ':ramen:':
-    'prefix': '\\:ramen:'
-    'body': '🍜'
-  ':oden:':
-    'prefix': '\\:oden:'
-    'body': '🍢'
-  ':aries:':
-    'prefix': '\\:aries:'
-    'body': '♈'
-  ':sparkling_heart:':
-    'prefix': '\\:sparkling_heart:'
-    'body': '💖'
-  ':bow:':
-    'prefix': '\\:bow:'
-    'body': '🙇'
-  ':eight_pointed_black_star:':
-    'prefix': '\\:eight_pointed_black_star:'
-    'body': '✴'
-  ':frowning:':
-    'prefix': '\\:frowning:'
-    'body': '😦'
-  ':gemini:':
-    'prefix': '\\:gemini:'
-    'body': '♊'
-  ':money_with_wings:':
-    'prefix': '\\:money_with_wings:'
-    'body': '💸'
-  ':moneybag:':
-    'prefix': '\\:moneybag:'
-    'body': '💰'
-  ':tokyo_tower:':
-    'prefix': '\\:tokyo_tower:'
-    'body': '🗼'
-  ':ab:':
-    'prefix': '\\:ab:'
-    'body': '🆎'
-  ':watch:':
-    'prefix': '\\:watch:'
-    'body': '⌚'
-  ':skin-tone-3:':
-    'prefix': '\\:skin-tone-3:'
-    'body': '🏼'
-  ':100:':
-    'prefix': '\\:100:'
-    'body': '💯'
-  ':camel:':
-    'prefix': '\\:camel:'
-    'body': '🐫'
-  ':person_with_pouting_face:':
-    'prefix': '\\:person_with_pouting_face:'
-    'body': '🙎'
-  ':eyes:':
-    'prefix': '\\:eyes:'
-    'body': '👀'
-  ':accept:':
-    'prefix': '\\:accept:'
-    'body': '🉑'
-  ':crocodile:':
-    'prefix': '\\:crocodile:'
-    'body': '🐊'
-  ':u7121:':
-    'prefix': '\\:u7121:'
-    'body': '🈚'
-  ':heavy_check_mark:':
-    'prefix': '\\:heavy_check_mark:'
-    'body': '✔'
-  ':kissing:':
-    'prefix': '\\:kissing:'
-    'body': '😗'
-  ':smoking:':
-    'prefix': '\\:smoking:'
-    'body': '🚬'
-  ':traffic_light:':
-    'prefix': '\\:traffic_light:'
-    'body': '🚥'
-  ':ideograph_advantage:':
-    'prefix': '\\:ideograph_advantage:'
-    'body': '🉐'
-  ':calling:':
-    'prefix': '\\:calling:'
-    'body': '📲'
-  ':bulb:':
-    'prefix': '\\:bulb:'
-    'body': '💡'
-  ':scream_cat:':
-    'prefix': '\\:scream_cat:'
-    'body': '🙀'
-  ':sunrise_over_mountains:':
-    'prefix': '\\:sunrise_over_mountains:'
-    'body': '🌄'
-  ':headphones:':
-    'prefix': '\\:headphones:'
-    'body': '🎧'
-  ':outbox_tray:':
-    'prefix': '\\:outbox_tray:'
-    'body': '📤'
-  ':no_bell:':
-    'prefix': '\\:no_bell:'
-    'body': '🔕'
-  ':hatching_chick:':
-    'prefix': '\\:hatching_chick:'
-    'body': '🐣'
-  ':expressionless:':
-    'prefix': '\\:expressionless:'
-    'body': '😑'
-  ':cd:':
-    'prefix': '\\:cd:'
-    'body': '💿'
-  ':mailbox_with_no_mail:':
-    'prefix': '\\:mailbox_with_no_mail:'
-    'body': '📭'
-  ':train:':
-    'prefix': '\\:train:'
-    'body': '🚋'
-  ':fast_forward:':
-    'prefix': '\\:fast_forward:'
-    'body': '⏩'
-  ':fax:':
-    'prefix': '\\:fax:'
-    'body': '📠'
-  ':envelope_with_arrow:':
-    'prefix': '\\:envelope_with_arrow:'
-    'body': '📩'
-  ':beetle:':
-    'prefix': '\\:beetle:'
-    'body': '🐞'
-  ':clock6:':
-    'prefix': '\\:clock6:'
-    'body': '🕕'
-  ':school:':
-    'prefix': '\\:school:'
-    'body': '🏫'
-  ':bug:':
-    'prefix': '\\:bug:'
-    'body': '🐛'
-  ':bike:':
-    'prefix': '\\:bike:'
-    'body': '🚲'
-  ':ferris_wheel:':
-    'prefix': '\\:ferris_wheel:'
-    'body': '🎡'
-  ':rice_ball:':
-    'prefix': '\\:rice_ball:'
-    'body': '🍙'
-  ':u6708:':
-    'prefix': '\\:u6708:'
-    'body': '🈷'
-  ':musical_note:':
-    'prefix': '\\:musical_note:'
-    'body': '🎵'
-  ':speak_no_evil:':
-    'prefix': '\\:speak_no_evil:'
-    'body': '🙊'
-  ':underage:':
-    'prefix': '\\:underage:'
-    'body': '🔞'
-  ':rocket:':
-    'prefix': '\\:rocket:'
-    'body': '🚀'
-  ':grimacing:':
-    'prefix': '\\:grimacing:'
-    'body': '😬'
-  ':snowman:':
-    'prefix': '\\:snowman:'
-    'body': '⛄'
-  ':kissing_cat:':
-    'prefix': '\\:kissing_cat:'
-    'body': '😽'
-  ':sound:':
-    'prefix': '\\:sound:'
-    'body': '🔉'
-  ':koala:':
-    'prefix': '\\:koala:'
-    'body': '🐨'
-  ':heart_eyes:':
-    'prefix': '\\:heart_eyes:'
-    'body': '😍'
-  ':blowfish:':
-    'prefix': '\\:blowfish:'
-    'body': '🐡'
-  ':astonished:':
-    'prefix': '\\:astonished:'
-    'body': '😲'
-  ':racehorse:':
-    'prefix': '\\:racehorse:'
-    'body': '🐎'
-  ':cop:':
-    'prefix': '\\:cop:'
-    'body': '👮'
-  ':grey_question:':
-    'prefix': '\\:grey_question:'
-    'body': '❔'
-  ':mahjong:':
-    'prefix': '\\:mahjong:'
-    'body': '🀄'
-  ':watermelon:':
-    'prefix': '\\:watermelon:'
-    'body': '🍉'
-  ':virgo:':
-    'prefix': '\\:virgo:'
-    'body': '♍'
-  ':tiger:':
-    'prefix': '\\:tiger:'
-    'body': '🐯'
-  ':leopard:':
-    'prefix': '\\:leopard:'
-    'body': '🐆'
-  ':dromedary_camel:':
-    'prefix': '\\:dromedary_camel:'
-    'body': '🐪'
-  ':tropical_drink:':
-    'prefix': '\\:tropical_drink:'
-    'body': '🍹'
-  ':arrow_forward:':
-    'prefix': '\\:arrow_forward:'
-    'body': '▶'
-  ':cloud:':
-    'prefix': '\\:cloud:'
-    'body': '☁'
-  ':kissing_closed_eyes:':
-    'prefix': '\\:kissing_closed_eyes:'
-    'body': '😚'
-  ':moyai:':
-    'prefix': '\\:moyai:'
-    'body': '🗿'
-  ':horse:':
-    'prefix': '\\:horse:'
-    'body': '🐴'
-  ':nut_and_bolt:':
-    'prefix': '\\:nut_and_bolt:'
-    'body': '🔩'
-  ':mailbox_closed:':
-    'prefix': '\\:mailbox_closed:'
-    'body': '📪'
-  ':grinning:':
-    'prefix': '\\:grinning:'
-    'body': '😀'
-  ':closed_book:':
-    'prefix': '\\:closed_book:'
-    'body': '📕'
-  ':running_shirt_with_sash:':
-    'prefix': '\\:running_shirt_with_sash:'
-    'body': '🎽'
-  ':movie_camera:':
-    'prefix': '\\:movie_camera:'
-    'body': '🎥'
-  ':japanese_castle:':
-    'prefix': '\\:japanese_castle:'
-    'body': '🏯'
-  ':rainbow:':
-    'prefix': '\\:rainbow:'
-    'body': '🌈'
-  ':elephant:':
-    'prefix': '\\:elephant:'
-    'body': '🐘'
-  ':green_book:':
-    'prefix': '\\:green_book:'
-    'body': '📗'
-  ':heavy_division_sign:':
-    'prefix': '\\:heavy_division_sign:'
-    'body': '➗'
-  ':eyeglasses:':
-    'prefix': '\\:eyeglasses:'
-    'body': '👓'
-  ':arrow_up_small:':
-    'prefix': '\\:arrow_up_small:'
-    'body': '🔼'
-  ':spades:':
-    'prefix': '\\:spades:'
-    'body': '♠'
-  ':pushpin:':
-    'prefix': '\\:pushpin:'
-    'body': '📌'
-  ':rabbit:':
-    'prefix': '\\:rabbit:'
-    'body': '🐰'
-  ':japan:':
-    'prefix': '\\:japan:'
-    'body': '🗾'
-  ':floppy_disk:':
-    'prefix': '\\:floppy_disk:'
-    'body': '💾'
-  ':information_source:':
-    'prefix': '\\:information_source:'
-    'body': 'ℹ'
-  ':haircut:':
-    'prefix': '\\:haircut:'
-    'body': '💇'
-  ':man:':
-    'prefix': '\\:man:'
-    'body': '👨'
-  ':arrows_counterclockwise:':
-    'prefix': '\\:arrows_counterclockwise:'
-    'body': '🔄'
-  ':stuck_out_tongue:':
-    'prefix': '\\:stuck_out_tongue:'
-    'body': '😛'
-  ':on:':
-    'prefix': '\\:on:'
-    'body': '🔛'
-  ':dango:':
-    'prefix': '\\:dango:'
-    'body': '🍡'
-  ':jack_o_lantern:':
-    'prefix': '\\:jack_o_lantern:'
-    'body': '🎃'
-  ':lips:':
-    'prefix': '\\:lips:'
-    'body': '👄'
-  ':no_entry_sign:':
-    'prefix': '\\:no_entry_sign:'
-    'body': '🚫'
-  ':sunny:':
-    'prefix': '\\:sunny:'
-    'body': '☀'
-  ':new:':
-    'prefix': '\\:new:'
-    'body': '🆕'
-  ':1234:':
-    'prefix': '\\:1234:'
-    'body': '🔢'
-  ':interrobang:':
-    'prefix': '\\:interrobang:'
-    'body': '⁉'
-  ':japanese_goblin:':
-    'prefix': '\\:japanese_goblin:'
-    'body': '👺'
-  ':copyright:':
-    'prefix': '\\:copyright:'
-    'body': '©'
-  ':wink:':
-    'prefix': '\\:wink:'
-    'body': '😉'
-  ':zzz:':
-    'prefix': '\\:zzz:'
-    'body': '💤'
-  ':arrow_down:':
-    'prefix': '\\:arrow_down:'
-    'body': '⬇'
-  ':dollar:':
-    'prefix': '\\:dollar:'
-    'body': '💵'
-  ':soccer:':
-    'prefix': '\\:soccer:'
-    'body': '⚽'
-  ':construction_worker:':
-    'prefix': '\\:construction_worker:'
-    'body': '👷'
-  ':potable_water:':
-    'prefix': '\\:potable_water:'
-    'body': '🚰'
-  ':arrow_down_small:':
-    'prefix': '\\:arrow_down_small:'
-    'body': '🔽'
-  ':soon:':
-    'prefix': '\\:soon:'
-    'body': '🔜'
-  ':art:':
-    'prefix': '\\:art:'
-    'body': '🎨'
-  ':tropical_fish:':
-    'prefix': '\\:tropical_fish:'
-    'body': '🐠'
-  ':fire_engine:':
-    'prefix': '\\:fire_engine:'
-    'body': '🚒'
-  ':cry:':
-    'prefix': '\\:cry:'
-    'body': '😢'
-  ':mountain_bicyclist:':
-    'prefix': '\\:mountain_bicyclist:'
-    'body': '🚵'
-  ':repeat:':
-    'prefix': '\\:repeat:'
-    'body': '🔁'
-  ':bowling:':
-    'prefix': '\\:bowling:'
-    'body': '🎳'
-  ':tired_face:':
-    'prefix': '\\:tired_face:'
-    'body': '😫'
-  ':confused:':
-    'prefix': '\\:confused:'
-    'body': '😕'
-  ':black_joker:':
-    'prefix': '\\:black_joker:'
-    'body': '🃏'
-  ':earth_americas:':
-    'prefix': '\\:earth_americas:'
-    'body': '🌎'
-  ':first_quarter_moon_with_face:':
-    'prefix': '\\:first_quarter_moon_with_face:'
-    'body': '🌛'
-  ':repeat_one:':
-    'prefix': '\\:repeat_one:'
-    'body': '🔂'
-  ':bird:':
-    'prefix': '\\:bird:'
-    'body': '🐦'
-  ':earth_asia:':
-    'prefix': '\\:earth_asia:'
-    'body': '🌏'
-  ':smiley_cat:':
-    'prefix': '\\:smiley_cat:'
-    'body': '😺'
-  ':white_check_mark:':
-    'prefix': '\\:white_check_mark:'
-    'body': '✅'
-  ':game_die:':
-    'prefix': '\\:game_die:'
-    'body': '🎲'
-  ':clock630:':
-    'prefix': '\\:clock630:'
-    'body': '🕡'
-  ':ox:':
-    'prefix': '\\:ox:'
-    'body': '🐂'
-  ':page_with_curl:':
-    'prefix': '\\:page_with_curl:'
-    'body': '📃'
-  ':police_car:':
-    'prefix': '\\:police_car:'
-    'body': '🚓'
-  ':clock1230:':
-    'prefix': '\\:clock1230:'
-    'body': '🕧'
-  ':santa:':
-    'prefix': '\\:santa:'
-    'body': '🎅'
-  ':yellow_heart:':
-    'prefix': '\\:yellow_heart:'
-    'body': '💛'
-  ':cat:':
-    'prefix': '\\:cat:'
-    'body': '🐱'
-  ':anguished:':
-    'prefix': '\\:anguished:'
-    'body': '😧'
-  ':station:':
-    'prefix': '\\:station:'
-    'body': '🚉'
-  ':four_leaf_clover:':
-    'prefix': '\\:four_leaf_clover:'
-    'body': '🍀'
-  ':thought_balloon:':
-    'prefix': '\\:thought_balloon:'
-    'body': '💭'
-  ':loop:':
-    'prefix': '\\:loop:'
-    'body': '➿'
-  ':tanabata_tree:':
-    'prefix': '\\:tanabata_tree:'
-    'body': '🎋'
-  ':cherries:':
-    'prefix': '\\:cherries:'
-    'body': '🍒'
-  ':bride_with_veil:':
-    'prefix': '\\:bride_with_veil:'
-    'body': '👰'
-  ':notebook:':
-    'prefix': '\\:notebook:'
-    'body': '📓'
-  ':custard:':
-    'prefix': '\\:custard:'
-    'body': '🍮'
-  ':arrow_lower_left:':
-    'prefix': '\\:arrow_lower_left:'
-    'body': '↙'
-  ':warning:':
-    'prefix': '\\:warning:'
-    'body': '⚠'
-  ':first_quarter_moon:':
-    'prefix': '\\:first_quarter_moon:'
-    'body': '🌓'
-  ':memo:':
-    'prefix': '\\:memo:'
-    'body': '📝'
-  ':last_quarter_moon:':
-    'prefix': '\\:last_quarter_moon:'
-    'body': '🌗'
-  ':up:':
-    'prefix': '\\:up:'
-    'body': '🆙'
-  ':slot_machine:':
-    'prefix': '\\:slot_machine:'
-    'body': '🎰'
-  ':rat:':
-    'prefix': '\\:rat:'
-    'body': '🐀'
-  ':car:':
-    'prefix': '\\:car:'
-    'body': '🚗'
-  ':pig2:':
-    'prefix': '\\:pig2:'
-    'body': '🐖'
-  ':globe_with_meridians:':
-    'prefix': '\\:globe_with_meridians:'
-    'body': '🌐'
-  ':black_circle:':
-    'prefix': '\\:black_circle:'
-    'body': '⚫'
-  ':ram:':
-    'prefix': '\\:ram:'
-    'body': '🐏'
-  ':bamboo:':
-    'prefix': '\\:bamboo:'
-    'body': '🎍'
-  ':busstop:':
-    'prefix': '\\:busstop:'
-    'body': '🚏'
-  ':boy:':
-    'prefix': '\\:boy:'
-    'body': '👦'
-  ':part_alternation_mark:':
-    'prefix': '\\:part_alternation_mark:'
-    'body': '〽'
-  ':sandal:':
-    'prefix': '\\:sandal:'
-    'body': '👡'
-  ':baseball:':
-    'prefix': '\\:baseball:'
-    'body': '⚾'
-  ':tulip:':
-    'prefix': '\\:tulip:'
-    'body': '🌷'
-  ':video_camera:':
-    'prefix': '\\:video_camera:'
-    'body': '📹'
-  ':blue_heart:':
-    'prefix': '\\:blue_heart:'
-    'body': '💙'
-  ':black_small_square:':
-    'prefix': '\\:black_small_square:'
-    'body': '▪'
-  ':waning_gibbous_moon:':
-    'prefix': '\\:waning_gibbous_moon:'
-    'body': '🌖'
-  ':triangular_ruler:':
-    'prefix': '\\:triangular_ruler:'
-    'body': '📐'
-  ':pizza:':
-    'prefix': '\\:pizza:'
-    'body': '🍕'
-  ':chestnut:':
-    'prefix': '\\:chestnut:'
-    'body': '🌰'
-  ':baby_bottle:':
-    'prefix': '\\:baby_bottle:'
-    'body': '🍼'
-  ':fuelpump:':
-    'prefix': '\\:fuelpump:'
-    'body': '⛽'
-  ':articulated_lorry:':
-    'prefix': '\\:articulated_lorry:'
-    'body': '🚛'
-  ':ski:':
-    'prefix': '\\:ski:'
-    'body': '🎿'
-  ':straight_ruler:':
-    'prefix': '\\:straight_ruler:'
-    'body': '📏'
-  ':point_right:':
-    'prefix': '\\:point_right:'
-    'body': '👉'
-  ':relieved:':
-    'prefix': '\\:relieved:'
-    'body': '😌'
-  ':night_with_stars:':
-    'prefix': '\\:night_with_stars:'
-    'body': '🌃'
-  ':dizzy_face:':
-    'prefix': '\\:dizzy_face:'
-    'body': '😵'
-  ':person_with_blond_hair:':
-    'prefix': '\\:person_with_blond_hair:'
-    'body': '👱'
-  ':cookie:':
-    'prefix': '\\:cookie:'
-    'body': '🍪'
-  ':inbox_tray:':
-    'prefix': '\\:inbox_tray:'
-    'body': '📥'
-  ':no_pedestrians:':
-    'prefix': '\\:no_pedestrians:'
-    'body': '🚷'
-  ':oncoming_taxi:':
-    'prefix': '\\:oncoming_taxi:'
-    'body': '🚖'
-  ':sunflower:':
-    'prefix': '\\:sunflower:'
-    'body': '🌻'
-  ':laughing:':
-    'prefix': '\\:laughing:'
-    'body': '😆'
-  ':handbag:':
-    'prefix': '\\:handbag:'
-    'body': '👜'
-  ':cow:':
-    'prefix': '\\:cow:'
-    'body': '🐮'
-  ':wind_chime:':
-    'prefix': '\\:wind_chime:'
-    'body': '🎐'
-  ':cat2:':
-    'prefix': '\\:cat2:'
-    'body': '🐈'
-  ':banana:':
-    'prefix': '\\:banana:'
-    'body': '🍌'
-  ':open_hands:':
-    'prefix': '\\:open_hands:'
-    'body': '👐'
-  ':tada:':
-    'prefix': '\\:tada:'
-    'body': '🎉'
-  ':loudspeaker:':
-    'prefix': '\\:loudspeaker:'
-    'body': '📢'
-  ':monorail:':
-    'prefix': '\\:monorail:'
-    'body': '🚝'
-  ':spaghetti:':
-    'prefix': '\\:spaghetti:'
-    'body': '🍝'
-  ':hatched_chick:':
-    'prefix': '\\:hatched_chick:'
-    'body': '🐥'
-  ':sunrise:':
-    'prefix': '\\:sunrise:'
-    'body': '🌅'
-  ':woman:':
-    'prefix': '\\:woman:'
-    'body': '👩'
-  ':man_with_turban:':
-    'prefix': '\\:man_with_turban:'
-    'body': '👳'
-  ':palm_tree:':
-    'prefix': '\\:palm_tree:'
-    'body': '🌴'
-  ':bullettrain_front:':
-    'prefix': '\\:bullettrain_front:'
-    'body': '🚅'
-  ':busts_in_silhouette:':
-    'prefix': '\\:busts_in_silhouette:'
-    'body': '👥'
-  ':scissors:':
-    'prefix': '\\:scissors:'
-    'body': '✂'
-  ':hankey:':
-    'prefix': '\\:hankey:'
-    'body': '💩'
-  ':bento:':
-    'prefix': '\\:bento:'
-    'body': '🍱'
-  ':rewind:':
-    'prefix': '\\:rewind:'
-    'body': '⏪'
-  ':doughnut:':
-    'prefix': '\\:doughnut:'
-    'body': '🍩'
-  ':princess:':
-    'prefix': '\\:princess:'
-    'body': '👸'
-  ':e-mail:':
-    'prefix': '\\:e-mail:'
-    'body': '📧'
-  ':dog2:':
-    'prefix': '\\:dog2:'
-    'body': '🐕'
-  ':v:':
-    'prefix': '\\:v:'
-    'body': '✌'
-  ':clap:':
-    'prefix': '\\:clap:'
-    'body': '👏'
-  ':arrow_upper_right:':
-    'prefix': '\\:arrow_upper_right:'
-    'body': '↗'
-  ':grey_exclamation:':
-    'prefix': '\\:grey_exclamation:'
-    'body': '❕'
-  ':ear_of_rice:':
-    'prefix': '\\:ear_of_rice:'
-    'body': '🌾'
-  ':card_index:':
-    'prefix': '\\:card_index:'
-    'body': '📇'
-  ':pray:':
-    'prefix': '\\:pray:'
-    'body': '🙏'
-  ':scream:':
-    'prefix': '\\:scream:'
-    'body': '😱'
-  ':japanese_ogre:':
-    'prefix': '\\:japanese_ogre:'
-    'body': '👹'
-  ':sheep:':
-    'prefix': '\\:sheep:'
-    'body': '🐑'
-  ':fishing_pole_and_fish:':
-    'prefix': '\\:fishing_pole_and_fish:'
-    'body': '🎣'
-  ':weary:':
-    'prefix': '\\:weary:'
-    'body': '😩'
-  ':girl:':
-    'prefix': '\\:girl:'
-    'body': '👧'
-  ':tm:':
-    'prefix': '\\:tm:'
-    'body': '™'
-  ':fries:':
-    'prefix': '\\:fries:'
-    'body': '🍟'
-  ':u7a7a:':
-    'prefix': '\\:u7a7a:'
-    'body': '🈳'
-  ':milky_way:':
-    'prefix': '\\:milky_way:'
-    'body': '🌌'
-  ':m:':
-    'prefix': '\\:m:'
-    'body': 'Ⓜ'
-  ':snowboarder:':
-    'prefix': '\\:snowboarder:'
-    'body': '🏂'
-  ':atm:':
-    'prefix': '\\:atm:'
-    'body': '🏧'
-  ':capricorn:':
-    'prefix': '\\:capricorn:'
-    'body': '♑'
-  ':bomb:':
-    'prefix': '\\:bomb:'
-    'body': '💣'
-  ':arrow_lower_right:':
-    'prefix': '\\:arrow_lower_right:'
-    'body': '↘'
-  ':maple_leaf:':
-    'prefix': '\\:maple_leaf:'
-    'body': '🍁'
-  ':full_moon_with_face:':
-    'prefix': '\\:full_moon_with_face:'
-    'body': '🌝'
-  ':pisces:':
-    'prefix': '\\:pisces:'
-    'body': '♓'
-  ':chart_with_downwards_trend:':
-    'prefix': '\\:chart_with_downwards_trend:'
-    'body': '📉'
-  ':evergreen_tree:':
-    'prefix': '\\:evergreen_tree:'
-    'body': '🌲'
-  ':whale:':
-    'prefix': '\\:whale:'
-    'body': '🐳'
-  ':black_medium_small_square:':
-    'prefix': '\\:black_medium_small_square:'
-    'body': '◾'
-  ':triangular_flag_on_post:':
-    'prefix': '\\:triangular_flag_on_post:'
-    'body': '🚩'
-  ':satellite:':
-    'prefix': '\\:satellite:'
-    'body': '📡'
-  ':sparkles:':
-    'prefix': '\\:sparkles:'
-    'body': '✨'
-  ':sushi:':
-    'prefix': '\\:sushi:'
-    'body': '🍣'
-  ':seedling:':
-    'prefix': '\\:seedling:'
-    'body': '🌱'
-  ':do_not_litter:':
-    'prefix': '\\:do_not_litter:'
-    'body': '🚯'
-  ':flower_playing_cards:':
-    'prefix': '\\:flower_playing_cards:'
-    'body': '🎴'
-  ':sunglasses:':
-    'prefix': '\\:sunglasses:'
-    'body': '😎'
-  ':books:':
-    'prefix': '\\:books:'
-    'body': '📚'
-  ':golf:':
-    'prefix': '\\:golf:'
-    'body': '⛳'
-  ':mailbox:':
-    'prefix': '\\:mailbox:'
-    'body': '📫'
-  ':guardsman:':
-    'prefix': '\\:guardsman:'
-    'body': '💂'
-  ':monkey_face:':
-    'prefix': '\\:monkey_face:'
-    'body': '🐵'
-  ':mouse2:':
-    'prefix': '\\:mouse2:'
-    'body': '🐁'
-  ':symbols:':
-    'prefix': '\\:symbols:'
-    'body': '🔣'
-  ':negative_squared_cross_mark:':
-    'prefix': '\\:negative_squared_cross_mark:'
-    'body': '❎'
-  ':red_circle:':
-    'prefix': '\\:red_circle:'
-    'body': '🔴'
-  ':bust_in_silhouette:':
-    'prefix': '\\:bust_in_silhouette:'
-    'body': '👤'
-  ':scorpius:':
-    'prefix': '\\:scorpius:'
-    'body': '♏'
-  ':crown:':
-    'prefix': '\\:crown:'
-    'body': '👑'
-  ':goat:':
-    'prefix': '\\:goat:'
-    'body': '🐐'
-  ':clock1:':
-    'prefix': '\\:clock1:'
-    'body': '🕐'
-  ':partly_sunny:':
-    'prefix': '\\:partly_sunny:'
-    'body': '⛅'
-  ':arrow_right:':
-    'prefix': '\\:arrow_right:'
-    'body': '➡'
-  ':lemon:':
-    'prefix': '\\:lemon:'
-    'body': '🍋'
-  ':tongue:':
-    'prefix': '\\:tongue:'
-    'body': '👅'
-  ':imp:':
-    'prefix': '\\:imp:'
-    'body': '👿'
-  ':sleepy:':
-    'prefix': '\\:sleepy:'
-    'body': '😪'
-  ':walking:':
-    'prefix': '\\:walking:'
-    'body': '🚶'
-  ':u7533:':
-    'prefix': '\\:u7533:'
-    'body': '🈸'
-  ':arrow_upper_left:':
-    'prefix': '\\:arrow_upper_left:'
-    'body': '↖'
-  ':tv:':
-    'prefix': '\\:tv:'
-    'body': '📺'
-  ':secret:':
-    'prefix': '\\:secret:'
-    'body': '㊙'
-  ':trumpet:':
-    'prefix': '\\:trumpet:'
-    'body': '🎺'
-  ':strawberry:':
-    'prefix': '\\:strawberry:'
-    'body': '🍓'
-  ':space_invader:':
-    'prefix': '\\:space_invader:'
-    'body': '👾'
-  ':black_square_button:':
-    'prefix': '\\:black_square_button:'
-    'body': '🔲'
-  ':house_with_garden:':
-    'prefix': '\\:house_with_garden:'
-    'body': '🏡'
-  ':sweat_smile:':
-    'prefix': '\\:sweat_smile:'
-    'body': '😅'
-  ':wave:':
-    'prefix': '\\:wave:'
-    'body': '👋'
-  ':gem:':
-    'prefix': '\\:gem:'
-    'body': '💎'
-  ':love_letter:':
-    'prefix': '\\:love_letter:'
-    'body': '💌'
-  ':skin-tone-4:':
-    'prefix': '\\:skin-tone-4:'
-    'body': '🏽'
-  ':sleeping:':
-    'prefix': '\\:sleeping:'
-    'body': '😴'
-  ':point_up:':
-    'prefix': '\\:point_up:'
-    'body': '☝'
-  ':sun_with_face:':
-    'prefix': '\\:sun_with_face:'
-    'body': '🌞'
-  ':customs:':
-    'prefix': '\\:customs:'
-    'body': '🛃'
-  ':mega:':
-    'prefix': '\\:mega:'
-    'body': '📣'
-  ':rose:':
-    'prefix': '\\:rose:'
-    'body': '🌹'
-  ':camera:':
-    'prefix': '\\:camera:'
-    'body': '📷'
-  ':bath:':
-    'prefix': '\\:bath:'
-    'body': '🛀'
-  ':flags:':
-    'prefix': '\\:flags:'
-    'body': '🎏'
-  ':arrow_up_down:':
-    'prefix': '\\:arrow_up_down:'
-    'body': '↕'
-  ':arrow_up:':
-    'prefix': '\\:arrow_up:'
-    'body': '⬆'
-  ':ophiuchus:':
-    'prefix': '\\:ophiuchus:'
-    'body': '⛎'
-  ':mailbox_with_mail:':
-    'prefix': '\\:mailbox_with_mail:'
-    'body': '📬'
-  ':alarm_clock:':
-    'prefix': '\\:alarm_clock:'
-    'body': '⏰'
-  ':+1:':
-    'prefix': '\\:+1:'
-    'body': '👍'
-  ':mobile_phone_off:':
-    'prefix': '\\:mobile_phone_off:'
-    'body': '📴'
-  ':tiger2:':
-    'prefix': '\\:tiger2:'
-    'body': '🐅'
-  ':department_store:':
-    'prefix': '\\:department_store:'
-    'body': '🏬'
-  ':fork_and_knife:':
-    'prefix': '\\:fork_and_knife:'
-    'body': '🍴'
-  ':signal_strength:':
-    'prefix': '\\:signal_strength:'
-    'body': '📶'
-  ':no_smoking:':
-    'prefix': '\\:no_smoking:'
-    'body': '🚭'
-  ':office:':
-    'prefix': '\\:office:'
-    'body': '🏢'
-  ':helicopter:':
-    'prefix': '\\:helicopter:'
-    'body': '🚁'
-  ':fish:':
-    'prefix': '\\:fish:'
-    'body': '🐟'
-  ':last_quarter_moon_with_face:':
-    'prefix': '\\:last_quarter_moon_with_face:'
-    'body': '🌜'
-  ':ticket:':
-    'prefix': '\\:ticket:'
-    'body': '🎫'
-  ':pig:':
-    'prefix': '\\:pig:'
-    'body': '🐷'
-  ':snail:':
-    'prefix': '\\:snail:'
-    'body': '🐌'
-  ':couple_with_heart:':
-    'prefix': '\\:couple_with_heart:'
-    'body': '💑'
-  ':trolleybus:':
-    'prefix': '\\:trolleybus:'
-    'body': '🚎'
-  ':recycle:':
-    'prefix': '\\:recycle:'
-    'body': '♻'
-  ':bus:':
-    'prefix': '\\:bus:'
-    'body': '🚌'
-  ':deciduous_tree:':
-    'prefix': '\\:deciduous_tree:'
-    'body': '🌳'
-  ':convenience_store:':
-    'prefix': '\\:convenience_store:'
-    'body': '🏪'
-  ':paperclip:':
-    'prefix': '\\:paperclip:'
-    'body': '📎'
-  ':heavy_plus_sign:':
-    'prefix': '\\:heavy_plus_sign:'
-    'body': '➕'
-  ':open_file_folder:':
-    'prefix': '\\:open_file_folder:'
-    'body': '📂'
-  ':crying_cat_face:':
-    'prefix': '\\:crying_cat_face:'
-    'body': '😿'
-  ':boar:':
-    'prefix': '\\:boar:'
-    'body': '🐗'
-  ':parking:':
-    'prefix': '\\:parking:'
-    'body': '🅿'
-  ':coffee:':
-    'prefix': '\\:coffee:'
-    'body': '☕'
-  ':clock1030:':
-    'prefix': '\\:clock1030:'
-    'body': '🕥'
-  ':postbox:':
-    'prefix': '\\:postbox:'
-    'body': '📮'
-  ':briefcase:':
-    'prefix': '\\:briefcase:'
-    'body': '💼'
-  ':cherry_blossom:':
-    'prefix': '\\:cherry_blossom:'
-    'body': '🌸'
-  ':city_sunrise:':
-    'prefix': '\\:city_sunrise:'
-    'body': '🌇'
-  ':two_men_holding_hands:':
-    'prefix': '\\:two_men_holding_hands:'
-    'body': '👬'
-  ':curry:':
-    'prefix': '\\:curry:'
-    'body': '🍛'
-  ':droplet:':
-    'prefix': '\\:droplet:'
-    'body': '💧'
-  ':sa:':
-    'prefix': '\\:sa:'
-    'body': '🈂'
-  ':hourglass_flowing_sand:':
-    'prefix': '\\:hourglass_flowing_sand:'
-    'body': '⏳'
-  ':diamonds:':
-    'prefix': '\\:diamonds:'
-    'body': '♦'
-  ':notes:':
-    'prefix': '\\:notes:'
-    'body': '🎶'
-  ':skin-tone-6:':
-    'prefix': '\\:skin-tone-6:'
-    'body': '🏿'
-  ':stuck_out_tongue_winking_eye:':
-    'prefix': '\\:stuck_out_tongue_winking_eye:'
-    'body': '😜'
-  ':two_hearts:':
-    'prefix': '\\:two_hearts:'
-    'body': '💕'
-  ':zap:':
-    'prefix': '\\:zap:'
-    'body': '⚡'
-  ':mount_fuji:':
-    'prefix': '\\:mount_fuji:'
-    'body': '🗻'
-  ':stuck_out_tongue_closed_eyes:':
-    'prefix': '\\:stuck_out_tongue_closed_eyes:'
-    'body': '😝'
-  ':capital_abcd:':
-    'prefix': '\\:capital_abcd:'
-    'body': '🔠'
-  ':point_left:':
-    'prefix': '\\:point_left:'
-    'body': '👈'
-  ':disappointed_relieved:':
-    'prefix': '\\:disappointed_relieved:'
-    'body': '😥'
-  ':back:':
-    'prefix': '\\:back:'
-    'body': '🔙'
-  ':bookmark:':
-    'prefix': '\\:bookmark:'
-    'body': '🔖'
-  ':trophy:':
-    'prefix': '\\:trophy:'
-    'body': '🏆'
-  ':penguin:':
-    'prefix': '\\:penguin:'
-    'body': '🐧'
-  ':couplekiss:':
-    'prefix': '\\:couplekiss:'
-    'body': '💏'
-  ':leftwards_arrow_with_hook:':
-    'prefix': '\\:leftwards_arrow_with_hook:'
-    'body': '↩'
-  ':bicyclist:':
-    'prefix': '\\:bicyclist:'
-    'body': '🚴'
-  ':no_mobile_phones:':
-    'prefix': '\\:no_mobile_phones:'
-    'body': '📵'
-  ':boat:':
-    'prefix': '\\:boat:'
-    'body': '⛵'
-  ':poodle:':
-    'prefix': '\\:poodle:'
-    'body': '🐩'
-  ':school_satchel:':
-    'prefix': '\\:school_satchel:'
-    'body': '🎒'
-  ':kissing_heart:':
-    'prefix': '\\:kissing_heart:'
-    'body': '😘'
-  ':alien:':
-    'prefix': '\\:alien:'
-    'body': '👽'
-  ':minibus:':
-    'prefix': '\\:minibus:'
-    'body': '🚐'
-  ':circus_tent:':
-    'prefix': '\\:circus_tent:'
-    'body': '🎪'
-  ':large_blue_circle:':
-    'prefix': '\\:large_blue_circle:'
-    'body': '🔵'
-  ':triumph:':
-    'prefix': '\\:triumph:'
-    'body': '😤'
-  ':construction:':
-    'prefix': '\\:construction:'
-    'body': '🚧'
-  ':stew:':
-    'prefix': '\\:stew:'
-    'body': '🍲'
-  ':turtle:':
-    'prefix': '\\:turtle:'
-    'body': '🐢'
-  ':bathtub:':
-    'prefix': '\\:bathtub:'
-    'body': '🛁'
-  ':new_moon_with_face:':
-    'prefix': '\\:new_moon_with_face:'
-    'body': '🌚'
-  ':poultry_leg:':
-    'prefix': '\\:poultry_leg:'
-    'body': '🍗'
-  ':fearful:':
-    'prefix': '\\:fearful:'
-    'body': '😨'
-  ':key:':
-    'prefix': '\\:key:'
-    'body': '🔑'
-  ':fist:':
-    'prefix': '\\:fist:'
-    'body': '✊'
-  ':basketball:':
-    'prefix': '\\:basketball:'
-    'body': '🏀'
-  ':orange_book:':
-    'prefix': '\\:orange_book:'
-    'body': '📙'
-  ':pill:':
-    'prefix': '\\:pill:'
-    'body': '💊'
-  ':pencil2:':
-    'prefix': '\\:pencil2:'
-    'body': '✏'
-  ':o2:':
-    'prefix': '\\:o2:'
-    'body': '🅾'
-  ':foggy:':
-    'prefix': '\\:foggy:'
-    'body': '🌁'
-  ':hibiscus:':
-    'prefix': '\\:hibiscus:'
-    'body': '🌺'
-  ':necktie:':
-    'prefix': '\\:necktie:'
-    'body': '👔'
-  ':mountain_cableway:':
-    'prefix': '\\:mountain_cableway:'
-    'body': '🚠'
-  ':telephone_receiver:':
-    'prefix': '\\:telephone_receiver:'
-    'body': '📞'
-  ':tram:':
-    'prefix': '\\:tram:'
-    'body': '🚊'
-  ':lollipop:':
-    'prefix': '\\:lollipop:'
-    'body': '🍭'
-  ':heart:':
-    'prefix': '\\:heart:'
-    'body': '❤'
-  ':dancers:':
-    'prefix': '\\:dancers:'
-    'body': '👯'
-  ':pound:':
-    'prefix': '\\:pound:'
-    'body': '💷'
-  ':radio_button:':
-    'prefix': '\\:radio_button:'
-    'body': '🔘'
-  ':iphone:':
-    'prefix': '\\:iphone:'
-    'body': '📱'
-  ':eight_spoked_asterisk:':
-    'prefix': '\\:eight_spoked_asterisk:'
-    'body': '✳'
-  ':muscle:':
-    'prefix': '\\:muscle:'
-    'body': '💪'
-  ':libra:':
-    'prefix': '\\:libra:'
-    'body': '♎'
-  ':no_bicycles:':
-    'prefix': '\\:no_bicycles:'
-    'body': '🚳'
-  ':bikini:':
-    'prefix': '\\:bikini:'
-    'body': '👙'
-  ':stars:':
-    'prefix': '\\:stars:'
-    'body': '🌠'
-  ':oncoming_automobile:':
-    'prefix': '\\:oncoming_automobile:'
-    'body': '🚘'
-  
+  'ghost':
+    prefix: '\\:ghost:'
+    body: '👻'
+  'metro':
+    prefix: '\\:metro:'
+    body: '🚇'
+  'children_crossing':
+    prefix: '\\:children_crossing:'
+    body: '🚸'
+  'rooster':
+    prefix: '\\:rooster:'
+    body: '🐓'
+  'shaved_ice':
+    prefix: '\\:shaved_ice:'
+    body: '🍧'
+  'clock9':
+    prefix: '\\:clock9:'
+    body: '🕘'
+  'cake':
+    prefix: '\\:cake:'
+    body: '🍰'
+  'chicken':
+    prefix: '\\:chicken:'
+    body: '🐔'
+  'white_circle':
+    prefix: '\\:white_circle:'
+    body: '⚪'
+  'no_good':
+    prefix: '\\:no_good:'
+    body: '🙅'
+  'mens':
+    prefix: '\\:mens:'
+    body: '🚹'
+  'crescent_moon':
+    prefix: '\\:crescent_moon:'
+    body: '🌙'
+  'person_frowning':
+    prefix: '\\:person_frowning:'
+    body: '🙍'
+  'izakaya_lantern':
+    prefix: '\\:izakaya_lantern:'
+    body: '🏮'
+  'athletic_shoe':
+    prefix: '\\:athletic_shoe:'
+    body: '👟'
+  'octopus':
+    prefix: '\\:octopus:'
+    body: '🐙'
+  'relaxed':
+    prefix: '\\:relaxed:'
+    body: '☺'
+  'small_orange_diamond':
+    prefix: '\\:small_orange_diamond:'
+    body: '🔸'
+  'white_large_square':
+    prefix: '\\:white_large_square:'
+    body: '⬜'
+  'candy':
+    prefix: '\\:candy:'
+    body: '🍬'
+  'womens':
+    prefix: '\\:womens:'
+    body: '🚺'
+  'facepunch':
+    prefix: '\\:facepunch:'
+    body: '👊'
+  'syringe':
+    prefix: '\\:syringe:'
+    body: '💉'
+  'taurus':
+    prefix: '\\:taurus:'
+    body: '♉'
+  'boot':
+    prefix: '\\:boot:'
+    body: '👢'
+  'skin-tone-2':
+    prefix: '\\:skin-tone-2:'
+    body: '🏻'
+  'open_mouth':
+    prefix: '\\:open_mouth:'
+    body: '😮'
+  'corn':
+    prefix: '\\:corn:'
+    body: '🌽'
+  'wc':
+    prefix: '\\:wc:'
+    body: '🚾'
+  'clipboard':
+    prefix: '\\:clipboard:'
+    body: '📋'
+  'white_flower':
+    prefix: '\\:white_flower:'
+    body: '💮'
+  'six_pointed_star':
+    prefix: '\\:six_pointed_star:'
+    body: '🔯'
+  'smiling_imp':
+    prefix: '\\:smiling_imp:'
+    body: '😈'
+  'kiss':
+    prefix: '\\:kiss:'
+    body: '💋'
+  'microphone':
+    prefix: '\\:microphone:'
+    body: '🎤'
+  'ring':
+    prefix: '\\:ring:'
+    body: '💍'
+  'blue_book':
+    prefix: '\\:blue_book:'
+    body: '📘'
+  'pig_nose':
+    prefix: '\\:pig_nose:'
+    body: '🐽'
+  'swimmer':
+    prefix: '\\:swimmer:'
+    body: '🏊'
+  'phone':
+    prefix: '\\:phone:'
+    body: '☎'
+  'chart':
+    prefix: '\\:chart:'
+    body: '💹'
+  'waning_crescent_moon':
+    prefix: '\\:waning_crescent_moon:'
+    body: '🌘'
+  'footprints':
+    prefix: '\\:footprints:'
+    body: '👣'
+  'fire':
+    prefix: '\\:fire:'
+    body: '🔥'
+  'video_game':
+    prefix: '\\:video_game:'
+    body: '🎮'
+  'trident':
+    prefix: '\\:trident:'
+    body: '🔱'
+  'clock1130':
+    prefix: '\\:clock1130:'
+    body: '🕦'
+  'cold_sweat':
+    prefix: '\\:cold_sweat:'
+    body: '😰'
+  'bouquet':
+    prefix: '\\:bouquet:'
+    body: '💐'
+  'clock2':
+    prefix: '\\:clock2:'
+    body: '🕑'
+  'clock7':
+    prefix: '\\:clock7:'
+    body: '🕖'
+  'older_man':
+    prefix: '\\:older_man:'
+    body: '👴'
+  'earth_africa':
+    prefix: '\\:earth_africa:'
+    body: '🌍'
+  'top':
+    prefix: '\\:top:'
+    body: '🔝'
+  'european_post_office':
+    prefix: '\\:european_post_office:'
+    body: '🏤'
+  'vs':
+    prefix: '\\:vs:'
+    body: '🆚'
+  'rice':
+    prefix: '\\:rice:'
+    body: '🍚'
+  'kimono':
+    prefix: '\\:kimono:'
+    body: '👘'
+  'feet':
+    prefix: '\\:feet:'
+    body: '🐾'
+  'star':
+    prefix: '\\:star:'
+    body: '⭐'
+  'cow2':
+    prefix: '\\:cow2:'
+    body: '🐄'
+  'a':
+    prefix: '\\:a:'
+    body: '🅰'
+  'hotel':
+    prefix: '\\:hotel:'
+    body: '🏨'
+  'currency_exchange':
+    prefix: '\\:currency_exchange:'
+    body: '💱'
+  'battery':
+    prefix: '\\:battery:'
+    body: '🔋'
+  'smile_cat':
+    prefix: '\\:smile_cat:'
+    body: '😸'
+  'tangerine':
+    prefix: '\\:tangerine:'
+    body: '🍊'
+  'birthday':
+    prefix: '\\:birthday:'
+    body: '🎂'
+  'cl':
+    prefix: '\\:cl:'
+    body: '🆑'
+  'restroom':
+    prefix: '\\:restroom:'
+    body: '🚻'
+  'skull':
+    prefix: '\\:skull:'
+    body: '💀'
+  'white_medium_small_square':
+    prefix: '\\:white_medium_small_square:'
+    body: '◽'
+  'abc':
+    prefix: '\\:abc:'
+    body: '🔤'
+  'fried_shrimp':
+    prefix: '\\:fried_shrimp:'
+    body: '🍤'
+  'large_blue_diamond':
+    prefix: '\\:large_blue_diamond:'
+    body: '🔷'
+  'cocktail':
+    prefix: '\\:cocktail:'
+    body: '🍸'
+  'wheelchair':
+    prefix: '\\:wheelchair:'
+    body: '♿'
+  'green_heart':
+    prefix: '\\:green_heart:'
+    body: '💚'
+  'white_small_square':
+    prefix: '\\:white_small_square:'
+    body: '▫'
+  'passport_control':
+    prefix: '\\:passport_control:'
+    body: '🛂'
+  'free':
+    prefix: '\\:free:'
+    body: '🆓'
+  'yen':
+    prefix: '\\:yen:'
+    body: '💴'
+  'dragon_face':
+    prefix: '\\:dragon_face:'
+    body: '🐲'
+  'ok':
+    prefix: '\\:ok:'
+    body: '🆗'
+  'persevere':
+    prefix: '\\:persevere:'
+    body: '😣'
+  'pineapple':
+    prefix: '\\:pineapple:'
+    body: '🍍'
+  'mountain_railway':
+    prefix: '\\:mountain_railway:'
+    body: '🚞'
+  'tea':
+    prefix: '\\:tea:'
+    body: '🍵'
+  'crossed_flags':
+    prefix: '\\:crossed_flags:'
+    body: '🎌'
+  'broken_heart':
+    prefix: '\\:broken_heart:'
+    body: '💔'
+  'snake':
+    prefix: '\\:snake:'
+    body: '🐍'
+  'low_brightness':
+    prefix: '\\:low_brightness:'
+    body: '🔅'
+  'smile':
+    prefix: '\\:smile:'
+    body: '😄'
+  'arrow_double_down':
+    prefix: '\\:arrow_double_down:'
+    body: '⏬'
+  'cupid':
+    prefix: '\\:cupid:'
+    body: '💘'
+  'hourglass':
+    prefix: '\\:hourglass:'
+    body: '⌛'
+  'worried':
+    prefix: '\\:worried:'
+    body: '😟'
+  'clock430':
+    prefix: '\\:clock430:'
+    body: '🕟'
+  'minidisc':
+    prefix: '\\:minidisc:'
+    body: '💽'
+  'vhs':
+    prefix: '\\:vhs:'
+    body: '📼'
+  'carousel_horse':
+    prefix: '\\:carousel_horse:'
+    body: '🎠'
+  'congratulations':
+    prefix: '\\:congratulations:'
+    body: '㊗'
+  'steam_locomotive':
+    prefix: '\\:steam_locomotive:'
+    body: '🚂'
+  'black_medium_square':
+    prefix: '\\:black_medium_square:'
+    body: '◼'
+  'violin':
+    prefix: '\\:violin:'
+    body: '🎻'
+  'incoming_envelope':
+    prefix: '\\:incoming_envelope:'
+    body: '📨'
+  'anchor':
+    prefix: '\\:anchor:'
+    body: '⚓'
+  'hear_no_evil':
+    prefix: '\\:hear_no_evil:'
+    body: '🙉'
+  'keycap_ten':
+    prefix: '\\:keycap_ten:'
+    body: '🔟'
+  'microscope':
+    prefix: '\\:microscope:'
+    body: '🔬'
+  'clock4':
+    prefix: '\\:clock4:'
+    body: '🕓'
+  'purse':
+    prefix: '\\:purse:'
+    body: '👛'
+  'lock_with_ink_pen':
+    prefix: '\\:lock_with_ink_pen:'
+    body: '🔏'
+  'toilet':
+    prefix: '\\:toilet:'
+    body: '🚽'
+  'bell':
+    prefix: '\\:bell:'
+    body: '🔔'
+  'joy':
+    prefix: '\\:joy:'
+    body: '😂'
+  'gift':
+    prefix: '\\:gift:'
+    body: '🎁'
+  'u7981':
+    prefix: '\\:u7981:'
+    body: '🈲'
+  'ear':
+    prefix: '\\:ear:'
+    body: '👂'
+  'arrow_heading_down':
+    prefix: '\\:arrow_heading_down:'
+    body: '⤵'
+  'egg':
+    prefix: '\\:egg:'
+    body: '🍳'
+  'barber':
+    prefix: '\\:barber:'
+    body: '💈'
+  'shell':
+    prefix: '\\:shell:'
+    body: '🐚'
+  'clock130':
+    prefix: '\\:clock130:'
+    body: '🕜'
+  'cancer':
+    prefix: '\\:cancer:'
+    body: '♋'
+  'family':
+    prefix: '\\:family:'
+    body: '👪'
+  'gift_heart':
+    prefix: '\\:gift_heart:'
+    body: '💝'
+  'left_luggage':
+    prefix: '\\:left_luggage:'
+    body: '🛅'
+  'round_pushpin':
+    prefix: '\\:round_pushpin:'
+    body: '📍'
+  'christmas_tree':
+    prefix: '\\:christmas_tree:'
+    body: '🎄'
+  'pear':
+    prefix: '\\:pear:'
+    body: '🍐'
+  'angel':
+    prefix: '\\:angel:'
+    body: '👼'
+  'newspaper':
+    prefix: '\\:newspaper:'
+    body: '📰'
+  'horse_racing':
+    prefix: '\\:horse_racing:'
+    body: '🏇'
+  'point_up_2':
+    prefix: '\\:point_up_2:'
+    body: '👆'
+  'ambulance':
+    prefix: '\\:ambulance:'
+    body: '🚑'
+  'nose':
+    prefix: '\\:nose:'
+    body: '👃'
+  'truck':
+    prefix: '\\:truck:'
+    body: '🚚'
+  'vertical_traffic_light':
+    prefix: '\\:vertical_traffic_light:'
+    body: '🚦'
+  'heavy_multiplication_x':
+    prefix: '\\:heavy_multiplication_x:'
+    body: '✖'
+  '8ball':
+    prefix: '\\:8ball:'
+    body: '🎱'
+  'o':
+    prefix: '\\:o:'
+    body: '⭕'
+  'u55b6':
+    prefix: '\\:u55b6:'
+    body: '🈺'
+  'unlock':
+    prefix: '\\:unlock:'
+    body: '🔓'
+  'roller_coaster':
+    prefix: '\\:roller_coaster:'
+    body: '🎢'
+  'beginner':
+    prefix: '\\:beginner:'
+    body: '🔰'
+  'u5272':
+    prefix: '\\:u5272:'
+    body: '🈹'
+  'apple':
+    prefix: '\\:apple:'
+    body: '🍎'
+  'hamster':
+    prefix: '\\:hamster:'
+    body: '🐹'
+  'no_mouth':
+    prefix: '\\:no_mouth:'
+    body: '😶'
+  'white_square_button':
+    prefix: '\\:white_square_button:'
+    body: '🔳'
+  'baby_chick':
+    prefix: '\\:baby_chick:'
+    body: '🐤'
+  'surfer':
+    prefix: '\\:surfer:'
+    body: '🏄'
+  'door':
+    prefix: '\\:door:'
+    body: '🚪'
+  'clock11':
+    prefix: '\\:clock11:'
+    body: '🕚'
+  'clapper':
+    prefix: '\\:clapper:'
+    body: '🎬'
+  'small_blue_diamond':
+    prefix: '\\:small_blue_diamond:'
+    body: '🔹'
+  'light_rail':
+    prefix: '\\:light_rail:'
+    body: '🚈'
+  'radio':
+    prefix: '\\:radio:'
+    body: '📻'
+  'see_no_evil':
+    prefix: '\\:see_no_evil:'
+    body: '🙈'
+  'closed_umbrella':
+    prefix: '\\:closed_umbrella:'
+    body: '🌂'
+  'confetti_ball':
+    prefix: '\\:confetti_ball:'
+    body: '🎊'
+  'bookmark_tabs':
+    prefix: '\\:bookmark_tabs:'
+    body: '📑'
+  'dvd':
+    prefix: '\\:dvd:'
+    body: '📀'
+  'exclamation':
+    prefix: '\\:exclamation:'
+    body: '❗'
+  'hand':
+    prefix: '\\:hand:'
+    body: '✋'
+  'rowboat':
+    prefix: '\\:rowboat:'
+    body: '🚣'
+  'checkered_flag':
+    prefix: '\\:checkered_flag:'
+    body: '🏁'
+  'high_brightness':
+    prefix: '\\:high_brightness:'
+    body: '🔆'
+  'koko':
+    prefix: '\\:koko:'
+    body: '🈁'
+  'saxophone':
+    prefix: '\\:saxophone:'
+    body: '🎷'
+  'snowflake':
+    prefix: '\\:snowflake:'
+    body: '❄'
+  'bangbang':
+    prefix: '\\:bangbang:'
+    body: '‼'
+  'sweat_drops':
+    prefix: '\\:sweat_drops:'
+    body: '💦'
+  'information_desk_person':
+    prefix: '\\:information_desk_person:'
+    body: '💁'
+  'page_facing_up':
+    prefix: '\\:page_facing_up:'
+    body: '📄'
+  'disappointed':
+    prefix: '\\:disappointed:'
+    body: '😞'
+  'sos':
+    prefix: '\\:sos:'
+    body: '🆘'
+  'book':
+    prefix: '\\:book:'
+    body: '📖'
+  'beer':
+    prefix: '\\:beer:'
+    body: '🍺'
+  'speech_balloon':
+    prefix: '\\:speech_balloon:'
+    body: '💬'
+  'anger':
+    prefix: '\\:anger:'
+    body: '💢'
+  'pager':
+    prefix: '\\:pager:'
+    body: '📟'
+  'id':
+    prefix: '\\:id:'
+    body: '🆔'
+  'clock230':
+    prefix: '\\:clock230:'
+    body: '🕝'
+  'loud_sound':
+    prefix: '\\:loud_sound:'
+    body: '🔊'
+  'melon':
+    prefix: '\\:melon:'
+    body: '🍈'
+  'blossom':
+    prefix: '\\:blossom:'
+    body: '🌼'
+  'fish_cake':
+    prefix: '\\:fish_cake:'
+    body: '🍥'
+  'massage':
+    prefix: '\\:massage:'
+    body: '💆'
+  'u6709':
+    prefix: '\\:u6709:'
+    body: '🈶'
+  'gun':
+    prefix: '\\:gun:'
+    body: '🔫'
+  'small_red_triangle':
+    prefix: '\\:small_red_triangle:'
+    body: '🔺'
+  'statue_of_liberty':
+    prefix: '\\:statue_of_liberty:'
+    body: '🗽'
+  'dizzy':
+    prefix: '\\:dizzy:'
+    body: '💫'
+  'ice_cream':
+    prefix: '\\:ice_cream:'
+    body: '🍨'
+  'purple_heart':
+    prefix: '\\:purple_heart:'
+    body: '💜'
+  'clock830':
+    prefix: '\\:clock830:'
+    body: '🕣'
+  'left_right_arrow':
+    prefix: '\\:left_right_arrow:'
+    body: '↔'
+  'water_buffalo':
+    prefix: '\\:water_buffalo:'
+    body: '🐃'
+  'clock930':
+    prefix: '\\:clock930:'
+    body: '🕤'
+  'mute':
+    prefix: '\\:mute:'
+    body: '🔇'
+  'heartbeat':
+    prefix: '\\:heartbeat:'
+    body: '💓'
+  'ant':
+    prefix: '\\:ant:'
+    body: '🐜'
+  'innocent':
+    prefix: '\\:innocent:'
+    body: '😇'
+  'clock3':
+    prefix: '\\:clock3:'
+    body: '🕒'
+  'neutral_face':
+    prefix: '\\:neutral_face:'
+    body: '😐'
+  'bullettrain_side':
+    prefix: '\\:bullettrain_side:'
+    body: '🚄'
+  'couple':
+    prefix: '\\:couple:'
+    body: '👫'
+  'abcd':
+    prefix: '\\:abcd:'
+    body: '🔡'
+  'lipstick':
+    prefix: '\\:lipstick:'
+    body: '💄'
+  'rabbit2':
+    prefix: '\\:rabbit2:'
+    body: '🐇'
+  'name_badge':
+    prefix: '\\:name_badge:'
+    body: '📛'
+  'football':
+    prefix: '\\:football:'
+    body: '🏈'
+  'ballot_box_with_check':
+    prefix: '\\:ballot_box_with_check:'
+    body: '☑'
+  'hearts':
+    prefix: '\\:hearts:'
+    body: '♥'
+  'musical_score':
+    prefix: '\\:musical_score:'
+    body: '🎼'
+  'bank':
+    prefix: '\\:bank:'
+    body: '🏦'
+  'hammer':
+    prefix: '\\:hammer:'
+    body: '🔨'
+  '-1':
+    prefix: '\\:-1:'
+    body: '👎'
+  'postal_horn':
+    prefix: '\\:postal_horn:'
+    body: '📯'
+  'man_with_gua_pi_mao':
+    prefix: '\\:man_with_gua_pi_mao:'
+    body: '👲'
+  'aquarius':
+    prefix: '\\:aquarius:'
+    body: '♒'
+  'guitar':
+    prefix: '\\:guitar:'
+    body: '🎸'
+  'small_red_triangle_down':
+    prefix: '\\:small_red_triangle_down:'
+    body: '🔻'
+  'email':
+    prefix: '\\:email:'
+    body: '✉'
+  'smirk_cat':
+    prefix: '\\:smirk_cat:'
+    body: '😼'
+  'peach':
+    prefix: '\\:peach:'
+    body: '🍑'
+  'clock10':
+    prefix: '\\:clock10:'
+    body: '🕙'
+  'flushed':
+    prefix: '\\:flushed:'
+    body: '😳'
+  'hospital':
+    prefix: '\\:hospital:'
+    body: '🏥'
+  'boom':
+    prefix: '\\:boom:'
+    body: '💥'
+  'point_down':
+    prefix: '\\:point_down:'
+    body: '👇'
+  'raising_hand':
+    prefix: '\\:raising_hand:'
+    body: '🙋'
+  'tractor':
+    prefix: '\\:tractor:'
+    body: '🚜'
+  'curly_loop':
+    prefix: '\\:curly_loop:'
+    body: '➰'
+  'ribbon':
+    prefix: '\\:ribbon:'
+    body: '🎀'
+  'cool':
+    prefix: '\\:cool:'
+    body: '🆒'
+  'beers':
+    prefix: '\\:beers:'
+    body: '🍻'
+  'mag_right':
+    prefix: '\\:mag_right:'
+    body: '🔎'
+  'crystal_ball':
+    prefix: '\\:crystal_ball:'
+    body: '🔮'
+  'clock330':
+    prefix: '\\:clock330:'
+    body: '🕞'
+  'european_castle':
+    prefix: '\\:european_castle:'
+    body: '🏰'
+  'chart_with_upwards_trend':
+    prefix: '\\:chart_with_upwards_trend:'
+    body: '📈'
+  'shirt':
+    prefix: '\\:shirt:'
+    body: '👕'
+  'clubs':
+    prefix: '\\:clubs:'
+    body: '♣'
+  'rugby_football':
+    prefix: '\\:rugby_football:'
+    body: '🏉'
+  'dancer':
+    prefix: '\\:dancer:'
+    body: '💃'
+  'smirk':
+    prefix: '\\:smirk:'
+    body: '😏'
+  'u5408':
+    prefix: '\\:u5408:'
+    body: '🈴'
+  'raised_hands':
+    prefix: '\\:raised_hands:'
+    body: '🙌'
+  'calendar':
+    prefix: '\\:calendar:'
+    body: '📆'
+  'house':
+    prefix: '\\:house:'
+    body: '🏠'
+  'lock':
+    prefix: '\\:lock:'
+    body: '🔒'
+  'dog':
+    prefix: '\\:dog:'
+    body: '🐶'
+  'ocean':
+    prefix: '\\:ocean:'
+    body: '🌊'
+  'nail_care':
+    prefix: '\\:nail_care:'
+    body: '💅'
+  'heart_decoration':
+    prefix: '\\:heart_decoration:'
+    body: '💟'
+  'black_nib':
+    prefix: '\\:black_nib:'
+    body: '✒'
+  'kissing_smiling_eyes':
+    prefix: '\\:kissing_smiling_eyes:'
+    body: '😙'
+  'baby_symbol':
+    prefix: '\\:baby_symbol:'
+    body: '🚼'
+  'non-potable_water':
+    prefix: '\\:non-potable_water:'
+    body: '🚱'
+  'clock530':
+    prefix: '\\:clock530:'
+    body: '🕠'
+  'hocho':
+    prefix: '\\:hocho:'
+    body: '🔪'
+  'speaker':
+    prefix: '\\:speaker:'
+    body: '🔈'
+  'cyclone':
+    prefix: '\\:cyclone:'
+    body: '🌀'
+  'musical_keyboard':
+    prefix: '\\:musical_keyboard:'
+    body: '🎹'
+  'airplane':
+    prefix: '\\:airplane:'
+    body: '✈'
+  'pouch':
+    prefix: '\\:pouch:'
+    body: '👝'
+  'registered':
+    prefix: '\\:registered:'
+    body: '®'
+  'mag':
+    prefix: '\\:mag:'
+    body: '🔍'
+  'blush':
+    prefix: '\\:blush:'
+    body: '😊'
+  'high_heel':
+    prefix: '\\:high_heel:'
+    body: '👠'
+  'wedding':
+    prefix: '\\:wedding:'
+    body: '💒'
+  'arrow_double_up':
+    prefix: '\\:arrow_double_up:'
+    body: '⏫'
+  'wavy_dash':
+    prefix: '\\:wavy_dash:'
+    body: '〰'
+  'train2':
+    prefix: '\\:train2:'
+    body: '🚆'
+  'ship':
+    prefix: '\\:ship:'
+    body: '🚢'
+  'computer':
+    prefix: '\\:computer:'
+    body: '💻'
+  'tent':
+    prefix: '\\:tent:'
+    body: '⛺'
+  'euro':
+    prefix: '\\:euro:'
+    body: '💶'
+  'monkey':
+    prefix: '\\:monkey:'
+    body: '🐒'
+  'frog':
+    prefix: '\\:frog:'
+    body: '🐸'
+  'ng':
+    prefix: '\\:ng:'
+    body: '🆖'
+  'skin-tone-5':
+    prefix: '\\:skin-tone-5:'
+    body: '🏾'
+  'flashlight':
+    prefix: '\\:flashlight:'
+    body: '🔦'
+  'star2':
+    prefix: '\\:star2:'
+    body: '🌟'
+  'meat_on_bone':
+    prefix: '\\:meat_on_bone:'
+    body: '🍖'
+  'put_litter_in_its_place':
+    prefix: '\\:put_litter_in_its_place:'
+    body: '🚮'
+  'u6307':
+    prefix: '\\:u6307:'
+    body: '🈯'
+  'full_moon':
+    prefix: '\\:full_moon:'
+    body: '🌕'
+  'clock8':
+    prefix: '\\:clock8:'
+    body: '🕗'
+  'blue_car':
+    prefix: '\\:blue_car:'
+    body: '🚙'
+  'leo':
+    prefix: '\\:leo:'
+    body: '♌'
+  'wolf':
+    prefix: '\\:wolf:'
+    body: '🐺'
+  'package':
+    prefix: '\\:package:'
+    body: '📦'
+  'fireworks':
+    prefix: '\\:fireworks:'
+    body: '🎆'
+  'b':
+    prefix: '\\:b:'
+    body: '🅱'
+  'hamburger':
+    prefix: '\\:hamburger:'
+    body: '🍔'
+  'church':
+    prefix: '\\:church:'
+    body: '⛪'
+  'rice_cracker':
+    prefix: '\\:rice_cracker:'
+    body: '🍘'
+  'fountain':
+    prefix: '\\:fountain:'
+    body: '⛲'
+  'sweet_potato':
+    prefix: '\\:sweet_potato:'
+    body: '🍠'
+  'pensive':
+    prefix: '\\:pensive:'
+    body: '😔'
+  'dolls':
+    prefix: '\\:dolls:'
+    body: '🎎'
+  'telescope':
+    prefix: '\\:telescope:'
+    body: '🔭'
+  'joy_cat':
+    prefix: '\\:joy_cat:'
+    body: '😹'
+  'rage':
+    prefix: '\\:rage:'
+    body: '😡'
+  'dolphin':
+    prefix: '\\:dolphin:'
+    body: '🐬'
+  'confounded':
+    prefix: '\\:confounded:'
+    body: '😖'
+  'baby':
+    prefix: '\\:baby:'
+    body: '👶'
+  'volcano':
+    prefix: '\\:volcano:'
+    body: '🌋'
+  'factory':
+    prefix: '\\:factory:'
+    body: '🏭'
+  'notebook_with_decorative_cover':
+    prefix: '\\:notebook_with_decorative_cover:'
+    body: '📔'
+  'vibration_mode':
+    prefix: '\\:vibration_mode:'
+    body: '📳'
+  'closed_lock_with_key':
+    prefix: '\\:closed_lock_with_key:'
+    body: '🔐'
+  'mask':
+    prefix: '\\:mask:'
+    body: '😷'
+  'ok_woman':
+    prefix: '\\:ok_woman:'
+    body: '🙆'
+  'arrows_clockwise':
+    prefix: '\\:arrows_clockwise:'
+    body: '🔃'
+  'wrench':
+    prefix: '\\:wrench:'
+    body: '🔧'
+  'arrow_right_hook':
+    prefix: '\\:arrow_right_hook:'
+    body: '↪'
+  'rice_scene':
+    prefix: '\\:rice_scene:'
+    body: '🎑'
+  'heavy_dollar_sign':
+    prefix: '\\:heavy_dollar_sign:'
+    body: '💲'
+  'revolving_hearts':
+    prefix: '\\:revolving_hearts:'
+    body: '💞'
+  'cinema':
+    prefix: '\\:cinema:'
+    body: '🎦'
+  'chocolate_bar':
+    prefix: '\\:chocolate_bar:'
+    body: '🍫'
+  'sob':
+    prefix: '\\:sob:'
+    body: '😭'
+  'end':
+    prefix: '\\:end:'
+    body: '🔚'
+  'angry':
+    prefix: '\\:angry:'
+    body: '😠'
+  'heavy_minus_sign':
+    prefix: '\\:heavy_minus_sign:'
+    body: '➖'
+  'tophat':
+    prefix: '\\:tophat:'
+    body: '🎩'
+  'mushroom':
+    prefix: '\\:mushroom:'
+    body: '🍄'
+  'grapes':
+    prefix: '\\:grapes:'
+    body: '🍇'
+  'moon':
+    prefix: '\\:moon:'
+    body: '🌔'
+  'womans_clothes':
+    prefix: '\\:womans_clothes:'
+    body: '👚'
+  'cactus':
+    prefix: '\\:cactus:'
+    body: '🌵'
+  'fallen_leaf':
+    prefix: '\\:fallen_leaf:'
+    body: '🍂'
+  'oncoming_bus':
+    prefix: '\\:oncoming_bus:'
+    body: '🚍'
+  'speedboat':
+    prefix: '\\:speedboat:'
+    body: '🚤'
+  'sweat':
+    prefix: '\\:sweat:'
+    body: '😓'
+  'bread':
+    prefix: '\\:bread:'
+    body: '🍞'
+  'post_office':
+    prefix: '\\:post_office:'
+    body: '🏣'
+  'green_apple':
+    prefix: '\\:green_apple:'
+    body: '🍏'
+  'large_orange_diamond':
+    prefix: '\\:large_orange_diamond:'
+    body: '🔶'
+  'grin':
+    prefix: '\\:grin:'
+    body: '😁'
+  'wine_glass':
+    prefix: '\\:wine_glass:'
+    body: '🍷'
+  'mans_shoe':
+    prefix: '\\:mans_shoe:'
+    body: '👞'
+  'clock730':
+    prefix: '\\:clock730:'
+    body: '🕢'
+  'credit_card':
+    prefix: '\\:credit_card:'
+    body: '💳'
+  'sagittarius':
+    prefix: '\\:sagittarius:'
+    body: '♐'
+  'honey_pot':
+    prefix: '\\:honey_pot:'
+    body: '🍯'
+  'yum':
+    prefix: '\\:yum:'
+    body: '😋'
+  'dash':
+    prefix: '\\:dash:'
+    body: '💨'
+  'tennis':
+    prefix: '\\:tennis:'
+    body: '🎾'
+  'rotating_light':
+    prefix: '\\:rotating_light:'
+    body: '🚨'
+  'railway_car':
+    prefix: '\\:railway_car:'
+    body: '🚃'
+  'older_woman':
+    prefix: '\\:older_woman:'
+    body: '👵'
+  'arrow_left':
+    prefix: '\\:arrow_left:'
+    body: '⬅'
+  'herb':
+    prefix: '\\:herb:'
+    body: '🌿'
+  'womans_hat':
+    prefix: '\\:womans_hat:'
+    body: '👒'
+  'bear':
+    prefix: '\\:bear:'
+    body: '🐻'
+  'tomato':
+    prefix: '\\:tomato:'
+    body: '🍅'
+  'ledger':
+    prefix: '\\:ledger:'
+    body: '📒'
+  'bridge_at_night':
+    prefix: '\\:bridge_at_night:'
+    body: '🌉'
+  'new_moon':
+    prefix: '\\:new_moon:'
+    body: '🌑'
+  'seat':
+    prefix: '\\:seat:'
+    body: '💺'
+  'pouting_cat':
+    prefix: '\\:pouting_cat:'
+    body: '😾'
+  'sake':
+    prefix: '\\:sake:'
+    body: '🍶'
+  'u6e80':
+    prefix: '\\:u6e80:'
+    body: '🈵'
+  'city_sunset':
+    prefix: '\\:city_sunset:'
+    body: '🌆'
+  'taxi':
+    prefix: '\\:taxi:'
+    body: '🚕'
+  'arrow_heading_up':
+    prefix: '\\:arrow_heading_up:'
+    body: '⤴'
+  'oncoming_police_car':
+    prefix: '\\:oncoming_police_car:'
+    body: '🚔'
+  'question':
+    prefix: '\\:question:'
+    body: '❓'
+  'whale2':
+    prefix: '\\:whale2:'
+    body: '🐋'
+  'baggage_claim':
+    prefix: '\\:baggage_claim:'
+    body: '🛄'
+  'unamused':
+    prefix: '\\:unamused:'
+    body: '😒'
+  'hushed':
+    prefix: '\\:hushed:'
+    body: '😯'
+  'waxing_crescent_moon':
+    prefix: '\\:waxing_crescent_moon:'
+    body: '🌒'
+  'umbrella':
+    prefix: '\\:umbrella:'
+    body: '☔'
+  'arrow_backward':
+    prefix: '\\:arrow_backward:'
+    body: '◀'
+  'bar_chart':
+    prefix: '\\:bar_chart:'
+    body: '📊'
+  'diamond_shape_with_a_dot_inside':
+    prefix: '\\:diamond_shape_with_a_dot_inside:'
+    body: '💠'
+  'scroll':
+    prefix: '\\:scroll:'
+    body: '📜'
+  'shower':
+    prefix: '\\:shower:'
+    body: '🚿'
+  'heart_eyes_cat':
+    prefix: '\\:heart_eyes_cat:'
+    body: '😻'
+  'leaves':
+    prefix: '\\:leaves:'
+    body: '🍃'
+  'sparkle':
+    prefix: '\\:sparkle:'
+    body: '❇'
+  'suspension_railway':
+    prefix: '\\:suspension_railway:'
+    body: '🚟'
+  'sparkler':
+    prefix: '\\:sparkler:'
+    body: '🎇'
+  'mouse':
+    prefix: '\\:mouse:'
+    body: '🐭'
+  'black_large_square':
+    prefix: '\\:black_large_square:'
+    body: '⬛'
+  'icecream':
+    prefix: '\\:icecream:'
+    body: '🍦'
+  'jeans':
+    prefix: '\\:jeans:'
+    body: '👖'
+  'dress':
+    prefix: '\\:dress:'
+    body: '👗'
+  'file_folder':
+    prefix: '\\:file_folder:'
+    body: '📁'
+  'ok_hand':
+    prefix: '\\:ok_hand:'
+    body: '👌'
+  'eggplant':
+    prefix: '\\:eggplant:'
+    body: '🍆'
+  'bee':
+    prefix: '\\:bee:'
+    body: '🐝'
+  'aerial_tramway':
+    prefix: '\\:aerial_tramway:'
+    body: '🚡'
+  'smiley':
+    prefix: '\\:smiley:'
+    body: '😃'
+  'electric_plug':
+    prefix: '\\:electric_plug:'
+    body: '🔌'
+  'panda_face':
+    prefix: '\\:panda_face:'
+    body: '🐼'
+  'twisted_rightwards_arrows':
+    prefix: '\\:twisted_rightwards_arrows:'
+    body: '🔀'
+  'love_hotel':
+    prefix: '\\:love_hotel:'
+    body: '🏩'
+  'clock5':
+    prefix: '\\:clock5:'
+    body: '🕔'
+  'date':
+    prefix: '\\:date:'
+    body: '📅'
+  'dart':
+    prefix: '\\:dart:'
+    body: '🎯'
+  'dragon':
+    prefix: '\\:dragon:'
+    body: '🐉'
+  'performing_arts':
+    prefix: '\\:performing_arts:'
+    body: '🎭'
+  'clock12':
+    prefix: '\\:clock12:'
+    body: '🕛'
+  'heartpulse':
+    prefix: '\\:heartpulse:'
+    body: '💗'
+  'balloon':
+    prefix: '\\:balloon:'
+    body: '🎈'
+  'runner':
+    prefix: '\\:runner:'
+    body: '🏃'
+  'link':
+    prefix: '\\:link:'
+    body: '🔗'
+  'no_entry':
+    prefix: '\\:no_entry:'
+    body: '⛔'
+  'hotsprings':
+    prefix: '\\:hotsprings:'
+    body: '♨'
+  'two_women_holding_hands':
+    prefix: '\\:two_women_holding_hands:'
+    body: '👭'
+  'x':
+    prefix: '\\:x:'
+    body: '❌'
+  'white_medium_square':
+    prefix: '\\:white_medium_square:'
+    body: '◻'
+  'mortar_board':
+    prefix: '\\:mortar_board:'
+    body: '🎓'
+  'ramen':
+    prefix: '\\:ramen:'
+    body: '🍜'
+  'oden':
+    prefix: '\\:oden:'
+    body: '🍢'
+  'aries':
+    prefix: '\\:aries:'
+    body: '♈'
+  'sparkling_heart':
+    prefix: '\\:sparkling_heart:'
+    body: '💖'
+  'bow':
+    prefix: '\\:bow:'
+    body: '🙇'
+  'eight_pointed_black_star':
+    prefix: '\\:eight_pointed_black_star:'
+    body: '✴'
+  'frowning':
+    prefix: '\\:frowning:'
+    body: '😦'
+  'gemini':
+    prefix: '\\:gemini:'
+    body: '♊'
+  'money_with_wings':
+    prefix: '\\:money_with_wings:'
+    body: '💸'
+  'moneybag':
+    prefix: '\\:moneybag:'
+    body: '💰'
+  'tokyo_tower':
+    prefix: '\\:tokyo_tower:'
+    body: '🗼'
+  'ab':
+    prefix: '\\:ab:'
+    body: '🆎'
+  'watch':
+    prefix: '\\:watch:'
+    body: '⌚'
+  'skin-tone-3':
+    prefix: '\\:skin-tone-3:'
+    body: '🏼'
+  '100':
+    prefix: '\\:100:'
+    body: '💯'
+  'camel':
+    prefix: '\\:camel:'
+    body: '🐫'
+  'person_with_pouting_face':
+    prefix: '\\:person_with_pouting_face:'
+    body: '🙎'
+  'eyes':
+    prefix: '\\:eyes:'
+    body: '👀'
+  'accept':
+    prefix: '\\:accept:'
+    body: '🉑'
+  'crocodile':
+    prefix: '\\:crocodile:'
+    body: '🐊'
+  'u7121':
+    prefix: '\\:u7121:'
+    body: '🈚'
+  'heavy_check_mark':
+    prefix: '\\:heavy_check_mark:'
+    body: '✔'
+  'kissing':
+    prefix: '\\:kissing:'
+    body: '😗'
+  'smoking':
+    prefix: '\\:smoking:'
+    body: '🚬'
+  'traffic_light':
+    prefix: '\\:traffic_light:'
+    body: '🚥'
+  'ideograph_advantage':
+    prefix: '\\:ideograph_advantage:'
+    body: '🉐'
+  'calling':
+    prefix: '\\:calling:'
+    body: '📲'
+  'bulb':
+    prefix: '\\:bulb:'
+    body: '💡'
+  'scream_cat':
+    prefix: '\\:scream_cat:'
+    body: '🙀'
+  'sunrise_over_mountains':
+    prefix: '\\:sunrise_over_mountains:'
+    body: '🌄'
+  'headphones':
+    prefix: '\\:headphones:'
+    body: '🎧'
+  'outbox_tray':
+    prefix: '\\:outbox_tray:'
+    body: '📤'
+  'no_bell':
+    prefix: '\\:no_bell:'
+    body: '🔕'
+  'hatching_chick':
+    prefix: '\\:hatching_chick:'
+    body: '🐣'
+  'expressionless':
+    prefix: '\\:expressionless:'
+    body: '😑'
+  'cd':
+    prefix: '\\:cd:'
+    body: '💿'
+  'mailbox_with_no_mail':
+    prefix: '\\:mailbox_with_no_mail:'
+    body: '📭'
+  'train':
+    prefix: '\\:train:'
+    body: '🚋'
+  'fast_forward':
+    prefix: '\\:fast_forward:'
+    body: '⏩'
+  'fax':
+    prefix: '\\:fax:'
+    body: '📠'
+  'envelope_with_arrow':
+    prefix: '\\:envelope_with_arrow:'
+    body: '📩'
+  'beetle':
+    prefix: '\\:beetle:'
+    body: '🐞'
+  'clock6':
+    prefix: '\\:clock6:'
+    body: '🕕'
+  'school':
+    prefix: '\\:school:'
+    body: '🏫'
+  'bug':
+    prefix: '\\:bug:'
+    body: '🐛'
+  'bike':
+    prefix: '\\:bike:'
+    body: '🚲'
+  'ferris_wheel':
+    prefix: '\\:ferris_wheel:'
+    body: '🎡'
+  'rice_ball':
+    prefix: '\\:rice_ball:'
+    body: '🍙'
+  'u6708':
+    prefix: '\\:u6708:'
+    body: '🈷'
+  'musical_note':
+    prefix: '\\:musical_note:'
+    body: '🎵'
+  'speak_no_evil':
+    prefix: '\\:speak_no_evil:'
+    body: '🙊'
+  'underage':
+    prefix: '\\:underage:'
+    body: '🔞'
+  'rocket':
+    prefix: '\\:rocket:'
+    body: '🚀'
+  'grimacing':
+    prefix: '\\:grimacing:'
+    body: '😬'
+  'snowman':
+    prefix: '\\:snowman:'
+    body: '⛄'
+  'kissing_cat':
+    prefix: '\\:kissing_cat:'
+    body: '😽'
+  'sound':
+    prefix: '\\:sound:'
+    body: '🔉'
+  'koala':
+    prefix: '\\:koala:'
+    body: '🐨'
+  'heart_eyes':
+    prefix: '\\:heart_eyes:'
+    body: '😍'
+  'blowfish':
+    prefix: '\\:blowfish:'
+    body: '🐡'
+  'astonished':
+    prefix: '\\:astonished:'
+    body: '😲'
+  'racehorse':
+    prefix: '\\:racehorse:'
+    body: '🐎'
+  'cop':
+    prefix: '\\:cop:'
+    body: '👮'
+  'grey_question':
+    prefix: '\\:grey_question:'
+    body: '❔'
+  'mahjong':
+    prefix: '\\:mahjong:'
+    body: '🀄'
+  'watermelon':
+    prefix: '\\:watermelon:'
+    body: '🍉'
+  'virgo':
+    prefix: '\\:virgo:'
+    body: '♍'
+  'tiger':
+    prefix: '\\:tiger:'
+    body: '🐯'
+  'leopard':
+    prefix: '\\:leopard:'
+    body: '🐆'
+  'dromedary_camel':
+    prefix: '\\:dromedary_camel:'
+    body: '🐪'
+  'tropical_drink':
+    prefix: '\\:tropical_drink:'
+    body: '🍹'
+  'arrow_forward':
+    prefix: '\\:arrow_forward:'
+    body: '▶'
+  'cloud':
+    prefix: '\\:cloud:'
+    body: '☁'
+  'kissing_closed_eyes':
+    prefix: '\\:kissing_closed_eyes:'
+    body: '😚'
+  'moyai':
+    prefix: '\\:moyai:'
+    body: '🗿'
+  'horse':
+    prefix: '\\:horse:'
+    body: '🐴'
+  'nut_and_bolt':
+    prefix: '\\:nut_and_bolt:'
+    body: '🔩'
+  'mailbox_closed':
+    prefix: '\\:mailbox_closed:'
+    body: '📪'
+  'grinning':
+    prefix: '\\:grinning:'
+    body: '😀'
+  'closed_book':
+    prefix: '\\:closed_book:'
+    body: '📕'
+  'running_shirt_with_sash':
+    prefix: '\\:running_shirt_with_sash:'
+    body: '🎽'
+  'movie_camera':
+    prefix: '\\:movie_camera:'
+    body: '🎥'
+  'japanese_castle':
+    prefix: '\\:japanese_castle:'
+    body: '🏯'
+  'rainbow':
+    prefix: '\\:rainbow:'
+    body: '🌈'
+  'elephant':
+    prefix: '\\:elephant:'
+    body: '🐘'
+  'green_book':
+    prefix: '\\:green_book:'
+    body: '📗'
+  'heavy_division_sign':
+    prefix: '\\:heavy_division_sign:'
+    body: '➗'
+  'eyeglasses':
+    prefix: '\\:eyeglasses:'
+    body: '👓'
+  'arrow_up_small':
+    prefix: '\\:arrow_up_small:'
+    body: '🔼'
+  'spades':
+    prefix: '\\:spades:'
+    body: '♠'
+  'pushpin':
+    prefix: '\\:pushpin:'
+    body: '📌'
+  'rabbit':
+    prefix: '\\:rabbit:'
+    body: '🐰'
+  'japan':
+    prefix: '\\:japan:'
+    body: '🗾'
+  'floppy_disk':
+    prefix: '\\:floppy_disk:'
+    body: '💾'
+  'information_source':
+    prefix: '\\:information_source:'
+    body: 'ℹ'
+  'haircut':
+    prefix: '\\:haircut:'
+    body: '💇'
+  'man':
+    prefix: '\\:man:'
+    body: '👨'
+  'arrows_counterclockwise':
+    prefix: '\\:arrows_counterclockwise:'
+    body: '🔄'
+  'stuck_out_tongue':
+    prefix: '\\:stuck_out_tongue:'
+    body: '😛'
+  'on':
+    prefix: '\\:on:'
+    body: '🔛'
+  'dango':
+    prefix: '\\:dango:'
+    body: '🍡'
+  'jack_o_lantern':
+    prefix: '\\:jack_o_lantern:'
+    body: '🎃'
+  'lips':
+    prefix: '\\:lips:'
+    body: '👄'
+  'no_entry_sign':
+    prefix: '\\:no_entry_sign:'
+    body: '🚫'
+  'sunny':
+    prefix: '\\:sunny:'
+    body: '☀'
+  'new':
+    prefix: '\\:new:'
+    body: '🆕'
+  '1234':
+    prefix: '\\:1234:'
+    body: '🔢'
+  'interrobang':
+    prefix: '\\:interrobang:'
+    body: '⁉'
+  'japanese_goblin':
+    prefix: '\\:japanese_goblin:'
+    body: '👺'
+  'copyright':
+    prefix: '\\:copyright:'
+    body: '©'
+  'wink':
+    prefix: '\\:wink:'
+    body: '😉'
+  'zzz':
+    prefix: '\\:zzz:'
+    body: '💤'
+  'arrow_down':
+    prefix: '\\:arrow_down:'
+    body: '⬇'
+  'dollar':
+    prefix: '\\:dollar:'
+    body: '💵'
+  'soccer':
+    prefix: '\\:soccer:'
+    body: '⚽'
+  'construction_worker':
+    prefix: '\\:construction_worker:'
+    body: '👷'
+  'potable_water':
+    prefix: '\\:potable_water:'
+    body: '🚰'
+  'arrow_down_small':
+    prefix: '\\:arrow_down_small:'
+    body: '🔽'
+  'soon':
+    prefix: '\\:soon:'
+    body: '🔜'
+  'art':
+    prefix: '\\:art:'
+    body: '🎨'
+  'tropical_fish':
+    prefix: '\\:tropical_fish:'
+    body: '🐠'
+  'fire_engine':
+    prefix: '\\:fire_engine:'
+    body: '🚒'
+  'cry':
+    prefix: '\\:cry:'
+    body: '😢'
+  'mountain_bicyclist':
+    prefix: '\\:mountain_bicyclist:'
+    body: '🚵'
+  'repeat':
+    prefix: '\\:repeat:'
+    body: '🔁'
+  'bowling':
+    prefix: '\\:bowling:'
+    body: '🎳'
+  'tired_face':
+    prefix: '\\:tired_face:'
+    body: '😫'
+  'confused':
+    prefix: '\\:confused:'
+    body: '😕'
+  'black_joker':
+    prefix: '\\:black_joker:'
+    body: '🃏'
+  'earth_americas':
+    prefix: '\\:earth_americas:'
+    body: '🌎'
+  'first_quarter_moon_with_face':
+    prefix: '\\:first_quarter_moon_with_face:'
+    body: '🌛'
+  'repeat_one':
+    prefix: '\\:repeat_one:'
+    body: '🔂'
+  'bird':
+    prefix: '\\:bird:'
+    body: '🐦'
+  'earth_asia':
+    prefix: '\\:earth_asia:'
+    body: '🌏'
+  'smiley_cat':
+    prefix: '\\:smiley_cat:'
+    body: '😺'
+  'white_check_mark':
+    prefix: '\\:white_check_mark:'
+    body: '✅'
+  'game_die':
+    prefix: '\\:game_die:'
+    body: '🎲'
+  'clock630':
+    prefix: '\\:clock630:'
+    body: '🕡'
+  'ox':
+    prefix: '\\:ox:'
+    body: '🐂'
+  'page_with_curl':
+    prefix: '\\:page_with_curl:'
+    body: '📃'
+  'police_car':
+    prefix: '\\:police_car:'
+    body: '🚓'
+  'clock1230':
+    prefix: '\\:clock1230:'
+    body: '🕧'
+  'santa':
+    prefix: '\\:santa:'
+    body: '🎅'
+  'yellow_heart':
+    prefix: '\\:yellow_heart:'
+    body: '💛'
+  'cat':
+    prefix: '\\:cat:'
+    body: '🐱'
+  'anguished':
+    prefix: '\\:anguished:'
+    body: '😧'
+  'station':
+    prefix: '\\:station:'
+    body: '🚉'
+  'four_leaf_clover':
+    prefix: '\\:four_leaf_clover:'
+    body: '🍀'
+  'thought_balloon':
+    prefix: '\\:thought_balloon:'
+    body: '💭'
+  'loop':
+    prefix: '\\:loop:'
+    body: '➿'
+  'tanabata_tree':
+    prefix: '\\:tanabata_tree:'
+    body: '🎋'
+  'cherries':
+    prefix: '\\:cherries:'
+    body: '🍒'
+  'bride_with_veil':
+    prefix: '\\:bride_with_veil:'
+    body: '👰'
+  'notebook':
+    prefix: '\\:notebook:'
+    body: '📓'
+  'custard':
+    prefix: '\\:custard:'
+    body: '🍮'
+  'arrow_lower_left':
+    prefix: '\\:arrow_lower_left:'
+    body: '↙'
+  'warning':
+    prefix: '\\:warning:'
+    body: '⚠'
+  'first_quarter_moon':
+    prefix: '\\:first_quarter_moon:'
+    body: '🌓'
+  'memo':
+    prefix: '\\:memo:'
+    body: '📝'
+  'last_quarter_moon':
+    prefix: '\\:last_quarter_moon:'
+    body: '🌗'
+  'up':
+    prefix: '\\:up:'
+    body: '🆙'
+  'slot_machine':
+    prefix: '\\:slot_machine:'
+    body: '🎰'
+  'rat':
+    prefix: '\\:rat:'
+    body: '🐀'
+  'car':
+    prefix: '\\:car:'
+    body: '🚗'
+  'pig2':
+    prefix: '\\:pig2:'
+    body: '🐖'
+  'globe_with_meridians':
+    prefix: '\\:globe_with_meridians:'
+    body: '🌐'
+  'black_circle':
+    prefix: '\\:black_circle:'
+    body: '⚫'
+  'ram':
+    prefix: '\\:ram:'
+    body: '🐏'
+  'bamboo':
+    prefix: '\\:bamboo:'
+    body: '🎍'
+  'busstop':
+    prefix: '\\:busstop:'
+    body: '🚏'
+  'boy':
+    prefix: '\\:boy:'
+    body: '👦'
+  'part_alternation_mark':
+    prefix: '\\:part_alternation_mark:'
+    body: '〽'
+  'sandal':
+    prefix: '\\:sandal:'
+    body: '👡'
+  'baseball':
+    prefix: '\\:baseball:'
+    body: '⚾'
+  'tulip':
+    prefix: '\\:tulip:'
+    body: '🌷'
+  'video_camera':
+    prefix: '\\:video_camera:'
+    body: '📹'
+  'blue_heart':
+    prefix: '\\:blue_heart:'
+    body: '💙'
+  'black_small_square':
+    prefix: '\\:black_small_square:'
+    body: '▪'
+  'waning_gibbous_moon':
+    prefix: '\\:waning_gibbous_moon:'
+    body: '🌖'
+  'triangular_ruler':
+    prefix: '\\:triangular_ruler:'
+    body: '📐'
+  'pizza':
+    prefix: '\\:pizza:'
+    body: '🍕'
+  'chestnut':
+    prefix: '\\:chestnut:'
+    body: '🌰'
+  'baby_bottle':
+    prefix: '\\:baby_bottle:'
+    body: '🍼'
+  'fuelpump':
+    prefix: '\\:fuelpump:'
+    body: '⛽'
+  'articulated_lorry':
+    prefix: '\\:articulated_lorry:'
+    body: '🚛'
+  'ski':
+    prefix: '\\:ski:'
+    body: '🎿'
+  'straight_ruler':
+    prefix: '\\:straight_ruler:'
+    body: '📏'
+  'point_right':
+    prefix: '\\:point_right:'
+    body: '👉'
+  'relieved':
+    prefix: '\\:relieved:'
+    body: '😌'
+  'night_with_stars':
+    prefix: '\\:night_with_stars:'
+    body: '🌃'
+  'dizzy_face':
+    prefix: '\\:dizzy_face:'
+    body: '😵'
+  'person_with_blond_hair':
+    prefix: '\\:person_with_blond_hair:'
+    body: '👱'
+  'cookie':
+    prefix: '\\:cookie:'
+    body: '🍪'
+  'inbox_tray':
+    prefix: '\\:inbox_tray:'
+    body: '📥'
+  'no_pedestrians':
+    prefix: '\\:no_pedestrians:'
+    body: '🚷'
+  'oncoming_taxi':
+    prefix: '\\:oncoming_taxi:'
+    body: '🚖'
+  'sunflower':
+    prefix: '\\:sunflower:'
+    body: '🌻'
+  'laughing':
+    prefix: '\\:laughing:'
+    body: '😆'
+  'handbag':
+    prefix: '\\:handbag:'
+    body: '👜'
+  'cow':
+    prefix: '\\:cow:'
+    body: '🐮'
+  'wind_chime':
+    prefix: '\\:wind_chime:'
+    body: '🎐'
+  'cat2':
+    prefix: '\\:cat2:'
+    body: '🐈'
+  'banana':
+    prefix: '\\:banana:'
+    body: '🍌'
+  'open_hands':
+    prefix: '\\:open_hands:'
+    body: '👐'
+  'tada':
+    prefix: '\\:tada:'
+    body: '🎉'
+  'loudspeaker':
+    prefix: '\\:loudspeaker:'
+    body: '📢'
+  'monorail':
+    prefix: '\\:monorail:'
+    body: '🚝'
+  'spaghetti':
+    prefix: '\\:spaghetti:'
+    body: '🍝'
+  'hatched_chick':
+    prefix: '\\:hatched_chick:'
+    body: '🐥'
+  'sunrise':
+    prefix: '\\:sunrise:'
+    body: '🌅'
+  'woman':
+    prefix: '\\:woman:'
+    body: '👩'
+  'man_with_turban':
+    prefix: '\\:man_with_turban:'
+    body: '👳'
+  'palm_tree':
+    prefix: '\\:palm_tree:'
+    body: '🌴'
+  'bullettrain_front':
+    prefix: '\\:bullettrain_front:'
+    body: '🚅'
+  'busts_in_silhouette':
+    prefix: '\\:busts_in_silhouette:'
+    body: '👥'
+  'scissors':
+    prefix: '\\:scissors:'
+    body: '✂'
+  'hankey':
+    prefix: '\\:hankey:'
+    body: '💩'
+  'bento':
+    prefix: '\\:bento:'
+    body: '🍱'
+  'rewind':
+    prefix: '\\:rewind:'
+    body: '⏪'
+  'doughnut':
+    prefix: '\\:doughnut:'
+    body: '🍩'
+  'princess':
+    prefix: '\\:princess:'
+    body: '👸'
+  'e-mail':
+    prefix: '\\:e-mail:'
+    body: '📧'
+  'dog2':
+    prefix: '\\:dog2:'
+    body: '🐕'
+  'v':
+    prefix: '\\:v:'
+    body: '✌'
+  'clap':
+    prefix: '\\:clap:'
+    body: '👏'
+  'arrow_upper_right':
+    prefix: '\\:arrow_upper_right:'
+    body: '↗'
+  'grey_exclamation':
+    prefix: '\\:grey_exclamation:'
+    body: '❕'
+  'ear_of_rice':
+    prefix: '\\:ear_of_rice:'
+    body: '🌾'
+  'card_index':
+    prefix: '\\:card_index:'
+    body: '📇'
+  'pray':
+    prefix: '\\:pray:'
+    body: '🙏'
+  'scream':
+    prefix: '\\:scream:'
+    body: '😱'
+  'japanese_ogre':
+    prefix: '\\:japanese_ogre:'
+    body: '👹'
+  'sheep':
+    prefix: '\\:sheep:'
+    body: '🐑'
+  'fishing_pole_and_fish':
+    prefix: '\\:fishing_pole_and_fish:'
+    body: '🎣'
+  'weary':
+    prefix: '\\:weary:'
+    body: '😩'
+  'girl':
+    prefix: '\\:girl:'
+    body: '👧'
+  'tm':
+    prefix: '\\:tm:'
+    body: '™'
+  'fries':
+    prefix: '\\:fries:'
+    body: '🍟'
+  'u7a7a':
+    prefix: '\\:u7a7a:'
+    body: '🈳'
+  'milky_way':
+    prefix: '\\:milky_way:'
+    body: '🌌'
+  'm':
+    prefix: '\\:m:'
+    body: 'Ⓜ'
+  'snowboarder':
+    prefix: '\\:snowboarder:'
+    body: '🏂'
+  'atm':
+    prefix: '\\:atm:'
+    body: '🏧'
+  'capricorn':
+    prefix: '\\:capricorn:'
+    body: '♑'
+  'bomb':
+    prefix: '\\:bomb:'
+    body: '💣'
+  'arrow_lower_right':
+    prefix: '\\:arrow_lower_right:'
+    body: '↘'
+  'maple_leaf':
+    prefix: '\\:maple_leaf:'
+    body: '🍁'
+  'full_moon_with_face':
+    prefix: '\\:full_moon_with_face:'
+    body: '🌝'
+  'pisces':
+    prefix: '\\:pisces:'
+    body: '♓'
+  'chart_with_downwards_trend':
+    prefix: '\\:chart_with_downwards_trend:'
+    body: '📉'
+  'evergreen_tree':
+    prefix: '\\:evergreen_tree:'
+    body: '🌲'
+  'whale':
+    prefix: '\\:whale:'
+    body: '🐳'
+  'black_medium_small_square':
+    prefix: '\\:black_medium_small_square:'
+    body: '◾'
+  'triangular_flag_on_post':
+    prefix: '\\:triangular_flag_on_post:'
+    body: '🚩'
+  'satellite':
+    prefix: '\\:satellite:'
+    body: '📡'
+  'sparkles':
+    prefix: '\\:sparkles:'
+    body: '✨'
+  'sushi':
+    prefix: '\\:sushi:'
+    body: '🍣'
+  'seedling':
+    prefix: '\\:seedling:'
+    body: '🌱'
+  'do_not_litter':
+    prefix: '\\:do_not_litter:'
+    body: '🚯'
+  'flower_playing_cards':
+    prefix: '\\:flower_playing_cards:'
+    body: '🎴'
+  'sunglasses':
+    prefix: '\\:sunglasses:'
+    body: '😎'
+  'books':
+    prefix: '\\:books:'
+    body: '📚'
+  'golf':
+    prefix: '\\:golf:'
+    body: '⛳'
+  'mailbox':
+    prefix: '\\:mailbox:'
+    body: '📫'
+  'guardsman':
+    prefix: '\\:guardsman:'
+    body: '💂'
+  'monkey_face':
+    prefix: '\\:monkey_face:'
+    body: '🐵'
+  'mouse2':
+    prefix: '\\:mouse2:'
+    body: '🐁'
+  'symbols':
+    prefix: '\\:symbols:'
+    body: '🔣'
+  'negative_squared_cross_mark':
+    prefix: '\\:negative_squared_cross_mark:'
+    body: '❎'
+  'red_circle':
+    prefix: '\\:red_circle:'
+    body: '🔴'
+  'bust_in_silhouette':
+    prefix: '\\:bust_in_silhouette:'
+    body: '👤'
+  'scorpius':
+    prefix: '\\:scorpius:'
+    body: '♏'
+  'crown':
+    prefix: '\\:crown:'
+    body: '👑'
+  'goat':
+    prefix: '\\:goat:'
+    body: '🐐'
+  'clock1':
+    prefix: '\\:clock1:'
+    body: '🕐'
+  'partly_sunny':
+    prefix: '\\:partly_sunny:'
+    body: '⛅'
+  'arrow_right':
+    prefix: '\\:arrow_right:'
+    body: '➡'
+  'lemon':
+    prefix: '\\:lemon:'
+    body: '🍋'
+  'tongue':
+    prefix: '\\:tongue:'
+    body: '👅'
+  'imp':
+    prefix: '\\:imp:'
+    body: '👿'
+  'sleepy':
+    prefix: '\\:sleepy:'
+    body: '😪'
+  'walking':
+    prefix: '\\:walking:'
+    body: '🚶'
+  'u7533':
+    prefix: '\\:u7533:'
+    body: '🈸'
+  'arrow_upper_left':
+    prefix: '\\:arrow_upper_left:'
+    body: '↖'
+  'tv':
+    prefix: '\\:tv:'
+    body: '📺'
+  'secret':
+    prefix: '\\:secret:'
+    body: '㊙'
+  'trumpet':
+    prefix: '\\:trumpet:'
+    body: '🎺'
+  'strawberry':
+    prefix: '\\:strawberry:'
+    body: '🍓'
+  'space_invader':
+    prefix: '\\:space_invader:'
+    body: '👾'
+  'black_square_button':
+    prefix: '\\:black_square_button:'
+    body: '🔲'
+  'house_with_garden':
+    prefix: '\\:house_with_garden:'
+    body: '🏡'
+  'sweat_smile':
+    prefix: '\\:sweat_smile:'
+    body: '😅'
+  'wave':
+    prefix: '\\:wave:'
+    body: '👋'
+  'gem':
+    prefix: '\\:gem:'
+    body: '💎'
+  'love_letter':
+    prefix: '\\:love_letter:'
+    body: '💌'
+  'skin-tone-4':
+    prefix: '\\:skin-tone-4:'
+    body: '🏽'
+  'sleeping':
+    prefix: '\\:sleeping:'
+    body: '😴'
+  'point_up':
+    prefix: '\\:point_up:'
+    body: '☝'
+  'sun_with_face':
+    prefix: '\\:sun_with_face:'
+    body: '🌞'
+  'customs':
+    prefix: '\\:customs:'
+    body: '🛃'
+  'mega':
+    prefix: '\\:mega:'
+    body: '📣'
+  'rose':
+    prefix: '\\:rose:'
+    body: '🌹'
+  'camera':
+    prefix: '\\:camera:'
+    body: '📷'
+  'bath':
+    prefix: '\\:bath:'
+    body: '🛀'
+  'flags':
+    prefix: '\\:flags:'
+    body: '🎏'
+  'arrow_up_down':
+    prefix: '\\:arrow_up_down:'
+    body: '↕'
+  'arrow_up':
+    prefix: '\\:arrow_up:'
+    body: '⬆'
+  'ophiuchus':
+    prefix: '\\:ophiuchus:'
+    body: '⛎'
+  'mailbox_with_mail':
+    prefix: '\\:mailbox_with_mail:'
+    body: '📬'
+  'alarm_clock':
+    prefix: '\\:alarm_clock:'
+    body: '⏰'
+  '+1':
+    prefix: '\\:+1:'
+    body: '👍'
+  'mobile_phone_off':
+    prefix: '\\:mobile_phone_off:'
+    body: '📴'
+  'tiger2':
+    prefix: '\\:tiger2:'
+    body: '🐅'
+  'department_store':
+    prefix: '\\:department_store:'
+    body: '🏬'
+  'fork_and_knife':
+    prefix: '\\:fork_and_knife:'
+    body: '🍴'
+  'signal_strength':
+    prefix: '\\:signal_strength:'
+    body: '📶'
+  'no_smoking':
+    prefix: '\\:no_smoking:'
+    body: '🚭'
+  'office':
+    prefix: '\\:office:'
+    body: '🏢'
+  'helicopter':
+    prefix: '\\:helicopter:'
+    body: '🚁'
+  'fish':
+    prefix: '\\:fish:'
+    body: '🐟'
+  'last_quarter_moon_with_face':
+    prefix: '\\:last_quarter_moon_with_face:'
+    body: '🌜'
+  'ticket':
+    prefix: '\\:ticket:'
+    body: '🎫'
+  'pig':
+    prefix: '\\:pig:'
+    body: '🐷'
+  'snail':
+    prefix: '\\:snail:'
+    body: '🐌'
+  'couple_with_heart':
+    prefix: '\\:couple_with_heart:'
+    body: '💑'
+  'trolleybus':
+    prefix: '\\:trolleybus:'
+    body: '🚎'
+  'recycle':
+    prefix: '\\:recycle:'
+    body: '♻'
+  'bus':
+    prefix: '\\:bus:'
+    body: '🚌'
+  'deciduous_tree':
+    prefix: '\\:deciduous_tree:'
+    body: '🌳'
+  'convenience_store':
+    prefix: '\\:convenience_store:'
+    body: '🏪'
+  'paperclip':
+    prefix: '\\:paperclip:'
+    body: '📎'
+  'heavy_plus_sign':
+    prefix: '\\:heavy_plus_sign:'
+    body: '➕'
+  'open_file_folder':
+    prefix: '\\:open_file_folder:'
+    body: '📂'
+  'crying_cat_face':
+    prefix: '\\:crying_cat_face:'
+    body: '😿'
+  'boar':
+    prefix: '\\:boar:'
+    body: '🐗'
+  'parking':
+    prefix: '\\:parking:'
+    body: '🅿'
+  'coffee':
+    prefix: '\\:coffee:'
+    body: '☕'
+  'clock1030':
+    prefix: '\\:clock1030:'
+    body: '🕥'
+  'postbox':
+    prefix: '\\:postbox:'
+    body: '📮'
+  'briefcase':
+    prefix: '\\:briefcase:'
+    body: '💼'
+  'cherry_blossom':
+    prefix: '\\:cherry_blossom:'
+    body: '🌸'
+  'city_sunrise':
+    prefix: '\\:city_sunrise:'
+    body: '🌇'
+  'two_men_holding_hands':
+    prefix: '\\:two_men_holding_hands:'
+    body: '👬'
+  'curry':
+    prefix: '\\:curry:'
+    body: '🍛'
+  'droplet':
+    prefix: '\\:droplet:'
+    body: '💧'
+  'sa':
+    prefix: '\\:sa:'
+    body: '🈂'
+  'hourglass_flowing_sand':
+    prefix: '\\:hourglass_flowing_sand:'
+    body: '⏳'
+  'diamonds':
+    prefix: '\\:diamonds:'
+    body: '♦'
+  'notes':
+    prefix: '\\:notes:'
+    body: '🎶'
+  'skin-tone-6':
+    prefix: '\\:skin-tone-6:'
+    body: '🏿'
+  'stuck_out_tongue_winking_eye':
+    prefix: '\\:stuck_out_tongue_winking_eye:'
+    body: '😜'
+  'two_hearts':
+    prefix: '\\:two_hearts:'
+    body: '💕'
+  'zap':
+    prefix: '\\:zap:'
+    body: '⚡'
+  'mount_fuji':
+    prefix: '\\:mount_fuji:'
+    body: '🗻'
+  'stuck_out_tongue_closed_eyes':
+    prefix: '\\:stuck_out_tongue_closed_eyes:'
+    body: '😝'
+  'capital_abcd':
+    prefix: '\\:capital_abcd:'
+    body: '🔠'
+  'point_left':
+    prefix: '\\:point_left:'
+    body: '👈'
+  'disappointed_relieved':
+    prefix: '\\:disappointed_relieved:'
+    body: '😥'
+  'back':
+    prefix: '\\:back:'
+    body: '🔙'
+  'bookmark':
+    prefix: '\\:bookmark:'
+    body: '🔖'
+  'trophy':
+    prefix: '\\:trophy:'
+    body: '🏆'
+  'penguin':
+    prefix: '\\:penguin:'
+    body: '🐧'
+  'couplekiss':
+    prefix: '\\:couplekiss:'
+    body: '💏'
+  'leftwards_arrow_with_hook':
+    prefix: '\\:leftwards_arrow_with_hook:'
+    body: '↩'
+  'bicyclist':
+    prefix: '\\:bicyclist:'
+    body: '🚴'
+  'no_mobile_phones':
+    prefix: '\\:no_mobile_phones:'
+    body: '📵'
+  'boat':
+    prefix: '\\:boat:'
+    body: '⛵'
+  'poodle':
+    prefix: '\\:poodle:'
+    body: '🐩'
+  'school_satchel':
+    prefix: '\\:school_satchel:'
+    body: '🎒'
+  'kissing_heart':
+    prefix: '\\:kissing_heart:'
+    body: '😘'
+  'alien':
+    prefix: '\\:alien:'
+    body: '👽'
+  'minibus':
+    prefix: '\\:minibus:'
+    body: '🚐'
+  'circus_tent':
+    prefix: '\\:circus_tent:'
+    body: '🎪'
+  'large_blue_circle':
+    prefix: '\\:large_blue_circle:'
+    body: '🔵'
+  'triumph':
+    prefix: '\\:triumph:'
+    body: '😤'
+  'construction':
+    prefix: '\\:construction:'
+    body: '🚧'
+  'stew':
+    prefix: '\\:stew:'
+    body: '🍲'
+  'turtle':
+    prefix: '\\:turtle:'
+    body: '🐢'
+  'bathtub':
+    prefix: '\\:bathtub:'
+    body: '🛁'
+  'new_moon_with_face':
+    prefix: '\\:new_moon_with_face:'
+    body: '🌚'
+  'poultry_leg':
+    prefix: '\\:poultry_leg:'
+    body: '🍗'
+  'fearful':
+    prefix: '\\:fearful:'
+    body: '😨'
+  'key':
+    prefix: '\\:key:'
+    body: '🔑'
+  'fist':
+    prefix: '\\:fist:'
+    body: '✊'
+  'basketball':
+    prefix: '\\:basketball:'
+    body: '🏀'
+  'orange_book':
+    prefix: '\\:orange_book:'
+    body: '📙'
+  'pill':
+    prefix: '\\:pill:'
+    body: '💊'
+  'pencil2':
+    prefix: '\\:pencil2:'
+    body: '✏'
+  'o2':
+    prefix: '\\:o2:'
+    body: '🅾'
+  'foggy':
+    prefix: '\\:foggy:'
+    body: '🌁'
+  'hibiscus':
+    prefix: '\\:hibiscus:'
+    body: '🌺'
+  'necktie':
+    prefix: '\\:necktie:'
+    body: '👔'
+  'mountain_cableway':
+    prefix: '\\:mountain_cableway:'
+    body: '🚠'
+  'telephone_receiver':
+    prefix: '\\:telephone_receiver:'
+    body: '📞'
+  'tram':
+    prefix: '\\:tram:'
+    body: '🚊'
+  'lollipop':
+    prefix: '\\:lollipop:'
+    body: '🍭'
+  'heart':
+    prefix: '\\:heart:'
+    body: '❤'
+  'dancers':
+    prefix: '\\:dancers:'
+    body: '👯'
+  'pound':
+    prefix: '\\:pound:'
+    body: '💷'
+  'radio_button':
+    prefix: '\\:radio_button:'
+    body: '🔘'
+  'iphone':
+    prefix: '\\:iphone:'
+    body: '📱'
+  'eight_spoked_asterisk':
+    prefix: '\\:eight_spoked_asterisk:'
+    body: '✳'
+  'muscle':
+    prefix: '\\:muscle:'
+    body: '💪'
+  'libra':
+    prefix: '\\:libra:'
+    body: '♎'
+  'no_bicycles':
+    prefix: '\\:no_bicycles:'
+    body: '🚳'
+  'bikini':
+    prefix: '\\:bikini:'
+    body: '👙'
+  'stars':
+    prefix: '\\:stars:'
+    body: '🌠'
+  'oncoming_automobile':
+    prefix: '\\:oncoming_automobile:'
+    body: '🚘'

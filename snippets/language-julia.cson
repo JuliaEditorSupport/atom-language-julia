@@ -1,5 +1,5 @@
 "*":
-  Docstring:
+  "Docstring":
     prefix: "doc"
     body: '''
       @doc doc"""
@@ -21,82 +21,102 @@
     '''
   "Ternary operator":
     prefix: "3"
-    body: "$1 ? $2 : $3"
-  elseif:
-    prefix: "elif"
-    body: "elseif"
-  error:
+    body: "${1:condition} ? ${2:if_true} : ${3:if_false}"
+  'Else if':
+    prefix: 'elseif'
+    body: """elseif ${1:condition}
+      $2
+    """
+  'Else if2':
+    prefix: 'elif'
+    body: """elseif ${1:condition}
+      $2
+    """
+  "error":
     prefix: "err"
-    body: "error(\"$0\")"
-  finally:
+    body: "error(\"$1\")"
+  "finally":
     prefix: "fn"
     body: '''
       finally
-      	$0
+      	$1
     '''
   "for/in":
     prefix: "fr"
     body: '''
-      for $1 in $2
-      	$1
-      end
-    '''
-  function:
-    prefix: "fx"
-    body: '''
-      function $1($2)
+      for ${1:variable} in ${2:iterator}
       	$3
       end
     '''
-  if:
+  "function":
+    prefix: "fx"
+    body: '''
+      function ${1:name}(${2:args})
+      	${3:body}
+      end
+    '''
+  "return":
+      prefix: 'ret'
+      body: 'return $1'
+  "if":
     prefix: "if"
     body: '''
-      if $0
-      	$1
+      if ${1:condition}
+      	${2:body}
       end
     '''
   "if/else":
     prefix: "ie"
     body: '''
-      if $0
-      	$1
+      if ${1:condition}
+      	${2:true_body}
       else
-      	$2
+      	${3:false_body}
       end
     '''
-  macro:
+  "macro":
     prefix: "mcr"
     body: '''
-      macro $1
-      	$2
+      macro ${1:name}(${2:args})
+      	${3:body}
       end
     '''
-  println:
+  "println":
     prefix: "p"
-    body: "println($0)"
-  throw:
+    body: "println(${1:msg})"
+  "throw":
     prefix: "th"
-    body: "throw($0Error($1))"
+    body: "throw(${1:err_type}Error(${2:msg}))"
   "try/catch":
     prefix: "tr"
     body: '''
       try
-      	$0
+      	${1:try_block}
       catch $1
       	$2
       end
     '''
-  type:
+  "type":
     prefix: "t"
     body: '''
-      type $0
-      	$1
+      type ${1:name}
+      	${1:fields}
       end
     '''
-  while:
+  "while":
     prefix: "wh"
     body: '''
-      while $1
-      	$2
+      while ${1:condition}
+      	${2:body}
       end
     '''
+  'Compound expression':
+    prefix: 'beg'
+    body: """${1:variable} = begin
+      $2
+    end"""
+  'let block':
+    prefix: 'let'
+    body: """${1:variable} = let
+      $2
+    end"""

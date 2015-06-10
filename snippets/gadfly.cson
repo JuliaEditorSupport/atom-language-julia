@@ -1,0 +1,7 @@
+'.source.julia':
+   'Draw to PDF':
+      prefix: 'gfpdf'
+      body: 'draw(PDF("$1.pdf", $2cm, $3cm), $4)'
+    'Draw to PNG':
+      prefix: 'gfpng'
+      body: 'draw(PNG("$1.png", $2cm, $3cm), $4)'

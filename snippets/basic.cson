@@ -1,15 +1,35 @@
 ".source.julia":
-  'Module':
-    'prefix': 'mod'
-    'body': """
+  "Module":
+    prefix: 'mod'
+    body: """
     module ${1:name}
     ${2}
     end  # module ${1}
     """
-  immutable:
+  "immutable":
     prefix: 'i'
     body: '''
-      immutable $0
-      	$1
+      immutable ${1:name}
+      	$2
       end
     '''
+  "Bang":
+    prefix: '#!'
+    body: """#! /usr/bin/env julia
+    $1"""
+  'Multi-line comment':
+    prefix: '#='
+    body: """#=
+    $1
+    =#"""
+   "Use":
+      prefix: 'use'
+      body: """using ${1:module}
+      $2"""
+   "Include":
+      prefix: 'inc'
+      body: """include("${1:file}")
+      $2"""
+   "Typed variable":
+      prefix: 'tv'
+      body: '${1:var}::${2:type}'
