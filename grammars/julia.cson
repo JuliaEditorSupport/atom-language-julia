@@ -1,19 +1,18 @@
-comment: '''
-  
+comment: """
+
   	TODO:
   	* syntax types, tuple types, union
   	* take out ::Type
-  	
-'''
+
+"""
 fileTypes: [
   "jl"
 ]
 firstLineMatch: "^#!.*\\bjulia\\s*$"
+foldingStartMarker: "^\\s*(?:if|while|for|begin|function|macro|module|baremodule|type|immutable|try|let)\\b(?!.*\\bend\\b).*$"
+foldingStopMarker: "^\\s*(?:end)\\b.*$"
 name: "Julia"
 patterns: [
-  {
-    include: "#symbol"
-  }
   {
     include: "#operator"
   }
@@ -25,9 +24,6 @@ patterns: [
   }
   {
     include: "#bracket"
-  }
-  {
-    include: "#type_decl"
   }
   {
     include: "#function_decl"
@@ -43,6 +39,12 @@ patterns: [
   }
   {
     include: "#comment"
+  }
+  {
+    include: "#type_decl"
+  }
+  {
+    include: "#symbol"
   }
 ]
 repository:
@@ -97,7 +99,7 @@ repository:
   function_call:
     patterns: [
       {
-        begin: "([a-zA-Z0-9_]+!?)\\w*\\("
+        begin: "([a-zA-Z0-9_\u0021-\uFFFF]+!?)\\w*\\("
         beginCaptures:
           "1":
             name: "support.function.julia"
@@ -121,6 +123,7 @@ repository:
           "2":
             name: "support.type.julia"
         match: "([\\w.!]+)({[^}]*})?\\((?=.*\\)\\s*=(?!=))"
+        comment: "This is different from the one in tpoisot's package"
       }
       {
         captures:
@@ -130,17 +133,17 @@ repository:
             name: "entity.name.function.julia"
           "3":
             name: "support.type.julia"
-        match: "\\b(function|stagedfunction|macro)\\s+([\\w.!]+)({[^}]*})?\\("
+        match: "\\b(function|@generated|macro)\\s+([\\w.!]+)({[^}]*})?\\("
       }
     ]
   keyword:
     patterns: [
       {
-        match: "\\b(?:function|stagedfunction|type|immutable|macro|quote|abstract|bitstype|typealias|module|baremodule|new)\\b"
+        match: "\\b(?:function|@generated|type|immutable|macro|quote|abstract|bitstype|typealias|module|baremodule|new)\\b"
         name: "keyword.other.julia"
       }
       {
-        match: "\\b(?:if|else|elseif|while|for|in|begin|let|end|do|try|catch|finally|return|break|continue)\\b"
+        match: "\\b(?:if|else|elseif|while|for|in|begin|let|end|do|try|catch|finally|return|break|throw|continue)\\b"
         name: "keyword.control.julia"
       }
       {
@@ -148,8 +151,16 @@ repository:
         name: "storage.modifier.variable.julia"
       }
       {
+        match: '\\b(Int8|UInt8|Int16|UInt16|Int32|UInt32|Int64|UInt64|Int128|UInt128|Dict|Float16|Float32|Float64|Number|Real|FloatingPoint|Signed|Unsigned|Any|Bool|Char|ASCIIString|AbstractString|DataType|Array|DataFrame)\\b'
+        name: 'storage.type.julia'
+       }
+      {
         match: "@\\w+\\b"
         name: "support.function.macro.julia"
+      }
+      {
+        match: "\\b(Argument|Bounds|Divide|Domain|EOF|Inexact|Key|Load|Memory|Method|Overflow|Parse|System|Type|UndefRef|UndefVar)Error\\b"
+        name: "support.type.exception.julia"
       }
     ]
   number:
@@ -303,6 +314,28 @@ repository:
         patterns: [
           {
             include: "#string_escaped_char"
+          }
+        ]
+      }
+      {
+        begin: '(@doc) (doc""")'
+        beginCaptures:
+          '1':
+            'name': 'support.function.macro.julia'
+          '2':
+            'name': 'punctuation.definition.string.begin.julia'
+        end: '(""") (->)'
+        endCaptures:
+          '1':
+            'name': 'punctuation.definition.string.end.julia'
+          '2':
+            'name': 'keyword.operator.arrow.julia'
+        name: 'string.docstring.julia'
+        contentName : 'source.gfm'
+        patterns: [
+          {
+            include: '#string_escaped_char'
+            include: 'source.gfm'
           }
         ]
       }
