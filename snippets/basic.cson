@@ -1,0 +1,15 @@
+".source.julia":
+  'Module':
+    'prefix': 'mod'
+    'body': """
+    module ${1:name}
+    ${2}
+    end  # module ${1}
+    """
+  immutable:
+    prefix: 'i'
+    body: '''
+      immutable $0
+      	$1
+      end
+    '''
