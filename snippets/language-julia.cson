@@ -1,0 +1,102 @@
+"*":
+  Docstring:
+    prefix: "doc"
+    body: '''
+      @doc doc"""
+      $1($2)
+      $3
+      """ ->
+    '''
+".source.julia":
+  "Documented function":
+    prefix: "fxd"
+    body: '''
+      @doc doc"""
+      $1($2)
+      $3
+      """ ->
+      function $1($2)
+      	$4
+      end
+    '''
+  "Ternary operator":
+    prefix: "3"
+    body: "$1 ? $2 : $3"
+  elseif:
+    prefix: "elif"
+    body: "elseif"
+  error:
+    prefix: "err"
+    body: "error(\"$0\")"
+  finally:
+    prefix: "fn"
+    body: '''
+      finally
+      	$0
+    '''
+  "for/in":
+    prefix: "fr"
+    body: '''
+      for $1 in $2
+      	$1
+      end
+    '''
+  function:
+    prefix: "fx"
+    body: '''
+      function $1($2)
+      	$3
+      end
+    '''
+  if:
+    prefix: "if"
+    body: '''
+      if $0
+      	$1
+      end
+    '''
+  "if/else":
+    prefix: "ie"
+    body: '''
+      if $0
+      	$1
+      else
+      	$2
+      end
+    '''
+  macro:
+    prefix: "mcr"
+    body: '''
+      macro $1
+      	$2
+      end
+    '''
+  println:
+    prefix: "p"
+    body: "println($0)"
+  throw:
+    prefix: "th"
+    body: "throw($0Error($1))"
+  "try/catch":
+    prefix: "tr"
+    body: '''
+      try
+      	$0
+      catch $1
+      	$2
+      end
+    '''
+  type:
+    prefix: "t"
+    body: '''
+      type $0
+      	$1
+      end
+    '''
+  while:
+    prefix: "wh"
+    body: '''
+      while $1
+      	$2
+      end
+    '''
