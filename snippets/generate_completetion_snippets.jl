@@ -27,11 +27,6 @@ function write_snippet_file(d::Dict, fn::String)
     end
 end
 
-function foobarαfd(foda, )
-end
-
-foobarαfd(aoe, )
-
 
 function main()
     dicts = (Base.REPLCompletions.latex_symbols,
@@ -40,6 +35,5 @@ function main()
     map(write_snippet_file, dicts, file_names)
     nothing
 end
-
 
 main()
