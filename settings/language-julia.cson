@@ -5,3 +5,5 @@
   editor:
     increaseIndentPattern: "^(\\s*|.*=\\s*|.*@\\w*\\s*)(if|while|for|function|stagedfunction|macro|immutable|type|let|quote|try|begin|.*\\)\\s*do|else|elseif|catch|finally)\\b(?!.*\\bend\\b[^\\]]*$).*$"
     decreaseIndentPattern: "^\\s*(end|else|elseif|catch|finally)\\b.*$"
+    softTabs: true
+    tabLength: 4
