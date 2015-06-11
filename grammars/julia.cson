@@ -100,7 +100,7 @@ repository:
   function_call:
     patterns: [
       {
-        begin: "([a-zA-Z0-9_\u0021-\uFFFF]+!?)\\w*\\("
+        begin: "([\\w.!]+!?)\\w*\\("
         beginCaptures:
           "1":
             name: "support.function.julia"

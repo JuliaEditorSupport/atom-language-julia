@@ -42,3 +42,24 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine("@doc doc\"\"\" xx *x* \"\"\" ->")
     expect(tokens[0]).toEqual value: "@doc", scopes: ["source.julia", "string.docstring.julia", "support.function.macro.julia"]
     expect(tokens[2]).toEqual value: "doc\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
+
+  # code is a line from Gadfly.jl
+  it "tokenizes function calls starting with double quotes", ->
+    {tokens} = grammar.tokenizeLine("warn(\"$(string(key)) is not a recognized aesthetic. Ignoring.\")")
+    expect(tokens[0]).toEqual value: "warn", scopes: ["source.julia", "support.function.julia"]
+    expect(tokens[1]).toEqual value: "(", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "\"", scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[3]).toEqual value: "$(string(key)) is not a recognized aesthetic. Ignoring.", scopes: ["source.julia", "string.quoted.double.julia"]
+    expect(tokens[4]).toEqual value: "\"", scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[5]).toEqual value: ")", scopes: ["source.julia"]
+
+  it "tokenizes function calls with unicode in names", ->
+    {tokens} = grammar.tokenizeLine("fooα(bing, bang, boom)")
+    expect(tokens[0]).toEqual value: "fooα", scopes: ["source.julia", "support.function.julia"]
+    expect(tokens[1]).toEqual value: "(", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "bing", scopes: ["source.julia"]
+    expect(tokens[3]).toEqual value: ",", scopes: ["source.julia", "meta.bracket.julia"]
+    expect(tokens[4]).toEqual value: " bang", scopes: ["source.julia"]
+    expect(tokens[5]).toEqual value: ",", scopes: ["source.julia", "meta.bracket.julia"]
+    expect(tokens[6]).toEqual value: " boom", scopes: ["source.julia"]
+    expect(tokens[7]).toEqual value: ")", scopes: ["source.julia"]
