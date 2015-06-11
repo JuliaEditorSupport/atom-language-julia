@@ -332,9 +332,6 @@ repository:
           {
             include: "#string_dollar_sign_interpolate"
           }
-          {
-            include: "#string_dollar_sign_interpolate"
-          }
         ]
       }
       {
@@ -351,9 +348,6 @@ repository:
         patterns: [
           {
             include: "#string_escaped_char"
-          }
-          {
-            include: "#string_dollar_sign_interpolate"
           }
           {
             include: "#string_dollar_sign_interpolate"
@@ -435,6 +429,7 @@ repository:
           }
           {
             include: 'source.gfm'
+            comment: "TODO: do we put dollar_sign interpolation in here?"
           }
           {
             include: "#string_dollar_sign_interpolate"
