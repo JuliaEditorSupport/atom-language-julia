@@ -4,6 +4,7 @@ comment: """
     * syntax types, tuple types, union
     * take out ::Type
     * Add more regex stuff.
+    * Some in comments throughout the grammar
 
 """
 fileTypes: [
@@ -291,6 +292,9 @@ repository:
           {
             include: '#string_escaped_char'
           }
+          {
+            include: "#string_dollar_sign_interpolate"
+          }
         ]
       }
       {
@@ -310,18 +314,49 @@ repository:
         ]
       }
       {
-        begin: "\""
+        begin: '"""'
         beginCaptures:
           "0":
-            name: "punctuation.definition.string.begin.julia"
-        end: "\""
+            name: "punctuation.definition.string.multiline.begin.julia"
+        end: '"""'
         endCaptures:
           "0":
-            name: "punctuation.definition.string.end.julia"
-        name: "string.quoted.double.julia"
+            name: "punctuation.definition.string.multiline.end.julia"
+        name: "string.quoted.triple.double.julia"
+        comment: "multi-line string with triple double quotes"
+        comment: "TODO: decide on a name for this scope"
         patterns: [
           {
             include: "#string_escaped_char"
+          }
+          {
+            include: "#string_dollar_sign_interpolate"
+          }
+          {
+            include: "#string_dollar_sign_interpolate"
+          }
+        ]
+      }
+      {
+        name: "string.quoted.double.julia"
+        begin: '(?<!")"(?!")'
+        beginCaptures:
+          "0":
+            name: "punctuation.definition.string.begin.julia"
+        end: '(?<!")"(?!")'
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.julia"
+        comment: "String with single pair of double quotes. Regex matches isolated double quote"
+        patterns: [
+          {
+            include: "#string_escaped_char"
+          }
+          {
+            include: "#string_dollar_sign_interpolate"
+          }
+          {
+            include: "#string_dollar_sign_interpolate"
           }
         ]
       }
@@ -369,11 +404,13 @@ repository:
         endCaptures:
           "0":
             name: "punctuation.definition.string.end.julia"
-        name: "string.interpolated.julia"
-        comment: "This is called string.quoted.backtick.julia in tpoisot"
+        name: "string.interpolated.backtick.julia"
         patterns: [
           {
             include: "#string_escaped_char"
+          }
+          {
+            include: "#string_dollar_sign_interpolate"
           }
         ]
       }
@@ -395,9 +432,13 @@ repository:
         patterns: [
           {
             include: 'source.gfm'
+            comment: "TODO: do we put dollar_sign interpolation in here?"
           }
           {
             include: '#string_escaped_char'
+          }
+          {
+            include: "#string_dollar_sign_interpolate"
           }
         ]
       }
@@ -412,8 +453,39 @@ repository:
   string_escaped_char:
     patterns: [
       {
-        match: "\\\\(\\\\|[0-3]\\d{0,2}|[4-7]\\d?|x[a-fA-F0-9]{0,2}|u[a-fA-F0-9]{0,4}|U[a-fA-F0-9]{0,8}|.)"
+        match: "\\\\(\\\\|[0-3]\\d{,2}|[4-7]\\d?|x[a-fA-F0-9]{,2}|u[a-fA-F0-9]{,4}|U[a-fA-F0-9]{,8}|.)"
         name: "constant.character.escape.julia"
+      }
+    ]
+  string_dollar_sign_interpolate:
+    patterns: [
+      {
+        match: "(\\$)(\\w+)"
+        captures:
+          "1":
+            name: "keyword.operator.dollar-sign.julia"
+          "2":
+            patterns: [
+              {
+                include: "$self"
+              }
+            ]
+        name: "string.interpolated.dollar-sign.julia"
+
+      }
+      {
+        begin: "(\\$)\\("
+        beginCaptures:
+          "1":
+            name: "keyword.operator.dollar-sign.julia"
+        end: "\\)"
+        name: "string.interpolated.dollar-sign.julia"
+        patterns: [
+          {
+            include: "$self"
+          }
+        ]
+
       }
     ]
   symbol:
