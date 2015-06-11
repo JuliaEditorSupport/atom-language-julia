@@ -32,10 +32,11 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: "foobar", scopes: ["source.julia", "constant.other.symbol.julia"]
 
   it "tokenizes regular expressions", ->
-    {tokens} = grammar.tokenizeLine('r"[jJ]ulia"')
+    {tokens} = grammar.tokenizeLine('r"[jJ]ulia"im')
     expect(tokens[0]).toEqual value: "r\"", scopes: ["source.julia", "string.regexp.julia", "punctuation.definition.string.regexp.begin.julia"]
     expect(tokens[1]).toEqual value: "[jJ]ulia", scopes: ["source.julia", "string.regexp.julia"]
     expect(tokens[2]).toEqual value: "\"", scopes: ["source.julia", "string.regexp.julia", "punctuation.definition.string.regexp.end.julia"]
+    expect(tokens[3]).toEqual value: "im", scopes: ["source.julia", "string.regexp.julia", "keyword.other.option-toggle.regexp.julia"]
 
   it "tokenizes docstrings", ->
     {tokens} = grammar.tokenizeLine("@doc doc\"\"\" xx *x* \"\"\" ->")
