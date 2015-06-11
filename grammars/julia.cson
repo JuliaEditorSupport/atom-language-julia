@@ -3,6 +3,7 @@ comment: """
     TODO:
     * syntax types, tuple types, union
     * take out ::Type
+    * Add more regex stuff.
 
 """
 fileTypes: [
@@ -287,6 +288,22 @@ repository:
         ]
       }
       {
+        begin: "r\""
+        beginCaptures:
+          "0":
+            name: "punctuation.definition.string.regexp.begin.julia"
+        end: "\""
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.regexp.end.julia"
+        name: 'string.regexp.julia'
+        patterns: [
+          {
+            include: '#string_escaped_char'
+          }
+        ]
+      }
+      {
         begin: "\\b\\w+\""
         beginCaptures:
           "0":
@@ -320,7 +337,7 @@ repository:
         ]
       }
       {
-        begin: '(@doc) (doc""")'
+        begin: '(@doc) ((?:doc)?""")'
         beginCaptures:
           '1':
             'name': 'support.function.macro.julia'
