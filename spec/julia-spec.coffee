@@ -26,6 +26,12 @@ describe "Julia grammar", ->
     expect(tokens[2]).toEqual value: "^", scopes: ["source.julia", "keyword.operator.arithmetic.julia"]
     expect(tokens[3]).toEqual value: "2", scopes: ["source.julia", "constant.numeric.julia"]
 
+  it "tokenizes symbols", ->
+    {tokens} = grammar.tokenizeLine(":foobar")
+    expect(tokens[0]).toEqual value: ":", scopes: ["source.julia", "keyword.operator.ternary.julia"]
+    expect(tokens[1]).toEqual value: "foobar", scopes: ["source.julia", "constant.other.symbol.julia"]
+
+
   it "tokenizes docstrings", ->
     {tokens} = grammar.tokenizeLine("@doc doc\"\"\" xx *x* \"\"\" ->")
     expect(tokens[0]).toEqual value: "@doc", scopes: ["source.julia", "string.docstring.julia", "support.function.macro.julia"]
