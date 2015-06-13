@@ -124,6 +124,17 @@ repository:
           "2":
             name: "support.type.julia"
         match: "([\\w.!]+)({[^}]*})?\\((?=.*\\)\\s*=(?!=))"
+        comment: "TODO: why do we have `.` in the function name characer class?"
+        comment: """
+        first group is function name
+        Second group is type parameters (e.g. {T<:Number, S})
+        Then open parens
+        Then a lookahead ensures that we are followed by:
+          - anything (function argumnets)
+          - 0 or more spaces
+          - Finally an equal sign
+        Negative lookahead ensures we don't have another equal sign (not `==`)
+        """
         comment: "This is different from the one in tpoisot's package"
       }
       {
@@ -134,7 +145,8 @@ repository:
             name: "entity.name.function.julia"
           "3":
             name: "support.type.julia"
-        match: "\\b(function|@generated|macro)\\s+([\\w.!]+)({[^}]*})?\\("
+        match: "\\b(function|macro)\\s+([\\w.!]+)({[^}]*})?\\("
+        comment: "similar regex to previous, but with keyword not 1-line syntax"
       }
     ]
   keyword:
