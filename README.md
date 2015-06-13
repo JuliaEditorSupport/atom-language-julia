@@ -1,6 +1,6 @@
 # Julia support for Atom
 
-Atom package for the Julia language. Originally based off of [JuliaLang/julia.tmBundle](https://github.com/JuliaLang/Julia.tmbundle), merged with new ideas from  [laguage-julia](https://github.com/tpoisot/language-julia/blob/master/README.md) package.
+Atom package for the Julia language. Originally based off of [JuliaLang/julia.tmBundle](https://github.com/JuliaLang/Julia.tmbundle), merged with new ideas from  [language-julia](https://github.com/tpoisot/language-julia/blob/master/README.md) package.
 
 ## Features:
 
