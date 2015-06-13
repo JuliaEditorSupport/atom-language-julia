@@ -4,13 +4,13 @@
   "description": "Julia language support for Atom.",
   "keywords": [
   ],
-  "repository": "https://github.com/JuliaLang/language-julia",
+  "repository": "https://github.com/JuliaLang/atom-language-julia",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
   },
   "bugs": {
-    "url": "https://github.com/JuliaLang/language-julia/issues"
+    "url": "https://github.com/JuliaLang/atom-language-julia/issues"
   },
-  "homepage": "https://github.com/JuliaLang/language-julia"
+  "homepage": "https://github.com/JuliaLang/atom-language-julia"
 }
