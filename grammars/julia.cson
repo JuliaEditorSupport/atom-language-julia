@@ -429,6 +429,8 @@ repository:
           }
           {
             include: 'source.gfm'
+          }
+          {
             comment: "TODO: do we put dollar_sign interpolation in here?"
           }
           {
