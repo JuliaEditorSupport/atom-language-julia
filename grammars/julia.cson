@@ -431,11 +431,10 @@ repository:
         contentName : 'source.gfm'
         patterns: [
           {
-            include: 'source.gfm'
-            comment: "TODO: do we put dollar_sign interpolation in here?"
+            include: '#string_escaped_char'
           }
           {
-            include: '#string_escaped_char'
+            include: 'source.gfm'
           }
           {
             include: "#string_dollar_sign_interpolate"
