@@ -9,18 +9,9 @@ Atom package for the Julia language. Originally based off of [JuliaLang/julia.tm
 - Snippets to replace LaTex-like greek characters with their unicode equivalent (exact same behavior as at the Julia REPL, i.e. `\alpha[TAB]` → `α`)
 - Snippets for all emoji supported at the REPL
 
-
 ## Installation
-Until atom-language-julia is listed in the Atom Package Manager, installation is a manual process:
 
-```
-apm uninstall language-julia    # remove existing package
-cd SOMEWHERE_TO_STORE_REPO      # pick a directory to store this git repository
-git clone git@github.com:JuliaLang/atom-language-julia.git  # clone the repo
-apm link atom-language-julia    # create a symlink to ~/.atom/packages.
-```
-
-All commands should be entered at a UNIX shell, and `SOMEWHERE_TO_STORE_REPO` should be changed to a directory of your choosing.
+Installation happens normally either through `apm install language-julia` or through the install section of the settings tab within Atom.
 
 ## Contributors:
 
