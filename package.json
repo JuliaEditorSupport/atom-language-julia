@@ -1,9 +1,8 @@
 {
   "name": "language-julia",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Julia language support for Atom.",
-  "keywords": [
-  ],
+  "keywords": [],
   "repository": "https://github.com/JuliaLang/atom-language-julia",
   "license": "MIT",
   "engines": {
