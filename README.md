@@ -1,5 +1,7 @@
 # Julia support for Atom
 
+[![Build Status](https://travis-ci.org/JuliaLang/atom-language-julia.svg?branch=master)](https://travis-ci.org/JuliaLang/atom-language-julia)
+
 Atom package for the Julia language. Originally based off of [JuliaLang/julia.tmBundle](https://github.com/JuliaLang/Julia.tmbundle), merged with new ideas from  [language-julia](https://github.com/tpoisot/language-julia/blob/master/README.md) package.
 
 ## Features:
