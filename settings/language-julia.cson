@@ -7,3 +7,10 @@
     decreaseIndentPattern: "^\\s*(end|else|elseif|catch|finally)\\b.*$"
     softTabs: true
     tabLength: 4
+    foldingStartMarker: "^\\s*(?:if|while|for|begin|function|macro|module|baremodule|type|immutable|try|let)\\b(?!.*\\bend\\b).*$"
+    foldingStopMarker: "^\\s*(?:end)\\b.*$"
+
+# NOTE: foldingStartMarker/foldingStopMarker not currently implemented in
+#       atom/first-mate, but we leave it here anyway for the potential future
+#       day when it will be implemented
+#       see https://github.com/atom/first-mate/issues/48
