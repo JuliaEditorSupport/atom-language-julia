@@ -43,6 +43,17 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: "@doc", scopes: ["source.julia", "string.docstring.julia", "support.function.macro.julia"]
     expect(tokens[2]).toEqual value: "doc\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
 
+  it "tokenizes void docstrings", ->
+    {tokens} = grammar.tokenizeLine("""\"\"\"
+    docstring
+
+    foo bar
+    \"\"\"
+    """)
+    expect(tokens[0]).toEqual value: '"""', scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar", scopes: ["source.julia", "string.docstring.julia", "source.gfm"]
+    expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
+
   # code is a line from Gadfly.jl
   it "tokenizes function calls starting with double quotes", ->
     {tokens} = grammar.tokenizeLine("warn(\"$(string(key)) is not a recognized aesthetic. Ignoring.\")")
