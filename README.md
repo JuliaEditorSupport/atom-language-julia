@@ -15,6 +15,8 @@ Atom package for the Julia language. Originally based off of [JuliaLang/julia.tm
 
 Installation happens normally either through `apm install language-julia` or through the install section of the settings tab within Atom.
 
+Note: if you already have a different version of language-julia plugin installed (e.g. [this one](https://github.com/tpoisot/language-julia)), you would need to remove it first using `apm uninstall language-julia`
+
 ## Contributors:
 
 - Everyone who has helped with the [tmBundle](https://github.com/JuliaLang/Julia.tmbundle)
