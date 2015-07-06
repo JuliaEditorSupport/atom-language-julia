@@ -8,7 +8,6 @@ Atom package for the Julia language. Originally based off of [JuliaLang/julia.tm
 
 - Syntax highlighting
 - Snippets for common Julia keywords and constructs (see `snippets/language-julia.cson`)
-- Snippets to replace LaTex-like greek characters with their unicode equivalent (exact same behavior as at the Julia REPL, i.e. `\alpha[TAB]` → `α`)
 - Snippets for all emoji supported at the REPL
 
 ## Installation
