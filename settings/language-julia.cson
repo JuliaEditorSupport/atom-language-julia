@@ -5,8 +5,6 @@
   editor:
     increaseIndentPattern: "^(\\s*|.*=\\s*|.*@\\w*\\s*)(if|while|for|function|stagedfunction|macro|immutable|type|let|quote|try|begin|.*\\)\\s*do|else|elseif|catch|finally)\\b(?!.*\\bend\\b[^\\]]*$).*$"
     decreaseIndentPattern: "^\\s*(end|else|elseif|catch|finally)\\b.*$"
-    softTabs: true
-    tabLength: 4
     foldingStartMarker: "^\\s*(?:if|while|for|begin|function|macro|module|baremodule|type|immutable|try|let)\\b(?!.*\\bend\\b).*$"
     foldingStopMarker: "^\\s*(?:end)\\b.*$"
 
