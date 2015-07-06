@@ -20,6 +20,13 @@ Note: if you already have a different version of language-julia plugin installed
 
 * The [Latex Completions](https://github.com/JunoLab/atom-latex-completions)
   package provides support for unicode characters similarly to the Julia REPL.
+* Additional settings: we recommend following the [contributor guidelines](https://github.com/JuliaLang/julia/blob/b414076bc4e9b77f983524540f0d8ad9498f1aa1/CONTRIBUTING.md#general-formatting-guidelines-for-julia-code-contributions) with resepct to whitespace. Atom can help you with this. To have atom automatically replace spaces with 4 tabs, you should click the checkbox for the `Soft Tabs` option on the settings page and add the following to your `settings.cson` file:
+
+```coffeescript
+".julia.source":
+  editor:
+    tabLength: 4
+```
 
 ## Contributors:
 
