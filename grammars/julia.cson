@@ -336,11 +336,11 @@ repository:
       }
       {
         name: "string.quoted.double.julia"
-        begin: '(?<!")"(?!")'
+        begin: '"'
         beginCaptures:
           "0":
             name: "punctuation.definition.string.begin.julia"
-        end: '(?<!")"(?!")'
+        end: '"'
         endCaptures:
           "0":
             name: "punctuation.definition.string.end.julia"
