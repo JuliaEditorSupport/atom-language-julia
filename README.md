@@ -28,7 +28,23 @@ Note: if you already have a different version of language-julia plugin installed
     tabLength: 4
 ```
 
-## Contributors:
+## Contributing
+
+We love contributors. Here are the steps we have taken to develop on this pacakge:
+
+1. Remove the official install of the package: `apm uninstall language-julia`
+2. Clone the repository somewhere we can remember: `git clone git@github.com:JuliaLang/atom-language-julia.git`
+3. Link the cloned package to `~/.atom` (enter the following from the root of the repo directory): `apm link .`
+4. Hack away!
+
+When new features are added, you should write specs to show that the package is behaving as expected. To run the specs you need to do the following:
+
+- Make sure you have the library's folder open in the current atom project.
+- Then open the command pallete and select `Window: Run package specs`. On OSX this key-binding is `ctrl+cmd+option+p`.
+
+This should open up a new window with the spec results.
+
+#### Contributor list
 
 - Everyone who has helped with the [tmBundle](https://github.com/JuliaLang/Julia.tmbundle)
 - [Timothée Poisot](mailto:tim@poisotlab.io "tim@poisotlab.io")
