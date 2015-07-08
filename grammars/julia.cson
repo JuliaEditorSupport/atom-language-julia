@@ -101,10 +101,12 @@ repository:
   function_call:
     patterns: [
       {
-        begin: "([\\w.!]+!?)\\w*\\("
+        begin: "([\\w!]+)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\("
         beginCaptures:
           "1":
             name: "support.function.julia"
+          "2":
+            name: "support.type.julia"
         end: "\\)(('|(\\.'))*\\.?')?"
         endCaptures:
           "1":
@@ -124,7 +126,7 @@ repository:
             name: "entity.name.function.julia"
           "2":
             name: "support.type.julia"
-        match: "([\\w.!]+)({[^}]*})?\\((?=.*\\)\\s*=(?!=))"
+        match: "([\\w.!]+)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\((?=.*\\)\\s*=(?!=))"
         comment: "TODO: why do we have `.` in the function name characer class?"
         comment: """
         first group is function name
@@ -146,7 +148,7 @@ repository:
             name: "entity.name.function.julia"
           "3":
             name: "support.type.julia"
-        match: "\\b(function|macro)\\s+([\\w.!]+)({[^}]*})?\\("
+        match: "\\b(function|macro)\\s+([\\w.!]+)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\("
         comment: "similar regex to previous, but with keyword not 1-line syntax"
       }
     ]
@@ -196,7 +198,7 @@ repository:
         name: "keyword.operator.update.julia"
       }
       {
-        match: "(?:::(?:(?:Union)?\\([^)]*\\)|\\w+(?:{[^}]*})?))(?:\\.\\.\\.)?"
+        match: "(?:::(?:(?:Union)?\\([^)]*\\)|\\w+(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?))(?:\\.\\.\\.)?"
         name: "support.type.julia"
       }
       {
