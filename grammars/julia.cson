@@ -1,7 +1,7 @@
 comment: """
 
     TODO:
-    * syntax types, tuple types, union
+    * Once 0.4 is released, simplify type matches (no explicit 'Union', parens, etc.)
     * take out ::Type
     * Add more regex stuff.
     * Some in comments throughout the grammar
@@ -195,6 +195,10 @@ repository:
       }
       {
         match: "(?:::(?:(?:Union)?\\([^)]*\\)|\\w+(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?))(?:\\.\\.\\.)?"
+        name: "support.type.julia"
+      }
+      {
+        match: "(?:(?:(?:Union)?\\([^)]*\\)|\\w+(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?))(?:\\.\\.\\.)?(?=\\[)"
         name: "support.type.julia"
       }
       {
