@@ -1,7 +1,7 @@
 comment: """
 
     TODO:
-    * syntax types, tuple types, union
+    * Once 0.4 is released, simplify type matches (no explicit 'Union', parens, etc.)
     * take out ::Type
     * Add more regex stuff.
     * Some in comments throughout the grammar
@@ -126,8 +126,7 @@ repository:
             name: "entity.name.function.julia"
           "2":
             name: "support.type.julia"
-        match: "([\\w.!]+)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\((?=.*\\)\\s*=(?!=))"
-        comment: "TODO: why do we have `.` in the function name characer class?"
+        match: "([\\w!]+)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\((?=.*\\)\\s*=(?!=))"
         comment: """
         first group is function name
         Second group is type parameters (e.g. {T<:Number, S})
@@ -145,10 +144,12 @@ repository:
           "1":
             name: "keyword.other.julia"
           "2":
-            name: "entity.name.function.julia"
+            name: "keyword.operator.dots.julia"
           "3":
+            name: "entity.name.function.julia"
+          "4":
             name: "support.type.julia"
-        match: "\\b(function|macro)\\s+([\\w.!]+)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\("
+        match: "\\b(function|macro)\\s+(?:\\w+(\\.))?([\\w!]+)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\("
         comment: "similar regex to previous, but with keyword not 1-line syntax"
       }
     ]
@@ -167,12 +168,7 @@ repository:
         name: "storage.modifier.variable.julia"
       }
       {
-        match: '\\b(Int8|UInt8|Int16|UInt16|Int32|UInt32|Int64|UInt64|Int128|UInt128|Dict|Float16|Float32|Float64|Number|Real|FloatingPoint|Signed|Unsigned|Any|Bool|Char|ASCIIString|AbstractString|DataType|Array|DataFrame)\\b'
-        name: 'storage.type.julia'
-        comment: "TODO: This is being clobbered by support.type.julia"
-       }
-      {
-        match: "@\\w+\\b"
+        match: "(@\\w+)(?=[ (])"
         name: "support.function.macro.julia"
       }
       {
@@ -199,6 +195,10 @@ repository:
       }
       {
         match: "(?:::(?:(?:Union)?\\([^)]*\\)|\\w+(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?))(?:\\.\\.\\.)?"
+        name: "support.type.julia"
+      }
+      {
+        match: "(?:(?:(?:Union)?\\([^)]*\\)|\\w+(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?))(?:\\.\\.\\.)?(?=\\[)"
         name: "support.type.julia"
       }
       {
@@ -238,7 +238,7 @@ repository:
         name: "keyword.operator.isa.julia"
       }
       {
-        match: "(?:\\.(?=[a-zA-Z])|\\.\\.+)"
+        match: "(?:\\.(?=[@a-zA-Z])|\\.\\.+)"
         name: "keyword.operator.dots.julia"
       }
       {

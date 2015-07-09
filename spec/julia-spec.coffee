@@ -32,7 +32,37 @@ describe "Julia grammar", ->
     expect(tokens[7]).toEqual value: "::Union{Int, Set{Any}}", scopes: ["source.julia", "support.type.julia"]
     expect(tokens[8]).toEqual value: ")", scopes: ["source.julia"]
 
-  it "tokenizes macros", ->
+  it "tokenizes typed arrays and comprehensions", ->
+    {tokens} = grammar.tokenizeLine("Tuple{Int, Int}[x for x=y]")
+    console.log(tokens)
+    expect(tokens[0]).toEqual value: "Tuple{Int, Int}", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[1]).toEqual value: "[", scopes: ["source.julia", "meta.array.julia"]
+    expect(tokens[2]).toEqual value: "x ", scopes: ["source.julia", "meta.array.julia"]
+    expect(tokens[3]).toEqual value: "for", scopes: ["source.julia", "meta.array.julia", "keyword.control.julia"]
+    expect(tokens[4]).toEqual value: " x", scopes: ["source.julia", "meta.array.julia"]
+    expect(tokens[5]).toEqual value: "=", scopes: ["source.julia", "meta.array.julia", "keyword.operator.update.julia"]
+    expect(tokens[6]).toEqual value: "y", scopes: ["source.julia", "meta.array.julia"]
+    expect(tokens[7]).toEqual value: "]", scopes: ["source.julia", "meta.array.julia"]
+
+  it "tokenizes qualified names", ->
+    {tokens} = grammar.tokenizeLine("Base.@time")
+    expect(tokens[0]).toEqual value: "Base", scopes: ["source.julia"]
+    expect(tokens[1]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[2]).toEqual value: "@time", scopes: ["source.julia"]
+
+  it "tokenizes extension of external methods", ->
+    {tokens} = grammar.tokenizeLine("function Base.start(itr::MyItr)")
+    console.log(tokens)
+    expect(tokens[0]).toEqual value: "function", scopes: ["source.julia", "keyword.other.julia"]
+    expect(tokens[1]).toEqual value: " Base", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[3]).toEqual value: "start", scopes: ["source.julia", "entity.name.function.julia"]
+    expect(tokens[4]).toEqual value: "(", scopes: ["source.julia"]
+    expect(tokens[5]).toEqual value: "itr", scopes: ["source.julia"]
+    expect(tokens[6]).toEqual value: "::MyItr", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[7]).toEqual value: ")", scopes: ["source.julia", "meta.bracket.julia"]
+
+  it "tokenizes macro calls", ->
     {tokens} = grammar.tokenizeLine("@elapsed x^2")
     expect(tokens[0]).toEqual value: "@elapsed", scopes: ["source.julia", "support.function.macro.julia"]
     expect(tokens[1]).toEqual value: " x", scopes: ["source.julia"]
