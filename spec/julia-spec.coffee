@@ -11,9 +11,9 @@ describe "Julia grammar", ->
     expect(grammar.scopeName).toBe "source.julia"
 
   it "tokenizes functions and types", ->
-    {tokens} = grammar.tokenizeLine("x!(a::Int64)")
+    {tokens} = grammar.tokenizeLine("à_b9!(a::Int64)")
     console.log(tokens)
-    expect(tokens[0]).toEqual value: "x!", scopes: ["source.julia", "support.function.julia"]
+    expect(tokens[0]).toEqual value: "à_b9!", scopes: ["source.julia", "support.function.julia"]
     expect(tokens[1]).toEqual value: "(", scopes: ["source.julia"]
     expect(tokens[2]).toEqual value: "a", scopes: ["source.julia"]
     expect(tokens[3]).toEqual value: "::Int64", scopes: ["source.julia", "support.type.julia"]
@@ -50,6 +50,12 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
     expect(tokens[2]).toEqual value: "@time", scopes: ["source.julia"]
 
+  it "tokenizes qualified unicode names", ->
+    {tokens} = grammar.tokenizeLine("Ñy_M0d!._àb9!_")
+    expect(tokens[0]).toEqual value: "Ñy_M0d!", scopes: ["source.julia"]
+    expect(tokens[1]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[2]).toEqual value: "_àb9!_", scopes: ["source.julia"]
+
   it "tokenizes extension of external methods", ->
     {tokens} = grammar.tokenizeLine("function Base.start(itr::MyItr)")
     console.log(tokens)
@@ -70,9 +76,9 @@ describe "Julia grammar", ->
     expect(tokens[3]).toEqual value: "2", scopes: ["source.julia", "constant.numeric.julia"]
 
   it "tokenizes symbols", ->
-    {tokens} = grammar.tokenizeLine(":foobar")
+    {tokens} = grammar.tokenizeLine(":à_b9!")
     expect(tokens[0]).toEqual value: ":", scopes: ["source.julia", "keyword.operator.ternary.julia"]
-    expect(tokens[1]).toEqual value: "foobar", scopes: ["source.julia", "constant.other.symbol.julia"]
+    expect(tokens[1]).toEqual value: "à_b9!", scopes: ["source.julia", "constant.other.symbol.julia"]
 
   it "tokenizes regular expressions", ->
     {tokens} = grammar.tokenizeLine('r"[jJ]ulia"im')
