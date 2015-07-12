@@ -166,3 +166,21 @@ describe "Julia grammar", ->
     expect(tokens[10]).toEqual value: '\\"', scopes: ["source.julia", "string.quoted.double.julia", "constant.character.escape.julia"]
     expect(tokens[11]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
     expect(tokens[12]).toEqual value: ')', scopes: ["source.julia"]
+
+  it "tokenizes Cxx.jl multiline string macros", ->
+    tokens = grammar.tokenizeLines('''
+    cxx"""
+    #include "test.h"
+    """
+    ''')
+    expect(tokens[0][0]).toEqual value: 'cxx', scopes: ["source.julia", "embed.cxx.julia", "support.function.macro.julia"]
+    expect(tokens[0][1]).toEqual value: '"""', scopes: ["source.julia", "embed.cxx.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1][0]).toEqual value: '#include "test.h"', scopes: ["source.julia", "embed.cxx.julia", "source.cpp"]
+    expect(tokens[2][0]).toEqual value: '"""', scopes: ["source.julia", "embed.cxx.julia", "punctuation.definition.string.end.julia"]
+
+  it "tokenizes Cxx.jl single lin string macros", ->
+    {tokens} = grammar.tokenizeLine('vcpp"std::string"')
+    expect(tokens[0]).toEqual value: 'vcpp', scopes: ["source.julia", "embed.cxx.julia", "support.function.macro.julia"]
+    expect(tokens[1]).toEqual value: '"', scopes: ["source.julia", "embed.cxx.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[2]).toEqual value: 'std::string', scopes: ["source.julia", "embed.cxx.julia", "source.cpp"]
+    expect(tokens[3]).toEqual value: '"', scopes: ["source.julia", "embed.cxx.julia", "punctuation.definition.string.end.julia"]
