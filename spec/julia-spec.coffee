@@ -139,30 +139,66 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: "\\u2203", scopes: ["source.julia", "string.quoted.single.julia", "constant.character.escape.julia"]
     expect(tokens[2]).toEqual value: "'", scopes: ["source.julia", "string.quoted.single.julia", "punctuation.definition.string.end.julia"]
 
-  it "tokenizes dollar-sign interpolation in double strings", ->
+  it "tokenizes interpolated names in double strings", ->
+    {tokens} = grammar.tokenizeLine('"$_ω!z_.ard!"')
+    expect(tokens[0]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "$_ω!z_", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[2]).toEqual value: ".ard!", scopes: ["source.julia", "string.quoted.double.julia"]
+    expect(tokens[3]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
+
+  it "tokenizes interpolated expressions in double strings", ->
     {tokens} = grammar.tokenizeLine('"x=$(rand())"')
     expect(tokens[0]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
     expect(tokens[1]).toEqual value: "x=", scopes: ["source.julia", "string.quoted.double.julia"]
-    expect(tokens[2]).toEqual value: "$", scopes: ["source.julia", "string.quoted.double.julia", "string.interpolated.dollar-sign.julia", "keyword.operator.dollar-sign.julia"]
-    expect(tokens[3]).toEqual value: "(", scopes: ["source.julia", "string.quoted.double.julia", "string.interpolated.dollar-sign.julia"]
-    expect(tokens[4]).toEqual value: "rand", scopes: ["source.julia", "string.quoted.double.julia", "string.interpolated.dollar-sign.julia", "support.function.julia"]
-    expect(tokens[5]).toEqual value: "(", scopes: ["source.julia", "string.quoted.double.julia", "string.interpolated.dollar-sign.julia"]
-    expect(tokens[6]).toEqual value: ")", scopes: ["source.julia", "string.quoted.double.julia", "string.interpolated.dollar-sign.julia"]
-    expect(tokens[7]).toEqual value: ")", scopes: ["source.julia", "string.quoted.double.julia", "string.interpolated.dollar-sign.julia"]
-    expect(tokens[8]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[2]).toEqual value: "$(", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[3]).toEqual value: "rand", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "support.function.julia"]
+    expect(tokens[4]).toEqual value: "(", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[5]).toEqual value: ")", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[6]).toEqual value: ")", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[7]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
+
+
+  it "tokenizes nested interpolated expressions in double strings", ->
+    {tokens} = grammar.tokenizeLine('"$((true + length("asdf$asf"))*0x0d) is a number."')
+    expect(tokens[0]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "$(", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[2]).toEqual value: "(", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[3]).toEqual value: "true", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "constant.language.julia"]
+    expect(tokens[4]).toEqual value: " ", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[5]).toEqual value: "+", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[6]).toEqual value: " ", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[7]).toEqual value: "length", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "support.function.julia"]
+    expect(tokens[8]).toEqual value: "(", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[9]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[10]).toEqual value: "asdf", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "string.quoted.double.julia"]
+    expect(tokens[11]).toEqual value: "$asf", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[12]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[13]).toEqual value: ")", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[14]).toEqual value: ")", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[15]).toEqual value: "*", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[16]).toEqual value: "0x0d", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "constant.numeric.julia"]
+    expect(tokens[17]).toEqual value: ")", scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+    expect(tokens[18]).toEqual value: " is a number.", scopes: ["source.julia", "string.quoted.double.julia"]
+    expect(tokens[19]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
 
   it "tokenizes escaped double quotes", ->
     {tokens} = grammar.tokenizeLine('f("\\""); f("\\"")')
-    expect(tokens[0]).toEqual value: 'f', scopes: ["source.julia", "support.function.julia"]
+    expect(tokens[0]).toEqual value: "f", scopes: ["source.julia", "support.function.julia"]
     expect(tokens[1]).toEqual value: "(", scopes: ["source.julia"]
     expect(tokens[2]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
     expect(tokens[3]).toEqual value: '\\"', scopes: ["source.julia", "string.quoted.double.julia", "constant.character.escape.julia"]
     expect(tokens[4]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
-    expect(tokens[5]).toEqual value: ')', scopes: ["source.julia"]
-    expect(tokens[6]).toEqual value: '; ', scopes: ["source.julia"]
-    expect(tokens[7]).toEqual value: 'f', scopes: ["source.julia", "support.function.julia"]
+    expect(tokens[5]).toEqual value: ")", scopes: ["source.julia"]
+    expect(tokens[6]).toEqual value: "; ", scopes: ["source.julia"]
+    expect(tokens[7]).toEqual value: "f", scopes: ["source.julia", "support.function.julia"]
     expect(tokens[8]).toEqual value: "(", scopes: ["source.julia"]
     expect(tokens[9]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
     expect(tokens[10]).toEqual value: '\\"', scopes: ["source.julia", "string.quoted.double.julia", "constant.character.escape.julia"]
     expect(tokens[11]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
-    expect(tokens[12]).toEqual value: ')', scopes: ["source.julia"]
+    expect(tokens[12]).toEqual value: ")", scopes: ["source.julia"]
+
+  it "tokenizes custom string literals", ->
+    {tokens} = grammar.tokenizeLine('àb9!"asdf"_a9Ñ')
+    expect(tokens[0]).toEqual value: 'àb9!"', scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "asdf", scopes: ["source.julia", "string.quoted.other.julia"]
+    expect(tokens[2]).toEqual value: '"_a9Ñ', scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.end.julia"]

@@ -455,32 +455,42 @@ repository:
   string_dollar_sign_interpolate:
     patterns: [
       {
-        match: "(\\$)([[:alpha:]_][[:word:]!]*)"
-        captures:
-          "1":
-            name: "keyword.operator.dollar-sign.julia"
-          "2":
-            patterns: [
-              {
-                include: "$self"
-              }
-            ]
-        name: "string.interpolated.dollar-sign.julia"
-
+        match: "\\$[[:alpha:]_][[:word:]!]*"
+        name: "variable.interpolation.julia"
       }
       {
-        begin: "(\\$)\\("
-        beginCaptures:
-          "1":
-            name: "keyword.operator.dollar-sign.julia"
+        begin: "\\$\\("
         end: "\\)"
-        name: "string.interpolated.dollar-sign.julia"
+        name: "variable.interpolation.julia"
+        comment: """
+        `punctuation.section.embedded`, `constant.escape`,
+        & `meta.embedded.line` were considered but appear to have even spottier
+        support among popular syntaxes.
+        """
         patterns: [
+          {
+            include: '#nest_parens_and_self'
+          }
           {
             include: "$self"
           }
         ]
 
+      }
+    ]
+  nest_parens_and_self:
+    patterns: [
+      {
+        begin: '\\('
+        end: '\\)'
+        patterns: [
+          {
+            include: '#nest_parens_and_self'
+          }
+        ]
+      }
+      {
+        include: '$self'
       }
     ]
   symbol:
