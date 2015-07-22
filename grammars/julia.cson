@@ -156,15 +156,15 @@ repository:
   keyword:
     patterns: [
       {
-        match: "\\b(?:function|@generated|type|immutable|macro|quote|abstract|bitstype|typealias|module|baremodule|new)\\b"
+        match: "\\b(?<![:_])(?:function|@generated|type|immutable|macro|quote|abstract|bitstype|typealias|module|baremodule|new)\\b"
         name: "keyword.other.julia"
       }
       {
-        match: "\\b(?:if|else|elseif|while|for|in|begin|let|end|do|try|catch|finally|return|break|throw|continue)\\b"
+        match: "\\b(?<![:_])(?:if|else|elseif|while|for|in|begin|let|end|do|try|catch|finally|return|break|throw|continue)\\b"
         name: "keyword.control.julia"
       }
       {
-        match: "\\b(?:global|local|const|export|import|importall|using)\\b"
+        match: "\\b(?<![:_])(?:global|local|const|export|import|importall|using)\\b"
         name: "storage.modifier.variable.julia"
       }
       {
@@ -550,14 +550,12 @@ repository:
       {
         captures:
           "1":
-            name: "keyword.control.type.julia"
-          "2":
             name: "entity.name.type.julia"
-          "3":
+          "2":
             name: "entity.other.inherited-class.julia"
-          "4":
+          "3":
             name: "punctuation.separator.inheritance.julia"
-        match: "(type|immutable)\\s+([[:alpha:]_][[:word:]!]*)(\\s*(<:)\\s*[[:alpha:]_][[:word:]!]*(?:{.*})?)?"
+        match: "(?>!:_)(?:type|immutable)\\s+([[:alpha:]_][[:word:]!]*)(\\s*(<:)\\s*[[:alpha:]_][[:word:]!]*(?:{.*})?)?"
         name: "meta.type.julia"
       }
     ]
