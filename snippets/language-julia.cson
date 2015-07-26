@@ -1,4 +1,4 @@
-"*":
+".source.julia":
   "Docstring":
     prefix: "doc"
     body: '''
