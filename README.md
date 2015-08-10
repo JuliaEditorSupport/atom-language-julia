@@ -40,5 +40,4 @@ This should open up a new window with the spec results.
 #### Contributor list
 
 - Everyone who has helped with the [tmBundle](https://github.com/JuliaLang/Julia.tmbundle)
-- [Timothée Poisot](mailto:tim@poisotlab.io "tim@poisotlab.io")
-- [Spencer Lyon](mailto:spencer.lyon@stern.nyu.edu "spencer.lyon@stern.nyu.edu")
+- [See contributors](https://github.com/JuliaLang/atom-language-julia/graphs/contributors)
