@@ -97,7 +97,7 @@ repository:
             name: "punctuation.definition.comment.julia"
         end: "\\n"
         # match: "(?<!\\$)(#)(?!\\{).*$\\n?"
-        name: "comment.block.number-sign.julia"
+        name: "comment.line.number-sign.julia"
       }
     ]
   function_call:
