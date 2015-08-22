@@ -91,11 +91,13 @@ repository:
         name: "comment.block.number-sign-equals.julia"
       }
       {
-        captures:
-          "1":
+        begin: "#"
+        beginCaptures:
+          "0":
             name: "punctuation.definition.comment.julia"
-        match: "(?<!\\$)(#)(?!\\{).*$\\n?"
-        name: "comment.line.number-sign.julia"
+        end: "\\n"
+        # match: "(?<!\\$)(#)(?!\\{).*$\\n?"
+        name: "comment.block.number-sign.julia"
       }
     ]
   function_call:
