@@ -245,10 +245,3 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine('# This is a comment')
     expect(tokens[0]).toEqual value: '#', scopes: ["source.julia", "comment.line.number-sign.julia", "punctuation.definition.comment.julia"]
     expect(tokens[1]).toEqual value: ' This is a comment', scopes: ["source.julia", "comment.line.number-sign.julia"]
-
-  it "tokenizes TODO, etc, in comments", ->
-    {tokens} = grammar.tokenizeLine('# TODO do something')
-    expect(tokens[0]).toEqual value: '#', scopes: ["source.julia", "comment.line.number-sign.julia", "punctuation.definition.comment.julia"]
-    expect(tokens[1]).toEqual value: ' ', scopes: ["source.julia"]
-    expect(tokens[2]).toEqual value: 'TODO', scopes: ["source.julia", "storage.type.class.todo"]
-    expect(tokens[3]).toEqual value: ' do something', scopes: ["source.julia", "comment.line.number-sign.julia"]
