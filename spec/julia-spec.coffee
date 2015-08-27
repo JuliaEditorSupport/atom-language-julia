@@ -240,3 +240,8 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine('foo_immutable in')
     expect(tokens[0]).toEqual value: 'foo_immutable ', scopes: ["source.julia"]
     expect(tokens[1]).toEqual value: 'in', scopes: ["source.julia", "keyword.control.julia"]
+
+  it "tokenizes comments", ->
+    {tokens} = grammar.tokenizeLine('# This is a comment')
+    expect(tokens[0]).toEqual value: '#', scopes: ["source.julia", "comment.line.number-sign.julia", "punctuation.definition.comment.julia"]
+    expect(tokens[1]).toEqual value: ' This is a comment', scopes: ["source.julia", "comment.line.number-sign.julia"]
