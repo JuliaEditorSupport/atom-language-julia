@@ -162,8 +162,12 @@ repository:
         name: "keyword.other.julia"
       }
       {
-        match: "\\b(?<![:_])(?:if|else|elseif|while|for|in|begin|let|end|do|try|catch|finally|return|break|throw|continue)\\b"
+        match: "\\b(?<![:_])(?:if|else|elseif|while|for|in|begin|let|do|try|catch|finally|return|break|throw|continue)\\b"
         name: "keyword.control.julia"
+      }
+      {
+        match: "\\b(?<![:_])end\\b"
+        name: "keyword.control.end.julia"
       }
       {
         match: "\\b(?<![:_])(?:global|local|const|export|import|importall|using)\\b"
