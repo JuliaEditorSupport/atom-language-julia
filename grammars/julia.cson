@@ -170,7 +170,7 @@ repository:
         name: "storage.modifier.variable.julia"
       }
       {
-        match: "(@[[:alpha:]_][[:word:]!]*)(?=[ (])"
+        match: "(@[[:alpha:]_][[:word:]!]*)"
         name: "support.function.macro.julia"
       }
       {
