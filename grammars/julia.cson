@@ -190,7 +190,7 @@ repository:
         name: "keyword.control.using.julia"
       }
       {
-        match: "(@[[:alpha:]_][[:word:]!]*)(?=[ (])"
+        match: "(@[[:alpha:]_][[:word:]!]*)"
         name: "support.function.macro.julia"
       }
       {

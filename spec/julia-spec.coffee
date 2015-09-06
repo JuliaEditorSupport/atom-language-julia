@@ -48,7 +48,7 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine("Base.@time")
     expect(tokens[0]).toEqual value: "Base", scopes: ["source.julia"]
     expect(tokens[1]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
-    expect(tokens[2]).toEqual value: "@time", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "@time", scopes: ["source.julia", "support.function.macro.julia"]
 
   it "tokenizes qualified unicode names", ->
     {tokens} = grammar.tokenizeLine("Ñy_M0d!._àb9!_")
