@@ -89,8 +89,8 @@ describe "Julia grammar", ->
 
   it "tokenizes docstrings", ->
     {tokens} = grammar.tokenizeLine("@doc doc\"\"\" xx *x* \"\"\" ->")
-    expect(tokens[0]).toEqual value: "@doc", scopes: ["source.julia", "string.docstring.julia", "support.function.macro.julia"]
-    expect(tokens[2]).toEqual value: "doc\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[0]).toEqual value: "@doc", scopes: ["source.julia", "docstring.julia", "support.function.macro.julia"]
+    expect(tokens[2]).toEqual value: "doc\"\"\"", scopes: ["source.julia", "docstring.julia", "punctuation.definition.string.begin.julia"]
 
   it "tokenizes void docstrings", ->
     {tokens} = grammar.tokenizeLine("""\"\"\"
@@ -99,9 +99,9 @@ describe "Julia grammar", ->
     foo bar
     \"\"\"
     """)
-    expect(tokens[0]).toEqual value: '"""', scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar", scopes: ["source.julia", "string.docstring.julia", "source.gfm"]
-    expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[0]).toEqual value: '"""', scopes: ["source.julia", "docstring.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar", scopes: ["source.julia", "docstring.julia", "source.gfm"]
+    expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "docstring.julia", "punctuation.definition.string.end.julia"]
 
   # code is a line from Gadfly.jl -- with the interpolation taken out
   it "tokenizes function calls starting with double quotes", ->

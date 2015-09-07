@@ -331,7 +331,7 @@ repository:
         endCaptures:
           '1':
             'name': 'punctuation.definition.string.end.julia'
-        name: 'string.docstring.julia'
+        name: 'docstring.julia'
         contentName : 'source.gfm'
         comment: """
         This only matches docstrings that start and end with triple quotes on
@@ -473,7 +473,7 @@ repository:
             'name': 'punctuation.definition.string.end.julia'
           '2':
             'name': 'keyword.operator.arrow.julia'
-        name: 'string.docstring.julia'
+        name: 'docstring.julia'
         contentName : 'source.gfm'
         patterns: [
           {
