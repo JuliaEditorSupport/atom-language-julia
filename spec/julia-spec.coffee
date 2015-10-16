@@ -10,6 +10,15 @@ describe "Julia grammar", ->
     expect(grammar).toBeDefined()
     expect(grammar.scopeName).toBe "source.julia"
 
+  it "tokenizes element-wise operators", ->
+    {tokens} = grammar.tokenizeLine("A .* B'")
+    console.log(tokens)
+    expect(tokens[0]).toEqual value: "A ", scopes: ["source.julia"]
+    expect(tokens[1]).toEqual value: ".*", scopes: ["source.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[2]).toEqual value: " ", scopes: ["source.julia"]
+    expect(tokens[3]).toEqual value: "B", scopes: ["source.julia"]
+    expect(tokens[4]).toEqual value: "'", scopes: ["source.julia", "keyword.operator.transposed-variable.julia"]
+
   it "tokenizes functions and types", ->
     {tokens} = grammar.tokenizeLine("à_b9!(a::Int64)")
     console.log(tokens)
