@@ -84,6 +84,32 @@ describe "Julia grammar", ->
     expect(tokens[2]).toEqual value: "^", scopes: ["source.julia", "keyword.operator.arithmetic.julia"]
     expect(tokens[3]).toEqual value: "2", scopes: ["source.julia", "constant.numeric.julia"]
 
+  it "tokenizes using statements", ->
+    {tokens} = grammar.tokenizeLine("using Base.Test")
+    expect(tokens[0]).toEqual value: "using", scopes: ["source.julia", "keyword.control.using.julia"]
+    expect(tokens[1]).toEqual value: " Base", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[3]).toEqual value: "Test", scopes: ["source.julia"]
+
+  it "tokenizes import statements", ->
+    {tokens} = grammar.tokenizeLine("import Base.Test")
+    expect(tokens[0]).toEqual value: "import", scopes: ["source.julia", "keyword.control.import.julia"]
+    expect(tokens[1]).toEqual value: " Base", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[3]).toEqual value: "Test", scopes: ["source.julia"]
+
+  it "tokenizes importall statements", ->
+    {tokens} = grammar.tokenizeLine("importall Base.Test")
+    expect(tokens[0]).toEqual value: "importall", scopes: ["source.julia", "keyword.control.importall.julia"]
+    expect(tokens[1]).toEqual value: " Base", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[3]).toEqual value: "Test", scopes: ["source.julia"]
+
+  it "tokenizes export statements", ->
+    {tokens} = grammar.tokenizeLine("export my_awesome_function")
+    expect(tokens[0]).toEqual value: "export", scopes: ["source.julia", "keyword.control.export.julia"]
+    expect(tokens[1]).toEqual value: " my_awesome_function", scopes: ["source.julia"]
+
   it "tokenizes symbols", ->
     {tokens} = grammar.tokenizeLine(":à_b9!")
     expect(tokens[0]).toEqual value: ":", scopes: ["source.julia", "keyword.operator.ternary.julia"]

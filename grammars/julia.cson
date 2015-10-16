@@ -170,8 +170,24 @@ repository:
         name: "keyword.control.end.julia"
       }
       {
-        match: "\\b(?<![:_])(?:global|local|const|export|import|importall|using)\\b"
+        match: "\\b(?<![:_])(?:global|local|const)\\b"
         name: "storage.modifier.variable.julia"
+      }
+      {
+        match: "\\b(?<![:_])(?:export)\\b"
+        name: "keyword.control.export.julia"
+      }
+      {
+        match: "\\b(?<![:_])(?:import)\\b"
+        name: "keyword.control.import.julia"
+      }
+      {
+        match: "\\b(?<![:_])(?:importall)\\b"
+        name: "keyword.control.importall.julia"
+      }
+      {
+        match: "\\b(?<![:_])(?:using)\\b"
+        name: "keyword.control.using.julia"
       }
       {
         match: "(@[[:alpha:]_][[:word:]!]*)"
