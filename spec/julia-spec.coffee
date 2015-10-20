@@ -138,6 +138,27 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar", scopes: ["source.julia", "string.docstring.julia", "source.gfm"]
     expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
 
+  it "tokenizes void docstrings that have extra content after ending tripe quote", ->
+    {tokens} = grammar.tokenizeLine("""\"\"\"
+    docstring
+
+    foo bar
+    \"\"\" foobar
+    """)
+    expect(tokens[0]).toEqual value: '"""', scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar", scopes: ["source.julia", "string.docstring.julia", "source.gfm"]
+    expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[4]).toEqual value: " ", scopes: ["source.julia", "string.docstring.julia"]
+    expect(tokens[5]).toEqual value: "foobar", scopes: ["source.julia"]
+
+  it "Doesn't tokenize all triple quotes as docstrings", ->
+    {tokens} = grammar.tokenizeLine("""parse(\"\"\"boo\"\"\")""")
+    expect(tokens[0]).toEqual value: 'parse', scopes: ["source.julia", "support.function.julia"]
+    expect(tokens[1]).toEqual value: "(", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: '"""', scopes: ["source.julia", "string.quoted.triple.double.julia", "punctuation.definition.string.multiline.begin.julia"]
+
+  # we don't care about the rest of the tokens -- we just didn't want first """ to be docstring
+
   # code is a line from Gadfly.jl -- with the interpolation taken out
   it "tokenizes function calls starting with double quotes", ->
     {tokens} = grammar.tokenizeLine('warn("the_key is not a recognized aesthetic. Ignoring.")')
