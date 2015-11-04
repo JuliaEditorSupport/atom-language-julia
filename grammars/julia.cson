@@ -212,7 +212,11 @@ repository:
   operator:
     patterns: [
       {
-        match: "(?:=|:=|\\+=|-=|\\*=|/=|//=|\\.//=|\\.\\*=|\\\\=|\\.\\\\=|^=|\\.^=|%=|\\|=|&=|\\$=|<<=|>>=)"
+        match: "(?:\\.==|!=|\\.>=|\\.>=|\\.>|\\.<|==|\\.!=|\\.=|\\.!|<:|:>|>=|<=|>|<)"
+        name: "keyword.operator.relation.julia"
+      }
+      {
+        match: "(?::=|\\+=|-=|\\*=|//=|/=|\\.//=|\\.\\*=|\\\\=|\\.\\\\=|^=|\\.^=|%=|\\|=|&=|\\$=|<<=|>>=|=)"
         name: "keyword.operator.update.julia"
       }
       {
@@ -228,24 +232,20 @@ repository:
         name: "keyword.operator.ternary.julia"
       }
       {
-        match: "(?:\\|\\||&&|(?<![[:word:]])!)"
-        name: "keyword.operator.boolean.julia"
-      }
-      {
         match: "(?:->|<-|-->)"
         name: "keyword.operator.arrow.julia"
       }
       {
-        match: "(?:>|<|>=|<=|==|!=|\\.>|\\.<|\\.>=|\\.>=|\\.==|\\.!=|\\.=|\\.!|<:|:>)"
-        name: "keyword.operator.relation.julia"
+        match: "(?:<<|>>)"
+        name: "keyword.operator.shift.julia"
+      }
+      {
+        match: "(?:\\|\\||&&|(?<![[:word:]])!)"
+        name: "keyword.operator.boolean.julia"
       }
       {
         match: "(?::)"
         name: "keyword.operator.range.julia"
-      }
-      {
-        match: "(?:<<|>>)"
-        name: "keyword.operator.shift.julia"
       }
       {
         match: "(?:\\||\\&|~)"
