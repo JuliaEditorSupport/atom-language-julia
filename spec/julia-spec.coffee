@@ -277,6 +277,29 @@ describe "Julia grammar", ->
     expect(tokens[2]).toEqual value: 'std::string', scopes: ["source.julia", "embed.cxx.julia", "source.cpp"]
     expect(tokens[3]).toEqual value: '"', scopes: ["source.julia", "embed.cxx.julia", "punctuation.definition.string.end.julia"]
 
+  it "tokenizes JSON multiline string macros", ->
+    tokens = grammar.tokenizeLines('''
+    json"""
+    {"a": 55}
+    """
+    ''')
+    expect(tokens[0][0]).toEqual value: 'json', scopes: ["source.julia", "embed.json.julia", "support.function.macro.julia"]
+    expect(tokens[0][1]).toEqual value: '"""', scopes: ["source.julia", "embed.json.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1][0]).toEqual value: '{"a": 55}', scopes: ["source.julia", "embed.json.julia", "source.json"]
+    expect(tokens[2][0]).toEqual value: '"""', scopes: ["source.julia", "embed.json.julia", "punctuation.definition.string.end.julia"]
+
+  it "tokenizes YAML multiline string macros", ->
+    tokens = grammar.tokenizeLines('''
+    yaml"""
+    a: 55
+    """
+    ''')
+    expect(tokens[0][0]).toEqual value: 'yaml', scopes: ["source.julia", "embed.yaml.julia", "support.function.macro.julia"]
+    expect(tokens[0][1]).toEqual value: '"""', scopes: ["source.julia", "embed.yaml.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1][0]).toEqual value: 'a: 55', scopes: ["source.julia", "embed.yaml.julia", "source.yaml"]
+    expect(tokens[2][0]).toEqual value: '"""', scopes: ["source.julia", "embed.yaml.julia", "punctuation.definition.string.end.julia"]
+
+
   it "tokenizes symbols of `keyword.other`s", ->
     {tokens} = grammar.tokenizeLine(':type')
     expect(tokens[0]).toEqual value: ':', scopes: ["source.julia", "keyword.operator.ternary.julia"]

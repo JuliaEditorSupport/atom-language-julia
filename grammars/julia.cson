@@ -337,6 +337,44 @@ repository:
         ]
       }
       {
+        begin: "(i?json)(\"\"\")"
+        beginCaptures:
+          "1":
+            name: "support.function.macro.julia"
+          "2":
+            name: "punctuation.definition.string.begin.julia"
+        end: "\"\"\""
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.julia"
+        name: 'embed.json.julia'
+        contentName: 'source.json'
+        patterns: [
+          {
+            include: 'source.json'
+          }
+        ]
+      }
+      {
+        begin: "(i?yaml)(\"\"\")"
+        beginCaptures:
+          "1":
+            name: "support.function.macro.julia"
+          "2":
+            name: "punctuation.definition.string.begin.julia"
+        end: "\"\"\""
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.julia"
+        name: 'embed.yaml.julia'
+        contentName: 'source.yaml'
+        patterns: [
+          {
+            include: 'source.yaml'
+          }
+        ]
+      }
+      {
         begin: '^\\s?([[:alpha:]_][[:word:]!]*)?(""")\\s?$'
         beginCaptures:
           '1':
