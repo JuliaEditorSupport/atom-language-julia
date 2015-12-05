@@ -137,6 +137,15 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: '"""', scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
     expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar", scopes: ["source.julia", "string.docstring.julia", "source.gfm"]
     expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
+  
+  it "tokenizes void docstrings with whitespace after the final newline, but before the close-quote", ->
+    {tokens} = grammar.tokenizeLine(
+    """\"\"\"
+        This is a simple test
+        \"\"\"""")
+    expect(tokens[0]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "This is a simple test", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia", "punctuation.definition.string.begin.julia"]
 
   it "tokenizes void docstrings that have extra content after ending tripe quote", ->
     {tokens} = grammar.tokenizeLine("""\"\"\"
