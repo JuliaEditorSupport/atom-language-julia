@@ -142,10 +142,10 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine("""\"\"\"
         This is a simple test
         \"\"\"""")
-    expect(tokens[0]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[1]).toEqual value: "\nThis is a simple test", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[2]).toEqual value: "\n", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[0]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "\nThis is a simple test", scopes: ["source.julia", "string.docstring.julia", "source.gfm"]
+    expect(tokens[2]).toEqual value: "\n", scopes: ["source.julia", "string.docstring.julia"]
+    expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
 
   it "tokenizes void docstrings that have extra content after ending tripe quote", ->
     {tokens} = grammar.tokenizeLine("""\"\"\"
