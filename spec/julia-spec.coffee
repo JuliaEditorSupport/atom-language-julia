@@ -28,6 +28,22 @@ describe "Julia grammar", ->
     expect(tokens[3]).toEqual value: "::Int64", scopes: ["source.julia", "support.type.julia"]
     expect(tokens[4]).toEqual value: ")", scopes: ["source.julia"]
 
+  it "tokenizes types ignoring whitespace", ->
+    {tokens} = grammar.tokenizeLine("f(x :: Int, y     ::   Float64, z::Float32, a :: X.Y.Z.A, b ::    X.Y.Z)")
+    expect(tokens[0]).toEqual value: "f", scopes: ["source.julia", "support.function.julia"]
+    expect(tokens[1]).toEqual value: "(", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "x", scopes: ["source.julia"]
+    expect(tokens[3]).toEqual value: " :: Int", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[5]).toEqual value: " y", scopes: ["source.julia"]
+    expect(tokens[6]).toEqual value: "     ::   Float64", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[8]).toEqual value: " z", scopes: ["source.julia"]
+    expect(tokens[9]).toEqual value: "::Float32", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[11]).toEqual value: " a", scopes: ["source.julia"]
+    expect(tokens[12]).toEqual value: " :: X.Y.Z.A", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[14]).toEqual value: " b", scopes: ["source.julia"]
+    expect(tokens[15]).toEqual value: " ::    X.Y.Z", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[16]).toEqual value: ")", scopes: ["source.julia"]
+
   it "tokenizes functions and (shallowly nested) parameterized types", ->
     {tokens} = grammar.tokenizeLine("x{T <: Dict{Any, Tuple{Int, Int}}}(a::T, b::Union{Int, Set{Any}})")
     console.log(tokens)
