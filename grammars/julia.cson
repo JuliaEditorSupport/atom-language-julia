@@ -194,6 +194,10 @@ repository:
         name: "support.function.macro.julia"
       }
       {
+        match: "[[:alpha:]_][[:word:]!]*"
+        name: "support.identifier.julia"
+      }
+      {
         match: "\\b(Argument|Assertion|Bounds|Divide|Domain|EOF|Inexact|Key|Load|Memory|Method|OutOfMemory|Overflow|Parse|StackOverflow|System|Type|UV|UndefRef|UndefVar)Error\\b"
         name: "support.type.exception.julia"
       }

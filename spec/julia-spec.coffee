@@ -13,18 +13,19 @@ describe "Julia grammar", ->
   it "tokenizes element-wise operators", ->
     {tokens} = grammar.tokenizeLine("A .* B'")
     console.log(tokens)
-    expect(tokens[0]).toEqual value: "A ", scopes: ["source.julia"]
-    expect(tokens[1]).toEqual value: ".*", scopes: ["source.julia", "keyword.operator.arithmetic.julia"]
-    expect(tokens[2]).toEqual value: " ", scopes: ["source.julia"]
-    expect(tokens[3]).toEqual value: "B", scopes: ["source.julia"]
-    expect(tokens[4]).toEqual value: "'", scopes: ["source.julia", "keyword.operator.transposed-variable.julia"]
+    expect(tokens[0]).toEqual value: "A", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[1]).toEqual value: " ", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: ".*", scopes: ["source.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[3]).toEqual value: " ", scopes: ["source.julia"]
+    expect(tokens[4]).toEqual value: "B", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[5]).toEqual value: "'", scopes: ["source.julia", "keyword.operator.transposed-variable.julia"]
 
   it "tokenizes functions and types", ->
     {tokens} = grammar.tokenizeLine("à_b9!(a::Int64)")
     console.log(tokens)
     expect(tokens[0]).toEqual value: "à_b9!", scopes: ["source.julia", "support.function.julia"]
     expect(tokens[1]).toEqual value: "(", scopes: ["source.julia"]
-    expect(tokens[2]).toEqual value: "a", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "a", scopes: ["source.julia", "support.identifier.julia"]
     expect(tokens[3]).toEqual value: "::Int64", scopes: ["source.julia", "support.type.julia"]
     expect(tokens[4]).toEqual value: ")", scopes: ["source.julia"]
 
@@ -32,17 +33,17 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine("f(x :: Int, y     ::   Float64, z::Float32, a :: X.Y.Z.A, b ::    X.Y.Z)")
     expect(tokens[0]).toEqual value: "f", scopes: ["source.julia", "support.function.julia"]
     expect(tokens[1]).toEqual value: "(", scopes: ["source.julia"]
-    expect(tokens[2]).toEqual value: "x", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "x", scopes: ["source.julia", "support.identifier.julia"]
     expect(tokens[3]).toEqual value: " :: Int", scopes: ["source.julia", "support.type.julia"]
-    expect(tokens[5]).toEqual value: " y", scopes: ["source.julia"]
-    expect(tokens[6]).toEqual value: "     ::   Float64", scopes: ["source.julia", "support.type.julia"]
-    expect(tokens[8]).toEqual value: " z", scopes: ["source.julia"]
-    expect(tokens[9]).toEqual value: "::Float32", scopes: ["source.julia", "support.type.julia"]
-    expect(tokens[11]).toEqual value: " a", scopes: ["source.julia"]
-    expect(tokens[12]).toEqual value: " :: X.Y.Z.A", scopes: ["source.julia", "support.type.julia"]
-    expect(tokens[14]).toEqual value: " b", scopes: ["source.julia"]
-    expect(tokens[15]).toEqual value: " ::    X.Y.Z", scopes: ["source.julia", "support.type.julia"]
-    expect(tokens[16]).toEqual value: ")", scopes: ["source.julia"]
+    expect(tokens[6]).toEqual value: "y", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[7]).toEqual value: "     ::   Float64", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[10]).toEqual value: "z", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[11]).toEqual value: "::Float32", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[14]).toEqual value: "a", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[15]).toEqual value: " :: X.Y.Z.A", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[18]).toEqual value: "b", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[19]).toEqual value: " ::    X.Y.Z", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[20]).toEqual value: ")", scopes: ["source.julia"]
 
   it "tokenizes functions and (shallowly nested) parameterized types", ->
     {tokens} = grammar.tokenizeLine("x{T <: Dict{Any, Tuple{Int, Int}}}(a::T, b::Union{Int, Set{Any}})")
@@ -50,36 +51,36 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: "x", scopes: ["source.julia", "support.function.julia"]
     expect(tokens[1]).toEqual value: "{T <: Dict{Any, Tuple{Int, Int}}}", scopes: ["source.julia", "support.type.julia"]
     expect(tokens[2]).toEqual value: "(", scopes: ["source.julia"]
-    expect(tokens[3]).toEqual value: "a", scopes: ["source.julia"]
+    expect(tokens[3]).toEqual value: "a", scopes: ["source.julia", "support.identifier.julia"]
     expect(tokens[4]).toEqual value: "::T", scopes: ["source.julia", "support.type.julia"]
     expect(tokens[5]).toEqual value: ",", scopes: ["source.julia", "meta.bracket.julia"]
-    expect(tokens[6]).toEqual value: " b", scopes: ["source.julia"]
-    expect(tokens[7]).toEqual value: "::Union{Int, Set{Any}}", scopes: ["source.julia", "support.type.julia"]
-    expect(tokens[8]).toEqual value: ")", scopes: ["source.julia"]
+    expect(tokens[7]).toEqual value: "b", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[8]).toEqual value: "::Union{Int, Set{Any}}", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[9]).toEqual value: ")", scopes: ["source.julia"]
 
   it "tokenizes typed arrays and comprehensions", ->
     {tokens} = grammar.tokenizeLine("Tuple{Int, Int}[x for x=y]")
     console.log(tokens)
     expect(tokens[0]).toEqual value: "Tuple{Int, Int}", scopes: ["source.julia", "support.type.julia"]
     expect(tokens[1]).toEqual value: "[", scopes: ["source.julia", "meta.array.julia"]
-    expect(tokens[2]).toEqual value: "x ", scopes: ["source.julia", "meta.array.julia"]
-    expect(tokens[3]).toEqual value: "for", scopes: ["source.julia", "meta.array.julia", "keyword.control.julia"]
-    expect(tokens[4]).toEqual value: " x", scopes: ["source.julia", "meta.array.julia"]
-    expect(tokens[5]).toEqual value: "=", scopes: ["source.julia", "meta.array.julia", "keyword.operator.update.julia"]
-    expect(tokens[6]).toEqual value: "y", scopes: ["source.julia", "meta.array.julia"]
-    expect(tokens[7]).toEqual value: "]", scopes: ["source.julia", "meta.array.julia"]
+    expect(tokens[2]).toEqual value: "x", scopes: ["source.julia", "meta.array.julia", "support.identifier.julia"]
+    expect(tokens[4]).toEqual value: "for", scopes: ["source.julia", "meta.array.julia", "keyword.control.julia"]
+    expect(tokens[6]).toEqual value: "x", scopes: ["source.julia", "meta.array.julia", "support.identifier.julia"]
+    expect(tokens[7]).toEqual value: "=", scopes: ["source.julia", "meta.array.julia", "keyword.operator.update.julia"]
+    expect(tokens[8]).toEqual value: "y", scopes: ["source.julia", "meta.array.julia", "support.identifier.julia"]
+    expect(tokens[9]).toEqual value: "]", scopes: ["source.julia", "meta.array.julia"]
 
   it "tokenizes qualified names", ->
     {tokens} = grammar.tokenizeLine("Base.@time")
-    expect(tokens[0]).toEqual value: "Base", scopes: ["source.julia"]
+    expect(tokens[0]).toEqual value: "Base", scopes: ["source.julia", "support.identifier.julia"]
     expect(tokens[1]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
     expect(tokens[2]).toEqual value: "@time", scopes: ["source.julia", "support.function.macro.julia"]
 
   it "tokenizes qualified unicode names", ->
     {tokens} = grammar.tokenizeLine("Ñy_M0d!._àb9!_")
-    expect(tokens[0]).toEqual value: "Ñy_M0d!", scopes: ["source.julia"]
+    expect(tokens[0]).toEqual value: "Ñy_M0d!", scopes: ["source.julia", "support.identifier.julia"]
     expect(tokens[1]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
-    expect(tokens[2]).toEqual value: "_àb9!_", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "_àb9!_", scopes: ["source.julia", "support.identifier.julia"]
 
   it "tokenizes extension of external methods", ->
     {tokens} = grammar.tokenizeLine("function Base.start(itr::MyItr)")
@@ -89,42 +90,42 @@ describe "Julia grammar", ->
     expect(tokens[2]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
     expect(tokens[3]).toEqual value: "start", scopes: ["source.julia", "entity.name.function.julia"]
     expect(tokens[4]).toEqual value: "(", scopes: ["source.julia"]
-    expect(tokens[5]).toEqual value: "itr", scopes: ["source.julia"]
+    expect(tokens[5]).toEqual value: "itr", scopes: ["source.julia", "support.identifier.julia"]
     expect(tokens[6]).toEqual value: "::MyItr", scopes: ["source.julia", "support.type.julia"]
     expect(tokens[7]).toEqual value: ")", scopes: ["source.julia", "meta.bracket.julia"]
 
   it "tokenizes macro calls", ->
     {tokens} = grammar.tokenizeLine("@elapsed x^2")
     expect(tokens[0]).toEqual value: "@elapsed", scopes: ["source.julia", "support.function.macro.julia"]
-    expect(tokens[1]).toEqual value: " x", scopes: ["source.julia"]
-    expect(tokens[2]).toEqual value: "^", scopes: ["source.julia", "keyword.operator.arithmetic.julia"]
-    expect(tokens[3]).toEqual value: "2", scopes: ["source.julia", "constant.numeric.julia"]
+    expect(tokens[2]).toEqual value: "x", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[3]).toEqual value: "^", scopes: ["source.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[4]).toEqual value: "2", scopes: ["source.julia", "constant.numeric.julia"]
 
   it "tokenizes using statements", ->
     {tokens} = grammar.tokenizeLine("using Base.Test")
     expect(tokens[0]).toEqual value: "using", scopes: ["source.julia", "keyword.control.using.julia"]
-    expect(tokens[1]).toEqual value: " Base", scopes: ["source.julia"]
-    expect(tokens[2]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
-    expect(tokens[3]).toEqual value: "Test", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "Base", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[3]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[4]).toEqual value: "Test", scopes: ["source.julia", "support.identifier.julia"]
 
   it "tokenizes import statements", ->
     {tokens} = grammar.tokenizeLine("import Base.Test")
     expect(tokens[0]).toEqual value: "import", scopes: ["source.julia", "keyword.control.import.julia"]
-    expect(tokens[1]).toEqual value: " Base", scopes: ["source.julia"]
-    expect(tokens[2]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
-    expect(tokens[3]).toEqual value: "Test", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "Base", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[3]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[4]).toEqual value: "Test", scopes: ["source.julia", "support.identifier.julia"]
 
   it "tokenizes importall statements", ->
     {tokens} = grammar.tokenizeLine("importall Base.Test")
     expect(tokens[0]).toEqual value: "importall", scopes: ["source.julia", "keyword.control.importall.julia"]
-    expect(tokens[1]).toEqual value: " Base", scopes: ["source.julia"]
-    expect(tokens[2]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
-    expect(tokens[3]).toEqual value: "Test", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "Base", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[3]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[4]).toEqual value: "Test", scopes: ["source.julia", "support.identifier.julia"]
 
   it "tokenizes export statements", ->
     {tokens} = grammar.tokenizeLine("export my_awesome_function")
     expect(tokens[0]).toEqual value: "export", scopes: ["source.julia", "keyword.control.export.julia"]
-    expect(tokens[1]).toEqual value: " my_awesome_function", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "my_awesome_function", scopes: ["source.julia", "support.identifier.julia"]
 
   it "tokenizes symbols", ->
     {tokens} = grammar.tokenizeLine(":à_b9!")
@@ -152,7 +153,7 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: '"""', scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
     expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar", scopes: ["source.julia", "string.docstring.julia", "source.gfm"]
     expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
-  
+
   it "tokenizes void docstrings with whitespace after the final newline, but before the close-quote", ->
     {tokens} = grammar.tokenizeLine("""\"\"\"
     docstring
@@ -174,7 +175,7 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar", scopes: ["source.julia", "string.docstring.julia", "source.gfm"]
     expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
     expect(tokens[4]).toEqual value: " ", scopes: ["source.julia", "string.docstring.julia"]
-    expect(tokens[5]).toEqual value: "foobar", scopes: ["source.julia"]
+    expect(tokens[5]).toEqual value: "foobar", scopes: ["source.julia", "support.identifier.julia"]
 
   it "Doesn't tokenize all triple quotes as docstrings", ->
     {tokens} = grammar.tokenizeLine("""parse(\"\"\"boo\"\"\")""")
@@ -198,12 +199,12 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine("fooα(bing, bang, boom)")
     expect(tokens[0]).toEqual value: "fooα", scopes: ["source.julia", "support.function.julia"]
     expect(tokens[1]).toEqual value: "(", scopes: ["source.julia"]
-    expect(tokens[2]).toEqual value: "bing", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "bing", scopes: ["source.julia", "support.identifier.julia"]
     expect(tokens[3]).toEqual value: ",", scopes: ["source.julia", "meta.bracket.julia"]
-    expect(tokens[4]).toEqual value: " bang", scopes: ["source.julia"]
-    expect(tokens[5]).toEqual value: ",", scopes: ["source.julia", "meta.bracket.julia"]
-    expect(tokens[6]).toEqual value: " boom", scopes: ["source.julia"]
-    expect(tokens[7]).toEqual value: ")", scopes: ["source.julia"]
+    expect(tokens[5]).toEqual value: "bang", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[6]).toEqual value: ",", scopes: ["source.julia", "meta.bracket.julia"]
+    expect(tokens[8]).toEqual value: "boom", scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[9]).toEqual value: ")", scopes: ["source.julia"]
 
   it "tokenizes escaped characters within a double quoted string", ->
     {tokens} = grammar.tokenizeLine('"\\u2200 x \\u2203 y"')
@@ -319,8 +320,8 @@ describe "Julia grammar", ->
 
   it "tokenizes variables ending in _type", ->
     {tokens} = grammar.tokenizeLine('foo_immutable in')
-    expect(tokens[0]).toEqual value: 'foo_immutable ', scopes: ["source.julia"]
-    expect(tokens[1]).toEqual value: 'in', scopes: ["source.julia", "keyword.control.julia"]
+    expect(tokens[0]).toEqual value: 'foo_immutable', scopes: ["source.julia", "support.identifier.julia"]
+    expect(tokens[2]).toEqual value: 'in', scopes: ["source.julia", "keyword.control.julia"]
 
   it "tokenizes comments", ->
     {tokens} = grammar.tokenizeLine('# This is a comment')
