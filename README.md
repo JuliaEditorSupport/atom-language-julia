@@ -8,6 +8,7 @@ Atom package for the Julia language. Originally based off of [JuliaLang/julia.tm
 
 - Syntax highlighting
 - Snippets for common Julia keywords and constructs (see `snippets/language-julia.cson`)
+- Toggle folding of docstrings
 
 ## Installation
 
@@ -20,6 +21,16 @@ Note: if you already have a different version of language-julia plugin installed
 * The [Latex Completions](https://github.com/JunoLab/atom-latex-completions)
   package provides support for unicode characters similarly to the Julia REPL.
 * The [Indent Detective](https://github.com/JunoLab/atom-indent-detective) package will help you keep to the style guidelines when working on Base or packages.
+
+## Toggling docstrings
+
+Two Atom commands are provided to toggle all docstrings or the docstring under the cursor: `language-julia:togglealldocstrings` and `language-julia:togglealldocstrings`. These are not assigned keys. Here is one example of adding these to keymaps using org-mode style keys:
+
+```
+'atom-text-editor[data-grammar="source julia"]:not([mini])':
+  'tab':       'language-julia:toggledocstrings'
+  'shift-tab': 'language-julia:togglealldocstrings'
+```
 
 ## Contributing
 
