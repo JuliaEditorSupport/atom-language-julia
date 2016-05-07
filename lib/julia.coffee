@@ -8,8 +8,8 @@ module.exports = JuliaFolding =
     @subscriptions = new CompositeDisposable
 
     # Register command that toggles the view
-    @subscriptions.add atom.commands.add 'atom-workspace', 'language-julia:toggledocstrings': (event) => @toggledocstrings(event)
-    @subscriptions.add atom.commands.add 'atom-workspace', 'language-julia:togglealldocstrings': => @togglealldocstrings()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'language-julia:toggle-docstrings': (event) => @toggledocstrings(event)
+    @subscriptions.add atom.commands.add 'atom-workspace', 'language-julia:toggle-all-docstrings': => @togglealldocstrings()
 
     @foldnext = true
 
@@ -18,11 +18,10 @@ module.exports = JuliaFolding =
 
   isdocstring: (scopes) ->
     for str in scopes.getScopesArray()
-      console.log(str)
       if str.match /string\.docstring/
         return true
     return false
-    
+
   toggledocstrings: (event) ->
     editor = atom.workspace.getActiveTextEditor()
     startpos = editor.getCursorBufferPosition()
@@ -57,7 +56,7 @@ module.exports = JuliaFolding =
         # editor.setCursorBufferPosition([row, 0])
         # isdoc = @isdocstring(editor.scopeDescriptorForBufferPosition(editor.getCursorBufferPosition()))
         isdoc = @isdocstring(editor.scopeDescriptorForBufferPosition([row, 0]))
-        if lookingforfirst && isdoc 
+        if lookingforfirst && isdoc
             firstrow = row
             lookingforfirst = false
         else if !lookingforfirst && !isdoc
@@ -65,4 +64,3 @@ module.exports = JuliaFolding =
             if row > firstrow
               editor.createFold(firstrow, row - 1)
     @foldnext = !@foldnext
-
