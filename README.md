@@ -24,7 +24,7 @@ Note: if you already have a different version of language-julia plugin installed
 
 ## Toggling docstrings
 
-Two Atom commands are provided to toggle all docstrings or the docstring under the cursor: `language-julia:togglealldocstrings` and `language-julia:togglealldocstrings`. These are not assigned keys. Here is one example of adding these to keymaps using org-mode style keys:
+Two Atom commands are provided to toggle all docstrings or the docstring under the cursor: `language-julia:togglealldocstrings` and `language-julia:toggledocstrings`. These are not assigned keys. Here is one example of adding these to keymaps using org-mode style keys:
 
 ```
 'atom-text-editor[data-grammar="source julia"]:not([mini])':
