@@ -57,6 +57,18 @@ describe "Julia grammar", ->
     expect(tokens[7]).toEqual value: "::Union{Int, Set{Any}}", scopes: ["source.julia", "support.type.julia"]
     expect(tokens[8]).toEqual value: ")", scopes: ["source.julia"]
 
+  it "tokenizes typed arrays and comprehensions", ->
+    {tokens} = grammar.tokenizeLine("Int[x for x=y]")
+    console.log(tokens)
+    expect(tokens[0]).toEqual value: "Int", scopes: ["source.julia"]
+    expect(tokens[1]).toEqual value: "[", scopes: ["source.julia", "meta.array.julia"]
+    expect(tokens[2]).toEqual value: "x ", scopes: ["source.julia", "meta.array.julia"]
+    expect(tokens[3]).toEqual value: "for", scopes: ["source.julia", "meta.array.julia", "keyword.control.julia"]
+    expect(tokens[4]).toEqual value: " x", scopes: ["source.julia", "meta.array.julia"]
+    expect(tokens[5]).toEqual value: "=", scopes: ["source.julia", "meta.array.julia", "keyword.operator.update.julia"]
+    expect(tokens[6]).toEqual value: "y", scopes: ["source.julia", "meta.array.julia"]
+    expect(tokens[7]).toEqual value: "]", scopes: ["source.julia", "meta.array.julia"]
+
   it "tokenizes qualified names", ->
     {tokens} = grammar.tokenizeLine("Base.@time")
     expect(tokens[0]).toEqual value: "Base", scopes: ["source.julia"]
