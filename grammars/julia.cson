@@ -224,10 +224,6 @@ repository:
         name: "support.type.julia"
       }
       {
-        match: "(?:(?:(?:Union)?\\([^)]*\\)|[[:alpha:]_][[:word:]!]*(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?))(?:\\.\\.\\.)?(?=\\[)"
-        name: "support.type.julia"
-      }
-      {
         match: "(?:\\?|:)"
         name: "keyword.operator.ternary.julia"
       }
