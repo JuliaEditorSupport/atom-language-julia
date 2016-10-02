@@ -103,7 +103,7 @@ repository:
   function_call:
     patterns: [
       {
-        begin: "([[:alpha:]_][[:word:]!]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\("
+        begin: "([[:alpha:]_][[:word:]!]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\.?\\("
         beginCaptures:
           "1":
             name: "support.function.julia"
