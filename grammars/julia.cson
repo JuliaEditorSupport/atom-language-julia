@@ -272,7 +272,7 @@ repository:
       {
         captures:
           "1":
-            name: "keyword.bracket.end.julia"
+            name: "bracket.end.julia"
           "2":
             name: "keyword.operator.transposed-matrix.julia"
         match: "(\\])((?:'|(?:\\.'))*\\.?')"
@@ -280,7 +280,7 @@ repository:
       {
         captures:
           "1":
-            name: "keyword.bracket.end.julia"
+            name: "bracket.end.julia"
           "2":
             name: "keyword.operator.transposed-parens.julia"
         match: "(\\))((?:'|(?:\\.'))*\\.?')"
