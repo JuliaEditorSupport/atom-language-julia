@@ -128,7 +128,7 @@ repository:
             name: "entity.name.function.julia"
           "2":
             name: "support.type.julia"
-        match: "([[:alpha:]_][[:word:]!]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\((?=.*\\)\\s*=(?!=))"
+        match: "([[:alpha:]_][[:word:]!]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\((?=.*\\)\\s*=(?![=>]))"
         comment: """
         first group is function name
         Second group is type parameters (e.g. {T<:Number, S})
