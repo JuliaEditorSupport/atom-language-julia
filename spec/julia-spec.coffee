@@ -341,3 +341,16 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine('# This is a comment')
     expect(tokens[0]).toEqual value: '#', scopes: ["source.julia", "comment.line.number-sign.julia", "punctuation.definition.comment.julia"]
     expect(tokens[1]).toEqual value: ' This is a comment', scopes: ["source.julia", "comment.line.number-sign.julia"]
+
+  it "tokenizes the pair assignment operator", ->
+    {tokens} = grammar.tokenizeLine('Dict(x => x for x in y)')
+    expect(tokens[0]).toEqual value: 'Dict', scopes:  ["source.julia", "support.function.julia"]
+    expect(tokens[1]).toEqual value: '(',    scopes:  ["source.julia"]
+    expect(tokens[2]).toEqual value: 'x ',   scopes:  ["source.julia"]
+    expect(tokens[3]).toEqual value: '=>',   scopes:  ["source.julia", "keyword.operator.arrow.julia"]
+    expect(tokens[4]).toEqual value: ' x ',  scopes:  ["source.julia"]
+    expect(tokens[5]).toEqual value: 'for',  scopes:  ["source.julia", "keyword.control.julia"]
+    expect(tokens[6]).toEqual value: ' x ',  scopes:  ["source.julia"]
+    expect(tokens[7]).toEqual value: 'in',   scopes:  ["source.julia", "keyword.control.julia"]
+    expect(tokens[8]).toEqual value: ' y',   scopes:  ["source.julia"]
+    expect(tokens[9]).toEqual value: ')',    scopes:  ["source.julia"]
