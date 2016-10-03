@@ -212,6 +212,10 @@ repository:
   operator:
     patterns: [
       {
+        match: "(?:->|<-|-->|=>)"
+        name: "keyword.operator.arrow.julia"
+      }
+      {
         match: "(?:\\.==|!=|\\.>=|\\.>=|\\.>|\\.<|==|\\.!=|\\.=|\\.!|<:|:>|>=|<=|>|<)"
         name: "keyword.operator.relation.julia"
       }
@@ -226,10 +230,6 @@ repository:
       {
         match: "(?:\\?|:)"
         name: "keyword.operator.ternary.julia"
-      }
-      {
-        match: "(?:->|<-|-->)"
-        name: "keyword.operator.arrow.julia"
       }
       {
         match: "(?:<<|>>)"
