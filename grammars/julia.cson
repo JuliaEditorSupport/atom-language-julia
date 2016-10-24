@@ -103,7 +103,7 @@ repository:
   function_call:
     patterns: [
       {
-        begin: "([[:alpha:]_][[:word:]\u207A-\u209C!]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\.?\\("
+        begin: "([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\.?\\("
         beginCaptures:
           "1":
             name: "support.function.julia"
@@ -128,7 +128,7 @@ repository:
             name: "entity.name.function.julia"
           "2":
             name: "support.type.julia"
-        match: "([[:alpha:]_][[:word:]\u207A-\u209C!]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\((?=.*\\)\\s*=(?![=>]))"
+        match: "([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\((?=.*\\)\\s*=(?![=>]))"
         comment: """
         first group is function name
         Second group is type parameters (e.g. {T<:Number, S})
@@ -151,7 +151,7 @@ repository:
             name: "entity.name.function.julia"
           "4":
             name: "support.type.julia"
-        match: "\\b(function|macro)\\s+(?:[[:alpha:]_][[:word:]\u207A-\u209C!]*(\\.))?([[:alpha:]_][[:word:]\u207A-\u209C!]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\("
+        match: "\\b(function|macro)\\s+(?:[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*(\\.))?([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\("
         comment: "similar regex to previous, but with keyword not 1-line syntax"
       }
     ]
@@ -190,7 +190,7 @@ repository:
         name: "keyword.control.using.julia"
       }
       {
-        match: "(@[[:alpha:]_][[:word:]\u207A-\u209C!]*)"
+        match: "(@[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)"
         name: "support.function.macro.julia"
       }
       {
@@ -224,7 +224,7 @@ repository:
         name: "keyword.operator.update.julia"
       }
       {
-        match: "(?:\\s*::\\s*(?:(?:Union)?\\([^)]*\\)|[[:alpha:]_][[:word:]\u207A-\u209C!\\.]*(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?))(?:\\.\\.\\.)?"
+        match: "(?:\\s*::\\s*(?:(?:Union)?\\([^)]*\\)|[[:alpha:]_][[:word:]\u207A-\u209C!\u2032\\.]*(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?))(?:\\.\\.\\.)?"
         name: "support.type.julia"
       }
       {
@@ -267,7 +267,7 @@ repository:
         captures:
           "2":
             name: "keyword.operator.transposed-variable.julia"
-        match: "([[:alpha:]_][[:word:]\u207A-\u209C!]*)(('|(\\.'))*\\.?')"
+        match: "([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)(('|(\\.'))*\\.?')"
       }
       {
         captures:
@@ -333,7 +333,7 @@ repository:
         ]
       }
       {
-        begin: '^\\s?([[:alpha:]_][[:word:]\u207A-\u209C!]*)?(""")\\s?$'
+        begin: '^\\s?([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)?(""")\\s?$'
         beginCaptures:
           '1':
             'name': 'support.function.macro.julia'
@@ -438,11 +438,11 @@ repository:
         ]
       }
       {
-        begin: "\\b[[:alpha:]_][[:word:]\u207A-\u209C!]*\""
+        begin: "\\b[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*\""
         beginCaptures:
           "0":
             name: "punctuation.definition.string.begin.julia"
-        end: "\"([[:alpha:]_][[:word:]\u207A-\u209C!]*)?"
+        end: "\"([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)?"
         endCaptures:
           "0":
             name: "punctuation.definition.string.end.julia"
@@ -517,7 +517,7 @@ repository:
   string_dollar_sign_interpolate:
     patterns: [
       {
-        match: "\\$[[:alpha:]_][[:word:]\u207A-\u209C!]*"
+        match: "\\$[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*"
         name: "variable.interpolation.julia"
       }
       {
@@ -558,7 +558,7 @@ repository:
   symbol:
     patterns: [
       {
-        match: "(?<![a-zA-Z0-9:<]:)(?<=:)[[:alpha:]_][[:word:]\u207A-\u209C!]*"
+        match: "(?<![a-zA-Z0-9:<]:)(?<=:)[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*"
         name: "constant.other.symbol.julia"
         comment: "This is string.quoted.symbol.julia in tpoisot's package"
       }
@@ -573,7 +573,7 @@ repository:
             name: "entity.other.inherited-class.julia"
           "3":
             name: "punctuation.separator.inheritance.julia"
-        match: "(?>!:_)(?:type|immutable)\\s+([[:alpha:]_][[:word:]\u207A-\u209C!]*)(\\s*(<:)\\s*[[:alpha:]_][[:word:]\u207A-\u209C!]*(?:{.*})?)?"
+        match: "(?>!:_)(?:type|immutable)\\s+([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)(\\s*(<:)\\s*[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*(?:{.*})?)?"
         name: "meta.type.julia"
       }
     ]
