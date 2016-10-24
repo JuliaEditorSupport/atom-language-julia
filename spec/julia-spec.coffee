@@ -140,7 +140,6 @@ describe "Julia grammar", ->
 
   it 'tokenizes macro strings with escaped chars', ->
     {tokens} = grammar.tokenizeLine('m"α\\u1234\\\\"')
-    console.log tokens
     expect(tokens[0]).toEqual value: "m\"", scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
     expect(tokens[1]).toEqual value: "α", scopes: ["source.julia", "string.quoted.other.julia"]
     expect(tokens[2]).toEqual value: "\\u1234", scopes: ["source.julia", "string.quoted.other.julia", "constant.character.escape.julia"]
