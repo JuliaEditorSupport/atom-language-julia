@@ -1,4 +1,6 @@
 comment: """
+    Reference to the Oniguruma Regex libraray:
+      https://github.com/kkos/oniguruma/blob/master/doc/RE
 
     TODO:
     * Once 0.4 is released, simplify type matches (no explicit 'Union', parens, etc.)
