@@ -1,6 +1,6 @@
 # Julia support for Atom
 
-[![Build Status](https://travis-ci.org/JuliaLang/atom-language-julia.svg?branch=master)](https://travis-ci.org/JuliaLang/atom-language-julia)
+[![Build Status](https://travis-ci.org/JuliaEditorSupport/atom-language-julia.svg?branch=master)](https://travis-ci.org/JuliaEditorSupport/atom-language-julia)
 
 Atom package for the Julia language. Originally based off of [JuliaLang/julia.tmBundle](https://github.com/JuliaLang/Julia.tmbundle), merged with new ideas from [language-julia](https://github.com/tpoisot/language-julia/blob/master/README.md) package.
 
@@ -37,7 +37,7 @@ Two Atom commands are provided to toggle all docstrings or the docstring under t
 We love contributors. Here are the steps we have taken to develop on this package:
 
 1. Remove the official install of the package: `apm uninstall language-julia`
-2. Clone the repository somewhere we can remember: `git clone git@github.com:JuliaLang/atom-language-julia.git`
+2. Clone the repository somewhere we can remember: `git clone git@github.com:JuliaEditorSupport/atom-language-julia.git`
 3. Link the cloned package to `~/.atom` (enter the following from the root of the repo directory): `apm link .`
 4. Hack away!
 
@@ -51,4 +51,4 @@ This should open up a new window with the spec results.
 #### Contributor list
 
 - Everyone who has helped with the [tmBundle](https://github.com/JuliaLang/Julia.tmbundle)
-- [See contributors](https://github.com/JuliaLang/atom-language-julia/graphs/contributors)
+- [See contributors](https://github.com/JuliaEditorSupport/atom-language-julia/graphs/contributors)
