@@ -449,7 +449,7 @@ repository:
         name: "string.quoted.other.julia"
         patterns: [
           {
-            include: "#string_custom_escaped_char"
+            include: "#string_escaped_char"
           }
         ]
       }
@@ -498,13 +498,6 @@ repository:
             include: "#string_dollar_sign_interpolate"
           }
         ]
-      }
-    ]
-  string_custom_escaped_char:
-    patterns: [
-      {
-        match: "\\\\\""
-        name: "constant.character.escape.julia"
       }
     ]
   string_escaped_char:
