@@ -1,5 +1,6 @@
 ".source.julia":
   editor:
+    tabLength: 4
     commentStart: "# "
 ".source.julia:not(.string)":
   editor:
