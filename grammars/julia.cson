@@ -218,24 +218,24 @@ repository:
         name: "keyword.operator.arrow.julia"
       }
       {
-        match: "(?:\\.==|!=|\\.>=|\\.>=|\\.>|\\.<|==|\\.!=|\\.=|\\.!|<:|:>|>=|<=|>|<)"
-        name: "keyword.operator.relation.julia"
+        match: "(?::=|\\+=|-=|\\*=|//=|/=|\\.//=|\\./=|\\.\\*=|\\\\=|\\.\\\\=|\\^=|\\.\\^=|%=|\\.%=|÷=|\\.÷=|\\|=|&=|\\$=|<<=|>>=|>>>=|=(?!=))"
+        name: "keyword.operator.update.julia"
       }
       {
-        match: "(?::=|\\+=|-=|\\*=|//=|/=|\\.//=|\\.\\*=|\\\\=|\\.\\\\=|^=|\\.^=|%=|\\|=|&=|\\$=|<<=|>>=|=)"
-        name: "keyword.operator.update.julia"
+        match: "(?:<<|>>>|>>|\\.>>>|\\.>>|\\.<<)"
+        name: "keyword.operator.shift.julia"
+      }
+      {
+        match: "(?:===|\\.==|!==|!=|\\.>=|\\.>|\\.<|==|\\.!=|\\.=|\\.!|<:|:>|(?<!>)>=|(?<!<)<=|\\.<=|>|<)"
+        name: "keyword.operator.relation.julia"
       }
       {
         match: "(?:\\s*::\\s*(?:(?:Union)?\\([^)]*\\)|[[:alpha:]_][[:word:]\u207A-\u209C!\u2032\\.]*(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?))(?:\\.\\.\\.)?"
         name: "support.type.julia"
       }
       {
-        match: "(?:\\?|:)"
+        match: "(?:\\?:)"
         name: "keyword.operator.ternary.julia"
-      }
-      {
-        match: "(?:<<|>>)"
-        name: "keyword.operator.shift.julia"
       }
       {
         match: "(?:\\|\\||&&|(?<![[:word:]])!)"
@@ -246,11 +246,15 @@ repository:
         name: "keyword.operator.range.julia"
       }
       {
+        match: "(?:\\|>)"
+        name: "keyword.operator.applies.julia"
+      }
+      {
         match: "(?:\\||\\&|~)"
         name: "keyword.operator.bitwise.julia"
       }
       {
-        match: "(?:\\+|-|\\*|\\.\\*|/|\\./|//|\\.//|%|\\.%|\\\\|\\.\\\\|\\^|\\.\\^)"
+        match: "(?:\\+\\+|--|\\+|\\.\\+|-|\\.\\-|\\*|\\.\\*|//(?!=)|\\.//(?!=)|/|\\./|%|\\.%|\\\\|\\.\\\\|\\^|\\.\\^)"
         name: "keyword.operator.arithmetic.julia"
       }
       {
