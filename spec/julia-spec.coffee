@@ -123,7 +123,7 @@ describe "Julia grammar", ->
 
   it "tokenizes symbols", ->
     {tokens} = grammar.tokenizeLine(":à_b9!")
-    expect(tokens[0]).toEqual value: ":", scopes: ["source.julia", "keyword.operator.ternary.julia"]
+    expect(tokens[0]).toEqual value: ":", scopes: ["source.julia", "keyword.operator.range.julia"]
     expect(tokens[1]).toEqual value: "à_b9!", scopes: ["source.julia", "constant.other.symbol.julia"]
 
   it "tokenizes regular expressions", ->
@@ -322,17 +322,17 @@ describe "Julia grammar", ->
 
   it "tokenizes symbols of `keyword.other`s", ->
     {tokens} = grammar.tokenizeLine(':type')
-    expect(tokens[0]).toEqual value: ':', scopes: ["source.julia", "keyword.operator.ternary.julia"]
+    expect(tokens[0]).toEqual value: ':', scopes: ["source.julia", "keyword.operator.range.julia"]
     expect(tokens[1]).toEqual value: 'type', scopes: ["source.julia", "constant.other.symbol.julia"]
 
   it "tokenizes symbols of `storage.modifier`s", ->
     {tokens} = grammar.tokenizeLine(':using')
-    expect(tokens[0]).toEqual value: ':', scopes: ["source.julia", "keyword.operator.ternary.julia"]
+    expect(tokens[0]).toEqual value: ':', scopes: ["source.julia", "keyword.operator.range.julia"]
     expect(tokens[1]).toEqual value: 'using', scopes: ["source.julia", "constant.other.symbol.julia"]
 
   it "tokenizes symbols of `keyword.control`s", ->
     {tokens} = grammar.tokenizeLine(':else')
-    expect(tokens[0]).toEqual value: ':', scopes: ["source.julia", "keyword.operator.ternary.julia"]
+    expect(tokens[0]).toEqual value: ':', scopes: ["source.julia", "keyword.operator.range.julia"]
     expect(tokens[1]).toEqual value: 'else', scopes: ["source.julia", "constant.other.symbol.julia"]
 
   it "tokenizes variables ending in _type", ->
@@ -372,9 +372,9 @@ describe "Julia grammar", ->
 
   it "tokenizes the function applicator", ->
     {tokens} = grammar.tokenizeLine('[1:5;] |> x->x.^2 |> sum')
-    expect(tokens[0]).toEqual value: '[',    scopes: ["source.julia", "meta.array.julia"]
+    expect(tokens[0]).toEqual value: '[',    scopes:  ["source.julia", "meta.array.julia"]
     expect(tokens[1]).toEqual value: '1',    scopes:  ["source.julia", "meta.array.julia", "constant.numeric.julia"]
-    expect(tokens[2]).toEqual value: ': ',   scopes:  ["source.julia", "meta.array.julia", "keyword.operator.range.julia"]
+    expect(tokens[2]).toEqual value: ':',    scopes:  ["source.julia", "meta.array.julia", "keyword.operator.range.julia"]
     expect(tokens[3]).toEqual value: '5',    scopes:  ["source.julia", "meta.array.julia", "constant.numeric.julia"]
     expect(tokens[4]).toEqual value: ';',    scopes:  ["source.julia", "meta.array.julia"]
     expect(tokens[5]).toEqual value: ']',    scopes:  ["source.julia", "meta.array.julia"]
@@ -384,6 +384,7 @@ describe "Julia grammar", ->
     expect(tokens[9]).toEqual value: '->',   scopes:  ["source.julia", "keyword.operator.arrow.julia"]
     expect(tokens[10]).toEqual value: 'x',   scopes:  ["source.julia"]
     expect(tokens[11]).toEqual value: '.^',  scopes:  ["source.julia", "keyword.operator.arithmetic.julia"]
-    expect(tokens[12]).toEqual value: '2 ',  scopes:  ["source.julia", "constant.numeric.julia"]
-    expect(tokens[13]).toEqual value: '|>',  scopes:  ["source.julia", "keyword.operator.applies.julia"]
-    expect(tokens[14]).toEqual value: ' sum',   scopes:  ["source.julia"]
+    expect(tokens[12]).toEqual value: '2',   scopes:  ["source.julia", "constant.numeric.julia"]
+    expect(tokens[13]).toEqual value: ' ',   scopes:  ["source.julia"]
+    expect(tokens[14]).toEqual value: '|>',  scopes:  ["source.julia", "keyword.operator.applies.julia"]
+    expect(tokens[15]).toEqual value: ' sum', scopes:  ["source.julia"]
