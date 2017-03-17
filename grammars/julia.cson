@@ -13,7 +13,7 @@ fileTypes: [
   "jl"
 ]
 firstLineMatch: "^#!.*\\bjulia\\s*$"
-foldingStartMarker: "^\\s*(?:if|while|for|begin|function|macro|module|baremodule|type|immutable|try|let)\\b(?!.*\\bend\\b).*$"
+foldingStartMarker: "^\\s*(?:if|while|for|begin|function|macro|module|baremodule|type|immutable|struct|try|let)\\b(?!.*\\bend\\b).*$"
 foldingStopMarker: "^\\s*(?:end)\\b.*$"
 name: "Julia"
 patterns: [
@@ -160,7 +160,7 @@ repository:
   keyword:
     patterns: [
       {
-        match: "\\b(?<![:_])(?:function|@generated|type|immutable|macro|quote|abstract|bitstype|typealias|module|baremodule|new)\\b"
+        match: "\\b(?<![:_])(?:function|@generated|type|immutable|mutable|struct|macro|quote|abstract|bitstype|typealias|module|baremodule|new|where)\\b"
         name: "keyword.other.julia"
       }
       {
@@ -572,7 +572,7 @@ repository:
             name: "entity.other.inherited-class.julia"
           "3":
             name: "punctuation.separator.inheritance.julia"
-        match: "(?>!:_)(?:type|immutable)\\s+([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)(\\s*(<:)\\s*[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*(?:{.*})?)?"
+        match: "(?>!:_)(?:type|immutable|struct)\\s+([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)(\\s*(<:)\\s*[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*(?:{.*})?)?"
         name: "meta.type.julia"
       }
     ]

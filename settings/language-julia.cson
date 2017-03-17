@@ -3,9 +3,9 @@
     commentStart: "# "
 ".source.julia:not(.string)":
   editor:
-    increaseIndentPattern: "^(\\s*|.*=\\s*|.*@\\w*\\s*)[\\w\\s]*(if|while|for|function|macro|immutable|type|let|quote|try|begin|.*\\)\\s*do|else|elseif|catch|finally)\\b(?!.*\\bend\\b[^\\]]*$).*$"
+    increaseIndentPattern: "^(\\s*|.*=\\s*|.*@\\w*\\s*)[\\w\\s]*(if|while|for|function|macro|immutable|struct|type|let|quote|try|begin|.*\\)\\s*do|else|elseif|catch|finally)\\b(?!.*\\bend\\b[^\\]]*$).*$"
     decreaseIndentPattern: "^\\s*(end|else|elseif|catch|finally)\\b.*$"
-    foldingStartMarker: "^\\s*(?:if|while|for|begin|function|macro|module|baremodule|type|immutable|try|let)\\b(?!.*\\bend\\b).*$"
+    foldingStartMarker: "^\\s*(?:if|while|for|begin|function|macro|module|baremodule|type|immutable|struct|try|let)\\b(?!.*\\bend\\b).*$"
     foldingStopMarker: "^\\s*(?:end)\\b.*$"
 
 # NOTE: foldingStartMarker/foldingStopMarker not currently implemented in
