@@ -54,6 +54,16 @@ describe "Julia grammar", ->
     expect(tokens[7]).toEqual value: "::Union{Int, Set{Any}}", scopes: ["source.julia", "support.type.julia"]
     expect(tokens[8]).toEqual value: ")", scopes: ["source.julia"]
 
+  it "tokenizes functions with return type declarations", ->
+    {tokens} = grammar.tokenizeLine("x{T<:AbstractInteger}(a::T)::Int")
+    expect(tokens[0]).toEqual value: "x", scopes: ["source.julia", "support.function.julia"]
+    expect(tokens[1]).toEqual value: "{T<:AbstractInteger}", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[2]).toEqual value: "(", scopes: ["source.julia"]
+    expect(tokens[3]).toEqual value: "a", scopes: ["source.julia"]
+    expect(tokens[4]).toEqual value: "::T", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[5]).toEqual value: ")", scopes: ["source.julia"]
+    expect(tokens[6]).toEqual value: "::Int", scopes: ["source.julia", "support.type.julia"]
+
   it "tokenizes typed arrays and comprehensions", ->
     {tokens} = grammar.tokenizeLine("Int[x for x=y]")
     expect(tokens[0]).toEqual value: "Int", scopes: ["source.julia"]
