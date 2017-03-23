@@ -1,6 +1,6 @@
 {
   "name": "language-julia",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Julia language support for Atom.",
   "keywords": [],
   "repository": "https://github.com/JuliaEditorSupport/atom-language-julia",
