@@ -1,4 +1,4 @@
-scopeName: 'text.julia.console'
+scopeName: 'source.julia.console'
 name: 'Julia Console'
 comment: "Not sure what this will be used for... Maybe if we have a REPL someday"
 patterns: [
