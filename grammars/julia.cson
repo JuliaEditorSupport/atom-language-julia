@@ -130,7 +130,7 @@ repository:
             name: "entity.name.function.julia"
           "2":
             name: "support.type.julia"
-        match: "([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\((?=.*\\)(::[^\\s]+)?\\s*=(?![=>]))"
+        match: "([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\((?=.*\\)(::[^\\s]+)?(\\s*\\bwhere\\b\\s*[^\\s]+)?\\s*?=(?![=>]))"
         comment: """
         first group is function name
         Second group is type parameters (e.g. {T<:Number, S})
@@ -226,12 +226,16 @@ repository:
         name: "keyword.operator.shift.julia"
       }
       {
-        match: "(?:===|(?<=\\s)in(?=\\s)|\\.==|!==|!=|\\.>=|\\.>|\\.<|==|\\.!=|\\.=|\\.!|<:|:>|(?<!>)>=|(?<!<)<=|\\.<=|>|<)"
-        name: "keyword.operator.relation.julia"
+        match: "(?:\\s*(::|<:)\\s*((?:(?:Union)?\\([^)]*\\)|[[:alpha:]_][[:word:]\u207A-\u209C!\u2032\\.]*(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?)))(?:\\.\\.\\.)?"
+        captures:
+          "1":
+            name: "keyword.operator.relation.julia"
+          "2":
+            name: "support.type.julia"
       }
       {
-        match: "(?:\\s*::\\s*(?:(?:Union)?\\([^)]*\\)|[[:alpha:]_][[:word:]\u207A-\u209C!\u2032\\.]*(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?))(?:\\.\\.\\.)?"
-        name: "support.type.julia"
+        match: "(?:===|(?<=\\s)in(?=\\s)|\\.==|!==|!=|\\.>=|\\.>|\\.<|==|\\.!=|\\.=|\\.!|<:|:>|(?<!>)>=|(?<!<)<=|\\.<=|>|<)"
+        name: "keyword.operator.relation.julia"
       }
       {
         match: "(?:\\?:)"
