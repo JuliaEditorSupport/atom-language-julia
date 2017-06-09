@@ -348,7 +348,7 @@ describe "Julia grammar", ->
   it "tokenizes variables ending in _type", ->
     {tokens} = grammar.tokenizeLine('foo_immutable in')
     expect(tokens[0]).toEqual value: 'foo_immutable ', scopes: ["source.julia"]
-    expect(tokens[1]).toEqual value: 'in', scopes: ["source.julia", "keyword.control.julia"]
+    expect(tokens[1]).toEqual value: 'in', scopes: ["source.julia", "keyword.operator.relation.julia"]
 
   it "tokenizes comments", ->
     {tokens} = grammar.tokenizeLine('# This is a comment')
@@ -364,7 +364,7 @@ describe "Julia grammar", ->
     expect(tokens[4]).toEqual value: ' x ',  scopes:  ["source.julia"]
     expect(tokens[5]).toEqual value: 'for',  scopes:  ["source.julia", "keyword.control.julia"]
     expect(tokens[6]).toEqual value: ' x ',  scopes:  ["source.julia"]
-    expect(tokens[7]).toEqual value: 'in',   scopes:  ["source.julia", "keyword.control.julia"]
+    expect(tokens[7]).toEqual value: 'in',   scopes:  ["source.julia", "keyword.operator.relation.julia"]
     expect(tokens[8]).toEqual value: ' y',   scopes:  ["source.julia"]
     expect(tokens[9]).toEqual value: ')',    scopes:  ["source.julia"]
 
@@ -372,12 +372,12 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine("f′(xᵢ₊₁) = xᵢ₊₁'")
     expect(tokens[0]).toEqual value: 'f′',   scopes:  ["source.julia", "entity.name.function.julia"]
     expect(tokens[1]).toEqual value: '(',    scopes:  ["source.julia"]
-    expect(tokens[2]).toEqual value: 'xᵢ₊₁', scopes:  ["source.julia"]
+    expect(tokens[2]).toEqual value: 'xᵢ₊₁',  scopes:  ["source.julia"]
     expect(tokens[3]).toEqual value: ')',    scopes:  ["source.julia", "meta.bracket.julia"]
     expect(tokens[4]).toEqual value: ' ',    scopes:  ["source.julia"]
     expect(tokens[5]).toEqual value: '=',    scopes:  ["source.julia", "keyword.operator.update.julia"]
     expect(tokens[6]).toEqual value: ' ',    scopes:  ["source.julia"]
-    expect(tokens[7]).toEqual value: 'xᵢ₊₁', scopes:  ["source.julia"]
+    expect(tokens[7]).toEqual value: 'xᵢ₊₁',  scopes:  ["source.julia"]
     expect(tokens[8]).toEqual value: "'",    scopes:  ["source.julia", "keyword.operator.transposed-variable.julia"]
 
   it "tokenizes the function applicator", ->
@@ -398,3 +398,13 @@ describe "Julia grammar", ->
     expect(tokens[13]).toEqual value: ' ',   scopes:  ["source.julia"]
     expect(tokens[14]).toEqual value: '|>',  scopes:  ["source.julia", "keyword.operator.applies.julia"]
     expect(tokens[15]).toEqual value: ' sum', scopes:  ["source.julia"]
+
+  it "tokenizes spelt out infix operators", ->
+    {tokens} = grammar.tokenizeLine('a isa Int && a in ints')
+    expect(tokens[0]).toEqual value: 'a ',    scopes:  ["source.julia"]
+    expect(tokens[1]).toEqual value: 'isa',   scopes:  ["source.julia", "keyword.operator.isa.julia"]
+    expect(tokens[2]).toEqual value: ' Int ', scopes:  ["source.julia"]
+    expect(tokens[3]).toEqual value: '&&',    scopes:  ["source.julia", "keyword.operator.boolean.julia"]
+    expect(tokens[4]).toEqual value: ' a ',   scopes:  ["source.julia"]
+    expect(tokens[5]).toEqual value: 'in',    scopes:  ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[6]).toEqual value: ' ints', scopes:  ["source.julia"]
