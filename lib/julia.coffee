@@ -47,14 +47,13 @@ module.exports = JuliaFolding =
 
   togglealldocstrings: ->
     editor = atom.workspace.getActiveTextEditor()
+    startpos = editor.getCursorBufferPosition()
     if !@foldnext
       editor.unfoldAll()
       editor.scrollToCursorPosition()
     else # fold
       lookingforfirst = true
       for row in [0..editor.getLastBufferRow()]
-        # editor.setCursorBufferPosition([row, 0])
-        # isdoc = @isdocstring(editor.scopeDescriptorForBufferPosition(editor.getCursorBufferPosition()))
         isdoc = @isdocstring(editor.scopeDescriptorForBufferPosition([row, 0]))
         if lookingforfirst && isdoc
             firstrow = row
@@ -62,5 +61,8 @@ module.exports = JuliaFolding =
         else if !lookingforfirst && !isdoc
             lookingforfirst = true
             if row > firstrow
-              editor.createFold(firstrow, row - 1)
+              editor.setSelectedBufferRange(new Range(new Point(firstrow, 0), new Point(row-1, 0)))
+              editor.foldSelectedLines()
     @foldnext = !@foldnext
+    # return cursor to initial position
+    editor.setCursorBufferPosition(startpos)
