@@ -379,7 +379,7 @@ describe "Julia grammar", ->
     expect(tokens[9]).toEqual value: ')',    scopes:  ["source.julia"]
 
   it 'tokenizes function definitions with special unicode identifiers', ->
-    {tokens} = grammar.tokenizeLine("f′(xᵢ₊₁) = xᵢ₊₁'")
+    {tokens} = grammar.tokenizeLine("f′(xᵢ₊₁) = xᵢ₊₁' + ∇'")
     expect(tokens[0]).toEqual value: 'f′',   scopes:  ["source.julia", "entity.name.function.julia"]
     expect(tokens[1]).toEqual value: '(',    scopes:  ["source.julia"]
     expect(tokens[2]).toEqual value: 'xᵢ₊₁',  scopes:  ["source.julia"]
@@ -389,6 +389,11 @@ describe "Julia grammar", ->
     expect(tokens[6]).toEqual value: ' ',    scopes:  ["source.julia"]
     expect(tokens[7]).toEqual value: 'xᵢ₊₁',  scopes:  ["source.julia"]
     expect(tokens[8]).toEqual value: "'",    scopes:  ["source.julia", "keyword.operator.transposed-variable.julia"]
+    expect(tokens[9]).toEqual value: " ",    scopes:  ["source.julia"]
+    expect(tokens[10]).toEqual value: "+",   scopes:  ["source.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[11]).toEqual value: ' ',   scopes:  ["source.julia"]
+    expect(tokens[12]).toEqual value: '∇',   scopes:  ["source.julia"]
+    expect(tokens[13]).toEqual value: "'",   scopes:  ["source.julia", "keyword.operator.transposed-variable.julia"]
 
   it "tokenizes short form function definitions with `where` syntax", ->
     {tokens} = grammar.tokenizeLine("x(a::T)  where  T<:Integer = ")
