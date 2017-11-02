@@ -153,7 +153,7 @@ repository:
             name: "entity.name.function.julia"
           "4":
             name: "support.type.julia"
-        match: "\\b(function|macro)\\s+(?:[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*(\\.))?([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\("
+        match: "\\b(function|macro)(?:\\s+(?:[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*(\\.))?([[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?|\\s*)\\("
         comment: "similar regex to previous, but with keyword not 1-line syntax"
       }
     ]
