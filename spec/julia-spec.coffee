@@ -404,6 +404,20 @@ describe "Julia grammar", ->
     expect(tokens[9]).toEqual value: "<:", scopes: ["source.julia", "keyword.operator.relation.julia"]
     expect(tokens[10]).toEqual value: "Integer", scopes: ["source.julia", "support.type.julia"]
 
+  it "tokenizes long-form anonymous function definitions without spaces", ->
+    {tokens} = grammar.tokenizeLine("function(a)")
+    expect(tokens[0]).toEqual value: "function", scopes: ["source.julia", "keyword.other.julia"]
+    expect(tokens[1]).toEqual value: "(", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "a", scopes: ["source.julia"]
+    expect(tokens[3]).toEqual value: ")", scopes: ["source.julia", "meta.bracket.julia"]
+
+  it "tokenizes long-form anonymous function definitions with spaces", ->
+    {tokens} = grammar.tokenizeLine("function (a)")
+    expect(tokens[0]).toEqual value: "function", scopes: ["source.julia", "keyword.other.julia"]
+    expect(tokens[1]).toEqual value: " (", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "a", scopes: ["source.julia"]
+    expect(tokens[3]).toEqual value: ")", scopes: ["source.julia", "meta.bracket.julia"]
+
   it "tokenizes long form function definitions with `where` syntax", ->
     {tokens} = grammar.tokenizeLine("function x(a::T)  where  T<:Integer")
     expect(tokens[0]).toEqual value: "function", scopes: ["source.julia", "keyword.other.julia"]
