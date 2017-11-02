@@ -246,7 +246,7 @@ repository:
         name: "keyword.operator.boolean.julia"
       }
       {
-        match: "(?::)"
+        match: "(?<=[[:word:]\u207A-\u209C!\u2032])(?::)"
         name: "keyword.operator.range.julia"
       }
       {
@@ -561,7 +561,7 @@ repository:
   symbol:
     patterns: [
       {
-        match: "(?<![a-zA-Z0-9:<]:)(?<=:)[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*"
+        match: "(?<![[:word:]\u207A-\u209C!\u2032]):(?:[[:alpha:]_][[:word:]\u207A-\u209C!\u2032]*)"
         name: "constant.other.symbol.julia"
         comment: "This is string.quoted.symbol.julia in tpoisot's package"
       }
