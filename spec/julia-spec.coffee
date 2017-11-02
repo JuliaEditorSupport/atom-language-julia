@@ -449,8 +449,8 @@ describe "Julia grammar", ->
     expect(tokens[5]).toEqual value: 'in',    scopes:  ["source.julia", "keyword.operator.relation.julia"]
     expect(tokens[6]).toEqual value: ' ints', scopes:  ["source.julia"]
 
-  it "tokenizes various ranges and symbols", ->
-    {tokens} = grammar.tokenizeLine('1:3; a:b; c: d; e :f; :g: :h')
+  it "tokenizes everything related to `:` (ranges, symbols, subtyping)", ->
+    {tokens} = grammar.tokenizeLine('1:3; a:b; c: d; e :f; :g: :h; i::J')
     expect(tokens[0]).toEqual value: '1',      scopes:  ["source.julia", "constant.numeric.julia"]
     expect(tokens[1]).toEqual value: ':',      scopes:  ["source.julia", "keyword.operator.range.julia"]
     expect(tokens[2]).toEqual value: '3',      scopes:  ["source.julia", "constant.numeric.julia"]
@@ -465,3 +465,6 @@ describe "Julia grammar", ->
     expect(tokens[11]).toEqual value: ':',     scopes:  ["source.julia", "keyword.operator.range.julia"]
     expect(tokens[12]).toEqual value: ' ',     scopes:  ["source.julia"]
     expect(tokens[13]).toEqual value: ':h',    scopes:  ["source.julia", "constant.other.symbol.julia"]
+    expect(tokens[14]).toEqual value: '; i',   scopes:  ["source.julia"]
+    expect(tokens[15]).toEqual value: '::',    scopes:  ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[16]).toEqual value: 'J',     scopes:  ["source.julia", "support.type.julia"]
