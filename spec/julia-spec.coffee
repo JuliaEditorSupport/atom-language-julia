@@ -487,3 +487,9 @@ describe "Julia grammar", ->
     expect(tokens[14]).toEqual value: '; i',   scopes:  ["source.julia"]
     expect(tokens[15]).toEqual value: '::',    scopes:  ["source.julia", "keyword.operator.relation.julia"]
     expect(tokens[16]).toEqual value: 'J',     scopes:  ["source.julia", "support.type.julia"]
+    
+  it "tokenizes dot operators", ->
+    {tokens} = grammar.tokenizeLine('x .<= y')
+    expect(tokens[0]).toEqual value: 'x ',     scopes:  ["source.julia"]
+    expect(tokens[1]).toEqual value: '.<=',    scopes:  ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[2]).toEqual value: ' y',     scopes:  ["source.julia"]
