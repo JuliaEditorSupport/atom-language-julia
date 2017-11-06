@@ -493,3 +493,9 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: 'x ',     scopes:  ["source.julia"]
     expect(tokens[1]).toEqual value: '.<=',    scopes:  ["source.julia", "keyword.operator.relation.julia"]
     expect(tokens[2]).toEqual value: ' y',     scopes:  ["source.julia"]
+  
+  it "tokenizes type", ->
+    {tokens} = grammar.tokenizeLine('T>:Interger')
+    expect(tokens[0]).toEqual value: 'T',     scopes:  ["source.julia"]
+    expect(tokens[1]).toEqual value: '>:',    scopes:  ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[2]).toEqual value: 'Interger',     scopes: ["source.julia", "support.type.julia"]
