@@ -21,6 +21,7 @@ Note: if you already have a different version of language-julia plugin installed
 * The [Latex Completions](https://github.com/JunoLab/atom-latex-completions)
   package provides support for unicode characters similarly to the Julia REPL.
 * The [Indent Detective](https://github.com/JunoLab/atom-indent-detective) package will help you keep to the style guidelines when working on Base or packages.
+* Install [language-markdown](https://atom.io/packages/language-markdown) for syntax highlighting in docstrings.
 
 ## Toggling docstrings
 
