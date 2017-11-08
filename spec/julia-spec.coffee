@@ -501,7 +501,7 @@ describe "Julia grammar", ->
     expect(tokens[2]).toEqual value: 'Interger',     scopes: ["source.julia", "support.type.julia"]
 
   it "tokenizes imaginary unit", ->
-    {tokens} = grammar.tokenizeLine('2im 2img 3+im 3-im 3*im 3/im 3^im 3\im')
+    {tokens} = grammar.tokenizeLine('2im 2img 3+im 3-im 3*im 3/im 3^im 3\\im')
     expect(tokens[0]).toEqual value: '2im',    scopes:  ["source.julia", "constant.numeric.julia"]
     expect(tokens[1]).toEqual value: ' ',      scopes:  ["source.julia"]
     expect(tokens[2]).toEqual value: '2',      scopes:  ["source.julia", "constant.numeric.julia"]
