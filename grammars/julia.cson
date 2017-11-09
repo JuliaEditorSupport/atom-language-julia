@@ -192,7 +192,7 @@ repository:
         name: "keyword.control.using.julia"
       }
       {
-        match: "(@[[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)"
+        match: "(@(\\.|[[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*))"
         name: "support.function.macro.julia"
       }
       {

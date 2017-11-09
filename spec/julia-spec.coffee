@@ -122,11 +122,13 @@ describe "Julia grammar", ->
     expect(tokens[8]).toEqual value: ")", scopes: ["source.julia", "meta.bracket.julia"]
 
   it "tokenizes macro calls", ->
-    {tokens} = grammar.tokenizeLine("@elapsed x^2")
-    expect(tokens[0]).toEqual value: "@elapsed", scopes: ["source.julia", "support.function.macro.julia"]
-    expect(tokens[1]).toEqual value: " x", scopes: ["source.julia"]
-    expect(tokens[2]).toEqual value: "^", scopes: ["source.julia", "keyword.operator.arithmetic.julia"]
-    expect(tokens[3]).toEqual value: "2", scopes: ["source.julia", "constant.numeric.julia"]
+    {tokens} = grammar.tokenizeLine("@. @elapsed x^2")
+    expect(tokens[0]).toEqual value: "@.", scopes: ["source.julia", "support.function.macro.julia"]
+    expect(tokens[1]).toEqual value: " ",  scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "@elapsed", scopes: ["source.julia", "support.function.macro.julia"]
+    expect(tokens[3]).toEqual value: " x", scopes: ["source.julia"]
+    expect(tokens[4]).toEqual value: "^", scopes: ["source.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[5]).toEqual value: "2", scopes: ["source.julia", "constant.numeric.julia"]
 
   it "tokenizes using statements", ->
     {tokens} = grammar.tokenizeLine("using Base.Test")
