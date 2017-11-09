@@ -32,7 +32,7 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: "f", scopes: ["source.julia", "support.function.julia"]
     expect(tokens[1]).toEqual value: "(", scopes: ["source.julia"]
     expect(tokens[2]).toEqual value: "x", scopes: ["source.julia"]
-    expect(tokens[3]).toEfqual value: " ", scopes: ["source.julia"]
+    expect(tokens[3]).toEqual value: " ", scopes: ["source.julia"]
     expect(tokens[4]).toEqual value: "::", scopes: ["source.julia", "keyword.operator.relation.julia"]
     expect(tokens[5]).toEqual value: " ", scopes: ["source.julia"]
     expect(tokens[6]).toEqual value: "Int", scopes: ["source.julia", "support.type.julia"]
