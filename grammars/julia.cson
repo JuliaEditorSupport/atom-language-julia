@@ -164,7 +164,7 @@ repository:
         name: "keyword.other.julia"
       }
       {
-        match: "\\b(?<![:_])(?:if|else|elseif|while|for|begin|let|do|try|catch|finally|return|break|continue)\\b"
+        match: "\\b(?<![:_])(?:if|else|elseif|while|for(?: outer)?|begin|let|do|try|catch|finally|return|break|continue)\\b"
         name: "keyword.control.julia"
       }
       {
