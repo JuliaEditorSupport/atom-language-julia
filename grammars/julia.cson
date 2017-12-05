@@ -299,6 +299,33 @@ repository:
   string:
     patterns: [
       {
+        begin: '(?:(@doc)\\s((?:doc)?""")|(doc"""))'
+        beginCaptures:
+          '1':
+            'name': 'support.function.macro.julia'
+          '2':
+            'name': 'punctuation.definition.string.begin.julia'
+        end: '(""") ?(->)?'
+        endCaptures:
+          '1':
+            'name': 'punctuation.definition.string.end.julia'
+          '2':
+            'name': 'keyword.operator.arrow.julia'
+        name: 'string.docstring.julia'
+        contentName : 'text.md'
+        patterns: [
+          {
+            include: '#string_escaped_char'
+          }
+          {
+            include: 'text.md'
+          }
+          {
+            include: "#string_dollar_sign_interpolate"
+          }
+        ]
+      }
+      {
         begin: "(i?cxx)(\"\"\")"
         beginCaptures:
           "1":
@@ -349,7 +376,7 @@ repository:
             'name': 'support.function.macro.julia'
           '2':
             'name': 'punctuation.definition.string.begin.julia'
-        end: '\\s?^\\s*(""")\\s?'
+        end: '(""")'
         endCaptures:
           '1':
             'name': 'punctuation.definition.string.end.julia'
@@ -476,33 +503,6 @@ repository:
         patterns: [
           {
             include: "#string_escaped_char"
-          }
-          {
-            include: "#string_dollar_sign_interpolate"
-          }
-        ]
-      }
-      {
-        begin: '(@doc) ((?:doc)?""")'
-        beginCaptures:
-          '1':
-            'name': 'support.function.macro.julia'
-          '2':
-            'name': 'punctuation.definition.string.begin.julia'
-        end: '(""") ?(->)?'
-        endCaptures:
-          '1':
-            'name': 'punctuation.definition.string.end.julia'
-          '2':
-            'name': 'keyword.operator.arrow.julia'
-        name: 'string.docstring.julia'
-        contentName : 'text.md'
-        patterns: [
-          {
-            include: '#string_escaped_char'
-          }
-          {
-            include: 'text.md'
           }
           {
             include: "#string_dollar_sign_interpolate"

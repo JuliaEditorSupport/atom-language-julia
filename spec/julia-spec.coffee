@@ -187,8 +187,8 @@ describe "Julia grammar", ->
     foo bar
     \"\"\"""")
     expect(tokens[0]).toEqual value: '"""', scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar", scopes: ["source.julia", "string.docstring.julia", "text.md"]
-    expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar\n", scopes: ["source.julia", "string.docstring.julia", "text.md"]
+    expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
 
   it "tokenizes void docstrings with whitespace after the final newline, but before the close-quote", ->
     {tokens} = grammar.tokenizeLine("""\"\"\"
@@ -197,8 +197,18 @@ describe "Julia grammar", ->
     foo bar
         \"\"\"""")
     expect(tokens[0]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar", scopes: ["source.julia", "string.docstring.julia", "text.md"]
-    expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar\n    ", scopes: ["source.julia", "string.docstring.julia", "text.md"]
+    expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
+
+  it "tokenizes docstrings with no linebreak before the ending triple-quotes", ->
+    {tokens} = grammar.tokenizeLine("""\"\"\"
+    docstring
+
+    foo bar \"\"\"""")
+    expect(tokens[0]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar ", scopes: ["source.julia", "string.docstring.julia", "text.md"]
+    expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
+
 
   it "tokenizes void docstrings that have extra content after ending tripe quote", ->
     {tokens} = grammar.tokenizeLine("""\"\"\"
@@ -208,10 +218,9 @@ describe "Julia grammar", ->
     \"\"\" foobar
     """)
     expect(tokens[0]).toEqual value: '"""', scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar", scopes: ["source.julia", "string.docstring.julia", "text.md"]
-    expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
-    expect(tokens[4]).toEqual value: " ", scopes: ["source.julia", "string.docstring.julia"]
-    expect(tokens[5]).toEqual value: "foobar", scopes: ["source.julia"]
+    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar\n", scopes: ["source.julia", "string.docstring.julia", "text.md"]
+    expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[3]).toEqual value: " foobar", scopes: ["source.julia"]
 
   it "tokenizes @doc docstrings that have extra content after ending tripe quote", ->
     {tokens} = grammar.tokenizeLine("""@doc \"\"\"
@@ -489,13 +498,13 @@ describe "Julia grammar", ->
     expect(tokens[14]).toEqual value: '; i',   scopes:  ["source.julia"]
     expect(tokens[15]).toEqual value: '::',    scopes:  ["source.julia", "keyword.operator.relation.julia"]
     expect(tokens[16]).toEqual value: 'J',     scopes:  ["source.julia", "support.type.julia"]
-    
+
   it "tokenizes dot operators", ->
     {tokens} = grammar.tokenizeLine('x .<= y')
     expect(tokens[0]).toEqual value: 'x ',     scopes:  ["source.julia"]
     expect(tokens[1]).toEqual value: '.<=',    scopes:  ["source.julia", "keyword.operator.relation.julia"]
     expect(tokens[2]).toEqual value: ' y',     scopes:  ["source.julia"]
-  
+
   it "tokenizes type", ->
     {tokens} = grammar.tokenizeLine('T>:Interger')
     expect(tokens[0]).toEqual value: 'T',     scopes:  ["source.julia"]
