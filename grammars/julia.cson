@@ -177,7 +177,7 @@ repository:
         beginCaptures:
           "0":
             name: "keyword.control.julia"
-        end: "(?<!,)(\\n)"
+        end: "(?<!,|\\s)(\\s*\\n)"
         patterns: [
           {
             match: "\\bouter\\b"
