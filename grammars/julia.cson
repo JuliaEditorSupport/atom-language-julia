@@ -349,7 +349,7 @@ repository:
             'name': 'support.function.macro.julia'
           '2':
             'name': 'punctuation.definition.string.begin.julia'
-        end: '\\s?^\\s*(""")\\s?'
+        end: '(""")'
         endCaptures:
           '1':
             'name': 'punctuation.definition.string.end.julia'
