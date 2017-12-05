@@ -520,7 +520,6 @@ describe "Julia grammar", ->
 
   it 'tokenizes for outer loops with multiple iteration variables', ->
     {tokens} = grammar.tokenizeLine('for outer i = range, \n outer j = range\n outer = 3')
-    console.log tokens
     expect(tokens[0]).toEqual value: 'for',       scopes:  ["source.julia", "keyword.control.julia"]
     expect(tokens[1]).toEqual value: ' ',         scopes:  ["source.julia"]
     expect(tokens[2]).toEqual value: 'outer',     scopes:  ["source.julia", "keyword.other.julia"]
