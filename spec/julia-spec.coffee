@@ -517,3 +517,38 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: ' ',      scopes:  ["source.julia"]
     expect(tokens[2]).toEqual value: '2',      scopes:  ["source.julia", "constant.numeric.julia"]
     expect(tokens[3]).toEqual value: 'img',    scopes:  ["source.julia"]
+
+  it 'tokenizes for outer loops', ->
+    {tokens} = grammar.tokenizeLine('for outer i = range')
+    expect(tokens[0]).toEqual value: 'for',       scopes:  ["source.julia", "keyword.control.julia"]
+    expect(tokens[1]).toEqual value: ' ',         scopes:  ["source.julia"]
+    expect(tokens[2]).toEqual value: 'outer',     scopes:  ["source.julia", "keyword.other.julia"]
+    expect(tokens[3]).toEqual value: ' i ',       scopes:  ["source.julia"]
+    expect(tokens[4]).toEqual value: '=',         scopes:  ["source.julia", "keyword.operator.update.julia"]
+    expect(tokens[5]).toEqual value: ' range',    scopes:  ["source.julia"]
+
+  it 'tokenizes for outer loops with multiple iteration variables', ->
+    {tokens} = grammar.tokenizeLine('for outer i = range, \n outer j = range\n outer = 3')
+    expect(tokens[0]).toEqual value: 'for',       scopes:  ["source.julia", "keyword.control.julia"]
+    expect(tokens[1]).toEqual value: ' ',         scopes:  ["source.julia"]
+    expect(tokens[2]).toEqual value: 'outer',     scopes:  ["source.julia", "keyword.other.julia"]
+    expect(tokens[3]).toEqual value: ' i ',       scopes:  ["source.julia"]
+    expect(tokens[4]).toEqual value: '=',         scopes:  ["source.julia", "keyword.operator.update.julia"]
+    expect(tokens[5]).toEqual value: ' range',    scopes:  ["source.julia"]
+    expect(tokens[6]).toEqual value: ',',         scopes:  ["source.julia", "meta.bracket.julia"]
+    expect(tokens[7]).toEqual value: ' \n ',      scopes:  ["source.julia"]
+    expect(tokens[8]).toEqual value: 'outer',     scopes:  ["source.julia", "keyword.other.julia"]
+    expect(tokens[9]).toEqual value: ' j ',       scopes:  ["source.julia"]
+    expect(tokens[10]).toEqual value: '=',        scopes:  ["source.julia", "keyword.operator.update.julia"]
+    expect(tokens[11]).toEqual value: ' range',   scopes:  ["source.julia"]
+    expect(tokens[12]).toEqual value: '\n',       scopes:  ["source.julia"]
+    expect(tokens[13]).toEqual value: ' outer ',  scopes:  ["source.julia"]
+    expect(tokens[14]).toEqual value: '=',        scopes:  ["source.julia", "keyword.operator.update.julia"]
+    expect(tokens[15]).toEqual value: ' ',        scopes:  ["source.julia"]
+    expect(tokens[16]).toEqual value: '3',        scopes:  ["source.julia", "constant.numeric.julia"]
+
+  it 'does not tokenize outer by itself as a keyword', ->
+    {tokens} = grammar.tokenizeLine('outer = foo')
+    expect(tokens[0]).toEqual value: 'outer ', scopes:  ["source.julia"]
+    expect(tokens[1]).toEqual value: '=',      scopes:  ["source.julia", "keyword.operator.update.julia"]
+    expect(tokens[2]).toEqual value: ' foo',   scopes:  ["source.julia"]

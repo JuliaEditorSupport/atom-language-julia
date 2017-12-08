@@ -67,6 +67,10 @@ repository:
             name: "constant.numeric.julia"
           }
           {
+            match: "\\bfor\\b"
+            name: "keyword.control.julia"
+          }
+          {
             include: "$self"
           }
         ]
@@ -117,6 +121,10 @@ repository:
             name: "keyword.operator.transposed-func.julia"
         patterns: [
           {
+            match: '\\bfor\\b'
+            name: 'keyword.control.julia'
+          }
+          {
             include: "$self"
           }
         ]
@@ -164,7 +172,24 @@ repository:
         name: "keyword.other.julia"
       }
       {
-        match: "\\b(?<![:_])(?:if|else|elseif|while|for|begin|let|do|try|catch|finally|return|break|continue)\\b"
+        comment: "special case for blocks to support tokenizing outer properly"
+        begin: "\\b(for)\\b"
+        beginCaptures:
+          "0":
+            name: "keyword.control.julia"
+        end: "(?<!,|\\s)(\\s*\\n)"
+        patterns: [
+          {
+            match: "\\bouter\\b"
+            name: "keyword.other.julia"
+          }
+          {
+            include: '$self'
+          }
+        ]
+      }
+      {
+        match: "\\b(?<![:_])(?:if|else|elseif|while|begin|let|do|try|catch|finally|return|break|continue)\\b"
         name: "keyword.control.julia"
       }
       {
