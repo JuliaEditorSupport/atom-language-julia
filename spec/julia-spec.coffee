@@ -187,7 +187,7 @@ describe "Julia grammar", ->
     foo bar
     \"\"\"""")
     expect(tokens[0]).toEqual value: '"""', scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar\n", scopes: ["source.julia", "string.docstring.julia", "text.md"]
+    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar\n", scopes: ["source.julia", "string.docstring.julia"]
     expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
 
   it "tokenizes void docstrings with whitespace after the final newline, but before the close-quote", ->
@@ -197,7 +197,7 @@ describe "Julia grammar", ->
     foo bar
         \"\"\"""")
     expect(tokens[0]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar\n    ", scopes: ["source.julia", "string.docstring.julia", "text.md"]
+    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar\n    ", scopes: ["source.julia", "string.docstring.julia"]
     expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
 
   it "tokenizes docstrings with no linebreak before the ending triple-quotes", ->
@@ -206,7 +206,7 @@ describe "Julia grammar", ->
 
     foo bar \"\"\"""")
     expect(tokens[0]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar ", scopes: ["source.julia", "string.docstring.julia", "text.md"]
+    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar ", scopes: ["source.julia", "string.docstring.julia"]
     expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
 
 
@@ -218,7 +218,7 @@ describe "Julia grammar", ->
     \"\"\" foobar
     """)
     expect(tokens[0]).toEqual value: '"""', scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar\n", scopes: ["source.julia", "string.docstring.julia", "text.md"]
+    expect(tokens[1]).toEqual value: "\ndocstring\n\nfoo bar\n", scopes: ["source.julia", "string.docstring.julia"]
     expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
     expect(tokens[3]).toEqual value: " foobar", scopes: ["source.julia"]
 
@@ -232,7 +232,7 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: '@doc', scopes: ["source.julia", "string.docstring.julia", "support.function.macro.julia"]
     expect(tokens[1]).toEqual value: ' ', scopes: ["source.julia", "string.docstring.julia"]
     expect(tokens[2]).toEqual value: '"""', scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[3]).toEqual value: "\ndocstring\n\nfoo bar\n", scopes: ["source.julia", "string.docstring.julia", "text.md"]
+    expect(tokens[3]).toEqual value: "\ndocstring\n\nfoo bar\n", scopes: ["source.julia", "string.docstring.julia",]
     expect(tokens[4]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.docstring.julia", "punctuation.definition.string.end.julia"]
     expect(tokens[5]).toEqual value: " ", scopes: ["source.julia", "string.docstring.julia"]
     expect(tokens[6]).toEqual value: "foobar", scopes: ["source.julia"]
