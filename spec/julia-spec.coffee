@@ -554,3 +554,9 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: 'outer ', scopes:  ["source.julia"]
     expect(tokens[1]).toEqual value: '=',      scopes:  ["source.julia", "keyword.operator.update.julia"]
     expect(tokens[2]).toEqual value: ' foo',   scopes:  ["source.julia"]
+
+  it 'tokenizes keywords preceded by dots correctly', ->
+    {tokens} = grammar.tokenizeLine('foo.module')
+    expect(tokens[0]).toEqual value: 'foo',    scopes:  ["source.julia"]
+    expect(tokens[1]).toEqual value: '.',      scopes:  ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[2]).toEqual value: 'module', scopes:  ["source.julia"]
