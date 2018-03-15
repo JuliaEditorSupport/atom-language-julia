@@ -56,10 +56,15 @@ repository:
     patterns: [
       {
         begin: "\\["
-        end: "\\]((\\.)?'*)"
+        beginCaptures:
+          "0":
+              name: "meta.bracket.julia"
+        end: "(?:\\])(?:(\\.)?'*)"
         endCaptures:
+          "0":
+              name: "meta.bracket.julia"
           "1":
-            name: "keyword.operator.transpose.julia"
+              name: "keyword.operator.transpose.julia"
         name: "meta.array.julia"
         patterns: [
           {
