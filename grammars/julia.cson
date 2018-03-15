@@ -114,7 +114,7 @@ repository:
   function_call:
     patterns: [
       {
-        begin: "([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\.?\\("
+        begin: "([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\.?(?=\\()"
         beginCaptures:
           "1":
             name: "support.function.julia"
@@ -122,6 +122,8 @@ repository:
             name: "support.type.julia"
         end: "\\)(('|(\\.'))*\\.?')?"
         endCaptures:
+          "0":
+            name: "meta.bracket.julia"
           "1":
             name: "keyword.operator.transposed-func.julia"
         patterns: [
