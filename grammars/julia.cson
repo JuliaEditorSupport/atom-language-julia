@@ -145,7 +145,7 @@ repository:
             name: "entity.name.function.julia"
           "2":
             name: "support.type.julia"
-        match: "([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?\\((?=.*\\)(::[^\\s]+)?(\\s*\\bwhere\\b\\s*[^\\s]+)?\\s*?=(?![=>]))"
+        match: "([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?(?=\\(.*\\)(::[^\\s]+)?(\\s*\\bwhere\\b\\s*[^\\s]+)?\\s*?=(?![=>]))"
         comment: """
         first group is function name
         Second group is type parameters (e.g. {T<:Number, S})
@@ -168,7 +168,7 @@ repository:
             name: "entity.name.function.julia"
           "4":
             name: "support.type.julia"
-        match: "\\b(function|macro)(?:\\s+(?:[[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*(\\.))?([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?|\\s*)\\("
+        match: "\\b(function|macro)(?:\\s+(?:[[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*(\\.))?([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)({(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?|\\s*)(?=\\()"
         comment: "similar regex to previous, but with keyword not 1-line syntax"
       }
     ]
