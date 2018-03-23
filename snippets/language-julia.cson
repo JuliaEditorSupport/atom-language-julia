@@ -7,7 +7,6 @@
       $3
       """ ->
     '''
-".source.julia":
   "Documented function":
     prefix: "fxd"
     body: '''
