@@ -1,13 +1,4 @@
 ".source.julia":
-  "Docstring":
-    prefix: "doc"
-    body: '''
-      @doc doc"""
-      $1($2)
-      $3
-      """ ->
-    '''
-".source.julia":
   "Documented function":
     prefix: "fxd"
     body: '''
