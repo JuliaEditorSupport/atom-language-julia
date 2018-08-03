@@ -90,6 +90,19 @@ repository:
     ]
   comment:
     patterns: [
+      {include: '#comment_block'}
+      {
+        begin: "#"
+        beginCaptures:
+          "0":
+            name: "punctuation.definition.comment.julia"
+        end: "\\n"
+        # match: "(?<!\\$)(#)(?!\\{).*$\\n?"
+        name: "comment.line.number-sign.julia"
+      }
+    ]
+  comment_block:
+    patterns: [
       {
         begin: "#="
         beginCaptures:
@@ -100,15 +113,9 @@ repository:
           "0":
             name: "punctuation.definition.comment.end.julia"
         name: "comment.block.number-sign-equals.julia"
-      }
-      {
-        begin: "#"
-        beginCaptures:
-          "0":
-            name: "punctuation.definition.comment.julia"
-        end: "\\n"
-        # match: "(?<!\\$)(#)(?!\\{).*$\\n?"
-        name: "comment.line.number-sign.julia"
+        patterns: [
+          {include: '#comment_block'}
+        ]
       }
     ]
   function_call:

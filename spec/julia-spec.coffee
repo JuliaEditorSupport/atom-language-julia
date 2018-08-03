@@ -376,6 +376,16 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: '#', scopes: ["source.julia", "comment.line.number-sign.julia", "punctuation.definition.comment.julia"]
     expect(tokens[1]).toEqual value: ' This is a comment', scopes: ["source.julia", "comment.line.number-sign.julia"]
 
+  it "tokenizes block comments", ->
+    {tokens} = grammar.tokenizeLine('#= begin #= begin end =# end =#')
+    expect(tokens[0]).toEqual value: "#=", scopes: ["source.julia", "comment.block.number-sign-equals.julia", "punctuation.definition.comment.begin.julia"]
+    expect(tokens[1]).toEqual value: " begin ", scopes: ["source.julia", "comment.block.number-sign-equals.julia"]
+    expect(tokens[2]).toEqual value: "#=", scopes: ["source.julia", "comment.block.number-sign-equals.julia", "comment.block.number-sign-equals.julia", "punctuation.definition.comment.begin.julia"]
+    expect(tokens[3]).toEqual value: " begin end ", scopes: ["source.julia", "comment.block.number-sign-equals.julia", "comment.block.number-sign-equals.julia"]
+    expect(tokens[4]).toEqual value: "=#", scopes: ["source.julia", "comment.block.number-sign-equals.julia", "comment.block.number-sign-equals.julia", "punctuation.definition.comment.end.julia"]
+    expect(tokens[5]).toEqual value: " end ", scopes: ["source.julia", "comment.block.number-sign-equals.julia"]
+    expect(tokens[6]).toEqual value: "=#", scopes: ["source.julia", "comment.block.number-sign-equals.julia", "punctuation.definition.comment.end.julia"]
+
   it "tokenizes the pair assignment operator", ->
     {tokens} = grammar.tokenizeLine('Dict(x => x for x in y)')
     expect(tokens[0]).toEqual value: 'Dict', scopes:  ["source.julia", "support.function.julia"]
