@@ -182,7 +182,7 @@ repository:
   keyword:
     patterns: [
       {
-        match: "\\b(?<![:_\\.])(?:function|@generated|type|immutable|mutable|struct|macro|quote|abstract|bitstype|typealias|module|baremodule|new|where)\\b"
+        match: "\\b(?<![:_\\.])(?:function|@generated|type|immutable|mutable|struct|macro|quote|abstract|primitive type|bitstype|typealias|module|baremodule|new|where)\\b"
         name: "keyword.other.julia"
       }
       {
