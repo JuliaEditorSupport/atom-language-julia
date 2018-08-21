@@ -27,6 +27,47 @@ describe "Julia grammar", ->
     expect(tokens[4]).toEqual value: "Int64", scopes: ["source.julia", "support.type.julia"]
     expect(tokens[5]).toEqual value: ")", scopes: ["source.julia", "meta.bracket.julia"]
 
+  it "tokenizes struct definitions", ->
+    {tokens} = grammar.tokenizeLine("struct Foo end")
+    expect(tokens[0]).toEqual value: "struct", scopes: ["source.julia", "keyword.other.julia"]
+    expect(tokens[1]).toEqual value: " Foo ", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "end", scopes: ["source.julia", "keyword.control.end.julia"]
+
+  it "tokenizes mutable struct definitions", ->
+    {tokens} = grammar.tokenizeLine("mutable  struct Foo end")
+    expect(tokens[0]).toEqual value: "mutable  struct", scopes: ["source.julia", "keyword.other.julia"]
+    expect(tokens[1]).toEqual value: " Foo ", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "end", scopes: ["source.julia", "keyword.control.end.julia"]
+
+  it "tokenizes abstract type definitions", ->
+    {tokens} = grammar.tokenizeLine("abstract type Foo end")
+    expect(tokens[0]).toEqual value: "abstract type", scopes: ["source.julia", "keyword.other.julia"]
+    expect(tokens[1]).toEqual value: " Foo ", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "end", scopes: ["source.julia", "keyword.control.end.julia"]
+
+  it "tokenizes primitive type definitions", ->
+    {tokens} = grammar.tokenizeLine("primitive type Foo 64 end")
+    expect(tokens[0]).toEqual value: "primitive type", scopes: ["source.julia", "keyword.other.julia"]
+    expect(tokens[1]).toEqual value: " Foo ", scopes: ["source.julia"]
+    expect(tokens[2]).toEqual value: "64", scopes: ["source.julia", "constant.numeric.julia"]
+    expect(tokens[3]).toEqual value:  " ", scopes: ["source.julia"]
+    expect(tokens[4]).toEqual value: "end", scopes: ["source.julia", "keyword.control.end.julia"]
+
+  it "doesn't tokenize 'mutable', 'abstract' or 'primitive' on their own", ->
+    {tokens} = grammar.tokenizeLine("mutable = 3; abstract = 5; primitive = 11")
+    expect(tokens[0]).toEqual value: "mutable ", scopes: ["source.julia"]
+    expect(tokens[1]).toEqual value: "=", scopes: ["source.julia", "keyword.operator.update.julia"]
+    expect(tokens[2]).toEqual value: " ", scopes: ["source.julia"]
+    expect(tokens[3]).toEqual value: "3", scopes: ["source.julia", "constant.numeric.julia"]
+    expect(tokens[4]).toEqual value: "; abstract ", scopes: ["source.julia"]
+    expect(tokens[5]).toEqual value: "=", scopes: ["source.julia", "keyword.operator.update.julia"]
+    expect(tokens[6]).toEqual value: " ", scopes: ["source.julia"]
+    expect(tokens[7]).toEqual value: "5", scopes: ["source.julia", "constant.numeric.julia"]
+    expect(tokens[8]).toEqual value: "; primitive ", scopes: ["source.julia"]
+    expect(tokens[9]).toEqual value: "=", scopes: ["source.julia", "keyword.operator.update.julia"]
+    expect(tokens[10]).toEqual value: " ", scopes: ["source.julia"]
+    expect(tokens[11]).toEqual value: "11", scopes: ["source.julia", "constant.numeric.julia"]
+
   it "tokenizes types ignoring whitespace", ->
     {tokens} = grammar.tokenizeLine("f(x :: Int, y     ::   Float64, z::Float32, a :: X.Y.Z.A, b ::    X.Y.Z)")
     expect(tokens[0]).toEqual value: "f", scopes: ["source.julia", "support.function.julia"]
