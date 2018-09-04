@@ -101,6 +101,11 @@ describe "Julia grammar", ->
     expect(tokens[28]).toEqual value: "X.Y.Z", scopes: ["source.julia", "support.type.julia"]
     expect(tokens[29]).toEqual value: ")", scopes: ["source.julia", "meta.bracket.julia"]
 
+  it "tokenizes `const` as a keyword", ->
+    {tokens} = grammar.tokenizeLine("const Foo")
+    expect(tokens[0]).toEqual value: "const", scopes: ["source.julia", "keyword.storage.modifier.julia"]
+    expect(tokens[1]).toEqual value: " Foo", scopes: ["source.julia"]
+
   it "tokenizes functions and (shallowly nested) parameterized types", ->
     {tokens} = grammar.tokenizeLine("x{T <: Dict{Any, Tuple{Int, Int}}}(a::T, b::Union{Int, Set{Any}})")
     expect(tokens[0]).toEqual value: "x", scopes: ["source.julia", "support.function.julia"]
