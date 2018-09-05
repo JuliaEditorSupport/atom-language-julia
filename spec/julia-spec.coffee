@@ -190,13 +190,6 @@ describe "Julia grammar", ->
     expect(tokens[2]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
     expect(tokens[3]).toEqual value: "Test", scopes: ["source.julia"]
 
-  it "tokenizes importall statements", ->
-    {tokens} = grammar.tokenizeLine("importall Base.Test")
-    expect(tokens[0]).toEqual value: "importall", scopes: ["source.julia", "keyword.control.importall.julia"]
-    expect(tokens[1]).toEqual value: " Base", scopes: ["source.julia"]
-    expect(tokens[2]).toEqual value: ".", scopes: ["source.julia", "keyword.operator.dots.julia"]
-    expect(tokens[3]).toEqual value: "Test", scopes: ["source.julia"]
-
   it "tokenizes export statements", ->
     {tokens} = grammar.tokenizeLine("export my_awesome_function")
     expect(tokens[0]).toEqual value: "export", scopes: ["source.julia", "keyword.control.export.julia"]
