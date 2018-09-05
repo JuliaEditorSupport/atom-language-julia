@@ -212,7 +212,7 @@ repository:
       }
       {
         match: "\\b(?<![:_])(?:global|local|const)\\b"
-        name: "storage.modifier.variable.julia"
+        name: "keyword.storage.modifier.julia"
       }
       {
         match: "\\b(?<![:_])(?:export)\\b"
