@@ -13,8 +13,6 @@ fileTypes: [
   "jl"
 ]
 firstLineMatch: "^#!.*\\bjulia\\s*$"
-foldingStartMarker: "^\\s*(?:if|while|for|begin|function|macro|module|baremodule|type|immutable|struct|try|let)\\b(?!.*\\bend\\b).*$"
-foldingStopMarker: "^\\s*(?:end)\\b.*$"
 name: "Julia"
 patterns: [
   {
