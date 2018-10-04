@@ -4,8 +4,7 @@
     commentStart: "# "
     increaseIndentPattern: "^(\\s*|.*=\\s*|.*@\\w*\\s*)([\\w\\s]*|\\s+\".*\"\\s+)\\b(if|while|for|function|macro|immutable|struct|type|let|quote|try|begin|.*\\)\\s*do|else|elseif|catch|finally)\\b(?!.*\\bend\\b[^\\]]*$).*$"
     decreaseIndentPattern: "^\\s*(end|else|elseif|catch|finally)\\b.*$"
-    foldingStartMarker: "^\\s*(?:if|while|for|begin|function|macro|module|baremodule|type|immutable|struct|try|let)\\b(?!.*\\bend\\b).*$"
-    foldingStopMarker: "^\\s*(?:end)\\b.*$"
+    foldEndPattern: '^\\s*\\]|^\\s*\\)'
 
 # NOTE: foldingStartMarker/foldingStopMarker not currently implemented in
 #       atom/first-mate, but we leave it here anyway for the potential future
