@@ -2,7 +2,7 @@
   editor:
     tabLength: 4
     commentStart: "# "
-    increaseIndentPattern: "^(\\s*|.*=\\s*|.*@\\w*\\s*)([\\w\\s]*|\\s+\".*\"\\s+)\\b(if|while|for|function|macro|immutable|struct|type|let|quote|try|begin|.*\\)\\s*do|else|elseif|catch|finally)\\b(?!.*\\bend\\b[^\\]]*$).*$"
+    increaseIndentPattern: "^(\\s*|.*=\\s*|.*@\\w*\\s*)([\\w\\s]*|\\s+\".*\"\\s+)\\b(if|while|for|function|macro|mutable\\s+struct|struct|abstract\\s+type|primitive\\s+type|let|quote|try|begin|.*\\)\\s*do|else|elseif|catch|finally)\\b(?!.*\\bend\\b[^\\]]*$).*$"
     decreaseIndentPattern: "^\\s*(end|else|elseif|catch|finally)\\b.*$"
     foldEndPattern: '^\\s*\\]|^\\s*\\)'
 

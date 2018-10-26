@@ -180,7 +180,7 @@ repository:
   keyword:
     patterns: [
       {
-        match: "\\b(?<![:_\\.])(?:function|@generated|type|immutable|mutable\\s+struct|struct|macro|quote|abstract\\s+type|primitive\\s+type|bitstype|typealias|module|baremodule|new|where)\\b"
+        match: "\\b(?<![:_\\.])(?:function|mutable\\s+struct|struct|macro|quote|abstract\\s+type|primitive\\s+type|module|baremodule|new|where)\\b"
         name: "keyword.other.julia"
       }
       {
@@ -219,10 +219,6 @@ repository:
       {
         match: "\\b(?<![:_])(?:import)\\b"
         name: "keyword.control.import.julia"
-      }
-      {
-        match: "\\b(?<![:_])(?:importall)\\b"
-        name: "keyword.control.importall.julia"
       }
       {
         match: "\\b(?<![:_])(?:using)\\b"
@@ -605,7 +601,7 @@ repository:
             name: "entity.other.inherited-class.julia"
           "3":
             name: "punctuation.separator.inheritance.julia"
-        match: "(?>!:_)(?:type|immutable|struct)\\s+([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)(\\s*(<:)\\s*[[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*(?:{.*})?)?"
+        match: "(?>!:_)(?:struct|mutable\\s+struct|abstract\\s+type|primitive\\s+type)\\s+([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)(\\s*(<:)\\s*[[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*(?:{.*})?)?"
         name: "meta.type.julia"
       }
     ]
