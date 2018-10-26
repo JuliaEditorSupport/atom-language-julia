@@ -1,113 +1,149 @@
 ".source.julia":
   "Documented function":
-    prefix: "fxd"
+    prefix: "functiond"
     body: '''
-      @doc doc"""
-      $1($2)
-      $3
-      """ ->
-      function $1($2)
-      	$4
-      end
+"""
+    ${1:name}(${2:args})
+
+${3:documentation}
+"""
+function ${1:name}(${2:args})
+\t${4:body}
+end
     '''
-  "Ternary operator":
-    prefix: "3"
-    body: "${1:condition} ? ${2:if_true} : ${3:if_false}"
+  "function":
+    prefix: "function"
+    body: '''
+function ${1:name}(${2:args})
+\t${3:body}
+end
+    '''
   'Else if':
     prefix: 'elseif'
-    body: """elseif ${1:condition}
-      $2
+    body: """
+elseif ${1:condition}
+\t$2
     """
   'Else if2':
     prefix: 'elif'
-    body: """elseif ${1:condition}
-      $2
+    body: """
+elseif ${1:condition}
+\t$2
     """
-  "error":
-    prefix: "err"
-    body: "error(\"$1\")"
-  "finally":
-    prefix: "fn"
+  "for":
+    prefix: "for"
     body: '''
-      finally
-      	$1
+for ${1:variable}
+\t$2
+end
     '''
   "for/in":
-    prefix: "fr"
+    prefix: "forin"
     body: '''
-      for ${1:variable} in ${2:iterator}
-      	$3
-      end
-    '''
-  "function":
-    prefix: "fx"
-    body: '''
-      function ${1:name}(${2:args})
-      	${3:body}
-      end
+for ${1:variable} in ${2:iterator}
+\t$3
+end
     '''
   "return":
-      prefix: 'ret'
+      prefix: 'return'
       body: 'return $1'
   "if":
     prefix: "if"
     body: '''
-      if ${1:condition}
-      	${2:body}
-      end
+if ${1:condition}
+\t${2:body}
+end
     '''
   "if/else":
-    prefix: "ie"
+    prefix: "ife"
     body: '''
-      if ${1:condition}
-      	${2:true_body}
-      else
-      	${3:false_body}
-      end
+if ${1:condition}
+\t${2:true_body}
+else
+\t${3:false_body}
+end
     '''
   "macro":
-    prefix: "mcr"
+    prefix: "macro"
     body: '''
-      macro ${1:name}(${2:args})
-      	${3:body}
-      end
+macro ${1:name}(${2:args})
+\t${3:body}
+end
     '''
-  "println":
-    prefix: "p"
-    body: "println(${1:msg})"
-  "throw":
-    prefix: "th"
-    body: "throw(${1:err_type}Error(${2:msg}))"
   "try/catch":
-    prefix: "tr"
+    prefix: "try"
     body: '''
-      try
-      	${1:try_block}
-      catch $1
-      	$2
-      end
+try
+\t${1:try_block}
+catch $2
+\t$3
+end
     '''
-  "type":
-    prefix: "t"
+  "try/finally":
+    prefix: "tryf"
     body: '''
-      type ${1:name}
-      	${1:fields}
-      end
+try
+\t$1
+finally
+\t$2
+end
     '''
+  "try/catch/finally":
+    prefix: "trycf"
+    body: '''
+try
+\t${1:try_block}
+catch $2
+\t$3
+finally
+\t$4
+end
+    '''
+  "struct":
+    prefix: "struct"
+    body: '''
+struct ${1:name}
+\t${2:fields}
+end
+    '''
+  "mutable struct":
+    prefix: "mutable"
+    body: '''
+mutable struct ${1:name}
+\t${2:fields}
+end
+    '''
+  "abstract type":
+    prefix: "abstract"
+    body: 'abstract type ${1:name} end'
+  "primtitive type":
+    prefix: "primitive"
+    body: 'primitive type ${1:name} ${2:bits} end'
   "while":
-    prefix: "wh"
+    prefix: "while"
     body: '''
-      while ${1:condition}
-      	${2:body}
-      end
+while ${1:condition}
+\t${2:body}
+end
     '''
-  'Compound expression':
-    prefix: 'beg'
-    body: """${1:variable} = begin
-      $2
-    end"""
+  'begin block':
+    prefix: 'begin'
+    body: """
+begin
+\t$1
+end
+    """
   'let block':
     prefix: 'let'
-    body: """${1:variable} = let
-      $2
-    end"""
+    body: """
+let
+\t$1
+end
+    """
+  'do block':
+    prefix: 'do'
+    body: """
+do ${1:args}
+\t$2
+end
+    """
