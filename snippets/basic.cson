@@ -1,18 +1,11 @@
 ".source.julia":
   "Module":
-    prefix: 'mod'
+    prefix: 'module'
     body: """
     module ${1:name}
     ${2}
     end  # module ${1}
     """
-  "immutable":
-    prefix: 'i'
-    body: '''
-      immutable ${1:name}
-      	$2
-      end
-    '''
   "Bang":
     prefix: '#!'
     body: """#! /usr/bin/env julia
@@ -22,12 +15,12 @@
     body: """#=
     $1
     =#"""
-   "Use":
-      prefix: 'use'
+   "Using":
+      prefix: 'using'
       body: """using ${1:module}
       $2"""
    "Include":
-      prefix: 'inc'
+      prefix: 'include'
       body: """include("${1:file}")
       $2"""
    "Typed variable":
