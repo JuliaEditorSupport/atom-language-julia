@@ -9,14 +9,14 @@ ${3:documentation}
 """
 function ${1:name}(${2:args})
 \t${4:body}
-end
+end # function
     '''
   "function":
     prefix: "function"
     body: '''
 function ${1:name}(${2:args})
 \t${3:body}
-end
+end # function
     '''
   'Else if':
     prefix: 'elseif'
@@ -35,14 +35,14 @@ elseif ${1:condition}
     body: '''
 for ${1:variable}
 \t$2
-end
+end # for
     '''
   "for/in":
     prefix: "forin"
     body: '''
 for ${1:variable} in ${2:iterator}
 \t$3
-end
+end # for
     '''
   "return":
       prefix: 'return'
@@ -52,7 +52,7 @@ end
     body: '''
 if ${1:condition}
 \t${2:body}
-end
+end # if
     '''
   "if/else":
     prefix: "ife"
@@ -61,14 +61,14 @@ if ${1:condition}
 \t${2:true_body}
 else
 \t${3:false_body}
-end
+end # if
     '''
   "macro":
     prefix: "macro"
     body: '''
 macro ${1:name}(${2:args})
 \t${3:body}
-end
+end # macro
     '''
   "try/catch":
     prefix: "try"
@@ -77,7 +77,7 @@ try
 \t${1:try_block}
 catch $2
 \t$3
-end
+end # try
     '''
   "try/finally":
     prefix: "tryf"
@@ -86,7 +86,7 @@ try
 \t$1
 finally
 \t$2
-end
+end # try
     '''
   "try/catch/finally":
     prefix: "trycf"
@@ -97,21 +97,21 @@ catch $2
 \t$3
 finally
 \t$4
-end
+end # try
     '''
   "struct":
     prefix: "struct"
     body: '''
 struct ${1:name}
 \t${2:fields}
-end
+end # struct
     '''
   "mutable struct":
     prefix: "mutable"
     body: '''
 mutable struct ${1:name}
 \t${2:fields}
-end
+end # mutable struct
     '''
   "abstract type":
     prefix: "abstract"
@@ -124,26 +124,26 @@ end
     body: '''
 while ${1:condition}
 \t${2:body}
-end
+end # while
     '''
   'begin block':
     prefix: 'begin'
     body: """
 begin
 \t$1
-end
+end # begin
     """
   'let block':
     prefix: 'let'
     body: """
 let
 \t$1
-end
+end # let
     """
   'do block':
     prefix: 'do'
     body: """
 do ${1:args}
 \t$2
-end
+end # do
     """
