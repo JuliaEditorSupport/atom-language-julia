@@ -466,7 +466,7 @@ repository:
         beginCaptures:
           "0":
             name: "punctuation.definition.string.begin.julia"
-        end: '(?<!\\)"'
+        end: '"'
         endCaptures:
           "0":
             name: "punctuation.definition.string.end.julia"
@@ -500,15 +500,17 @@ repository:
         ]
       }
       {
-        begin: "\\b([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)\"\"\""
+        begin: "(?<!\")\\b([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)\"\"\""
         beginCaptures:
           "0":
             name: "punctuation.definition.string.begin.julia"
           "1":
-            name: "support.funtion.macro.julia"
-        end: "\"\"\"([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)?"
+            name: "support.function.macro.julia"
+        end: "(\"\"\")([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)?"
         endCaptures:
-          "0":
+          "1":
+            name: "punctuation.definition.string.end.julia"
+          "2":
             name: "punctuation.definition.string.end.julia"
         name: "string.quoted.other.julia"
         patterns: [
@@ -518,15 +520,17 @@ repository:
         ]
       },
       {
-        begin: "\\b([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)\"(?!\")"
+        begin: "(?<!\")\\b([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)\"(?!\")"
         beginCaptures:
           "0":
             name: "punctuation.definition.string.begin.julia"
           "1":
-            name: "support.funtion.macro.julia"
-        end: "(?<!\\\\)\"([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)?"
+            name: "support.function.macro.julia"
+        end: "(\")([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)?"
         endCaptures:
-          "0":
+          "1":
+            name: "punctuation.definition.string.end.julia"
+          "2":
             name: "punctuation.definition.string.end.julia"
         name: "string.quoted.other.julia"
         patterns: [
