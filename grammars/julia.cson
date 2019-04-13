@@ -440,7 +440,7 @@ repository:
         ]
       }
       {
-        begin: '"""'
+        begin: '(?<![[:word:]\u207A-\u209C!\u2032\u2207])"""'
         beginCaptures:
           "0":
             name: "punctuation.definition.string.multiline.begin.julia"
@@ -462,7 +462,7 @@ repository:
       }
       {
         name: "string.quoted.double.julia"
-        begin: '"'
+        begin: '(?<![[:word:]\u207A-\u209C!\u2032\u2207])"(?!"")'
         beginCaptures:
           "0":
             name: "punctuation.definition.string.begin.julia"
@@ -500,13 +500,37 @@ repository:
         ]
       }
       {
-        begin: "\\b[[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*\""
+        begin: "(?<!\")\\b([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)\"\"\""
         beginCaptures:
           "0":
             name: "punctuation.definition.string.begin.julia"
-        end: "\"([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)?"
+          "1":
+            name: "support.function.macro.julia"
+        end: "(\"\"\")([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)?"
         endCaptures:
+          "1":
+            name: "punctuation.definition.string.end.julia"
+          "2":
+            name: "punctuation.definition.string.end.julia"
+        name: "string.quoted.other.julia"
+        patterns: [
+          {
+            include: "#string_escaped_char"
+          }
+        ]
+      },
+      {
+        begin: "(?<!\")\\b([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)\"(?!\")"
+        beginCaptures:
           "0":
+            name: "punctuation.definition.string.begin.julia"
+          "1":
+            name: "support.function.macro.julia"
+        end: "(\")([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)?"
+        endCaptures:
+          "1":
+            name: "punctuation.definition.string.end.julia"
+          "2":
             name: "punctuation.definition.string.end.julia"
         name: "string.quoted.other.julia"
         patterns: [
