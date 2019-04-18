@@ -259,7 +259,7 @@ repository:
         name: "keyword.operator.shift.julia"
       }
       {
-        match: "(?:\\s*(::|>:|<:)\\s*((?:(?:Union)?\\([^)]*\\)|[[:alpha:]_][[:word:]\u207A-\u209C!\u2032\\.]*(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})?)))(?:\\.\\.\\.)?"
+        match: "(?:\\s*(::|>:|<:)\\s*((?:(?:Union)?\\([^)]*\\)|[[:alpha:]_][[:word:]\u207A-\u209C!\u2032\\.]*(?:(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})|(?:\".+\"))?)))(?:\\.\\.\\.)?"
         captures:
           "1":
             name: "keyword.operator.relation.julia"
@@ -526,7 +526,7 @@ repository:
             name: "punctuation.definition.string.begin.julia"
           "1":
             name: "support.function.macro.julia"
-        end: "(\")([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)?"
+        end: "(?<![^\\\\]\\\\)(\")([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)?"
         endCaptures:
           "1":
             name: "punctuation.definition.string.end.julia"

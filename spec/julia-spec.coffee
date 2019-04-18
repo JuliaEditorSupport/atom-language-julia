@@ -219,6 +219,41 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: "xyz", scopes: ["source.julia", "string.quoted.triple.double.julia"]
     expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.quoted.triple.double.julia", "punctuation.definition.string.multiline.end.julia"]
 
+  it 'tokenizes string macro function type constraint', ->
+    {tokens} = grammar.tokenizeLine('f(x::T) where T <: MIME"text/plain"')
+    expect(tokens[0]).toEqual value: "f", scopes: ["source.julia", "support.function.julia"]
+    expect(tokens[1]).toEqual value: "(", scopes: ["source.julia", "meta.bracket.julia"]
+    expect(tokens[2]).toEqual value: "x", scopes: ["source.julia"]
+    expect(tokens[3]).toEqual value: "::", scopes: ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[4]).toEqual value: "T", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[5]).toEqual value: ")", scopes: ["source.julia", "meta.bracket.julia"]
+    expect(tokens[6]).toEqual value: " ", scopes: ["source.julia"]
+    expect(tokens[7]).toEqual value: "where", scopes: ["source.julia", "keyword.other.julia"]
+    expect(tokens[8]).toEqual value: " T", scopes: ["source.julia"]
+    expect(tokens[9]).toEqual value: " ", scopes: ["source.julia"]
+    expect(tokens[10]).toEqual value: "<:", scopes: ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[11]).toEqual value: " ", scopes: ["source.julia"]
+    expect(tokens[12]).toEqual value: "MIME\"text/plain\"", scopes: ["source.julia", "support.type.julia"]
+
+  it 'tokenizes string macro in function argument type', ->
+    {tokens} = grammar.tokenizeLine('f(x::MIME"text/plain")')
+    expect(tokens[0]).toEqual value: "f", scopes: ["source.julia", "support.function.julia"]
+    expect(tokens[1]).toEqual value: "(", scopes: ["source.julia", "meta.bracket.julia"]
+    expect(tokens[2]).toEqual value: "x", scopes: ["source.julia"]
+    expect(tokens[3]).toEqual value: "::", scopes: ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[4]).toEqual value: "MIME\"text/plain\"", scopes: ["source.julia", "support.type.julia"]
+    expect(tokens[5]).toEqual value: ")", scopes: ["source.julia", "meta.bracket.julia"]
+
+  it 'tokenizes string macro after type operator', ->
+    {tokens} = grammar.tokenizeLine('::MIME"annoying \"string\" bla bla"')
+    expect(tokens[0]).toEqual value: "::", scopes: ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[1]).toEqual value: 'MIME"annoying \"string\" bla bla"', scopes: ["source.julia", "support.type.julia"]
+
+  it 'tokenizes string macro after type operator', ->
+    {tokens} = grammar.tokenizeLine('::MIME"text/plain"')
+    expect(tokens[0]).toEqual value: "::", scopes: ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[1]).toEqual value: "MIME\"text/plain\"", scopes: ["source.julia", "support.type.julia"]
+
   it 'tokenizes macro strings with escaped chars', ->
     {tokens} = grammar.tokenizeLine('m"α\\u1234\\\\"')
     expect(tokens[0]).toEqual value: "m", scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.begin.julia", "support.function.macro.julia"]
