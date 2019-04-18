@@ -714,3 +714,13 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: 'foo',    scopes:  ["source.julia"]
     expect(tokens[1]).toEqual value: '.',      scopes:  ["source.julia", "keyword.operator.dots.julia"]
     expect(tokens[2]).toEqual value: 'module', scopes:  ["source.julia"]
+
+  it 'tokenizes nothing and missing as keywords', ->
+    {tokens} = grammar.tokenizeLine('x = nothing, missing')
+    expect(tokens[0]).toEqual value: 'x ',       scopes:  ["source.julia"]
+    expect(tokens[1]).toEqual value: '=',        scopes:  ["source.julia", "keyword.operator.update.julia"]
+    expect(tokens[2]).toEqual value: ' ',        scopes:  ["source.julia"]
+    expect(tokens[3]).toEqual value: 'nothing',  scopes:  ["source.julia", "constant.language.julia"]
+    expect(tokens[4]).toEqual value: ',',        scopes:  ["source.julia", "meta.bracket.julia"]
+    expect(tokens[5]).toEqual value: ' ',        scopes:  ["source.julia"]
+    expect(tokens[6]).toEqual value: 'missing',  scopes:  ["source.julia", "constant.language.julia"]
