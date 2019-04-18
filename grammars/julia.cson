@@ -240,7 +240,7 @@ repository:
         name: "constant.numeric.julia"
       }
       {
-        match: "\\btrue\\b|\\bfalse\\b|\\bnothing\\b"
+        match: "\\btrue\\b|\\bfalse\\b|\\bnothing\\b|\\bmissing\\b"
         name: "constant.language.julia"
       }
     ]
@@ -442,50 +442,50 @@ repository:
           }
         ]
       }
-            {
-              begin: "(js)(\"\"\")"
-              beginCaptures:
-                "1":
-                  name: "support.function.macro.julia"
-                "2":
-                  name: "punctuation.definition.string.begin.julia"
-              end: "\"\"\""
-              endCaptures:
-                "0":
-                  name: "punctuation.definition.string.end.julia"
-              name: 'embed.js.julia'
-              contentName: 'source.js'
-              patterns: [
-                {
-                  include: 'source.js'
-                }
-                {
-                  include: '#string_dollar_sign_interpolate'
-                }
-              ]
-            }
-            {
-              begin: "(js)(\")"
-              beginCaptures:
-                "1":
-                  name: "support.function.macro.julia"
-                "2":
-                  name: "punctuation.definition.string.begin.julia"
-              end: "\""
-              name: 'embed.js.julia'
-              endCaptures:
-                "0":
-                  name: "punctuation.definition.string.end.julia"
-              contentName: 'source.js'
-              patterns: [
-                {
-                  include: 'source.js'
-                }
-                {
-                  include: '#string_dollar_sign_interpolate'
-                }
-              ]
-            }
+      {
+        begin: "(js)(\"\"\")"
+        beginCaptures:
+          "1":
+            name: "support.function.macro.julia"
+          "2":
+            name: "punctuation.definition.string.begin.julia"
+        end: "\"\"\""
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.julia"
+        name: 'embed.js.julia'
+        contentName: 'source.js'
+        patterns: [
+          {
+            include: 'source.js'
+          }
+          {
+            include: '#string_dollar_sign_interpolate'
+          }
+        ]
+      }
+      {
+        begin: "(js)(\")"
+        beginCaptures:
+          "1":
+            name: "support.function.macro.julia"
+          "2":
+            name: "punctuation.definition.string.begin.julia"
+        end: "\""
+        name: 'embed.js.julia'
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.julia"
+        contentName: 'source.js'
+        patterns: [
+          {
+            include: 'source.js'
+          }
+          {
+            include: '#string_dollar_sign_interpolate'
+          }
+        ]
+      }
       {
         begin: '^\\s?([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)?(""")\\s?$'
         beginCaptures:
