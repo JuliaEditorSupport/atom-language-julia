@@ -1,4 +1,8 @@
 ".source.julia":
+  # Default to using the TextMate grammar for now
+  core:
+    useTreeSitterParsers: false
+
   editor:
     tabLength: 4
     commentStart: "# "

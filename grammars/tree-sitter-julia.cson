@@ -1,0 +1,124 @@
+name: 'Julia'
+scopeName: 'source.julia'
+type: 'tree-sitter'
+parser: 'tree-sitter-julia'
+
+firstLineRegex: [
+  '^#![ \\t]*/.*\\bjulia[\\d\\.]*\\b'
+  'vim\\b.*\\bset\\b.*\\b(filetype|ft|syntax)=julia'
+]
+
+fileTypes: [
+  'jl'
+]
+
+folds: [
+  {
+    type: 'function_definition'
+    start: {type: 'parameter_list'}
+    end: {type: ['"end"']}
+  }
+  {
+    type: 'if_statement'
+    end: {type: ['else_clause', 'elseif_clause']}
+  }
+  {
+    type: ['else_clause', 'elseif_clause']
+  }
+  {
+    end: {index: -1, type: 'end'}
+  }
+  {
+    start: {type: '(', index: 0}
+    end: {type: ')', index: -1}
+  },
+  {
+    start: {type: '[', index: 0}
+    end: {type: ']', index: -1}
+  },
+  {
+    start: {type: '{', index: 0}
+    end: {type: '}', index: -1}
+  }
+]
+
+comments:
+  start: '# '
+
+scopes:
+  'source_file': 'source.julia'
+
+  'comment': 'comment'
+  'number': 'constant.language'
+
+  'command_string': 'string.quoted'
+  'triple_string, string': 'string.quoted.double'
+  'character': 'string.quoted.single'
+
+  'quote_expression > identifier': 'constant.other.symbol'
+
+  '
+    "begin",
+    "break",
+    "catch",
+    "const",
+    "continue",
+    "else",
+    "elseif",
+    "end",
+    "export",
+    "finally",
+    "for",
+    "function",
+    "if",
+    "import",
+    "in",
+    "let",
+    "module",
+    "mutable",
+    "return",
+    "struct",
+    "try",
+    "using",
+    "while",
+  ': 'keyword.control'
+
+  '
+    parameterized_identifier > identifier
+  ': [
+    {match: '^[A-Z]', scopes: 'entity.name.type'},
+    'entity.name.function',
+  ]
+
+  '
+    subtype_clause > identifier,
+    type_argument_list > identifier,
+    type_parameter_list > identifier,
+    constrained_parameter > identifier,
+    subtype_clause > field_expression > identifier:nth-child(2),
+    type_parameter_list > field_expression > identifier:nth-child(2),
+    type_argument_list > field_expression > identifier:nth-child(2),
+    typed_expression > identifier:nth-child(2),
+    typed_parameter > identifier:nth-child(2),
+    typed_expression > field_expression:nth-child(2) > identifier:nth-child(2),
+    typed_parameter > field_expression:nth-child(2) > identifier:nth-child(2),
+    struct_definition > identifier:nth-child(1)
+  ': 'entity.name.type'
+
+  '
+    field_expression > identifier:nth-child(2),
+    named_field > identifier:nth-child(0),
+    struct_definition > typed_expression > identifier:nth-child(0),
+    struct_definition > identifier,
+  ': 'variable.other.object.property'
+
+  '
+    macro_identifier,
+    call_expression > identifier,
+    call_expression > field_expression > identifier:nth-child(2),
+    call_expression > field_identifier > identifier:nth-child(2),
+    broadcast_call_expression > identifier,
+    broadcast_call_expression > field_expression > identifier:nth-child(2),
+    broadcast_call_expression > field_identifier > identifier:nth-child(2),
+    function_definition > identifier:nth-child(1)
+  ': 'entity.name.function'

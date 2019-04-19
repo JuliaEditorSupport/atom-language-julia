@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/JuliaEditorSupport/atom-language-julia/issues"
   },
-  "homepage": "https://github.com/JuliaEditorSupport/atom-language-julia"
+  "homepage": "https://github.com/JuliaEditorSupport/atom-language-julia",
+  "dependencies": {
+    "tree-sitter-julia": "0.0.3"
+  }
 }
