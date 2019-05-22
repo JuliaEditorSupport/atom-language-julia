@@ -213,7 +213,15 @@ describe "Julia grammar", ->
     expect(tokens[2]).toEqual value: "xyz", scopes: ["source.julia", "string.quoted.other.julia"]
     expect(tokens[3]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.end.julia"]
 
-  it 'tokenizes tripple quotes', ->
+  it 'tokenizes macro strings juxtaposed to numbers', ->
+    {tokens} = grammar.tokenizeLine('123.2ab"""xyz"""')
+    expect(tokens[0]).toEqual value: "123.2", scopes: ["source.julia", "constant.numeric.julia"]
+    expect(tokens[1]).toEqual value: "ab", scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.begin.julia", "support.function.macro.julia"]
+    expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[3]).toEqual value: "xyz", scopes: ["source.julia", "string.quoted.other.julia"]
+    expect(tokens[4]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.end.julia"]
+
+  it 'tokenizes triple quotes', ->
     {tokens} = grammar.tokenizeLine('"""xyz"""')
     expect(tokens[0]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.quoted.triple.double.julia", "punctuation.definition.string.multiline.begin.julia"]
     expect(tokens[1]).toEqual value: "xyz", scopes: ["source.julia", "string.quoted.triple.double.julia"]
