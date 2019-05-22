@@ -487,7 +487,7 @@ repository:
         ]
       }
       {
-        begin: '^\\s?([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)?(""")\\s?$'
+        begin: '^\\s?(doc|raw)?(""")\\s?$'
         beginCaptures:
           '1':
             'name': 'support.function.macro.julia'
