@@ -507,6 +507,13 @@ describe "Julia grammar", ->
     expect(tokens[1][0]).toEqual value: '# hello world', scopes: ["source.julia", "embed.markdown.julia", "source.gfm"]
     expect(tokens[2][0]).toEqual value: '"""', scopes: ["source.julia", "embed.markdown.julia", "punctuation.definition.string.end.julia"]
 
+  it "tokenizes Markdown single line string macros", ->
+    {tokens} = grammar.tokenizeLine('md"hello *world*"')
+    expect(tokens[0]).toEqual value: 'md', scopes: ["source.julia", "embed.markdown.julia", "support.function.macro.julia"]
+    expect(tokens[1]).toEqual value: '"', scopes: ["source.julia", "embed.markdown.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[2]).toEqual value: 'hello *world*', scopes: ["source.julia", "embed.markdown.julia", "source.gfm"]
+    expect(tokens[3]).toEqual value: '"', scopes: ["source.julia", "embed.markdown.julia", "punctuation.definition.string.end.julia"]
+
   it "tokenizes symbols of `keyword.other`s", ->
     {tokens} = grammar.tokenizeLine(':type')
     expect(tokens[0]).toEqual value: ':type', scopes: ["source.julia", "constant.other.symbol.julia"]

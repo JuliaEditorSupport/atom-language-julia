@@ -553,6 +553,28 @@ repository:
         ]
       }
       {
+        begin: "(md)(\")"
+        beginCaptures:
+          "1":
+            name: "support.function.macro.julia"
+          "2":
+            name: "punctuation.definition.string.begin.julia"
+        end: "\""
+        name: 'embed.markdown.julia'
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.julia"
+        contentName: 'source.gfm'
+        patterns: [
+          {
+            include: 'source.gfm'
+          }
+          {
+            include: '#string_dollar_sign_interpolate'
+          }
+        ]
+      }
+      {
         begin: '^\\s?(doc|raw)?(""")\\s?$'
         beginCaptures:
           '1':
