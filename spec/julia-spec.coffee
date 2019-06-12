@@ -243,6 +243,12 @@ describe "Julia grammar", ->
     expect(tokens[11]).toEqual value: " ", scopes: ["source.julia"]
     expect(tokens[12]).toEqual value: "MIME\"text/plain\"", scopes: ["source.julia", "support.type.julia"]
 
+  it 'tokenizes empty string macros', ->
+    {tokens} = grammar.tokenizeLine('foo""')
+    expect(tokens[0]).toEqual value: "foo", scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.begin.julia", "support.function.macro.julia"]
+    expect(tokens[1]).toEqual value: "\"", scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[2]).toEqual value: "\"", scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.end.julia"]
+
   it 'tokenizes string macro in function argument type', ->
     {tokens} = grammar.tokenizeLine('f(x::MIME"text/plain")')
     expect(tokens[0]).toEqual value: "f", scopes: ["source.julia", "support.function.julia"]
