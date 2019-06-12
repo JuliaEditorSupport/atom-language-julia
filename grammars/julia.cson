@@ -652,7 +652,7 @@ repository:
         ]
       },
       {
-        begin: "(?<!\")([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)\"(?!\")"
+        begin: "(?<!\")([[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*)\""
         beginCaptures:
           "0":
             name: "punctuation.definition.string.begin.julia"
