@@ -206,6 +206,23 @@ describe "Julia grammar", ->
     expect(tokens[2]).toEqual value: "\"", scopes: ["source.julia", "string.regexp.julia", "punctuation.definition.string.regexp.end.julia"]
     expect(tokens[3]).toEqual value: "im", scopes: ["source.julia", "string.regexp.julia", "keyword.other.option-toggle.regexp.julia"]
 
+  it "tokenizes regular expressions with triple quotes", ->
+    {tokens} = grammar.tokenizeLine('r"""[jJ]ulia "jl" xyz"""im')
+    expect(tokens[0]).toEqual value: "r\"\"\"", scopes: ["source.julia", "string.regexp.julia", "punctuation.definition.string.regexp.begin.julia"]
+    expect(tokens[1]).toEqual value: "[jJ]ulia \"jl\" xyz", scopes: ["source.julia", "string.regexp.julia"]
+    expect(tokens[2]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.regexp.julia", "punctuation.definition.string.regexp.end.julia"]
+    expect(tokens[3]).toEqual value: "im", scopes: ["source.julia", "string.regexp.julia", "keyword.other.option-toggle.regexp.julia"]
+
+  it "tokenizes empty regular expressions", ->
+    {tokens} = grammar.tokenizeLine('r""')
+    expect(tokens[0]).toEqual value: "r\"", scopes: ["source.julia", "string.regexp.julia", "punctuation.definition.string.regexp.begin.julia"]
+    expect(tokens[1]).toEqual value: "\"", scopes: ["source.julia", "string.regexp.julia", "punctuation.definition.string.regexp.end.julia"]
+
+  it "tokenizes empty regular expressions with triple quotes", ->
+    {tokens} = grammar.tokenizeLine('r""""""')
+    expect(tokens[0]).toEqual value: "r\"\"\"", scopes: ["source.julia", "string.regexp.julia", "punctuation.definition.string.regexp.begin.julia"]
+    expect(tokens[1]).toEqual value: "\"\"\"", scopes: ["source.julia", "string.regexp.julia", "punctuation.definition.string.regexp.end.julia"]
+
   it 'tokenizes macro strings with triple quotes', ->
     {tokens} = grammar.tokenizeLine('ab"""xyz"""')
     expect(tokens[0]).toEqual value: "ab", scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.begin.julia", "support.function.macro.julia"]
