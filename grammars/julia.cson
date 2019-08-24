@@ -545,6 +545,9 @@ repository:
         contentName: 'source.gfm'
         patterns: [
           {
+            include: 'text.md'
+          }
+          {
             include: 'source.gfm'
           }
           {
@@ -566,6 +569,9 @@ repository:
             name: "punctuation.definition.string.end.julia"
         contentName: 'source.gfm'
         patterns: [
+          {
+            include: 'text.md'
+          }
           {
             include: 'source.gfm'
           }
