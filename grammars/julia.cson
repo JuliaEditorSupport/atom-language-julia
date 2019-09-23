@@ -532,6 +532,32 @@ repository:
         ]
       }
       {
+        begin: "(raw)(\"\"\")"
+        beginCaptures:
+          "1":
+            name: "support.function.macro.julia"
+          "2":
+            name: "punctuation.definition.string.begin.julia"
+        end: "\"\"\""
+        name: "string.quoted.other.julia"
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.julia"
+      }
+      {
+        begin: "(raw)(\")"
+        beginCaptures:
+          "1":
+            name: "support.function.macro.julia"
+          "2":
+            name: "punctuation.definition.string.begin.julia"
+        end: "\""
+        name: "string.quoted.other.julia"
+        endCaptures:
+          "0":
+            name: "punctuation.definition.string.end.julia"
+      }
+      {
         begin: "(md)(\"\"\")"
         beginCaptures:
           "1":
@@ -582,7 +608,7 @@ repository:
         ]
       }
       {
-        begin: '^\\s?(doc|raw)?(""")\\s?$'
+        begin: '^\\s?(doc)?(""")\\s?$'
         beginCaptures:
           '1':
             'name': 'support.function.macro.julia'
