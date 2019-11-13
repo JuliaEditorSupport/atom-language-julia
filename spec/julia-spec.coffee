@@ -429,7 +429,8 @@ describe "Julia grammar", ->
   it "char literals containing a '", ->
     {tokens} = grammar.tokenizeLine("'''")
     expect(tokens[0]).toEqual value: "'", scopes: ["source.julia", "string.quoted.single.julia", "punctuation.definition.string.begin.julia"]
-    expect(tokens[1]).toEqual value: "''", scopes: ["source.julia", "string.quoted.single.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[1]).toEqual value: "'", scopes: ["source.julia", "string.quoted.single.julia"]
+    expect(tokens[2]).toEqual value: "'", scopes: ["source.julia", "string.quoted.single.julia", "punctuation.definition.string.end.julia"]
 
   it "empty char literals", ->
     {tokens} = grammar.tokenizeLine("''")
