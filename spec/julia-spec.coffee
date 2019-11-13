@@ -426,6 +426,16 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: "\\u2203", scopes: ["source.julia", "string.quoted.single.julia", "constant.character.escape.julia"]
     expect(tokens[2]).toEqual value: "'", scopes: ["source.julia", "string.quoted.single.julia", "punctuation.definition.string.end.julia"]
 
+  it "char literals containing a '", ->
+    {tokens} = grammar.tokenizeLine("'''")
+    expect(tokens[0]).toEqual value: "'", scopes: ["source.julia", "string.quoted.single.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "''", scopes: ["source.julia", "string.quoted.single.julia", "punctuation.definition.string.end.julia"]
+
+  it "empty char literals", ->
+    {tokens} = grammar.tokenizeLine("''")
+    expect(tokens[0]).toEqual value: "'", scopes: ["source.julia", "string.quoted.single.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "'", scopes: ["source.julia", "string.quoted.single.julia", "punctuation.definition.string.end.julia"]
+
   it "tokenizes interpolated names in double strings", ->
     {tokens} = grammar.tokenizeLine('"$_ω!z_.ard!"')
     expect(tokens[0]).toEqual value: '"', scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
