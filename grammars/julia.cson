@@ -66,6 +66,10 @@ repository:
         name: "meta.array.julia"
         patterns: [
           {
+            match: "\\bbegin\\b"
+            name: "constant.numeric.julia"
+          }
+          {
             match: "\\bend\\b"
             name: "constant.numeric.julia"
           }
