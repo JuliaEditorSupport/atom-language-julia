@@ -233,10 +233,6 @@ repository:
         match: "(@(\\.|[[:alpha:]_\u2207][[:word:]\u207A-\u209C!\u2032\u2207]*))"
         name: "support.function.macro.julia"
       }
-      {
-        match: "\\b(Argument|Assertion|Bounds|Divide|Domain|EOF|Inexact|Key|Load|Memory|Method|OutOfMemory|Overflow|Parse|StackOverflow|System|Type|UV|UndefRef|UndefVar)Error\\b"
-        name: "support.type.exception.julia"
-      }
     ]
   number:
     patterns: [
