@@ -237,8 +237,14 @@ repository:
   number:
     patterns: [
       {
-        match: "((\\b0(x|X)[0-9a-fA-F](_?[0-9a-fA-F])*)|(\\b0o[0-7](_?[0-7])*)|(\\b0b[0-1](_?[0-1])*)|((\\b[0-9](_?[0-9])*\\.?(_?[0-9]*))|(\\.[0-9](_?[0-9])*))([eE][+-]?[0-9](_?[0-9])*)?(im\\b)?|\\bInf(16|32|64)?\\b|\\bNaN(16|32|64)?\\b)"
+        match: "((\\b0(x|X)[0-9a-fA-F](_?[0-9a-fA-F])*)|(\\b0o[0-7](_?[0-7])*)|(\\b0b[0-1](_?[0-1])*)|((\\b[0-9](_?[0-9])*\\.?(_?[0-9]*))|(\\.[0-9](_?[0-9])*))([eE][+-]?[0-9](_?[0-9])*)?(im\\b)?|\\bInf(16|32|64)?\\b|\\bNaN(16|32|64)?|\\bπ\\b|\\bpi\\b|\\bℯ\\b)"
         name: "constant.numeric.julia"
+        # xref: https://github.com/JuliaLang/julia/blob/f39cb43032e8a6e10cd3c8cd4d806676ff705c0c/base/exports.jl#L147-L158
+      }
+      {
+        match: "\\bARGS\\b|\\bC_NULL\\b|\\bDEPOT_PATH\\b|\\bENDIAN_BOM\\b|\\bENV\\b|\\bLOAD_PATH\\b|\\bPROGRAM_FILE\\b|\\bstdin\\b|\\bstdout\\b|\\bstderr\\b|\\bVERSION\\b|\\bdevnull\\b"
+        name: "constant.global.julia"
+        # xref: https://github.com/JuliaLang/julia/blob/f39cb43032e8a6e10cd3c8cd4d806676ff705c0c/base/exports.jl#L133-L145
       }
       {
         match: "\\btrue\\b|\\bfalse\\b|\\bnothing\\b|\\bmissing\\b"
