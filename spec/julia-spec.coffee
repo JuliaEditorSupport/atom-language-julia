@@ -848,3 +848,10 @@ describe "Julia grammar", ->
     expect(tokens[4]).toEqual value: ',',        scopes:  ["source.julia", "meta.bracket.julia"]
     expect(tokens[5]).toEqual value: ' ',        scopes:  ["source.julia"]
     expect(tokens[6]).toEqual value: 'missing',  scopes:  ["source.julia", "constant.language.julia"]
+
+  it 'tokenizes identifiers ', ->
+    {tokens} = grammar.tokenizeLine('b′0 - 2')
+    expect(tokens[0]).toEqual value: 'b′0 ', scopes:  ["source.julia"]
+    expect(tokens[1]).toEqual value: '-',   scopes:  ["source.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[2]).toEqual value: ' ',   scopes:  ["source.julia"]
+    expect(tokens[3]).toEqual value: '2',   scopes:  ["source.julia", "constant.numeric.julia"]
