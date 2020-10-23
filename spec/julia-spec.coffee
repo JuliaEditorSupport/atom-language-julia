@@ -855,3 +855,11 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: '-',   scopes:  ["source.julia", "keyword.operator.arithmetic.julia"]
     expect(tokens[2]).toEqual value: ' ',   scopes:  ["source.julia"]
     expect(tokens[3]).toEqual value: '2',   scopes:  ["source.julia", "constant.numeric.julia"]
+
+  it 'tokenizes the ternary operator ', ->
+    {tokens} = grammar.tokenizeLine('a ? b : c')
+    expect(tokens[0]).toEqual value: 'a ',  scopes:  ["source.julia"]
+    expect(tokens[1]).toEqual value: '?',   scopes:  ["source.julia", "keyword.operator.ternary.julia"]
+    expect(tokens[2]).toEqual value: ' b ', scopes:  ["source.julia"]
+    expect(tokens[3]).toEqual value: ':',   scopes:  ["source.julia", "keyword.operator.ternary.julia"]
+    expect(tokens[4]).toEqual value: ' c',  scopes:  ["source.julia"]
