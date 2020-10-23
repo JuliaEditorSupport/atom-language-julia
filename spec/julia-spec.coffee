@@ -855,3 +855,8 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: '-',   scopes:  ["source.julia", "keyword.operator.arithmetic.julia"]
     expect(tokens[2]).toEqual value: ' ',   scopes:  ["source.julia"]
     expect(tokens[3]).toEqual value: '2',   scopes:  ["source.julia", "constant.numeric.julia"]
+
+  it 'tokenizes identifiers with weird characters and a transpose', ->
+    {tokens} = grammar.tokenizeLine('k̂\'')
+    expect(tokens[0]).toEqual value: 'k̂',  scopes:  ["source.julia"]
+    expect(tokens[1]).toEqual value: '\'', scopes:  ["source.julia", "keyword.operator.transposed-variable.julia"]
