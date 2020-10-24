@@ -278,7 +278,11 @@ repository:
         name: "keyword.operator.relation.julia"
       }
       {
-        match: "(?:\\?:)"
+        match: "(?<=\\s)(?:\\?)(?=\\s)"
+        name: "keyword.operator.ternary.julia"
+      }
+      {
+        match: "(?<=\\s)(?:\\:)(?=\\s)"
         name: "keyword.operator.ternary.julia"
       }
       {
