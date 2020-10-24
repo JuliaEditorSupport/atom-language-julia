@@ -622,7 +622,7 @@ describe "Julia grammar", ->
   it "tokenizes variables ending in _type", ->
     {tokens} = grammar.tokenizeLine('foo_immutable in')
     expect(tokens[0]).toEqual value: 'foo_immutable ', scopes: ["source.julia"]
-    expect(tokens[1]).toEqual value: 'in', scopes: ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[1]).toEqual value: 'in', scopes: ["source.julia", "keyword.operator.relation.in.julia"]
 
   it "tokenizes comments", ->
     {tokens} = grammar.tokenizeLine('# This is a comment')
@@ -648,7 +648,7 @@ describe "Julia grammar", ->
     expect(tokens[4]).toEqual value: ' x ',  scopes:  ["source.julia"]
     expect(tokens[5]).toEqual value: 'for',  scopes:  ["source.julia", "keyword.control.julia"]
     expect(tokens[6]).toEqual value: ' x ',  scopes:  ["source.julia"]
-    expect(tokens[7]).toEqual value: 'in',   scopes:  ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[7]).toEqual value: 'in',   scopes:  ["source.julia", "keyword.operator.relation.in.julia"]
     expect(tokens[8]).toEqual value: ' y',   scopes:  ["source.julia"]
     expect(tokens[9]).toEqual value: ')',    scopes:  ["source.julia", "meta.bracket.julia"]
 
@@ -757,7 +757,7 @@ describe "Julia grammar", ->
     expect(tokens[2]).toEqual value: ' Int ', scopes:  ["source.julia"]
     expect(tokens[3]).toEqual value: '&&',    scopes:  ["source.julia", "keyword.operator.boolean.julia"]
     expect(tokens[4]).toEqual value: ' a ',   scopes:  ["source.julia"]
-    expect(tokens[5]).toEqual value: 'in',    scopes:  ["source.julia", "keyword.operator.relation.julia"]
+    expect(tokens[5]).toEqual value: 'in',    scopes:  ["source.julia", "keyword.operator.relation.in.julia"]
     expect(tokens[6]).toEqual value: ' ints', scopes:  ["source.julia"]
 
   it "tokenizes everything related to `:` (ranges, symbols, subtyping)", ->
