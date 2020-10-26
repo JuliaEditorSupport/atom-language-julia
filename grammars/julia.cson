@@ -424,7 +424,7 @@ repository:
             name: "support.function.macro.julia"
           "2":
             name: "punctuation.definition.string.begin.julia"
-        end: "(\\s*)(\\w*)(\"\"\")"
+        end: "([\\s\\w]*)(\"\"\")"
         endCaptures:
           "2":
             name: "punctuation.definition.string.end.julia"
@@ -449,7 +449,7 @@ repository:
         end: "(\\w*)(\")"
         name: 'embed.python.julia'
         endCaptures:
-          "1":
+          "2":
             name: "punctuation.definition.string.end.julia"
         contentName: 'source.python'
         patterns: [
