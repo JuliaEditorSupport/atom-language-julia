@@ -9,10 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install build dependencies
-        run: sudo apt-get install build-essential fakeroot git libsecret-1-dev
-      - name: Build the package and run tests
-        run: |
-          curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
-          chmod u+x build-package.sh
-          ./build-package.sh
+      - uses: UziTech/action-setup-atom@v1
+        with:
+          channel: ${{ matrix.channel }}
+      - name: Atom version
+        run: atom -v
+      - name: APM version
+        run: apm -v
+      - name: Install dependencies
+        run: apm install
+      - name: Run tests
+        run: atom --test spec
