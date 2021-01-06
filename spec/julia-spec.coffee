@@ -882,3 +882,10 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine('k̂\'')
     expect(tokens[0]).toEqual value: 'k̂',  scopes:  ["source.julia"]
     expect(tokens[1]).toEqual value: '\'', scopes:  ["source.julia", "keyword.operator.transposed-variable.julia"]
+
+  it 'tokenizes NaN', ->
+    {tokens} = grammar.tokenizeLine('NaN + NaNMath')
+    expect(tokens[0]).toEqual value: 'NaN',      scopes:  ["source.julia", "constant.numeric.julia"]
+    expect(tokens[1]).toEqual value: ' ',        scopes:  ["source.julia"]
+    expect(tokens[2]).toEqual value: '+',        scopes:  ["source.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[3]).toEqual value: ' NaNMath', scopes:  ["source.julia"]
