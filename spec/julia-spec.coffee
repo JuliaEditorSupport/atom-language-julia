@@ -889,3 +889,56 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: ' ',        scopes:  ["source.julia"]
     expect(tokens[2]).toEqual value: '+',        scopes:  ["source.julia", "keyword.operator.arithmetic.julia"]
     expect(tokens[3]).toEqual value: ' NaNMath', scopes:  ["source.julia"]
+
+  it 'tokenizes ranges of string macros', ->
+    {tokens} = grammar.tokenizeLine('q"a":r"b":r`c`:var"d"')
+    expect(tokens[0]).toEqual value: 'q',     scopes:  ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.begin.julia", "support.function.macro.julia"]
+    expect(tokens[1]).toEqual value: '"',     scopes:  ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[2]).toEqual value: 'a',     scopes:  ["source.julia", "string.quoted.other.julia"]
+    expect(tokens[3]).toEqual value: '"',     scopes:  ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[4]).toEqual value: ':',     scopes:  ["source.julia"]
+    expect(tokens[5]).toEqual value: 'r"',    scopes:  ["source.julia", "string.regexp.julia", "punctuation.definition.string.regexp.begin.julia"]
+    expect(tokens[6]).toEqual value: 'b',     scopes:  ["source.julia", "string.regexp.julia"]
+    expect(tokens[7]).toEqual value: '"',     scopes:  ["source.julia", "string.regexp.julia", "punctuation.definition.string.regexp.end.julia"]
+    expect(tokens[8]).toEqual value: ':',     scopes:  ["source.julia"]
+    expect(tokens[9]).toEqual value: 'r',     scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia", "support.function.macro.julia"]
+    expect(tokens[10]).toEqual value: '`',    scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[11]).toEqual value: 'c',    scopes:  ["source.julia", "string.interpolated.backtick.julia"]
+    expect(tokens[12]).toEqual value: '`',    scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[13]).toEqual value: ':',    scopes:  ["source.julia"]
+    expect(tokens[14]).toEqual value: 'var"', scopes:  ["source.julia", "constant.other.symbol.julia"]
+    expect(tokens[15]).toEqual value: 'd',    scopes:  ["source.julia", "constant.other.symbol.julia"]
+    expect(tokens[16]).toEqual value: '"',    scopes:  ["source.julia", "constant.other.symbol.julia"]
+
+  it 'tokenizes the var"blah" syntax', ->
+    {tokens} = grammar.tokenizeLine('2var"a"+var"""q"""')
+    expect(tokens[0]).toEqual value: '2',      scopes:  ["source.julia", "constant.numeric.julia"]
+    expect(tokens[1]).toEqual value: 'var"',   scopes:  ["source.julia", "constant.other.symbol.julia"]
+    expect(tokens[2]).toEqual value: 'a',      scopes:  ["source.julia", "constant.other.symbol.julia"]
+    expect(tokens[3]).toEqual value: '"',      scopes:  ["source.julia", "constant.other.symbol.julia"]
+    expect(tokens[4]).toEqual value: '+',      scopes:  ["source.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[5]).toEqual value: 'var"""', scopes:  ["source.julia", "constant.other.symbol.julia"]
+    expect(tokens[6]).toEqual value: 'q',      scopes:  ["source.julia", "constant.other.symbol.julia"]
+    expect(tokens[7]).toEqual value: '"""',    scopes:  ["source.julia", "constant.other.symbol.julia"]
+
+  it 'tokenizes cmd macros', ->
+    {tokens} = grammar.tokenizeLine('a```b```*c`d`')
+    expect(tokens[0]).toEqual value: 'a',   scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia", "support.function.macro.julia"]
+    expect(tokens[1]).toEqual value: '```', scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[2]).toEqual value: 'b',   scopes:  ["source.julia", "string.interpolated.backtick.julia"]
+    expect(tokens[3]).toEqual value: '```', scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[4]).toEqual value: '*',   scopes:  ["source.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[5]).toEqual value: 'c',   scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia", "support.function.macro.julia"]
+    expect(tokens[6]).toEqual value: '`',   scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[7]).toEqual value: 'd',   scopes:  ["source.julia", "string.interpolated.backtick.julia"]
+    expect(tokens[8]).toEqual value: '`',   scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.end.julia"]
+
+  it 'tokenizes backtick strings', ->
+    {tokens} = grammar.tokenizeLine('```b```*`d`')
+    expect(tokens[0]).toEqual value: '```', scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: 'b',   scopes:  ["source.julia", "string.interpolated.backtick.julia"]
+    expect(tokens[2]).toEqual value: '```', scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[3]).toEqual value: '*',   scopes:  ["source.julia", "keyword.operator.arithmetic.julia"]
+    expect(tokens[4]).toEqual value: '`',   scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[5]).toEqual value: 'd',   scopes:  ["source.julia", "string.interpolated.backtick.julia"]
+    expect(tokens[6]).toEqual value: '`',   scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.end.julia"]
