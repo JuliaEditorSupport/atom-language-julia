@@ -1,22 +1,27 @@
-# Julia support for Atom
+# Julia Grammar
 
-[![Build Status](https://travis-ci.org/JuliaEditorSupport/atom-language-julia.svg?branch=master)](https://travis-ci.org/JuliaEditorSupport/atom-language-julia)
+[![Build Status](https://github.com/JuliaEditorSupport/atom-language-julia/workflows/CI/badge.svg)](https://github.com/JuliaEditorSupport/atom-language-julia/actions?query=workflow%3ACI+branch%3Amaster)
 
-Atom package for the Julia language. Originally based off of [JuliaLang/julia.tmBundle](https://github.com/JuliaLang/Julia.tmbundle), merged with new ideas from [language-julia](https://github.com/tpoisot/language-julia/blob/master/README.md) package.
+Julia grammar definition for Atom, VSCode, and GitHub.
 
-## Features:
+The source of truth in this repo is `grammars/julia.cson`; `julia.json` and `julia_vscode.json` are automatically generated in a pre-commit hook.
+
+## Atom
+Also an Atom package to provide Julia syntax highlighting, snippets, and docstring folding. Originally based off of [JuliaLang/julia.tmBundle](https://github.com/JuliaLang/Julia.tmbundle), merged with new ideas from [language-julia](https://github.com/tpoisot/language-julia/blob/master/README.md).
+
+### Features:
 
 - Syntax highlighting
 - Snippets for common Julia keywords and constructs (see `snippets/language-julia.cson`)
 - Toggle folding of docstrings
 
-## Installation
+### Installation
 
 Installation happens normally either through `apm install language-julia` or through the install section of the settings tab within Atom.
 
 Note: if you already have a different version of language-julia plugin installed (e.g. [this one](https://github.com/tpoisot/language-julia)), you would need to remove it first using `apm uninstall language-julia`
 
-## Recommended Extras
+### Recommended Extras
 
 * The [LaTeX Completions](https://github.com/JunoLab/atom-latex-completions)
   package provides support for unicode characters similarly to the Julia REPL.
@@ -24,7 +29,7 @@ Note: if you already have a different version of language-julia plugin installed
 * Install [language-markdown](https://atom.io/packages/language-markdown) for syntax highlighting in docstrings.
 * Install [atom-language-r](https://atom.io/packages/atom-language-r) for syntax highlighting of R string macros.
 
-## Toggling docstrings
+### Toggling docstrings
 
 Two Atom commands are provided to toggle all docstrings or the docstring under the cursor: `language-julia:toggle-docstrings` and `language-julia:toggle-all-docstrings`. These are not assigned keys. Here is one example of adding these to keymaps using org-mode style keys:
 
@@ -50,7 +55,7 @@ When new features are added, you should write specs to show that the package is 
 
 This should open up a new window with the spec results.
 
-#### Contributor list
+### Contributor list
 
 - Everyone who has helped with the [tmBundle](https://github.com/JuliaLang/Julia.tmbundle)
 - [See contributors](https://github.com/JuliaEditorSupport/atom-language-julia/graphs/contributors)

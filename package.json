@@ -12,5 +12,13 @@
   "bugs": {
     "url": "https://github.com/JuliaEditorSupport/atom-language-julia/issues"
   },
-  "homepage": "https://github.com/JuliaEditorSupport/atom-language-julia"
+  "homepage": "https://github.com/JuliaEditorSupport/atom-language-julia",
+  "scripts": {
+    "generate": "node ./scripts/generate.js && git add grammars/julia.json && git add grammars/julia_vscode.json"
+  },
+  "devDependencies": {
+    "cson": "^7.20.0",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [ "generate" ]
 }
