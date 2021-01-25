@@ -1,6 +1,10 @@
 comment: """
-    Reference to the Oniguruma Regex libraray:
-      https://github.com/kkos/oniguruma/blob/master/doc/RE
+    This grammar is used by Atom (Oniguruma), GitHub (PCRE), and VSCode (Oniguruma),
+    so all regexps must be compatible with both engines.
+
+    Specs:
+    - https://github.com/kkos/oniguruma/blob/master/doc/RE
+    - https://www.pcre.org/current/doc/html/
 """
 fileTypes: [
   "jl"
