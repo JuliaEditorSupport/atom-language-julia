@@ -266,7 +266,7 @@ repository:
         match: "(?:\\s*(::|>:|<:)\\s*((?:(?:Union)?\\([^)]*\\)|[[:alpha:]_$\u2207][[:word:]\u207A-\u209C!\u2032\\.]*(?:(?:{(?:[^{}]|{(?:[^{}]|{[^{}]*})*})*})|(?:\".+?(?<!\\\\)\"))?)))(?:\\.\\.\\.)?"
         captures:
           "1":
-            name: "keyword.operator.relation.julia"
+            name: "keyword.operator.relation.types.julia"
           "2":
             name: "support.type.julia"
       }
