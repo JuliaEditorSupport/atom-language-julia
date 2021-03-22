@@ -942,3 +942,17 @@ describe "Julia grammar", ->
     expect(tokens[4]).toEqual value: '`',   scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia"]
     expect(tokens[5]).toEqual value: 'd',   scopes:  ["source.julia", "string.interpolated.backtick.julia"]
     expect(tokens[6]).toEqual value: '`',   scopes:  ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.end.julia"]
+
+  it 'tokenizes interpolated strings', ->
+    {tokens} = grammar.tokenizeLine('$"asd"')
+    expect(tokens[0]).toEqual value: '$',   scopes:  ["source.julia", "keyword.operator.interpolation.julia"]
+    expect(tokens[1]).toEqual value: '"',   scopes:  ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[2]).toEqual value: 'asd', scopes:  ["source.julia", "string.quoted.double.julia"]
+    expect(tokens[3]).toEqual value: '"',   scopes:  ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
+
+  it 'tokenizes interpolated multi-line strings', ->
+    {tokens} = grammar.tokenizeLine('$"""asd"""')
+    expect(tokens[0]).toEqual value: '$',   scopes:  ["source.julia", "keyword.operator.interpolation.julia"]
+    expect(tokens[1]).toEqual value: '"""',   scopes:  ["source.julia", "string.quoted.triple.double.julia", "punctuation.definition.string.multiline.begin.julia"]
+    expect(tokens[2]).toEqual value: 'asd', scopes:  ["source.julia", "string.quoted.triple.double.julia"]
+    expect(tokens[3]).toEqual value: '"""',   scopes:  ["source.julia", "string.quoted.triple.double.julia", "punctuation.definition.string.multiline.end.julia"]
