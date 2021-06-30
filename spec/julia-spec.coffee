@@ -953,6 +953,14 @@ describe "Julia grammar", ->
   it 'tokenizes interpolated multi-line strings', ->
     {tokens} = grammar.tokenizeLine('$"""asd"""')
     expect(tokens[0]).toEqual value: '$',   scopes:  ["source.julia", "keyword.operator.interpolation.julia"]
-    expect(tokens[1]).toEqual value: '"""',   scopes:  ["source.julia", "string.quoted.triple.double.julia", "punctuation.definition.string.multiline.begin.julia"]
+    expect(tokens[1]).toEqual value: '"""', scopes:  ["source.julia", "string.quoted.triple.double.julia", "punctuation.definition.string.multiline.begin.julia"]
     expect(tokens[2]).toEqual value: 'asd', scopes:  ["source.julia", "string.quoted.triple.double.julia"]
-    expect(tokens[3]).toEqual value: '"""',   scopes:  ["source.julia", "string.quoted.triple.double.julia", "punctuation.definition.string.multiline.end.julia"]
+    expect(tokens[3]).toEqual value: '"""', scopes:  ["source.julia", "string.quoted.triple.double.julia", "punctuation.definition.string.multiline.end.julia"]
+
+  it 'tokenizes numbers in combination with ranges', ->
+    {tokens} = grammar.tokenizeLine('123...')
+    expect(tokens[0]).toEqual value: '123',   scopes:  ["source.julia", "constant.numeric.julia"]
+    expect(tokens[1]).toEqual value: '...',   scopes:  ["source.julia", "keyword.operator.dots.julia"]
+    {tokens} = grammar.tokenizeLine('123_132.123_123...')
+    expect(tokens[0]).toEqual value: '123_132.123_123',   scopes:  ["source.julia", "constant.numeric.julia"]
+    expect(tokens[1]).toEqual value: '...',   scopes:  ["source.julia", "keyword.operator.dots.julia"]
