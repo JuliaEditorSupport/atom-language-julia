@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.21.2] - 2021-07-26
+### Fixed
+- Number splatting is now correctly tokenized ([#246](https://github.com/JuliaEditorSupport/atom-language-julia/pull/246)).
+- Multiple `!`s at the end of an identifier are now correctly tokenized ([#248](https://github.com/JuliaEditorSupport/atom-language-julia/pull/248)).
+
+### Changed
+- String macro suffixes are now tokenized as macros ([#247](https://github.com/JuliaEditorSupport/atom-language-julia/pull/247)).
+
+## [0.21.1] - 2021-04-09
+### Fixed
+- Interpolation of strings (e.g. `$"string"`) now works ([#243](https://github.com/JuliaEditorSupport/atom-language-julia/pull/243)).
+
+### Changed
+- Type relations are now tokenized as `keyword.operator.relation.types.julia` instead of `keyword.operator.relation.julia` ([#239](https://github.com/JuliaEditorSupport/atom-language-julia/pull/239)).
+
 ## [0.21.0] - 2021-01-25
 ### Added
 - Support for embedded SQL syntax via the `sql` string macro ([#235](https://github.com/JuliaEditorSupport/atom-language-julia/pull/235)).
