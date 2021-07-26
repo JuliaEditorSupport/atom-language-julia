@@ -942,7 +942,7 @@
               "name": "punctuation.definition.string.end.julia"
             },
             "2": {
-              "name": "punctuation.definition.string.end.julia"
+              "name": "support.function.macro.julia"
             }
           },
           "name": "string.quoted.other.julia",
@@ -968,7 +968,7 @@
               "name": "punctuation.definition.string.end.julia"
             },
             "2": {
-              "name": "punctuation.definition.string.end.julia"
+              "name": "support.function.macro.julia"
             }
           },
           "name": "string.quoted.other.julia",
@@ -994,7 +994,7 @@
               "name": "punctuation.definition.string.end.julia"
             },
             "2": {
-              "name": "punctuation.definition.string.end.julia"
+              "name": "support.function.macro.julia"
             }
           },
           "name": "string.interpolated.backtick.julia",
@@ -1020,7 +1020,7 @@
               "name": "punctuation.definition.string.end.julia"
             },
             "2": {
-              "name": "punctuation.definition.string.end.julia"
+              "name": "support.function.macro.julia"
             }
           },
           "name": "string.interpolated.backtick.julia",

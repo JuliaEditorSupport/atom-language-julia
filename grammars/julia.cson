@@ -800,7 +800,7 @@ repository:
           "1":
             name: "punctuation.definition.string.end.julia"
           "2":
-            name: "punctuation.definition.string.end.julia"
+            name: "support.function.macro.julia"
         name: "string.quoted.other.julia"
         patterns: [
           {
@@ -820,7 +820,7 @@ repository:
           "1":
             name: "punctuation.definition.string.end.julia"
           "2":
-            name: "punctuation.definition.string.end.julia"
+            name: "support.function.macro.julia"
         name: "string.quoted.other.julia"
         patterns: [
           {
@@ -840,7 +840,7 @@ repository:
           "1":
             name: "punctuation.definition.string.end.julia"
           "2":
-            name: "punctuation.definition.string.end.julia"
+            name: "support.function.macro.julia"
         name: "string.interpolated.backtick.julia"
         patterns: [
           {
@@ -860,7 +860,7 @@ repository:
           "1":
             name: "punctuation.definition.string.end.julia"
           "2":
-            name: "punctuation.definition.string.end.julia"
+            name: "support.function.macro.julia"
         name: "string.interpolated.backtick.julia"
         patterns: [
           {

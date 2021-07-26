@@ -523,7 +523,7 @@ describe "Julia grammar", ->
     expect(tokens[1]).toEqual value: '"', scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
     expect(tokens[2]).toEqual value: "asdf", scopes: ["source.julia", "string.quoted.other.julia"]
     expect(tokens[3]).toEqual value: '"', scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.end.julia"]
-    expect(tokens[4]).toEqual value: '_a9Ñ', scopes: ["source.julia", "string.quoted.other.julia", "punctuation.definition.string.end.julia"]
+    expect(tokens[4]).toEqual value: '_a9Ñ', scopes: ["source.julia", "string.quoted.other.julia", "support.function.macro.julia"]
 
   it "tokenizes Cxx.jl multiline string macros", ->
     tokens = grammar.tokenizeLines('''
