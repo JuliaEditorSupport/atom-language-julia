@@ -134,7 +134,7 @@ describe "Julia grammar", ->
     expect(tokens[7]).toEqual value: "::", scopes: ["source.julia","keyword.operator.relation.types.julia"]
     expect(tokens[8]).toEqual value: "Int", scopes: ["source.julia", "support.type.julia"]
 
-  it "tokenizes functiono declarations with interpolated type parameters", ->
+  it "tokenizes function declarations with interpolated type parameters", ->
     {tokens} = grammar.tokenizeLine("f(x::$foo)=3")
     expect(tokens[0]).toEqual value: "f", scopes: ["source.julia", "entity.name.function.julia"]
     expect(tokens[1]).toEqual value: "(", scopes: ["source.julia", "meta.bracket.julia"]
@@ -968,3 +968,12 @@ describe "Julia grammar", ->
   it 'tokenizes multiple !s as a suffix', ->
     {tokens} = grammar.tokenizeLine('asd!!!!!!')
     expect(tokens[0]).toEqual value: 'asd!!!!!!',   scopes:  ["source.julia"]
+
+  it 'tokenizes function calls with a `=` in a comment', ->
+    {tokens} = grammar.tokenizeLine('f() # = 2')
+    expect(tokens[0]).toEqual value: "f",    scopes: ["source.julia", "support.function.julia"]
+    expect(tokens[1]).toEqual value: "(",    scopes: ["source.julia", "meta.bracket.julia"]
+    expect(tokens[2]).toEqual value: ")",    scopes: ["source.julia", "meta.bracket.julia"]
+    expect(tokens[3]).toEqual value: " ",    scopes: ["source.julia"]
+    expect(tokens[4]).toEqual value: '#',    scopes: ["source.julia", "comment.line.number-sign.julia", "punctuation.definition.comment.julia"]
+    expect(tokens[5]).toEqual value: ' = 2', scopes: ["source.julia", "comment.line.number-sign.julia"]

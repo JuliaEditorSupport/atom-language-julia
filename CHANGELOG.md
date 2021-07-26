@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 - Number splatting is now correctly tokenized ([#246](https://github.com/JuliaEditorSupport/atom-language-julia/pull/246)).
 - Multiple `!`s at the end of an identifier are now correctly tokenized ([#248](https://github.com/JuliaEditorSupport/atom-language-julia/pull/248)).
+- Function calls succeded by a commented out `=` are now correctly tokenized ([#250](https://github.com/JuliaEditorSupport/atom-language-julia/pull/250)).
 
 ### Changed
 - String macro suffixes are now tokenized as macros ([#247](https://github.com/JuliaEditorSupport/atom-language-julia/pull/247)).
