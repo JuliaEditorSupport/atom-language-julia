@@ -964,3 +964,7 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine('123_132.123_123...')
     expect(tokens[0]).toEqual value: '123_132.123_123',   scopes:  ["source.julia", "constant.numeric.julia"]
     expect(tokens[1]).toEqual value: '...',   scopes:  ["source.julia", "keyword.operator.dots.julia"]
+
+  it 'tokenizes multiple !s as a suffix', ->
+    {tokens} = grammar.tokenizeLine('asd!!!!!!')
+    expect(tokens[0]).toEqual value: 'asd!!!!!!',   scopes:  ["source.julia"]
