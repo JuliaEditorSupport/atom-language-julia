@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 - String macro suffixes are now tokenized as macros ([#247](https://github.com/JuliaEditorSupport/atom-language-julia/pull/247)).
+- Markdown string content is no longer highlighted as markdown ([#249](https://github.com/JuliaEditorSupport/atom-language-julia/pull/249)).
 
 ## [0.21.1] - 2021-04-09
 ### Fixed
