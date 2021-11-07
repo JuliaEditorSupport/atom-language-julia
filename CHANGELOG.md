@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.22.0] - 2021-11-07
+### Fixed
+- Mathematial constants juxtaposed with numbers are properly highlighted now ([#251](https://github.com/JuliaEditorSupport/atom-language-julia/pull/251))
+- Parentheses in string interpolation are now correctly tokenized ([#251](https://github.com/JuliaEditorSupport/atom-language-julia/pull/251))
+- `'` after math constants is now correctly tokenized ([#251](https://github.com/JuliaEditorSupport/atom-language-julia/pull/251))
+
+### Changed
+- `foo"bar"` macros for foreign languages no longer inject a grammar for that language. No markdown strings are highlighted ([#252](https://github.com/JuliaEditorSupport/atom-language-julia/pull/252))
+
 ## [0.21.2] - 2021-07-26
 ### Fixed
 - Number splatting is now correctly tokenized ([#246](https://github.com/JuliaEditorSupport/atom-language-julia/pull/246)).
