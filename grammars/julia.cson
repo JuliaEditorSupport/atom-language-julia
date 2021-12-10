@@ -57,11 +57,11 @@ repository:
         beginCaptures:
           "0":
               name: "meta.bracket.julia"
-        end: "(?:\\])(?:(\\.)?'*)"
+        end: "(\\])((?:\\.)?'*)"
         endCaptures:
-          "0":
-              name: "meta.bracket.julia"
           "1":
+              name: "meta.bracket.julia"
+          "2":
               name: "keyword.operator.transpose.julia"
         name: "meta.array.julia"
         patterns: [
@@ -90,10 +90,12 @@ repository:
         beginCaptures:
           "0":
             name: "meta.bracket.julia"
-        end: "\\)"
+        end: "(\\))((?:\\.)?'*)"
         endCaptures:
-          "0":
+          "1":
             name: "meta.bracket.julia"
+          "2":
+            name: "keyword.operator.transpose.julia"
         patterns: [
           {
             include: "$self"

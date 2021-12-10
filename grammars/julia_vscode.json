@@ -53,12 +53,12 @@
               "name": "meta.bracket.julia"
             }
           },
-          "end": "(?:\\])(?:(\\.)?'*)",
+          "end": "(\\])((?:\\.)?'*)",
           "endCaptures": {
-            "0": {
+            "1": {
               "name": "meta.bracket.julia"
             },
-            "1": {
+            "2": {
               "name": "keyword.operator.transpose.julia"
             }
           },
@@ -92,10 +92,13 @@
               "name": "meta.bracket.julia"
             }
           },
-          "end": "\\)",
+          "end": "(\\))((?:\\.)?'*)",
           "endCaptures": {
-            "0": {
+            "1": {
               "name": "meta.bracket.julia"
+            },
+            "2": {
+              "name": "keyword.operator.transpose.julia"
             }
           },
           "patterns": [

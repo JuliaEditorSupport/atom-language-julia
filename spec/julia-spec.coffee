@@ -862,6 +862,30 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: 'k̂',  scopes:  ["source.julia"]
     expect(tokens[1]).toEqual value: '\'', scopes:  ["source.julia", "keyword.operator.transposed-variable.julia"]
 
+  it 'tokenizes parentheses with a transpose', ->
+    {tokens} = grammar.tokenizeLine('()\'')
+    expect(tokens[0]).toEqual value: '(',  scopes:  ["source.julia", "meta.bracket.julia"]
+    expect(tokens[1]).toEqual value: ')',  scopes:  ["source.julia", "meta.bracket.julia"]
+    expect(tokens[2]).toEqual value: '\'', scopes:  ["source.julia", "keyword.operator.transpose.julia"]
+
+  it 'tokenizes parentheses with a dot transpose', ->
+    {tokens} = grammar.tokenizeLine('().\'')
+    expect(tokens[0]).toEqual value: '(',  scopes:  ["source.julia", "meta.bracket.julia"]
+    expect(tokens[1]).toEqual value: ')',  scopes:  ["source.julia", "meta.bracket.julia"]
+    expect(tokens[2]).toEqual value: '.\'', scopes:  ["source.julia", "keyword.operator.transpose.julia"]
+
+  it 'tokenizes brackets with a transpose', ->
+    {tokens} = grammar.tokenizeLine('[]\'')
+    expect(tokens[0]).toEqual value: '[',  scopes:  ["source.julia", "meta.array.julia", "meta.bracket.julia"]
+    expect(tokens[1]).toEqual value: ']',  scopes:  ["source.julia", "meta.array.julia", "meta.bracket.julia"]
+    expect(tokens[2]).toEqual value: '\'', scopes:  ["source.julia", "meta.array.julia", "keyword.operator.transpose.julia"]
+
+  it 'tokenizes brackets with a dot transpose', ->
+    {tokens} = grammar.tokenizeLine('[].\'')
+    expect(tokens[0]).toEqual value: '[',  scopes:  ["source.julia", "meta.array.julia", "meta.bracket.julia"]
+    expect(tokens[1]).toEqual value: ']',  scopes:  ["source.julia", "meta.array.julia", "meta.bracket.julia"]
+    expect(tokens[2]).toEqual value: '.\'', scopes:  ["source.julia", "meta.array.julia", "keyword.operator.transpose.julia"]
+
   it 'tokenizes NaN', ->
     {tokens} = grammar.tokenizeLine('NaN + NaNMath')
     expect(tokens[0]).toEqual value: 'NaN',      scopes:  ["source.julia", "constant.numeric.julia"]
