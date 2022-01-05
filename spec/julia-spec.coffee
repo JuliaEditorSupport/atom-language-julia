@@ -974,8 +974,6 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine('123_132.123_123...')
     expect(tokens[0]).toEqual value: '123_132.123_123',   scopes:  ["source.julia", "constant.numeric.julia"]
     expect(tokens[1]).toEqual value: '...',   scopes:  ["source.julia", "keyword.operator.dots.julia"]
-    expect(tokens[1]).toEqual value: '...',   scopes:  ["source.julia", "keyword.operator.dots.julia"]
-    expect(tokens[1]).toEqual value: '...',   scopes:  ["source.julia", "keyword.operator.dots.julia"]
     {tokens} = grammar.tokenizeLine('1...1')
     expect(tokens[0]).toEqual value: '1',   scopes:  ["source.julia", "constant.numeric.julia"]
     expect(tokens[1]).toEqual value: '...', scopes:  ["source.julia", "keyword.operator.dots.julia"]
