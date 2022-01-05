@@ -974,6 +974,10 @@ describe "Julia grammar", ->
     {tokens} = grammar.tokenizeLine('123_132.123_123...')
     expect(tokens[0]).toEqual value: '123_132.123_123',   scopes:  ["source.julia", "constant.numeric.julia"]
     expect(tokens[1]).toEqual value: '...',   scopes:  ["source.julia", "keyword.operator.dots.julia"]
+    {tokens} = grammar.tokenizeLine('1...1')
+    expect(tokens[0]).toEqual value: '1',   scopes:  ["source.julia", "constant.numeric.julia"]
+    expect(tokens[1]).toEqual value: '...', scopes:  ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[2]).toEqual value: '1',   scopes:  ["source.julia", "constant.numeric.julia"]
 
   it 'tokenizes multiple !s as a suffix', ->
     {tokens} = grammar.tokenizeLine('asd!!!!!!')
@@ -987,3 +991,13 @@ describe "Julia grammar", ->
     expect(tokens[3]).toEqual value: " ",    scopes: ["source.julia"]
     expect(tokens[4]).toEqual value: '#',    scopes: ["source.julia", "comment.line.number-sign.julia", "punctuation.definition.comment.julia"]
     expect(tokens[5]).toEqual value: ' = 2', scopes: ["source.julia", "comment.line.number-sign.julia"]
+
+  it 'tokenizes number ranges syntax (..)', ->
+    {tokens} = grammar.tokenizeLine('0..1')
+    expect(tokens[0]).toEqual value: '0',   scopes:  ["source.julia", "constant.numeric.julia"]
+    expect(tokens[1]).toEqual value: '..',  scopes:  ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[2]).toEqual value: '1',   scopes:  ["source.julia", "constant.numeric.julia"]
+    {tokens} = grammar.tokenizeLine('0.0..1.0')
+    expect(tokens[0]).toEqual value: '0.0',   scopes:  ["source.julia", "constant.numeric.julia"]
+    expect(tokens[1]).toEqual value: '..',  scopes:  ["source.julia", "keyword.operator.dots.julia"]
+    expect(tokens[2]).toEqual value: '1.0',   scopes:  ["source.julia", "constant.numeric.julia"]
