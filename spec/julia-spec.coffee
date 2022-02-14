@@ -1001,3 +1001,21 @@ describe "Julia grammar", ->
     expect(tokens[0]).toEqual value: '0.0',   scopes:  ["source.julia", "constant.numeric.julia"]
     expect(tokens[1]).toEqual value: '..',  scopes:  ["source.julia", "keyword.operator.dots.julia"]
     expect(tokens[2]).toEqual value: '1.0',   scopes:  ["source.julia", "constant.numeric.julia"]
+
+  it 'tokenizes imports with as syntax', ->
+    {tokens} = grammar.tokenizeLine('import Foo as Bar')
+    expect(tokens[0]).toEqual value: 'import',   scopes:  ["source.julia", "keyword.control.import.julia"]
+    expect(tokens[1]).toEqual value: ' Foo ',  scopes:  ["source.julia"]
+    expect(tokens[2]).toEqual value: 'as',   scopes:  ["source.julia", "keyword.control.as.julia"]
+    expect(tokens[3]).toEqual value: ' Bar',   scopes:  ["source.julia"]
+    {tokens} = grammar.tokenizeLine('import Foo: x as y, z as yy')
+    expect(tokens[0]).toEqual value: 'import',   scopes:  ["source.julia", "keyword.control.import.julia"]
+    expect(tokens[1]).toEqual value: ' Foo',  scopes:  ["source.julia"]
+    expect(tokens[2]).toEqual value: ':',  scopes:  ["source.julia", "keyword.operator.range.julia"]
+    expect(tokens[3]).toEqual value: ' x ',  scopes:  ["source.julia"]
+    expect(tokens[4]).toEqual value: 'as',   scopes:  ["source.julia", "keyword.control.as.julia"]
+    expect(tokens[5]).toEqual value: ' y',   scopes:  ["source.julia"]
+    expect(tokens[6]).toEqual value: ',',   scopes:  ["source.julia", "meta.bracket.julia"]
+    expect(tokens[7]).toEqual value: ' z ',   scopes:  ["source.julia"]
+    expect(tokens[8]).toEqual value: 'as',   scopes:  ["source.julia", "keyword.control.as.julia"]
+    expect(tokens[9]).toEqual value: ' yy',   scopes:  ["source.julia"]
