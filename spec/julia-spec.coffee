@@ -1019,3 +1019,14 @@ describe "Julia grammar", ->
     expect(tokens[7]).toEqual value: ' z ',   scopes:  ["source.julia"]
     expect(tokens[8]).toEqual value: 'as',   scopes:  ["source.julia", "keyword.control.as.julia"]
     expect(tokens[9]).toEqual value: ' yy',   scopes:  ["source.julia"]
+
+  it 'tokenizes types with unicode chars', ->
+    {tokens} = grammar.tokenizeLine('struct ChebyshevLike <: AbstractΔMethod end')
+    expect(tokens[0]).toEqual value: 'struct',   scopes:  ["source.julia", "keyword.other.julia"]
+    expect(tokens[1]).toEqual value: ' ChebyshevLike',  scopes:  ["source.julia"]
+    expect(tokens[2]).toEqual value: ' ',   scopes:  ["source.julia"]
+    expect(tokens[3]).toEqual value: '<:',   scopes:  ["source.julia", "keyword.operator.relation.types.julia"]
+    expect(tokens[4]).toEqual value: ' ',   scopes:  ["source.julia"]
+    expect(tokens[5]).toEqual value: 'AbstractΔMethod',   scopes:  ["source.julia", "support.type.julia"]
+    expect(tokens[6]).toEqual value: ' ',   scopes:  ["source.julia"]
+    expect(tokens[7]).toEqual value: 'end',   scopes:  ["source.julia", "keyword.control.end.julia"]
