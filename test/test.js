@@ -3087,4 +3087,46 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
         });
     });
+    it("tokenizes interpolated names in multi-line command strings", function() {
+        const tokens = tokenize(grammar, '# TODO: foo');
+        expect(tokens[0]).to.deep.equal({
+            value: '#',
+            scopes: ["source.julia", "comment.line.number-sign.julia", "punctuation.definition.comment.julia"]
+        });
+        expect(tokens[1]).to.deep.equal({
+            value: " ",
+            scopes: ["source.julia", "comment.line.number-sign.julia"]
+        });
+        expect(tokens[2]).to.deep.equal({
+            value: "TODO",
+            scopes: ["source.julia", "comment.line.number-sign.julia", "keyword.other.comment-annotation.julia"]
+        });
+        expect(tokens[3]).to.deep.equal({
+            value: ': foo',
+            scopes: ["source.julia", "comment.line.number-sign.julia"]
+        });
+    });
+    it("tokenizes interpolated names in multi-line command strings", function() {
+        const tokens = tokenize(grammar, '#= TODO: foo =#');
+        expect(tokens[0]).to.deep.equal({
+            value: '#=',
+            scopes: ["source.julia", "comment.block.number-sign-equals.julia", "punctuation.definition.comment.begin.julia"]
+        });
+        expect(tokens[1]).to.deep.equal({
+            value: " ",
+            scopes: ["source.julia", "comment.block.number-sign-equals.julia"]
+        });
+        expect(tokens[2]).to.deep.equal({
+            value: "TODO",
+            scopes: ["source.julia", "comment.block.number-sign-equals.julia", "keyword.other.comment-annotation.julia"]
+        });
+        expect(tokens[3]).to.deep.equal({
+            value: ': foo ',
+            scopes: ["source.julia", "comment.block.number-sign-equals.julia"]
+        });
+        expect(tokens[4]).to.deep.equal({
+            value: '=#',
+            scopes: ["source.julia", "comment.block.number-sign-equals.julia", "punctuation.definition.comment.end.julia"]
+        });
+    });
 })

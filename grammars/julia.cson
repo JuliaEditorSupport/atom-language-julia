@@ -110,6 +110,25 @@ repository:
         name: "meta.bracket.julia"
       }
     ]
+  comment_tags:
+    patterns: [
+      {
+        match: '\\bTODO\\b'
+        name: 'keyword.other.comment-annotation.julia'
+      }
+      {
+        match: '\\bFIXME\\b'
+        name: 'keyword.other.comment-annotation.julia'
+      }
+      {
+        match: '\\bCHANGED\\b'
+        name: 'keyword.other.comment-annotation.julia'
+      }
+      {
+        match: '\\bXXX\\b'
+        name: 'keyword.other.comment-annotation.julia'
+      }
+    ]
   comment:
     patterns: [
       {include: '#comment_block'}
@@ -121,6 +140,9 @@ repository:
         end: "\\n"
         # match: "(?<!\\$)(#)(?!\\{).*$\\n?"
         name: "comment.line.number-sign.julia"
+        patterns: [
+          {include: '#comment_tags'}
+        ]
       }
     ]
   comment_block:
@@ -136,6 +158,7 @@ repository:
             name: "punctuation.definition.comment.end.julia"
         name: "comment.block.number-sign-equals.julia"
         patterns: [
+          {include: '#comment_tags'}
           {include: '#comment_block'}
         ]
       }
