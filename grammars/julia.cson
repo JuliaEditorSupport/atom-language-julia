@@ -722,6 +722,9 @@ repository:
         patterns: [
           {
             include: "#string_escaped_char"
+          },
+          {
+            include: "#string_dollar_sign_interpolate"
           }
         ]
       }
@@ -742,6 +745,9 @@ repository:
         patterns: [
           {
             include: "#string_escaped_char"
+          },
+          {
+            include: "#string_dollar_sign_interpolate"
           }
         ]
       }

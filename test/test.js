@@ -3010,4 +3010,42 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "keyword.control.end.julia"]
         });
     });
+    it("tokenizes interpolated names in command strings", function() {
+        const tokens = tokenize(grammar, '`$_ω!z_.ard!`');
+        expect(tokens[0]).to.deep.equal({
+            value: '`',
+            scopes: ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia"]
+        });
+        expect(tokens[1]).to.deep.equal({
+            value: "$_ω!z_",
+            scopes: ["source.julia", "string.interpolated.backtick.julia", "variable.interpolation.julia"]
+        });
+        expect(tokens[2]).to.deep.equal({
+            value: ".ard!",
+            scopes: ["source.julia", "string.interpolated.backtick.julia"]
+        });
+        expect(tokens[3]).to.deep.equal({
+            value: '`',
+            scopes: ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.end.julia"]
+        });
+    });
+    return it("tokenizes interpolated names in multi-line command strings", function() {
+        const tokens = tokenize(grammar, '```$_ω!z_.ard!```');
+        expect(tokens[0]).to.deep.equal({
+            value: '```',
+            scopes: ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia"]
+        });
+        expect(tokens[1]).to.deep.equal({
+            value: "$_ω!z_",
+            scopes: ["source.julia", "string.interpolated.backtick.julia", "variable.interpolation.julia"]
+        });
+        expect(tokens[2]).to.deep.equal({
+            value: ".ard!",
+            scopes: ["source.julia", "string.interpolated.backtick.julia"]
+        });
+        expect(tokens[3]).to.deep.equal({
+            value: '```',
+            scopes: ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.end.julia"]
+        });
+    });
 })
