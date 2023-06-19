@@ -907,6 +907,10 @@
           "comment": "`punctuation.section.embedded`, `constant.escape`,\n& `meta.embedded.line` were considered but appear to have even spottier\nsupport among popular syntaxes.",
           "patterns": [
             {
+              "match": "\\bfor\\b",
+              "name": "keyword.control.julia"
+            },
+            {
               "include": "#parentheses"
             },
             {
