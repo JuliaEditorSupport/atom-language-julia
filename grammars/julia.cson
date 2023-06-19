@@ -776,6 +776,10 @@ repository:
         """
         patterns: [
           {
+            match: '\\bfor\\b'
+            name: 'keyword.control.julia'
+          }
+          {
             include: '#parentheses'
           }
           {

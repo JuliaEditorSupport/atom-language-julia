@@ -15,7 +15,7 @@
   "homepage": "https://github.com/JuliaEditorSupport/atom-language-julia",
   "scripts": {
     "generate": "node ./scripts/generate.js && git add grammars/julia.json && git add grammars/julia_vscode.json",
-    "test": "mocha"
+    "test": "npm run generate && mocha"
   },
   "devDependencies": {
     "chai": "^4.3.7",
