@@ -117,6 +117,26 @@
         }
       ]
     },
+    "comment_tags": {
+      "patterns": [
+        {
+          "match": "\\bTODO\\b",
+          "name": "keyword.other.comment-annotation.julia"
+        },
+        {
+          "match": "\\bFIXME\\b",
+          "name": "keyword.other.comment-annotation.julia"
+        },
+        {
+          "match": "\\bCHANGED\\b",
+          "name": "keyword.other.comment-annotation.julia"
+        },
+        {
+          "match": "\\bXXX\\b",
+          "name": "keyword.other.comment-annotation.julia"
+        }
+      ]
+    },
     "comment": {
       "patterns": [
         {
@@ -130,7 +150,12 @@
             }
           },
           "end": "\\n",
-          "name": "comment.line.number-sign.julia"
+          "name": "comment.line.number-sign.julia",
+          "patterns": [
+            {
+              "include": "#comment_tags"
+            }
+          ]
         }
       ]
     },
@@ -151,6 +176,9 @@
           },
           "name": "comment.block.number-sign-equals.julia",
           "patterns": [
+            {
+              "include": "#comment_tags"
+            },
             {
               "include": "#comment_block"
             }
