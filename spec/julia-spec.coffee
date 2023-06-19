@@ -1030,3 +1030,17 @@ describe "Julia grammar", ->
     expect(tokens[5]).toEqual value: 'AbstractΔMethod',   scopes:  ["source.julia", "support.type.julia"]
     expect(tokens[6]).toEqual value: ' ',   scopes:  ["source.julia"]
     expect(tokens[7]).toEqual value: 'end',   scopes:  ["source.julia", "keyword.control.end.julia"]
+
+  it "tokenizes interpolated names in command strings", ->
+    {tokens} = grammar.tokenizeLine('`$_ω!z_.ard!`')
+    expect(tokens[0]).toEqual value: '`', scopes: ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "$_ω!z_", scopes: ["source.julia", "string.interpolated.backtick.julia", "variable.interpolation.julia"]
+    expect(tokens[2]).toEqual value: ".ard!", scopes: ["source.julia", "string.interpolated.backtick.julia"]
+    expect(tokens[3]).toEqual value: '`', scopes: ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.end.julia"]
+
+  it "tokenizes interpolated names in multi-line command strings", ->
+    {tokens} = grammar.tokenizeLine('```$_ω!z_.ard!```')
+    expect(tokens[0]).toEqual value: '```', scopes: ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.begin.julia"]
+    expect(tokens[1]).toEqual value: "$_ω!z_", scopes: ["source.julia", "string.interpolated.backtick.julia", "variable.interpolation.julia"]
+    expect(tokens[2]).toEqual value: ".ard!", scopes: ["source.julia", "string.interpolated.backtick.julia"]
+    expect(tokens[3]).toEqual value: '```', scopes: ["source.julia", "string.interpolated.backtick.julia", "punctuation.definition.string.end.julia"]
