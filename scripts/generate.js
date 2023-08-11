@@ -3,10 +3,10 @@ const fs = require('fs')
 const path = require('path')
 
 const outdir = path.join(__dirname, '..', 'grammars')
-const grammar = CSON.load(path.join(outdir, 'julia.cson'))
+const grammar = JSON.parse(fs.readFileSync(path.join(outdir, 'julia.json')))
 
 // write normal JSON grammar
-fs.writeFileSync(path.join(outdir, 'julia.json'), JSON.stringify(grammar, null, 2))
+fs.writeFileSync(path.join(outdir, 'julia.cson'), CSON.stringify(grammar, null, 2))
 
 // recurse through grammar and replace values:
 function recurseAndReplace(obj, key, val, replacement) {

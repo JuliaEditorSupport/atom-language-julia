@@ -2,9 +2,9 @@
 
 [![Build Status](https://github.com/JuliaEditorSupport/atom-language-julia/workflows/CI/badge.svg)](https://github.com/JuliaEditorSupport/atom-language-julia/actions?query=workflow%3ACI+branch%3Amaster)
 
-Julia grammar definition for Atom, VSCode, and GitHub.
+Julia grammar definition for Atom, VS Code, and GitHub.
 
-The source of truth in this repo is `grammars/julia.cson`; `julia.json` and `julia_vscode.json` are automatically generated in a pre-commit hook.
+The source of truth in this repo is `grammars/julia.json`; `julia.cson` and `julia_vscode.json` are automatically generated in a pre-commit hook.
 
 ## Atom
 Also an Atom package to provide Julia syntax highlighting, snippets, and docstring folding. Originally based off of [JuliaLang/julia.tmBundle](https://github.com/JuliaLang/Julia.tmbundle), merged with new ideas from [language-julia](https://github.com/tpoisot/language-julia/blob/master/README.md).
