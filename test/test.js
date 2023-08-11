@@ -3129,4 +3129,74 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "comment.block.number-sign-equals.julia", "punctuation.definition.comment.end.julia"]
         });
     });
+    it("tokenizes subtype relations with a transpose suffix", function() {
+        const tokens = tokenize(grammar, "Bar <: Foo'");
+        expect(tokens[0]).to.deep.equal({
+            value: "Bar",
+            scopes: ["source.julia"]
+        });
+        expect(tokens[1]).to.deep.equal({
+            value: " ",
+            scopes: ["source.julia"]
+        });
+        expect(tokens[2]).to.deep.equal({
+            value: "<:",
+            scopes: ["source.julia", "keyword.operator.relation.types.julia"]
+        });
+        expect(tokens[3]).to.deep.equal({
+            value: " ",
+            scopes: ["source.julia"]
+        });
+        expect(tokens[4]).to.deep.equal({
+            value: "Foo",
+            scopes: ["source.julia", "support.type.julia"]
+        });
+        expect(tokens[5]).to.deep.equal({
+            value: "'",
+            scopes: ["source.julia", "keyword.operator.transpose.julia"]
+        });
+    });
+    it("tokenizes subtype relations with a transpose suffix", function() {
+        const tokens = tokenize(grammar, "Bar <: Foo'.A()");
+        expect(tokens[0]).to.deep.equal({
+            value: "Bar",
+            scopes: ["source.julia"]
+        });
+        expect(tokens[1]).to.deep.equal({
+            value: " ",
+            scopes: ["source.julia"]
+        });
+        expect(tokens[2]).to.deep.equal({
+            value: "<:",
+            scopes: ["source.julia", "keyword.operator.relation.types.julia"]
+        });
+        expect(tokens[3]).to.deep.equal({
+            value: " ",
+            scopes: ["source.julia"]
+        });
+        expect(tokens[4]).to.deep.equal({
+            value: "Foo",
+            scopes: ["source.julia", "support.type.julia"]
+        });
+        expect(tokens[5]).to.deep.equal({
+            value: "'",
+            scopes: ["source.julia", "keyword.operator.transpose.julia"]
+        });
+        expect(tokens[6]).to.deep.equal({
+            value: ".",
+            scopes: ["source.julia", "keyword.operator.dots.julia"]
+        });
+        expect(tokens[7]).to.deep.equal({
+            value: "A",
+            scopes: ["source.julia", "support.function.julia"]
+        });
+        expect(tokens[8]).to.deep.equal({
+            value: "(",
+            scopes: ["source.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[9]).to.deep.equal({
+            value: ")",
+            scopes: ["source.julia", "meta.bracket.julia"]
+        });
+    });
 })
