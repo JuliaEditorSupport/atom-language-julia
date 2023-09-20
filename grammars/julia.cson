@@ -212,7 +212,7 @@ repository:
           Second group is type parameters (e.g. {T<:Number, S})
           Then open parens
           Then a lookahead ensures that we are followed by:
-            - anything (function argumnets)
+            - anything (function arguments)
             - 0 or more spaces
             - Finally an equal sign
           Negative lookahead ensures we don't have another equal sign (not `==`)
