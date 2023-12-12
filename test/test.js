@@ -3484,4 +3484,58 @@ describe('Julia grammar', function () {
             },
         ])
     })
+    it("tokenizes escape codes in raw strings", function () {
+        const tokens = tokenize(grammar, 'raw"a\\"b"')
+        compareTokens(tokens, [
+            {
+                value: 'raw',
+                scopes: ["string.quoted.other.julia", "support.function.macro.julia"]
+            },
+            {
+                value: '"',
+                scopes: ["string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
+            },
+            {
+                value: 'a',
+                scopes: ["string.quoted.other.julia"]
+            },
+            {
+                value: '\\"',
+                scopes: ["string.quoted.other.julia", "constant.character.escape.julia"]
+            },
+            {
+                value: 'b',
+                scopes: ["string.quoted.other.julia"]
+            },
+            {
+                value: '"',
+                scopes: ["string.quoted.other.julia", "punctuation.definition.string.end.julia"]
+            },
+        ])
+    })
+    it("tokenizes escape codes in var strings", function () {
+        const tokens = tokenize(grammar, 'var"a\\"b"')
+        compareTokens(tokens, [
+            {
+                value: 'var"',
+                scopes: ["constant.other.symbol.julia"]
+            },
+            {
+                value: 'a',
+                scopes: ["constant.other.symbol.julia"]
+            },
+            {
+                value: '\\"',
+                scopes: ["constant.other.symbol.julia", "constant.character.escape.julia"]
+            },
+            {
+                value: 'b',
+                scopes: ["constant.other.symbol.julia"]
+            },
+            {
+                value: '"',
+                scopes: ["constant.other.symbol.julia"]
+            },
+        ])
+    })
 })

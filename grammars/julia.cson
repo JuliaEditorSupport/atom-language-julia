@@ -542,6 +542,11 @@ repository:
         endCaptures:
           '0':
             name: 'punctuation.definition.string.end.julia'
+        patterns: [
+          {
+            include: '#string_escaped_char'
+          }
+        ]
       }
       {
         begin: '(raw)(")'
@@ -555,6 +560,11 @@ repository:
         endCaptures:
           '0':
             name: 'punctuation.definition.string.end.julia'
+        patterns: [
+          {
+            include: '#string_escaped_char'
+          }
+        ]
       }
       {
         begin: '(sql)(""")'
@@ -582,11 +592,21 @@ repository:
         begin: 'var"""'
         end: '"""'
         name: 'constant.other.symbol.julia'
+        patterns: [
+          {
+            include: '#string_escaped_char'
+          }
+        ]
       }
       {
         begin: 'var"'
         end: '"'
         name: 'constant.other.symbol.julia'
+        patterns: [
+          {
+            include: '#string_escaped_char'
+          }
+        ]
       }
       {
         begin: '^\\s?(doc)?(""")\\s?$'
