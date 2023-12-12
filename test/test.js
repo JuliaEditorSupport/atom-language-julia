@@ -191,42 +191,34 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "constant.numeric.julia"]
         });
         expect(tokens[4]).to.deep.equal({
-            value: ";",
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[5]).to.deep.equal({
-            value: " abstract ",
+            value: "; abstract ",
             scopes: ["source.julia"]
         });
-        expect(tokens[6]).to.deep.equal({
+        expect(tokens[5]).to.deep.equal({
             value: "=",
             scopes: ["source.julia", "keyword.operator.update.julia"]
         });
-        expect(tokens[7]).to.deep.equal({
+        expect(tokens[6]).to.deep.equal({
             value: " ",
             scopes: ["source.julia"]
         });
-        expect(tokens[8]).to.deep.equal({
+        expect(tokens[7]).to.deep.equal({
             value: "5",
             scopes: ["source.julia", "constant.numeric.julia"]
         });
-        expect(tokens[9]).to.deep.equal({
-            value: ";",
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[10]).to.deep.equal({
-            value: " primitive ",
+        expect(tokens[8]).to.deep.equal({
+            value: "; primitive ",
             scopes: ["source.julia"]
         });
-        expect(tokens[11]).to.deep.equal({
+        expect(tokens[9]).to.deep.equal({
             value: "=",
             scopes: ["source.julia", "keyword.operator.update.julia"]
         });
-        expect(tokens[12]).to.deep.equal({
+        expect(tokens[10]).to.deep.equal({
             value: " ",
             scopes: ["source.julia"]
         });
-        expect(tokens[13]).to.deep.equal({
+        expect(tokens[11]).to.deep.equal({
             value: "11",
             scopes: ["source.julia", "constant.numeric.julia"]
         });
@@ -262,94 +254,78 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "support.type.julia"]
         });
         expect(tokens[7]).to.deep.equal({
-            value: ",",
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[8]).to.deep.equal({
-            value: " y",
+            value: ", y",
             scopes: ["source.julia"]
         });
-        expect(tokens[9]).to.deep.equal({
+        expect(tokens[8]).to.deep.equal({
             value: "     ",
             scopes: ["source.julia"]
         });
-        expect(tokens[10]).to.deep.equal({
+        expect(tokens[9]).to.deep.equal({
             value: "::",
             scopes: ["source.julia", "keyword.operator.relation.types.julia"]
         });
-        expect(tokens[11]).to.deep.equal({
+        expect(tokens[10]).to.deep.equal({
             value: "   ",
             scopes: ["source.julia"]
         });
-        expect(tokens[12]).to.deep.equal({
+        expect(tokens[11]).to.deep.equal({
             value: "Float64",
             scopes: ["source.julia", "support.type.julia"]
         });
-        expect(tokens[13]).to.deep.equal({
-            value: ",",
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[14]).to.deep.equal({
-            value: " z",
+        expect(tokens[12]).to.deep.equal({
+            value: ", z",
             scopes: ["source.julia"]
         });
-        expect(tokens[15]).to.deep.equal({
+        expect(tokens[13]).to.deep.equal({
             value: "::",
             scopes: ["source.julia", "keyword.operator.relation.types.julia"]
         });
-        expect(tokens[16]).to.deep.equal({
+        expect(tokens[14]).to.deep.equal({
             value: "Float32",
             scopes: ["source.julia", "support.type.julia"]
         });
-        expect(tokens[17]).to.deep.equal({
-            value: ",",
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[18]).to.deep.equal({
-            value: " a",
+        expect(tokens[15]).to.deep.equal({
+            value: ", a",
             scopes: ["source.julia"]
         });
-        expect(tokens[19]).to.deep.equal({
+        expect(tokens[16]).to.deep.equal({
             value: " ",
             scopes: ["source.julia"]
         });
-        expect(tokens[20]).to.deep.equal({
+        expect(tokens[17]).to.deep.equal({
             value: "::",
             scopes: ["source.julia", "keyword.operator.relation.types.julia"]
+        });
+        expect(tokens[18]).to.deep.equal({
+            value: " ",
+            scopes: ["source.julia"]
+        });
+        expect(tokens[19]).to.deep.equal({
+            value: "X.Y.Z.A",
+            scopes: ["source.julia", "support.type.julia"]
+        });
+        expect(tokens[20]).to.deep.equal({
+            value: ", b",
+            scopes: ["source.julia"]
         });
         expect(tokens[21]).to.deep.equal({
             value: " ",
             scopes: ["source.julia"]
         });
         expect(tokens[22]).to.deep.equal({
-            value: "X.Y.Z.A",
-            scopes: ["source.julia", "support.type.julia"]
-        });
-        expect(tokens[23]).to.deep.equal({
-            value: ",",
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[24]).to.deep.equal({
-            value: " b",
-            scopes: ["source.julia"]
-        });
-        expect(tokens[25]).to.deep.equal({
-            value: " ",
-            scopes: ["source.julia"]
-        });
-        expect(tokens[26]).to.deep.equal({
             value: "::",
             scopes: ["source.julia", "keyword.operator.relation.types.julia"]
         });
-        expect(tokens[27]).to.deep.equal({
+        expect(tokens[23]).to.deep.equal({
             value: "    ",
             scopes: ["source.julia"]
         });
-        expect(tokens[28]).to.deep.equal({
+        expect(tokens[24]).to.deep.equal({
             value: "X.Y.Z",
             scopes: ["source.julia", "support.type.julia"]
         });
-        expect(tokens[29]).to.deep.equal({
+        expect(tokens[25]).to.deep.equal({
             value: ")",
             scopes: ["source.julia", "meta.bracket.julia"]
         });
@@ -392,22 +368,18 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "support.type.julia"]
         });
         expect(tokens[6]).to.deep.equal({
-            value: ",",
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[7]).to.deep.equal({
-            value: " b",
+            value: ", b",
             scopes: ["source.julia"]
         });
-        expect(tokens[8]).to.deep.equal({
+        expect(tokens[7]).to.deep.equal({
             value: "::",
             scopes: ["source.julia", "keyword.operator.relation.types.julia"]
         });
-        expect(tokens[9]).to.deep.equal({
+        expect(tokens[8]).to.deep.equal({
             value: "Union{Int, Set{Any}}",
             scopes: ["source.julia", "support.type.julia"]
         });
-        expect(tokens[10]).to.deep.equal({
+        expect(tokens[9]).to.deep.equal({
             value: ")",
             scopes: ["source.julia", "meta.bracket.julia"]
         });
@@ -1208,26 +1180,10 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "meta.bracket.julia"]
         });
         expect(tokens[2]).to.deep.equal({
-            value: "bing",
+            value: "bing, bang, boom",
             scopes: ["source.julia"]
         });
         expect(tokens[3]).to.deep.equal({
-            value: ",",
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[4]).to.deep.equal({
-            value: " bang",
-            scopes: ["source.julia"]
-        });
-        expect(tokens[5]).to.deep.equal({
-            value: ",",
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[6]).to.deep.equal({
-            value: " boom",
-            scopes: ["source.julia"]
-        });
-        expect(tokens[7]).to.deep.equal({
             value: ")",
             scopes: ["source.julia", "meta.bracket.julia"]
         });
@@ -1330,26 +1286,30 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "string.quoted.double.julia"]
         });
         expect(tokens[2]).to.deep.equal({
-            value: "$(",
+            value: "$",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
         });
         expect(tokens[3]).to.deep.equal({
-            value: "rand",
-            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "support.function.julia"]
-        });
-        expect(tokens[4]).to.deep.equal({
             value: "(",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
         });
+        expect(tokens[4]).to.deep.equal({
+            value: "rand",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "support.function.julia"]
+        });
         expect(tokens[5]).to.deep.equal({
-            value: ")",
+            value: "(",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
         });
         expect(tokens[6]).to.deep.equal({
             value: ")",
-            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
         });
         expect(tokens[7]).to.deep.equal({
+            value: ")",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[8]).to.deep.equal({
             value: '"',
             scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
         });
@@ -1361,7 +1321,7 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
         });
         expect(tokens[1]).to.deep.equal({
-            value: "$(",
+            value: "$",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
         });
         expect(tokens[2]).to.deep.equal({
@@ -1369,70 +1329,74 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
         });
         expect(tokens[3]).to.deep.equal({
-            value: "true",
-            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "constant.language.julia"]
-        });
-        expect(tokens[4]).to.deep.equal({
-            value: " ",
-            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
-        });
-        expect(tokens[5]).to.deep.equal({
-            value: "+",
-            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "keyword.operator.arithmetic.julia"]
-        });
-        expect(tokens[6]).to.deep.equal({
-            value: " ",
-            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
-        });
-        expect(tokens[7]).to.deep.equal({
-            value: "length",
-            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "support.function.julia"]
-        });
-        expect(tokens[8]).to.deep.equal({
             value: "(",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
         });
+        expect(tokens[4]).to.deep.equal({
+            value: "true",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "constant.language.julia"]
+        });
+        expect(tokens[5]).to.deep.equal({
+            value: " ",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+        });
+        expect(tokens[6]).to.deep.equal({
+            value: "+",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "keyword.operator.arithmetic.julia"]
+        });
+        expect(tokens[7]).to.deep.equal({
+            value: " ",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+        });
+        expect(tokens[8]).to.deep.equal({
+            value: "length",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "support.function.julia"]
+        });
         expect(tokens[9]).to.deep.equal({
+            value: "(",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[10]).to.deep.equal({
             value: '"',
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
         });
-        expect(tokens[10]).to.deep.equal({
+        expect(tokens[11]).to.deep.equal({
             value: "asdf",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "string.quoted.double.julia"]
         });
-        expect(tokens[11]).to.deep.equal({
+        expect(tokens[12]).to.deep.equal({
             value: "$asf",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
         });
-        expect(tokens[12]).to.deep.equal({
+        expect(tokens[13]).to.deep.equal({
             value: '"',
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
-        });
-        expect(tokens[13]).to.deep.equal({
-            value: ")",
-            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
         });
         expect(tokens[14]).to.deep.equal({
             value: ")",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
         });
         expect(tokens[15]).to.deep.equal({
+            value: ")",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[16]).to.deep.equal({
             value: "*",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "keyword.operator.arithmetic.julia"]
         });
-        expect(tokens[16]).to.deep.equal({
+        expect(tokens[17]).to.deep.equal({
             value: "0x0d",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "constant.numeric.julia"]
         });
-        expect(tokens[17]).to.deep.equal({
-            value: ")",
-            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
-        });
         expect(tokens[18]).to.deep.equal({
+            value: ")",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[19]).to.deep.equal({
             value: " is a number.",
             scopes: ["source.julia", "string.quoted.double.julia"]
         });
-        expect(tokens[19]).to.deep.equal({
+        expect(tokens[20]).to.deep.equal({
             value: '"',
             scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
         });
@@ -1444,23 +1408,23 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
         });
         expect(tokens[1]).to.deep.equal({
-            value: "$(",
+            value: "$",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
         });
         expect(tokens[2]).to.deep.equal({
-            value: "a",
-            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "support.function.julia"]
-        });
-        expect(tokens[3]).to.deep.equal({
             value: "(",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[3]).to.deep.equal({
+            value: "a",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "support.function.julia"]
         });
         expect(tokens[4]).to.deep.equal({
             value: "(",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
         });
         expect(tokens[5]).to.deep.equal({
-            value: ")",
+            value: "(",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
         });
         expect(tokens[6]).to.deep.equal({
@@ -1469,9 +1433,13 @@ describe('Julia grammar', function() {
         });
         expect(tokens[7]).to.deep.equal({
             value: ")",
-            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
         });
         expect(tokens[8]).to.deep.equal({
+            value: ")",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[9]).to.deep.equal({
             value: '"',
             scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
         });
@@ -1503,34 +1471,30 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "meta.bracket.julia"]
         });
         expect(tokens[6]).to.deep.equal({
-            value: ";",
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[7]).to.deep.equal({
-            value: " ",
+            value: "; ",
             scopes: ["source.julia"]
         });
-        expect(tokens[8]).to.deep.equal({
+        expect(tokens[7]).to.deep.equal({
             value: "f",
             scopes: ["source.julia", "support.function.julia"]
         });
-        expect(tokens[9]).to.deep.equal({
+        expect(tokens[8]).to.deep.equal({
             value: "(",
             scopes: ["source.julia", "meta.bracket.julia"]
         });
-        expect(tokens[10]).to.deep.equal({
+        expect(tokens[9]).to.deep.equal({
             value: '"',
             scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
         });
-        expect(tokens[11]).to.deep.equal({
+        expect(tokens[10]).to.deep.equal({
             value: '\\"',
             scopes: ["source.julia", "string.quoted.double.julia", "constant.character.escape.julia"]
         });
-        expect(tokens[12]).to.deep.equal({
+        expect(tokens[11]).to.deep.equal({
             value: '"',
             scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
         });
-        expect(tokens[13]).to.deep.equal({
+        expect(tokens[12]).to.deep.equal({
             value: ")",
             scopes: ["source.julia", "meta.bracket.julia"]
         });
@@ -1905,18 +1869,10 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "meta.bracket.julia"]
         });
         expect(tokens[10]).to.deep.equal({
-            value: "T",
+            value: "T, E",
             scopes: ["source.julia"]
         });
         expect(tokens[11]).to.deep.equal({
-            value: ",",
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[12]).to.deep.equal({
-            value: " E",
-            scopes: ["source.julia"]
-        });
-        expect(tokens[13]).to.deep.equal({
             value: "}",
             scopes: ["source.julia", "meta.bracket.julia"]
         });
@@ -2038,7 +1994,7 @@ describe('Julia grammar', function() {
         });
         expect(tokens[4]).to.deep.equal({
             value: ';',
-            scopes: ["source.julia", "meta.array.julia", "meta.bracket.julia"]
+            scopes: ["source.julia", "meta.array.julia"]
         });
         expect(tokens[5]).to.deep.equal({
             value: ']',
@@ -2131,96 +2087,92 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "constant.numeric.julia"]
         });
         expect(tokens[3]).to.deep.equal({
-            value: ';',
-            scopes: ["source.julia", "meta.bracket.julia"]
+            value: '; a',
+            scopes: ["source.julia"]
         });
         expect(tokens[4]).to.deep.equal({
-            value: ' a',
-            scopes: ["source.julia"]
+            value: ':',
+            scopes: ["source.julia", "keyword.operator.range.julia"]
         });
         expect(tokens[5]).to.deep.equal({
-            value: ':',
-            scopes: ["source.julia", "keyword.operator.range.julia"]
+            value: 'b; c',
+            scopes: ["source.julia"]
         });
         expect(tokens[6]).to.deep.equal({
-            value: 'b',
-            scopes: ["source.julia"]
-        });
-        expect(tokens[7]).to.deep.equal({
-            value: ';',
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[8]).to.deep.equal({
-            value: ' c',
-            scopes: ["source.julia"]
-        });
-        expect(tokens[9]).to.deep.equal({
             value: ':',
             scopes: ["source.julia", "keyword.operator.range.julia"]
         });
-        expect(tokens[10]).to.deep.equal({
-            value: ' d',
+        expect(tokens[7]).to.deep.equal({
+            value: ' d; e ',
             scopes: ["source.julia"]
         });
-        expect(tokens[11]).to.deep.equal({
-            value: ';',
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[12]).to.deep.equal({
-            value: ' e ',
-            scopes: ["source.julia"]
-        });
-        expect(tokens[13]).to.deep.equal({
+        expect(tokens[8]).to.deep.equal({
             value: ':f',
             scopes: ["source.julia", "constant.other.symbol.julia"]
         });
-        expect(tokens[14]).to.deep.equal({
-            value: ';',
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[15]).to.deep.equal({
-            value: ' ',
+        expect(tokens[9]).to.deep.equal({
+            value: '; ',
             scopes: ["source.julia"]
         });
-        expect(tokens[16]).to.deep.equal({
+        expect(tokens[10]).to.deep.equal({
             value: ':g',
             scopes: ["source.julia", "constant.other.symbol.julia"]
         });
-        expect(tokens[17]).to.deep.equal({
+        expect(tokens[11]).to.deep.equal({
             value: ':',
             scopes: ["source.julia", "keyword.operator.range.julia"]
         });
-        expect(tokens[18]).to.deep.equal({
+        expect(tokens[12]).to.deep.equal({
             value: ' ',
             scopes: ["source.julia"]
         });
-        expect(tokens[19]).to.deep.equal({
+        expect(tokens[13]).to.deep.equal({
             value: ':h',
             scopes: ["source.julia", "constant.other.symbol.julia"]
         });
-        expect(tokens[20]).to.deep.equal({
-            value: ';',
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[21]).to.deep.equal({
-            value: ' i',
+        expect(tokens[14]).to.deep.equal({
+            value: '; i',
             scopes: ["source.julia"]
         });
-        expect(tokens[22]).to.deep.equal({
+        expect(tokens[15]).to.deep.equal({
             value: '::',
             scopes: ["source.julia", "keyword.operator.relation.types.julia"]
         });
-        expect(tokens[23]).to.deep.equal({
+        expect(tokens[16]).to.deep.equal({
             value: 'J',
             scopes: ["source.julia", "support.type.julia"]
         });
-        expect(tokens[29]).to.deep.equal({
+        expect(tokens[17]).to.deep.equal({
+            value: '; ',
+            scopes: ["source.julia"]
+        });
+        expect(tokens[18]).to.deep.equal({
+            value: 'k',
+            scopes: ["source.julia", "support.function.julia"]
+        });
+        expect(tokens[19]).to.deep.equal({
+            value: '(',
+            scopes: ["source.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[20]).to.deep.equal({
+            value: ')',
+            scopes: ["source.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[21]).to.deep.equal({
             value: ':',
             scopes: ["source.julia", "keyword.operator.range.julia"]
         });
-        expect(tokens[30]).to.deep.equal({
+        expect(tokens[22]).to.deep.equal({
             value: 'l',
             scopes: ["source.julia", "support.function.julia"]
+        });
+        expect(tokens[23]).to.deep.equal({
+            value: '(',
+            scopes: ["source.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[24]).to.deep.equal({
+            value: ')',
+            scopes: ["source.julia", "meta.bracket.julia"]
         });
     });
     it("tokenizes dot operators", function() {
@@ -2337,50 +2289,42 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "keyword.operator.update.julia"]
         });
         expect(tokens[5]).to.deep.equal({
-            value: ' range',
+            value: ' range, \n ',
             scopes: ["source.julia"]
         });
         expect(tokens[6]).to.deep.equal({
-            value: ',',
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[7]).to.deep.equal({
-            value: ' \n ',
-            scopes: ["source.julia"]
-        });
-        expect(tokens[8]).to.deep.equal({
             value: 'outer',
             scopes: ["source.julia", "keyword.other.julia"]
         });
-        expect(tokens[9]).to.deep.equal({
+        expect(tokens[7]).to.deep.equal({
             value: ' j ',
             scopes: ["source.julia"]
         });
-        expect(tokens[10]).to.deep.equal({
+        expect(tokens[8]).to.deep.equal({
             value: '=',
             scopes: ["source.julia", "keyword.operator.update.julia"]
         });
-        expect(tokens[11]).to.deep.equal({
+        expect(tokens[9]).to.deep.equal({
             value: ' range',
             scopes: ["source.julia"]
         });
-        expect(tokens[12]).to.deep.equal({
+        expect(tokens[10]).to.deep.equal({
             value: '\n',
             scopes: ["source.julia"]
         });
-        expect(tokens[13]).to.deep.equal({
+        expect(tokens[11]).to.deep.equal({
             value: ' outer ',
             scopes: ["source.julia"]
         });
-        expect(tokens[14]).to.deep.equal({
+        expect(tokens[12]).to.deep.equal({
             value: '=',
             scopes: ["source.julia", "keyword.operator.update.julia"]
         });
-        expect(tokens[15]).to.deep.equal({
+        expect(tokens[13]).to.deep.equal({
             value: ' ',
             scopes: ["source.julia"]
         });
-        expect(tokens[16]).to.deep.equal({
+        expect(tokens[14]).to.deep.equal({
             value: '3',
             scopes: ["source.julia", "constant.numeric.julia"]
         });
@@ -2434,14 +2378,10 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "constant.language.julia"]
         });
         expect(tokens[4]).to.deep.equal({
-            value: ',',
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[5]).to.deep.equal({
-            value: ' ',
+            value: ', ',
             scopes: ["source.julia"]
         });
-        expect(tokens[6]).to.deep.equal({
+        expect(tokens[5]).to.deep.equal({
             value: 'missing',
             scopes: ["source.julia", "constant.language.julia"]
         });
@@ -2955,22 +2895,14 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "keyword.control.as.julia"]
         });
         expect(tokens[5]).to.deep.equal({
-            value: ' y',
+            value: ' y, z ',
             scopes: ["source.julia"]
         });
         expect(tokens[6]).to.deep.equal({
-            value: ',',
-            scopes: ["source.julia", "meta.bracket.julia"]
-        });
-        expect(tokens[7]).to.deep.equal({
-            value: ' z ',
-            scopes: ["source.julia"]
-        });
-        expect(tokens[8]).to.deep.equal({
             value: 'as',
             scopes: ["source.julia", "keyword.control.as.julia"]
         });
-        expect(tokens[9]).to.deep.equal({
+        expect(tokens[7]).to.deep.equal({
             value: ' yy',
             scopes: ["source.julia"]
         });
@@ -3055,34 +2987,101 @@ describe('Julia grammar', function() {
             scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
         });
         expect(tokens[1]).to.deep.equal({
-            value: "$(",
+            value: "$",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
         });
         expect(tokens[2]).to.deep.equal({
+            value: "(",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[3]).to.deep.equal({
             value: "a ",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
         });
-        expect(tokens[3]).to.deep.equal({
+        expect(tokens[4]).to.deep.equal({
             value: "for",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "keyword.control.julia"]
         });
-        expect(tokens[4]).to.deep.equal({
+        expect(tokens[5]).to.deep.equal({
             value: " a ",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
         });
-        expect(tokens[5]).to.deep.equal({
+        expect(tokens[6]).to.deep.equal({
             value: "in",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "keyword.operator.relation.in.julia"]
         });
-        expect(tokens[6]).to.deep.equal({
+        expect(tokens[7]).to.deep.equal({
             value: " a",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
         });
-        expect(tokens[7]).to.deep.equal({
+        expect(tokens[8]).to.deep.equal({
             value: ")",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[9]).to.deep.equal({
+            value: "\"",
+            scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
+        });
+    });
+    it("tokenizes interpolated generators", function() {
+        const tokens = tokenize(grammar, '"$((a for a in a()))"');
+        expect(tokens[0]).to.deep.equal({
+            value: '"',
+            scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
+        });
+        expect(tokens[1]).to.deep.equal({
+            value: "$",
             scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
         });
+        expect(tokens[2]).to.deep.equal({
+            value: "(",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[3]).to.deep.equal({
+            value: "(",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[4]).to.deep.equal({
+            value: "a ",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+        });
+        expect(tokens[5]).to.deep.equal({
+            value: "for",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "keyword.control.julia"]
+        });
+        expect(tokens[6]).to.deep.equal({
+            value: " a ",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+        });
+        expect(tokens[7]).to.deep.equal({
+            value: "in",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "keyword.operator.relation.in.julia"]
+        });
         expect(tokens[8]).to.deep.equal({
+            value: " ",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia"]
+        });
+        expect(tokens[9]).to.deep.equal({
+            value: "a",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "support.function.julia"]
+        });
+        expect(tokens[10]).to.deep.equal({
+            value: "(",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[11]).to.deep.equal({
+            value: ")",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[12]).to.deep.equal({
+            value: ")",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[13]).to.deep.equal({
+            value: ")",
+            scopes: ["source.julia", "string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+        });
+        expect(tokens[14]).to.deep.equal({
             value: "\"",
             scopes: ["source.julia", "string.quoted.double.julia", "punctuation.definition.string.end.julia"]
         });
