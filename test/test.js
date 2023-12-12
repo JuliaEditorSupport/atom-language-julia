@@ -1390,6 +1390,43 @@ describe('Julia grammar', function () {
             },
         ])
     })
+    it("tokenizes interpolated names without whitespace", function () {
+        const tokens = tokenize(grammar, '"$a$b$(c)"')
+        compareTokens(tokens, [
+            {
+                value: '"',
+                scopes: ["string.quoted.double.julia", "punctuation.definition.string.begin.julia"]
+            },
+            {
+                value: "$a",
+                scopes: ["string.quoted.double.julia", "variable.interpolation.julia"]
+            },
+            {
+                value: "$b",
+                scopes: ["string.quoted.double.julia", "variable.interpolation.julia"]
+            },
+            {
+                value: "$",
+                scopes: ["string.quoted.double.julia", "variable.interpolation.julia"]
+            },
+            {
+                value: "(",
+                scopes: ["string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+            },
+            {
+                value: "c",
+                scopes: ["string.quoted.double.julia", "variable.interpolation.julia"]
+            },
+            {
+                value: ")",
+                scopes: ["string.quoted.double.julia", "variable.interpolation.julia", "meta.bracket.julia"]
+            },
+            {
+                value: '"',
+                scopes: ["string.quoted.double.julia", "punctuation.definition.string.end.julia"]
+            },
+        ])
+    })
     it("tokenizes interpolated expressions in double strings", function () {
         const tokens = tokenize(grammar, '"x=$(rand())"')
         compareTokens(tokens, [
@@ -3262,7 +3299,7 @@ describe('Julia grammar', function () {
             },
         ])
     })
-    it("tokenizes interpolated generators", function () {
+    it("tokenizes interpolated nested generators", function () {
         const tokens = tokenize(grammar, '"$((a for a in a()))"')
         compareTokens(tokens, [
             {
@@ -3327,7 +3364,7 @@ describe('Julia grammar', function () {
             },
         ])
     })
-    it("tokenizes interpolated names in multi-line command strings", function () {
+    it("tokenizes comment annotations in single-line comments", function () {
         const tokens = tokenize(grammar, '# TODO: foo')
         compareTokens(tokens, [
             {
@@ -3348,7 +3385,7 @@ describe('Julia grammar', function () {
             },
         ])
     })
-    it("tokenizes interpolated names in multi-line command strings", function () {
+    it("tokenizes comment annotations in block-line comments", function () {
         const tokens = tokenize(grammar, '#= TODO: foo =#')
         compareTokens(tokens, [
             {
