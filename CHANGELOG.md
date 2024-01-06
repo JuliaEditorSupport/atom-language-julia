@@ -5,6 +5,8 @@ All notable changes to the Julia grammar will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
+### Fixed
+- new Julia 1.10 keyword `public` is now parsed correctly([#271](https://github.com/JuliaEditorSupport/atom-language-julia/issues/271))
 
 ## [0.22.0] - 2021-11-07
 ### Fixed
