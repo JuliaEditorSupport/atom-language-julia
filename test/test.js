@@ -715,6 +715,19 @@ describe('Julia grammar', function () {
             },
         ])
     })
+    it("tokenizes public statements", function () {
+        const tokens = tokenize(grammar, "public some_public_function")
+        compareTokens(tokens, [
+            {
+                value: "public",
+                scopes: ["keyword.control.public.julia"]
+            },
+            {
+                value: " some_public_function",
+                scopes: []
+            },
+        ])
+    })
     it("tokenizes symbols", function () {
         const tokens = tokenize(grammar, ":à_b9!")
         compareTokens(tokens, [
