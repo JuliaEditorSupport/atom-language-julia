@@ -6,8 +6,31 @@ Julia grammar definition for Atom, VS Code, and GitHub.
 
 The source of truth in this repo is `grammars/julia.json`; `julia.cson` and `julia_vscode.json` are automatically generated in a pre-commit hook.
 
-## Atom
-Also an Atom package to provide Julia syntax highlighting, snippets, and docstring folding. Originally based off of [JuliaLang/julia.tmBundle](https://github.com/JuliaLang/Julia.tmbundle), merged with new ideas from [language-julia](https://github.com/tpoisot/language-julia/blob/master/README.md).
+## Contributing
+
+We love contributors. Here are the steps we have taken to develop on this package:
+
+0. Install prerequisites: [Node.js](https://nodejs.org/) and `npm` (comes bundled with Node). We recommend using a [Node version manager](https://github.com/search?q=node+version+manager+archived%3Afalse&type=repositories&ref=advsearch). LTS is recommended, but any node version newer than 14 should do.
+1. Clone this repo and `cd` into it
+2. Run `npm ci`
+3. Open `grammars/julia.json` in your favourite editor and fix a bug or implement additional highlighting rules
+4. Add corresponding tests at the bottom of `test/test.js`
+5. Run the updated tests with `npm run test`
+6. Once tests pass and you're happy with your changes, commit them and open a PR against this repo. This should automatically run a pre-commit hook that generates derivative grammars for VS Code and Atom from `julia.json`.
+
+### Testing the updated grammar in VS Code
+Follow the [julia-vscode developer instructions](https://github.com/julia-vscode/julia-vscode/blob/main/CONTRIBUTING.md) to get the extension setup. Afterwards, simply copy the updated `julia_vscode.json` from this repo into `julia-vscode/syntaxes` and you should see your changes in the debug editor after reloading it.
+
+## Contributor list
+
+- Everyone who has helped with the [tmBundle](https://github.com/JuliaLang/Julia.tmbundle)
+- [See contributors](https://github.com/JuliaEditorSupport/atom-language-julia/graphs/contributors)
+
+## Atom package
+<details>
+<summary>Atom package (sunset end of 2022)</summary>
+
+This is also an Atom package to provide Julia syntax highlighting, snippets, and docstring folding. Originally based off of [JuliaLang/julia.tmBundle](https://github.com/JuliaLang/Julia.tmbundle), merged with new ideas from [language-julia](https://github.com/tpoisot/language-julia/blob/master/README.md).
 
 ### Features:
 
@@ -39,23 +62,4 @@ Two Atom commands are provided to toggle all docstrings or the docstring under t
   'shift-tab': 'language-julia:toggle-all-docstrings'
 ```
 
-## Contributing
-
-We love contributors. Here are the steps we have taken to develop on this package:
-
-1. Remove the official install of the package: `apm uninstall language-julia`
-2. Clone the repository somewhere we can remember: `git clone git@github.com:JuliaEditorSupport/atom-language-julia.git`
-3. Link the cloned package to `~/.atom` (enter the following from the root of the repo directory): `apm link .`
-4. Hack away!
-
-When new features are added, you should write specs to show that the package is behaving as expected. To run the specs you need to do the following:
-
-- Make sure you have the library's folder open in the current atom project.
-- Then open the command pallete and select `Window: Run package specs`. On OSX this key-binding is `ctrl+cmd+option+p`.
-
-This should open up a new window with the spec results.
-
-### Contributor list
-
-- Everyone who has helped with the [tmBundle](https://github.com/JuliaLang/Julia.tmbundle)
-- [See contributors](https://github.com/JuliaEditorSupport/atom-language-julia/graphs/contributors)
+</details>
