@@ -10,6 +10,7 @@ The source of truth in this repo is `grammars/julia.json`; `julia.cson` and `jul
 
 We love contributors. Here are the steps we have taken to develop on this package:
 
+0. Install prerequisites: [Node.js](https://nodejs.org/) and `npm` (comes bundled with Node). We recommend using a [Node version manager](https://github.com/search?q=node+version+manager+archived%3Afalse&type=repositories&ref=advsearch).
 1. Clone this repo and `cd` into it
 2. Run `npm ci`
 3. Open `grammars/julia.json` in your favourite editor and fix a bug or implement additional highlighting rules
