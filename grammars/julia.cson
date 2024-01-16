@@ -51,6 +51,9 @@ patterns: [
   {
     include: '#symbol'
   }
+  {
+    include: '#punctuation'
+  }
 ]
 repository:
   array:
@@ -913,6 +916,20 @@ repository:
       }
       {
         include: '#symbol'
+      }
+      {
+        include: '#punctuation'
+      }
+    ]
+  punctuation:
+    patterns: [
+      {
+        match: ','
+        name: 'punctuation.separator.comma.julia'
+      }
+      {
+        match: ';'
+        name: 'punctuation.separator.semicolon.julia'
       }
     ]
 scopeName: 'source.julia'
