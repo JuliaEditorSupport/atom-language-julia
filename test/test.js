@@ -212,7 +212,11 @@ describe('Julia grammar', function () {
                 scopes: ["constant.numeric.julia"]
             },
             {
-                value: "; abstract ",
+                value: ";",
+                scopes: ["punctuation.separator.semicolon.julia"]
+            },
+            {
+                value: " abstract ",
                 scopes: []
             },
             {
@@ -228,7 +232,11 @@ describe('Julia grammar', function () {
                 scopes: ["constant.numeric.julia"]
             },
             {
-                value: "; primitive ",
+                value: ";",
+                scopes: ["punctuation.separator.semicolon.julia"]
+            },
+            {
+                value: " primitive ",
                 scopes: []
             },
             {
@@ -277,7 +285,11 @@ describe('Julia grammar', function () {
                 scopes: ["support.type.julia"]
             },
             {
-                value: ", y",
+                value: ",",
+                scopes: ["punctuation.separator.comma.julia"]
+            },
+            {
+                value: " y",
                 scopes: []
             },
             {
@@ -297,7 +309,11 @@ describe('Julia grammar', function () {
                 scopes: ["support.type.julia"]
             },
             {
-                value: ", z",
+                value: ",",
+                scopes: ["punctuation.separator.comma.julia"]
+            },
+            {
+                value: " z",
                 scopes: []
             },
             {
@@ -309,7 +325,11 @@ describe('Julia grammar', function () {
                 scopes: ["support.type.julia"]
             },
             {
-                value: ", a",
+                value: ",",
+                scopes: ["punctuation.separator.comma.julia"]
+            },
+            {
+                value: " a",
                 scopes: []
             },
             {
@@ -329,7 +349,11 @@ describe('Julia grammar', function () {
                 scopes: ["support.type.julia"]
             },
             {
-                value: ", b",
+                value: ",",
+                scopes: ["punctuation.separator.comma.julia"]
+            },
+            {
+                value: " b",
                 scopes: []
             },
             {
@@ -395,7 +419,11 @@ describe('Julia grammar', function () {
                 scopes: ["support.type.julia"]
             },
             {
-                value: ", b",
+                value: ",",
+                scopes: ["punctuation.separator.comma.julia"]
+            },
+            {
+                value: " b",
                 scopes: []
             },
             {
@@ -971,7 +999,7 @@ describe('Julia grammar', function () {
             },
         ])
     })
-    it('tokenizes string macro after type operator', function () {
+    it('tokenizes string macro after type operator with weird mime type', function () {
         const tokens = tokenize(grammar, '::MIME"annoying \\"string\\" bla bla"')
         compareTokens(tokens, [
             {
@@ -1297,7 +1325,23 @@ describe('Julia grammar', function () {
                 scopes: ["meta.bracket.julia"]
             },
             {
-                value: "bing, bang, boom",
+                value: "bing",
+                scopes: []
+            },
+            {
+                value: ",",
+                scopes: ["punctuation.separator.comma.julia"]
+            },
+            {
+                value: " bang",
+                scopes: []
+            },
+            {
+                value: ",",
+                scopes: ["punctuation.separator.comma.julia"]
+            },
+            {
+                value: " boom",
                 scopes: []
             },
             {
@@ -1643,7 +1687,11 @@ describe('Julia grammar', function () {
                 scopes: ["meta.bracket.julia"]
             },
             {
-                value: "; ",
+                value: ";",
+                scopes: ["punctuation.separator.semicolon.julia"]
+            },
+            {
+                value: " ",
                 scopes: []
             },
             {
@@ -2069,7 +2117,15 @@ describe('Julia grammar', function () {
                 scopes: ["meta.bracket.julia"]
             },
             {
-                value: "T, E",
+                value: "T",
+                scopes: []
+            },
+            {
+                value: ",",
+                scopes: ["punctuation.separator.comma.julia"]
+            },
+            {
+                value: " E",
                 scopes: []
             },
             {
@@ -2202,7 +2258,7 @@ describe('Julia grammar', function () {
             },
             {
                 value: ';',
-                scopes: ["meta.array.julia"]
+                scopes: ["meta.array.julia", "punctuation.separator.semicolon.julia"]
             },
             {
                 value: ']',
@@ -2299,7 +2355,11 @@ describe('Julia grammar', function () {
                 scopes: ["constant.numeric.julia"]
             },
             {
-                value: '; a',
+                value: ';',
+                scopes: ["punctuation.separator.semicolon.julia"]
+            },
+            {
+                value: ' a',
                 scopes: []
             },
             {
@@ -2307,7 +2367,15 @@ describe('Julia grammar', function () {
                 scopes: ["keyword.operator.range.julia"]
             },
             {
-                value: 'b; c',
+                value: 'b',
+                scopes: []
+            },
+            {
+                value: ';',
+                scopes: ["punctuation.separator.semicolon.julia"]
+            },
+            {
+                value: ' c',
                 scopes: []
             },
             {
@@ -2315,7 +2383,15 @@ describe('Julia grammar', function () {
                 scopes: ["keyword.operator.range.julia"]
             },
             {
-                value: ' d; e ',
+                value: ' d',
+                scopes: []
+            },
+            {
+                value: ';',
+                scopes: ["punctuation.separator.semicolon.julia"]
+            },
+            {
+                value: ' e ',
                 scopes: []
             },
             {
@@ -2323,7 +2399,11 @@ describe('Julia grammar', function () {
                 scopes: ["constant.other.symbol.julia"]
             },
             {
-                value: '; ',
+                value: ';',
+                scopes: ["punctuation.separator.semicolon.julia"]
+            },
+            {
+                value: ' ',
                 scopes: []
             },
             {
@@ -2343,7 +2423,11 @@ describe('Julia grammar', function () {
                 scopes: ["constant.other.symbol.julia"]
             },
             {
-                value: '; i',
+                value: ';',
+                scopes: ["punctuation.separator.semicolon.julia"]
+            },
+            {
+                value: ' i',
                 scopes: []
             },
             {
@@ -2355,7 +2439,11 @@ describe('Julia grammar', function () {
                 scopes: ["support.type.julia"]
             },
             {
-                value: '; ',
+                value: ';',
+                scopes: ["punctuation.separator.semicolon.julia"]
+            },
+            {
+                value: ' ',
                 scopes: []
             },
             {
@@ -2513,7 +2601,15 @@ describe('Julia grammar', function () {
                 scopes: ["keyword.operator.update.julia"]
             },
             {
-                value: ' range, \n ',
+                value: ' range',
+                scopes: []
+            },
+            {
+                value: ',',
+                scopes: ["punctuation.separator.comma.julia"]
+            },
+            {
+                value: ' \n ',
                 scopes: []
             },
             {
@@ -2608,7 +2704,11 @@ describe('Julia grammar', function () {
                 scopes: ["constant.language.julia"]
             },
             {
-                value: ', ',
+                value: ',',
+                scopes: ["punctuation.separator.comma.julia"]
+            },
+            {
+                value: ' ',
                 scopes: []
             },
             {
@@ -3175,7 +3275,15 @@ describe('Julia grammar', function () {
                 scopes: ["keyword.control.as.julia"]
             },
             {
-                value: ' y, z ',
+                value: ' y',
+                scopes: []
+            },
+            {
+                value: ',',
+                scopes: ["punctuation.separator.comma.julia"]
+            },
+            {
+                value: ' z ',
                 scopes: []
             },
             {
@@ -3452,7 +3560,7 @@ describe('Julia grammar', function () {
             },
         ])
     })
-    it("tokenizes subtype relations with a transpose suffix", function () {
+    it("tokenizes subtype relations with a transpose suffix and dot access", function () {
         const tokens = tokenize(grammar, "Bar <: Foo'.A()")
         compareTokens(tokens, [
             {
