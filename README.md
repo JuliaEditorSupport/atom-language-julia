@@ -4,7 +4,7 @@
 
 Julia grammar definition for Atom, VS Code, and GitHub.
 
-The source of truth in this repo is `grammars/julia.json`; `julia.cson` and `julia_vscode.json` are automatically generated in a pre-commit hook.
+The source of truth in this repo is `grammars/julia.template.json`; `julia.json`, `julia.cson`, and `julia_vscode.json` are automatically generated in a pre-commit hook or with `npm run generate`.
 
 ## Contributing
 
@@ -13,10 +13,10 @@ We love contributors. Here are the steps we have taken to develop on this packag
 0. Install prerequisites: [Node.js](https://nodejs.org/) and `npm` (comes bundled with Node). We recommend using a [Node version manager](https://github.com/search?q=node+version+manager+archived%3Afalse&type=repositories&ref=advsearch). LTS is recommended, but any node version newer than 14 should do.
 1. Clone this repo and `cd` into it
 2. Run `npm ci`
-3. Open `grammars/julia.json` in your favourite editor and fix a bug or implement additional highlighting rules
+3. Open `grammars/julia.template.json` in your favourite editor and fix a bug or implement additional highlighting rules
 4. Add corresponding tests at the bottom of `test/test.js`
 5. Run the updated tests with `npm run test`
-6. Once tests pass and you're happy with your changes, commit them and open a PR against this repo. This should automatically run a pre-commit hook that generates derivative grammars for VS Code and Atom from `julia.json`.
+6. Once tests pass and you're happy with your changes, commit them and open a PR against this repo. This should automatically run a pre-commit hook that generates derivative grammars for VS Code and Atom from `julia.template.json`.
 
 ### Testing the updated grammar in VS Code
 Follow the [julia-vscode developer instructions](https://github.com/julia-vscode/julia-vscode/blob/main/CONTRIBUTING.md) to get the extension setup. Afterwards, simply copy the updated `julia_vscode.json` from this repo into `julia-vscode/syntaxes` and you should see your changes in the debug editor after reloading it.
