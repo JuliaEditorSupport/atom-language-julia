@@ -1787,6 +1787,27 @@ describe('Julia grammar', function () {
             },
         ])
     })
+    it("tokenizes markdown multiline string macros", function () {
+        const tokens = tokenize(grammar, 'md"""\nTest\n"""')
+        compareTokens(tokens, [
+            {
+                value: 'md',
+                scopes: ["embed.markdown.julia", "support.function.macro.julia"]
+            },
+            {
+                value: '"""',
+                scopes: ["embed.markdown.julia", "punctuation.definition.string.begin.julia"]
+            },
+            {
+                value: '\nTest\n',
+                scopes: ["embed.markdown.julia"]
+            },
+            {
+                value: '"""',
+                scopes: ["embed.markdown.julia", "punctuation.definition.string.end.julia"]
+            },
+        ])
+    })
     it("tokenizes js multiline string macros", function () {
         const tokens = tokenize(grammar, 'js"""\nvar foo = function () {return x}\n"""')
         compareTokens(tokens, [
