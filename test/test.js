@@ -756,6 +756,27 @@ describe('Julia grammar', function () {
             },
         ])
     })
+    it("does not tokenize public in non-toplevel scopes", function () {
+        const tokens = tokenize(grammar, "2 + public")
+        compareTokens(tokens, [
+            {
+                value: "2",
+                scopes: ["constant.numeric.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "+",
+                scopes: ["keyword.operator.arithmetic.julia"]
+            },
+            {
+                value: " public",
+                scopes: []
+            },
+        ])
+    })
     it("tokenizes symbols", function () {
         const tokens = tokenize(grammar, ":à_b9!")
         compareTokens(tokens, [
