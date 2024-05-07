@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const vsctm = require('vscode-textmate')
 const oniguruma = require('vscode-oniguruma')
+const dedent = require('dedent')
 const { expect } = require('chai')
 
 const GRAMMAR_PATH = path.join(__dirname, '../grammars/julia_vscode.json')
@@ -3681,60 +3682,249 @@ describe('Julia grammar', function () {
         ])
     })
     it("tokenizes @testitem with simple content", function () {
-        const tokens = tokenize(grammar, '@testitem "foo" begin x = 1 end')
+        const tokens = tokenize(grammar, '@testitem "foo" begin x = 1 end\ny=2')
         compareTokens(tokens, [
             {
-                value: "@testitem",
-                scopes: ["keyword.other.testitem.begin.julia"]
+                value: '@testitem',
+                scopes: ['keyword.other.testitem.julia', 'keyword.other.testitem.begin.julia']
             },
             {
-                value: " ",
+                value: ' ',
+                scopes: ['keyword.other.testitem.julia']
+            },
+            {
+                value: '"',
+                scopes: ['keyword.other.testitem.julia', 'string.quoted.double.julia', 'punctuation.definition.string.begin.julia'],
+            },
+            {
+                value: 'foo',
+                scopes: ['keyword.other.testitem.julia', 'string.quoted.double.julia']
+            },
+            {
+                value: '"',
+                scopes: ['keyword.other.testitem.julia', 'string.quoted.double.julia', 'punctuation.definition.string.end.julia']
+            },
+            {
+                value: ' ',
+                scopes: ['keyword.other.testitem.julia']
+            },
+            {
+                value: 'begin',
+                scopes: ['keyword.other.testitem.julia', 'keyword.control.julia']
+            },
+            {
+                value: ' x ',
+                scopes: ['keyword.other.testitem.julia']
+            },
+            {
+                value: '=',
+                scopes: ['keyword.other.testitem.julia', 'keyword.operator.update.julia']
+            },
+            {
+                value: ' ',
+                scopes: ['keyword.other.testitem.julia']
+            },
+            {
+                value: '1',
+                scopes: ['keyword.other.testitem.julia', 'constant.numeric.julia']
+            },
+            {
+                value: ' ',
+                scopes: ['keyword.other.testitem.julia']
+            },
+            {
+                value: 'end',
+                scopes: ['keyword.other.testitem.julia', 'keyword.other.testitem.end.julia']
+            },
+            // Make sure it goes back to normal after
+            {
+                value: '\ny',
                 scopes: []
             },
             {
-                value: "\"",
-                scopes: ["string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
+                value: '=',
+                scopes: ['keyword.operator.update.julia']
             },
             {
-                value: "foo",
-                scopes: ["string.quoted.other.julia"]
+                value: '2',
+                scopes: ['constant.numeric.julia']
+            },
+          ])        
+    })
+    it("tokenizes @testitem with nested content", function () {
+        const tokens = tokenize(grammar,
+            dedent(`
+                f(x) = x
+                @testitem "bar" begin
+                    using MyPkg: f
+                    for i in 1:10
+                        @test f(i) == i
+                    end
+                end
+            `)
+        )
+        const true_tokens = [
+            {
+                'value': 'f',
+                'scopes': ['entity.name.function.julia']
             },
             {
-                value: "\"",
-                scopes: ["string.quoted.other.julia", "punctuation.definition.string.end.julia"]
+                'value': '(',
+                'scopes': ['meta.bracket.julia']
             },
             {
-                value: " ",
-                scopes: []
+                'value': 'x',
+                'scopes': []
             },
             {
-                value: "begin",
-                scopes: ["keyword.control.julia"]
+                'value': ')',
+                'scopes': ['meta.bracket.julia']
             },
             {
-                value: " x",
-                scopes: []
+                'value': ' ',
+                'scopes': []
             },
             {
-                value: "=",
-                scopes: ["keyword.operator.update.julia"]
+                'value': '=',
+                'scopes': ['keyword.operator.update.julia']
             },
             {
-                value: " ",
-                scopes: []
+                'value': ' x\n',
+                'scopes': []
             },
             {
-                value: "1",
-                scopes: ["constant.numeric.julia"]
+                'value': '@testitem',
+                'scopes': ['keyword.other.testitem.julia', 'keyword.other.testitem.begin.julia']
             },
             {
-                value: " ",
-                scopes: []
+                'value': ' ',
+                'scopes': ['keyword.other.testitem.julia']
             },
             {
-                value: "end",
-                scopes: ["keyword.control.end.julia"]
+                'value': '"',
+                'scopes': ['keyword.other.testitem.julia', 'string.quoted.double.julia', 'punctuation.definition.string.begin.julia']
             },
-        ])
+            {
+                'value': 'bar',
+                'scopes': ['keyword.other.testitem.julia', 'string.quoted.double.julia']
+            },
+            {
+                'value': '"',
+                'scopes': ['keyword.other.testitem.julia', 'string.quoted.double.julia', 'punctuation.definition.string.end.julia']
+            },
+            {
+                'value': ' ',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': 'begin',
+                'scopes': ['keyword.other.testitem.julia', 'keyword.control.julia']
+            },
+            {
+                'value': '\n    ',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': 'using',
+                'scopes': ['keyword.other.testitem.julia', 'keyword.control.using.julia']
+            },
+            {
+                'value': ' MyPkg',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': ':',
+                'scopes': ['keyword.other.testitem.julia', 'keyword.operator.range.julia']
+            },
+            {
+                'value': ' f\n    ',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': 'for',
+                'scopes': ['keyword.other.testitem.julia', 'keyword.control.julia']
+            },
+            {
+                'value': ' i ',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': 'in',
+                'scopes': ['keyword.other.testitem.julia', 'keyword.operator.relation.in.julia']
+            },
+            {
+                'value': ' ',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': '1',
+                'scopes': ['keyword.other.testitem.julia', 'constant.numeric.julia']
+            },
+            {
+                'value': ':',
+                'scopes': ['keyword.other.testitem.julia', 'keyword.operator.range.julia']
+            },
+            {
+                'value': '10',
+                'scopes': ['keyword.other.testitem.julia', 'constant.numeric.julia']
+            },
+            {
+                'value': '\n',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': '        ',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': '@test',
+                'scopes': ['keyword.other.testitem.julia', 'support.function.macro.julia']
+            },
+            {
+                'value': ' ',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': 'f',
+                'scopes': ['keyword.other.testitem.julia', 'support.function.julia']
+            },
+            {
+                'value': '(',
+                'scopes': ['keyword.other.testitem.julia', 'meta.bracket.julia']
+            },
+            {
+                'value': 'i',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': ')',
+                'scopes': ['keyword.other.testitem.julia', 'meta.bracket.julia']
+            },
+            {
+                'value': ' ',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': '==',
+                'scopes': ['keyword.other.testitem.julia', 'keyword.operator.relation.julia']
+            },
+            {
+                'value': ' i\n    ',
+                'scopes': ['keyword.other.testitem.julia']
+            },
+            {
+                'value': 'end',
+                'scopes': ['keyword.other.testitem.julia', 'keyword.other.testitem.end.julia']
+            },
+            {
+                'value': '\n',
+                'scopes': []
+            },
+            {
+                'value': 'end',
+                'scopes': ['keyword.control.end.julia']
+            }
+        ]
+        compareTokens(tokens, true_tokens)
     })
 })

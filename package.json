@@ -27,5 +27,8 @@
   },
   "pre-commit": [
     "generate"
-  ]
+  ],
+  "dependencies": {
+    "dedent": "^1.5.3"
+  }
 }

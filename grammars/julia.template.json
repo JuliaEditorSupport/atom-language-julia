@@ -299,28 +299,27 @@
       ]
     },
     "testitem_block" : {
-      "begin": "(\\b@testitem\\b)\\s+(\"[^\"]*\")\\s+(\\bbegin\\b)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.other.testitem.julia"
-        },
-        "2": {
-          "name": "string.quoted.double.julia"
-        },
-        "3": {
-          "name": "keyword.control.julia"
-        }
-      },
-      "end": "\\bend\\b",
-      "endCaptures": {
-        "0": {
-          "name": "keyword.control.end.julia"
-        }
-      },
-      "name": "meta.testitem.julia",
       "patterns": [
         {
-          "include": "$self"
+          "name": "keyword.other.testitem.julia",
+          "begin": "@testitem\\b",
+          "beginCaptures": {
+            "0": {
+              "name": "keyword.other.testitem.begin.julia"
+            }
+          },
+          "end": "\\b(?<![:_])end\\b",
+          "endCaptures": {
+            "0": {
+              "name": "keyword.other.testitem.end.julia"
+            }
+          },
+          "comment": "@testitem block for unit-testing",
+          "patterns": [
+            {
+              "include": "$self"
+            }
+          ]
         }
       ]
     },
@@ -363,7 +362,7 @@
           "name": "keyword.control.as.julia"
         },
         {
-          "match": "(@(\\.|{{id}}))",
+          "match": "@(?!testitem\\b)(\\.|{{id}})",
           "name": "support.function.macro.julia"
         }
       ]
