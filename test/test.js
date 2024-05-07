@@ -3680,4 +3680,61 @@ describe('Julia grammar', function () {
             },
         ])
     })
+    it("tokenizes @testitem with simple content", function () {
+        const tokens = tokenize(grammar, '@testitem "foo" begin x = 1 end')
+        compareTokens(tokens, [
+            {
+                value: "@testitem",
+                scopes: ["keyword.other.testitem.begin.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "\"",
+                scopes: ["string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
+            },
+            {
+                value: "foo",
+                scopes: ["string.quoted.other.julia"]
+            },
+            {
+                value: "\"",
+                scopes: ["string.quoted.other.julia", "punctuation.definition.string.end.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "begin",
+                scopes: ["keyword.control.julia"]
+            },
+            {
+                value: " x",
+                scopes: []
+            },
+            {
+                value: "=",
+                scopes: ["keyword.operator.update.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "1",
+                scopes: ["constant.numeric.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "end",
+                scopes: ["keyword.control.end.julia"]
+            },
+        ])
+    })
 })

@@ -31,6 +31,9 @@
       "include": "#for_block"
     },
     {
+      "include": "#testitem_block"
+    },
+    {
       "include": "#keyword"
     },
     {
@@ -292,6 +295,32 @@
               "include": "$self"
             }
           ]
+        }
+      ]
+    },
+    "testitem_block" : {
+      "begin": "(\\b@testitem\\b)\\s+(\"[^\"]*\")\\s+(\\bbegin\\b)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.other.testitem.julia"
+        },
+        "2": {
+          "name": "string.quoted.double.julia"
+        },
+        "3": {
+          "name": "keyword.control.julia"
+        }
+      },
+      "end": "\\bend\\b",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.control.end.julia"
+        }
+      },
+      "name": "meta.testitem.julia",
+      "patterns": [
+        {
+          "include": "$self"
         }
       ]
     },
