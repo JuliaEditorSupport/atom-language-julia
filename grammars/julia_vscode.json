@@ -302,19 +302,22 @@
       "patterns": [
         {
           "name": "keyword.other.testitem.julia",
-          "begin": "@testitem\\b",
+          "begin": "^@testitem\\b",
           "beginCaptures": {
             "0": {
               "name": "keyword.other.testitem.begin.julia"
+            },
+            "1": {
+              "name": "keyword.control.begin.julia"
             }
           },
-          "end": "\\b(?<![:_])end\\b",
+          "end": "^end\\b",
           "endCaptures": {
             "0": {
               "name": "keyword.other.testitem.end.julia"
             }
           },
-          "comment": "@testitem block for unit-testing",
+          "comment": "@testitem block for unit-testing. MUST begin with `@testitem` on a new line, and end with `end` on a new line.",
           "patterns": [
             {
               "include": "$self"

@@ -3682,8 +3682,8 @@ describe('Julia grammar', function () {
         ])
     })
     it("tokenizes @testitem with simple content", function () {
-        const tokens = tokenize(grammar, '@testitem "foo" begin x = 1 end\ny=2')
-        compareTokens(tokens, [
+        const tokens = tokenize(grammar, '@testitem "foo" begin x = 1\nend\ny=2')
+        const true_tokens = [
             {
                 value: '@testitem',
                 scopes: ['keyword.other.testitem.julia', 'keyword.other.testitem.begin.julia']
@@ -3693,15 +3693,15 @@ describe('Julia grammar', function () {
                 scopes: ['keyword.other.testitem.julia']
             },
             {
-                value: '"',
-                scopes: ['keyword.other.testitem.julia', 'string.quoted.double.julia', 'punctuation.definition.string.begin.julia'],
+                value: '\"',
+                scopes: ['keyword.other.testitem.julia', 'string.quoted.double.julia', 'punctuation.definition.string.begin.julia']
             },
             {
                 value: 'foo',
                 scopes: ['keyword.other.testitem.julia', 'string.quoted.double.julia']
             },
             {
-                value: '"',
+                value: '\"',
                 scopes: ['keyword.other.testitem.julia', 'string.quoted.double.julia', 'punctuation.definition.string.end.julia']
             },
             {
@@ -3729,14 +3729,14 @@ describe('Julia grammar', function () {
                 scopes: ['keyword.other.testitem.julia', 'constant.numeric.julia']
             },
             {
-                value: ' ',
+                value: '\n',
                 scopes: ['keyword.other.testitem.julia']
             },
             {
                 value: 'end',
                 scopes: ['keyword.other.testitem.julia', 'keyword.other.testitem.end.julia']
             },
-            // Make sure it goes back to normal after
+            // Goes back after:
             {
                 value: '\ny',
                 scopes: []
@@ -3749,7 +3749,8 @@ describe('Julia grammar', function () {
                 value: '2',
                 scopes: ['constant.numeric.julia']
             },
-          ])        
+        ]
+        compareTokens(tokens, true_tokens)
     })
     it("tokenizes @testitem with nested content", function () {
         const tokens = tokenize(grammar,
@@ -3914,15 +3915,123 @@ describe('Julia grammar', function () {
             },
             {
                 'value': 'end',
-                'scopes': ['keyword.other.testitem.julia', 'keyword.other.testitem.end.julia']
+                'scopes': ['keyword.other.testitem.julia', 'keyword.control.end.julia']
             },
+            // Still within the testitem, even though we encountered an end:
             {
                 'value': '\n',
-                'scopes': []
+                'scopes': ['keyword.other.testitem.julia']
             },
             {
                 'value': 'end',
-                'scopes': ['keyword.control.end.julia']
+                'scopes': ['keyword.other.testitem.julia', 'keyword.other.testitem.end.julia']
+            }
+        ]
+        compareTokens(tokens, true_tokens)
+    })
+    it("fails to tokenize @testitem unless newline pattern", function () {
+        const tokens = tokenize(grammar, 'x = 1; @testitem "foo" begin x = 1 end')
+        // Purposefully fails to match, as might be within scope:
+        const true_tokens = [
+            { scopes: [], value: 'x ' },
+            { scopes: [ 'keyword.operator.update.julia' ], value: '=' },
+            { scopes: [], value: ' ' },
+            { scopes: [ 'constant.numeric.julia' ], value: '1' },
+            { scopes: [ 'punctuation.separator.semicolon.julia' ], value: ';' },
+            { scopes: [], value: ' @testitem ' },
+            {
+              scopes: [
+                'string.quoted.double.julia',
+                'punctuation.definition.string.begin.julia'
+              ],
+              value: '"'
+            },
+            { scopes: [ 'string.quoted.double.julia' ], value: 'foo' },
+            {
+              scopes: [
+                'string.quoted.double.julia',
+                'punctuation.definition.string.end.julia'
+              ],
+              value: '"'
+            },
+            { scopes: [], value: ' ' },
+            { scopes: [ 'keyword.control.julia' ], value: 'begin' },
+            { scopes: [], value: ' x ' },
+            { scopes: [ 'keyword.operator.update.julia' ], value: '=' },
+            { scopes: [], value: ' ' },
+            { scopes: [ 'constant.numeric.julia' ], value: '1' },
+            { scopes: [], value: ' ' },
+            { scopes: [ 'keyword.control.end.julia' ], value: 'end' }
+        ]
+        compareTokens(tokens, true_tokens)
+    })
+    it("fails to tokenize @testitem unless newline on end", function () {
+        const tokens = tokenize(grammar, '@testitem "foo" begin x = 1 end; y=2')
+        const true_tokens = [
+            {
+              scopes: [
+                'keyword.other.testitem.julia',
+                'keyword.other.testitem.begin.julia'
+              ],
+              value: '@testitem'
+            },
+            { scopes: [ 'keyword.other.testitem.julia' ], value: ' ' },
+            {
+              scopes: [
+                'keyword.other.testitem.julia',
+                'string.quoted.double.julia',
+                'punctuation.definition.string.begin.julia'
+              ],
+              value: '"'
+            },
+            {
+              scopes: [ 'keyword.other.testitem.julia', 'string.quoted.double.julia' ],
+              value: 'foo'
+            },
+            {
+              scopes: [
+                'keyword.other.testitem.julia',
+                'string.quoted.double.julia',
+                'punctuation.definition.string.end.julia'
+              ],
+              value: '"'
+            },
+            { scopes: [ 'keyword.other.testitem.julia' ], value: ' ' },
+            {
+              scopes: [ 'keyword.other.testitem.julia', 'keyword.control.julia' ],
+              value: 'begin'
+            },
+            { scopes: [ 'keyword.other.testitem.julia' ], value: ' x ' },
+            {
+              scopes: [ 'keyword.other.testitem.julia', 'keyword.operator.update.julia' ],
+              value: '='
+            },
+            { scopes: [ 'keyword.other.testitem.julia' ], value: ' ' },
+            {
+              scopes: [ 'keyword.other.testitem.julia', 'constant.numeric.julia' ],
+              value: '1'
+            },
+            { scopes: [ 'keyword.other.testitem.julia' ], value: ' ' },
+            {
+              scopes: [ 'keyword.other.testitem.julia', 'keyword.control.end.julia' ],
+              value: 'end'
+            },
+            {
+              scopes: [
+                'keyword.other.testitem.julia',
+                'punctuation.separator.semicolon.julia'
+              ],
+              value: ';'
+            },
+            // TODO: Fails to turn off testitem mode, because the `end` wasn't on a newline!
+            { scopes: [ 'keyword.other.testitem.julia' ], value: ' y' },
+            {
+              scopes: [ 'keyword.other.testitem.julia', 'keyword.operator.update.julia' ],
+              value: '='
+            },
+            {
+              scopes: [ 'keyword.other.testitem.julia', 'constant.numeric.julia' ],
+              value: '2'
             }
         ]
         compareTokens(tokens, true_tokens)
