@@ -3273,7 +3273,7 @@ describe('Julia grammar', function () {
                 scopes: []
             },
         ])
-        tokens = tokenize(grammar, 'import Foo: x as y, z as yy')
+        tokens = tokenize(grammar, 'import Foo: x as y, z!  as yy')
         compareTokens(tokens, [
             {
                 value: 'import',
@@ -3304,7 +3304,7 @@ describe('Julia grammar', function () {
                 scopes: ["punctuation.separator.comma.julia"]
             },
             {
-                value: ' z ',
+                value: ' z!  ',
                 scopes: []
             },
             {
