@@ -5,6 +5,7 @@ const oniguruma = require('vscode-oniguruma')
 const { expect } = require('chai')
 
 const GRAMMAR_PATH = path.join(__dirname, '../grammars/julia_vscode.json')
+const GRAMMAR_CONSOLE_PATH = path.join(__dirname, '../grammars/julia-console.json')
 
 /**
  * Utility to read a file as a promise
@@ -29,6 +30,9 @@ const registry = new vsctm.Registry({
     loadGrammar: (scopeName) => {
         if (scopeName === 'source.julia') {
             return readFile(GRAMMAR_PATH).then(data => vsctm.parseRawGrammar(data.toString(), GRAMMAR_PATH))
+        }
+        if (scopeName === 'source.julia.console') {
+            return readFile(GRAMMAR_CONSOLE_PATH).then(data => vsctm.parseRawGrammar(data.toString(), GRAMMAR_PATH))
         }
         return null
     }
@@ -3677,6 +3681,51 @@ describe('Julia grammar', function () {
             {
                 value: '"',
                 scopes: ["constant.other.symbol.julia"]
+            },
+        ])
+    })
+})
+
+describe('Julia-Console', function () {
+    let grammar
+    before(async function () {
+        grammar = await registry.loadGrammar('source.julia.console')
+    })
+    it('parses the grammar', function () {
+        expect(grammar).to.be.a('object')
+    })
+    it("should highlight multi-line expressions", function () {
+        const src = `julia> true
+true
+
+julia> begin
+       end
+        `;
+        const tokens = tokenize(grammar, src)
+        compareTokens(tokens, [
+            {
+                value: "julia>",
+                scopes: ["source.julia.console", "punctuation.separator.prompt.julia.console"],
+            },
+            { scopes: [ 'source.julia.console' ], value: ' ' },
+            {
+                value: "true",
+                scopes: ["source.julia.console", "constant.language.julia"],
+            },
+            { scopes: [ 'source.julia.console' ], value: '\ntrue\n\n' },
+            {
+                value: "julia>",
+                scopes: ["source.julia.console", "punctuation.separator.prompt.julia.console"],
+            },
+            { scopes: [ 'source.julia.console' ], value: ' ' },
+            {
+                value: "begin",
+                scopes:["source.julia.console", "keyword.control.julia"],
+            },
+            { scopes: [ "source.julia.console" ], value: "\n       " },
+            {
+              value: "end",
+              scopes: [ "source.julia.console", "keyword.control.end.julia" ],
             },
         ])
     })
