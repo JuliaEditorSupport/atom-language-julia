@@ -688,6 +688,59 @@ describe('Julia grammar', function () {
             },
         ])
     })
+    it("tokenizes operator-style macro calls", function () {
+        const tokens = tokenize(grammar, "@+ @& @<| @|> @:: @% x")
+        compareTokens(tokens, [
+            {
+                value: "@+",
+                scopes: ["support.function.macro.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "@&",
+                scopes: ["support.function.macro.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "@<|",
+                scopes: ["support.function.macro.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "@|>",
+                scopes: ["support.function.macro.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "@::",
+                scopes: ["support.function.macro.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "@%",
+                scopes: ["support.function.macro.julia"]
+            },
+            {
+                value: " x",
+                scopes: []
+            }
+        ])
+    })
     it("tokenizes using statements", function () {
         const tokens = tokenize(grammar, "using Base.Test")
         compareTokens(tokens, [
