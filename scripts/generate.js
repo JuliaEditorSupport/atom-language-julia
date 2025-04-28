@@ -3,6 +3,10 @@ const fs = require('fs')
 const path = require('path')
 
 const outdir = path.join(__dirname, '..', 'grammars')
+
+const consoleGrammar = JSON.parse(fs.readFileSync(path.join(outdir, 'julia-console.json')))
+fs.writeFileSync(path.join(outdir, 'julia-console.cson'), CSON.stringify(consoleGrammar, null, 2))
+
 let grammar = JSON.parse(fs.readFileSync(path.join(outdir, 'julia.template.json')))
 
 const templateRules = {

@@ -1,15 +1,17 @@
 scopeName: 'source.julia.console'
 name: 'Julia Console'
-comment: "Not sure what this will be used for... Maybe if we have a REPL someday"
+comment: 'Not sure what this will be used for... Maybe if we have a REPL someday. We do now...'
 patterns: [
   {
-    match: '^(julia>|\\.{3}|In \\[\\d+\\]:) (.+)$'
+    match: '^(julia>)(\\s+.*(?:\\n\\s{6}\\s+.*)*)'
     captures:
       '1':
         name: 'punctuation.separator.prompt.julia.console'
       '2':
         patterns: [
-          include: 'source.julia'
+          {
+            include: 'source.julia'
+          }
         ]
   }
   {
@@ -19,7 +21,9 @@ patterns: [
         name: 'punctuation.separator.prompt.shell.julia.console'
       '2':
         patterns: [
-          include: 'source.shell'
+          {
+            include: 'source.shell'
+          }
         ]
   }
   {
@@ -29,7 +33,9 @@ patterns: [
         name: 'punctuation.separator.prompt.help.julia.console'
       '2':
         patterns: [
-          include: 'source.julia'
+          {
+            include: 'source.julia'
+          }
         ]
   }
 ]
