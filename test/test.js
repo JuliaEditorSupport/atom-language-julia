@@ -3729,4 +3729,36 @@ julia> begin
             },
         ])
     })
+
+    it("should highlight help prompts", function () {
+      const src = "help?> begin"
+      const tokens = tokenize(grammar, src)
+      compareTokens(tokens, [
+        {
+          scopes: [
+            'source.julia.console',
+            'punctuation.separator.prompt.help.julia.console'
+          ],
+          value: 'help?>'
+        },
+        { scopes: [ 'source.julia.console' ], value: ' ' },
+        { scopes: [ 'source.julia.console', 'keyword.control.julia' ], value: 'begin' }
+      ])
+    })
+
+    it("should highlight shell prompts", function () {
+      const src = "shell> echo \"hello\""
+      const tokens = tokenize(grammar, src)
+      compareTokens(tokens, [
+        {
+          scopes: [
+            'source.julia.console',
+            'punctuation.separator.prompt.shell.julia.console'
+          ],
+          value: 'shell>'
+        },
+        { scopes: [ 'source.julia.console' ], value: ' ' },
+        { scopes: [ 'source.julia.console' ], value: 'echo "hello"' }
+      ])
+    })
 })
