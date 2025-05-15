@@ -664,7 +664,7 @@ describe('Julia grammar', function () {
         ])
     })
     it("tokenizes macro calls", function () {
-        const tokens = tokenize(grammar, "@. @elapsed x^2")
+        const tokens = tokenize(grammar, "@. @elapsed x^2 @__MODULE__ @__LINE__")
         compareTokens(tokens, [
             {
                 value: "@.",
@@ -689,6 +689,22 @@ describe('Julia grammar', function () {
             {
                 value: "2",
                 scopes: ["constant.numeric.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "@__MODULE__",
+                scopes: ["support.function.macro.julia"]
+            },
+            {
+                value: " ",
+                scopes: []
+            },
+            {
+                value: "@__LINE__",
+                scopes: ["support.function.macro.julia"]
             },
         ])
     })
