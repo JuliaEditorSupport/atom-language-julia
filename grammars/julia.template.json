@@ -334,7 +334,7 @@
           "name": "keyword.control.as.julia"
         },
         {
-          "match": "(@((?:\\.|[\\p{S}\\p{P}&&[^\\s@]]+)|{{id}}))",
+          "match": "@(\\.|{{id}}|[\\p{S}\\p{P}&&[^\\s@]]+)",
           "name": "support.function.macro.julia"
         }
       ]
