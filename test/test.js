@@ -2879,6 +2879,39 @@ describe('Julia grammar', function () {
             },
         ])
     })
+    it('tokenizes tranposed unicode identifiers in more complicated contexts', function () {
+        const tokens = tokenize(grammar, 'k̂\' + bâr\'')
+        compareTokens(tokens, [
+            {
+                value: 'k̂',
+                scopes: []
+            },
+            {
+                value: '\'',
+                scopes: ["keyword.operator.transposed-variable.julia"]
+            },
+            {
+                value: ' ',
+                scopes: []
+            },
+            {
+                value: '+',
+                scopes: ["keyword.operator.arithmetic.julia"]
+            },
+            {
+                value: ' ',
+                scopes: []
+            },
+            {
+                value: 'bâr',
+                scopes: []
+            },
+            {
+                value: '\'',
+                scopes: ["keyword.operator.transposed-variable.julia"]
+            },
+        ])
+    })
     it('tokenizes parentheses with a transpose', function () {
         const tokens = tokenize(grammar, '()\'')
         compareTokens(tokens, [
