@@ -9,6 +9,7 @@ comment: '''
 fileTypes: [
   'jl'
 ]
+scopeName: 'source.julia'
 firstLineMatch: '^#!.*\\bjulia\\s*$'
 name: 'Julia'
 patterns: [
@@ -932,4 +933,3 @@ repository:
         name: 'punctuation.separator.semicolon.julia'
       }
     ]
-scopeName: 'source.julia'

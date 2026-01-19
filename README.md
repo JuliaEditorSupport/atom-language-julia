@@ -4,7 +4,7 @@
 
 Julia grammar definition for Atom, VS Code, and GitHub.
 
-The source of truth in this repo is `grammars/julia.template.json`; `julia.json`, `julia.cson`, and `julia_vscode.json` are automatically generated in a pre-commit hook or with `npm run generate`.
+The source of truth in this repo is `julia.template.json`; `julia.json`, `julia.cson`, and `julia_vscode.json` are automatically generated in a pre-commit hook or with `npm run generate`.
 
 ## Contributing
 

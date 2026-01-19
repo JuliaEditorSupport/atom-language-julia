@@ -4,7 +4,7 @@ const vsctm = require('vscode-textmate')
 const oniguruma = require('vscode-oniguruma')
 const { expect } = require('chai')
 
-const GRAMMAR_PATH = path.join(__dirname, '../grammars/julia_vscode.json')
+const GRAMMAR_PATH = path.join(__dirname, '../variants/julia_vscode.json')
 const GRAMMAR_CONSOLE_PATH = path.join(__dirname, '../grammars/julia-console.json')
 
 /**

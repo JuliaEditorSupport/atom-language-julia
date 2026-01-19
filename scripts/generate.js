@@ -3,11 +3,12 @@ const fs = require('fs')
 const path = require('path')
 
 const outdir = path.join(__dirname, '..', 'grammars')
+const variantdir = path.join(__dirname, '..', 'variants')
 
 const consoleGrammar = JSON.parse(fs.readFileSync(path.join(outdir, 'julia-console.json')))
 fs.writeFileSync(path.join(outdir, 'julia-console.cson'), CSON.stringify(consoleGrammar, null, 2))
 
-let grammar = JSON.parse(fs.readFileSync(path.join(outdir, 'julia.template.json')))
+let grammar = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'template', 'julia.json')))
 
 const templateRules = {
     '{{id}}': '(?:[[:alpha:]_\\\\p{Lu}\\\\p{Ll}\\\\p{Lt}\\\\p{Lm}\\\\p{Lo}\\\\p{Nl}\\\\p{Sc}⅀-⅄∿⊾⊿⊤⊥∂∅-∇∎∏∐∑∞∟∫-∳⋀-⋃◸-◿♯⟘⟙⟀⟁⦰-⦴⨀-⨆⨉-⨖⨛⨜𝛁𝛛𝛻𝜕𝜵𝝏𝝯𝞉𝞩𝟃ⁱ-⁾₁-₎∠-∢⦛-⦯℘℮゛-゜𝟎-𝟡]|[^\\\\P{So}←-⇿])(?:[[:word:]_!\\\\p{Lu}\\\\p{Ll}\\\\p{Lt}\\\\p{Lm}\\\\p{Lo}\\\\p{Nl}\\\\p{Sc}⅀-⅄∿⊾⊿⊤⊥∂∅-∇∎∏∐∑∞∟∫-∳⋀-⋃◸-◿♯⟘⟙⟀⟁⦰-⦴⨀-⨆⨉-⨖⨛⨜𝛁𝛛𝛻𝜕𝜵𝝏𝝯𝞉𝞩𝟃ⁱ-⁾₁-₎∠-∢⦛-⦯℘℮゛-゜𝟎-𝟡]|[^\\\\P{Mn}\\u0001-¡]|[^\\\\P{Mc}\\u0001-¡]|[^\\\\P{Nd}\\u0001-¡]|[^\\\\P{Pc}\\u0001-¡]|[^\\\\P{Sk}\\u0001-¡]|[^\\\\P{Me}\\u0001-¡]|[^\\\\P{No}\\u0001-¡]|[′-‷⁗]|[^\\\\P{So}←-⇿])*',
@@ -53,4 +54,4 @@ recurseAndReplace(grammar, 'contentName', 'source.r', 'meta.embedded.inline.r')
 recurseAndReplace(grammar, 'contentName', 'source.python', 'meta.embedded.inline.python')
 
 // write VSCode compatible JSON grammar
-fs.writeFileSync(path.join(outdir, 'julia_vscode.json'), JSON.stringify(grammar, null, 2))
+fs.writeFileSync(path.join(variantdir, 'julia_vscode.json'), JSON.stringify(grammar, null, 2))
