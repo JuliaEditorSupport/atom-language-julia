@@ -3786,6 +3786,31 @@ describe('Julia grammar', function () {
             },
         ])
     })
+    it("tokenizes typegroup", function () {
+        const tokens = tokenize(grammar, 'typegroup\nstruct Foo end\nend')
+        compareTokens(tokens, [
+            {
+                value: 'typegroup',
+                scopes: ["keyword.other.julia"]
+            },
+            {
+                value: '\n',
+                scopes: []
+            },
+            {
+                value: 'struct',
+                scopes: ["keyword.other.julia"]
+            },
+            {
+                value: ' Foo ',
+                scopes: []
+            },
+            {
+                value: 'end',
+                scopes: ["keyword.control.end.julia"]
+            },
+        ])
+    })
 })
 
 describe('Julia-Console', function () {
