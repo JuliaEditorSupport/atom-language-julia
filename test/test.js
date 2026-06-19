@@ -3761,6 +3761,48 @@ describe('Julia grammar', function () {
             },
         ])
     })
+    it("does not tokenize non-quote backslash sequences in raw strings", function () {
+        const tokens = tokenize(grammar, 'raw"\\textbf"')
+        compareTokens(tokens, [
+            {
+                value: 'raw',
+                scopes: ["string.quoted.other.julia", "support.function.macro.julia"]
+            },
+            {
+                value: '"',
+                scopes: ["string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
+            },
+            {
+                value: '\\textbf',
+                scopes: ["string.quoted.other.julia"]
+            },
+            {
+                value: '"',
+                scopes: ["string.quoted.other.julia", "punctuation.definition.string.end.julia"]
+            },
+        ])
+    })
+    it("does not tokenize non-quote backslash sequences in raw multiline strings", function () {
+        const tokens = tokenize(grammar, 'raw"""\\textbf"""')
+        compareTokens(tokens, [
+            {
+                value: 'raw',
+                scopes: ["string.quoted.other.julia", "support.function.macro.julia"]
+            },
+            {
+                value: '"""',
+                scopes: ["string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
+            },
+            {
+                value: '\\textbf',
+                scopes: ["string.quoted.other.julia"]
+            },
+            {
+                value: '"""',
+                scopes: ["string.quoted.other.julia", "punctuation.definition.string.end.julia"]
+            },
+        ])
+    })
     it("tokenizes escape codes in var strings", function () {
         const tokens = tokenize(grammar, 'var"a\\"b"')
         compareTokens(tokens, [
