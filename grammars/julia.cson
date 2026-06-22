@@ -830,10 +830,14 @@ repository:
       }
     ]
   string_escaped_char_raw:
-    comment: 'In raw strings only a backslash that escapes a quote (or another backslash) is meaningful; all other backslashes are literal.'
+    comment: 'In raw strings, backslashes only escape anything when preceding a quote. An even number of backslashes causes all of them to be escaped and the quote to be literal; an odd number escapes all backslashes (except for the one preceding the quote) and the quote.'
     patterns: [
       {
-        match: '\\\\(\\\\|")'
+        match: '(\\\\\\\\)*\\\\"'
+        name: 'constant.character.escape.julia'
+      }
+      {
+        match: '(\\\\\\\\)+(?=")'
         name: 'constant.character.escape.julia'
       }
     ]
