@@ -38,15 +38,26 @@ const registry = new vsctm.Registry({
     }
 })
 
-function tokenize(grammar, line) {
-    const tokens = grammar.tokenizeLine(line).tokens
+// Tokenize the way real consumers (VS Code, GitHub) do: one line at a time,
+// threading the rule stack across lines. A `match` rule can therefore never
+// span lines -- multi-line constructs need begin/end rules.
+function tokenize(grammar, source) {
+    const result = []
+    let ruleStack = vsctm.INITIAL
 
-    return tokens.map((t) => {
-        return {
-            scopes: t.scopes.filter(s => s !== "source.julia"),
-            value: line.slice(t.startIndex, t.endIndex)
+    for (const line of source.split('\n')) {
+        const lineResult = grammar.tokenizeLine(line, ruleStack)
+        ruleStack = lineResult.ruleStack
+
+        for (const t of lineResult.tokens) {
+            result.push({
+                scopes: t.scopes.filter(s => s !== "source.julia"),
+                value: line.slice(t.startIndex, t.endIndex)
+            })
         }
-    })
+    }
+
+    return result
 };
 
 function compareTokens(actual, expected) {
@@ -1264,7 +1275,15 @@ describe('Julia grammar', function () {
                 scopes: ["string.docstring.julia", "punctuation.definition.string.begin.julia"]
             },
             {
-                value: "\ndocstring\n\nfoo bar\n",
+                value: "docstring",
+                scopes: ["string.docstring.julia"]
+            },
+            {
+                value: "",
+                scopes: ["string.docstring.julia"]
+            },
+            {
+                value: "foo bar",
                 scopes: ["string.docstring.julia"]
             },
             {
@@ -1281,7 +1300,19 @@ describe('Julia grammar', function () {
                 scopes: ["string.docstring.julia", "punctuation.definition.string.begin.julia"]
             },
             {
-                value: "\ndocstring\n\nfoo bar\n    ",
+                value: "docstring",
+                scopes: ["string.docstring.julia"]
+            },
+            {
+                value: "",
+                scopes: ["string.docstring.julia"]
+            },
+            {
+                value: "foo bar",
+                scopes: ["string.docstring.julia"]
+            },
+            {
+                value: "    ",
                 scopes: ["string.docstring.julia"]
             },
             {
@@ -1298,7 +1329,15 @@ describe('Julia grammar', function () {
                 scopes: ["string.docstring.julia", "punctuation.definition.string.begin.julia"]
             },
             {
-                value: "\ndocstring\n\nfoo bar ",
+                value: "docstring",
+                scopes: ["string.docstring.julia"]
+            },
+            {
+                value: "",
+                scopes: ["string.docstring.julia"]
+            },
+            {
+                value: "foo bar ",
                 scopes: ["string.docstring.julia"]
             },
             {
@@ -1315,7 +1354,15 @@ describe('Julia grammar', function () {
                 scopes: ["string.docstring.julia", "punctuation.definition.string.begin.julia"]
             },
             {
-                value: "\ndocstring\n\nfoo bar\n",
+                value: "docstring",
+                scopes: ["string.docstring.julia"]
+            },
+            {
+                value: "",
+                scopes: ["string.docstring.julia"]
+            },
+            {
+                value: "foo bar",
                 scopes: ["string.docstring.julia"]
             },
             {
@@ -1344,7 +1391,15 @@ describe('Julia grammar', function () {
                 scopes: ["string.docstring.julia", "punctuation.definition.string.begin.julia"]
             },
             {
-                value: "\ndocstring\n\nfoo bar\n",
+                value: "docstring",
+                scopes: ["string.docstring.julia"]
+            },
+            {
+                value: "",
+                scopes: ["string.docstring.julia"]
+            },
+            {
+                value: "foo bar",
                 scopes: ["string.docstring.julia"]
             },
             {
@@ -1851,7 +1906,7 @@ describe('Julia grammar', function () {
                 scopes: ["embed.cxx.julia", "punctuation.definition.string.begin.julia"]
             },
             {
-                value: '\n#include "test.h"\n',
+                value: '#include "test.h"',
                 scopes: ["embed.cxx.julia", "meta.embedded.inline.cpp"]
             },
             {
@@ -1872,8 +1927,8 @@ describe('Julia grammar', function () {
                 scopes: ["embed.python.julia", "punctuation.definition.string.begin.julia"]
             },
             {
-                value: '\nimport numpy as np\n',
-                scopes: ["embed.python.julia"]
+                value: 'import numpy as np',
+                scopes: ["embed.python.julia", "meta.embedded.inline.python"]
             },
             {
                 value: '"""',
@@ -1893,7 +1948,7 @@ describe('Julia grammar', function () {
                 scopes: ["embed.js.julia", "punctuation.definition.string.begin.julia"]
             },
             {
-                value: '\nvar foo = function () {return x}\n',
+                value: 'var foo = function () {return x}',
                 scopes: ["embed.js.julia", "meta.embedded.inline.javascript"]
             },
             {
@@ -1914,7 +1969,7 @@ describe('Julia grammar', function () {
                 scopes: ["string.quoted.other.julia", "punctuation.definition.string.begin.julia"]
             },
             {
-                value: '\na\t\sb\n',
+                value: 'a\t\sb',
                 scopes: ["string.quoted.other.julia"]
             },
             {
@@ -2703,7 +2758,11 @@ describe('Julia grammar', function () {
                 scopes: ["punctuation.separator.comma.julia"]
             },
             {
-                value: ' \n ',
+                value: ' ',
+                scopes: []
+            },
+            {
+                value: ' ',
                 scopes: []
             },
             {
@@ -2720,10 +2779,6 @@ describe('Julia grammar', function () {
             },
             {
                 value: ' range',
-                scopes: []
-            },
-            {
-                value: '\n',
                 scopes: []
             },
             {
@@ -3877,10 +3932,6 @@ describe('Julia grammar', function () {
                 scopes: ["keyword.other.julia"]
             },
             {
-                value: '\n',
-                scopes: []
-            },
-            {
                 value: 'struct',
                 scopes: ["keyword.other.julia"]
             },
@@ -3922,7 +3973,8 @@ julia> begin
                 value: "true",
                 scopes: ["source.julia.console", "constant.language.julia"],
             },
-            { scopes: [ 'source.julia.console' ], value: '\ntrue\n\n' },
+            { scopes: [ 'source.julia.console' ], value: 'true' },
+            { scopes: [ 'source.julia.console' ], value: '' },
             {
                 value: "julia>",
                 scopes: ["source.julia.console", "punctuation.separator.prompt.julia.console"],
@@ -3932,11 +3984,50 @@ julia> begin
                 value: "begin",
                 scopes:["source.julia.console", "keyword.control.julia"],
             },
-            { scopes: [ "source.julia.console" ], value: "\n       " },
+            { scopes: [ "source.julia.console" ], value: "       " },
             {
               value: "end",
               scopes: [ "source.julia.console", "keyword.control.end.julia" ],
             },
+        ])
+    })
+
+    it("should highlight continuation lines but not output", function () {
+        const src = `julia> function f(x)
+           return x + 1
+       end
+f (generic function with 1 method)
+
+julia> f(1)
+2`
+        const tokens = tokenize(grammar, src)
+        compareTokens(tokens, [
+            { value: "julia>", scopes: ["source.julia.console", "punctuation.separator.prompt.julia.console"] },
+            { value: " ", scopes: ["source.julia.console"] },
+            { value: "function", scopes: ["source.julia.console", "keyword.other.julia"] },
+            { value: " ", scopes: ["source.julia.console"] },
+            { value: "f", scopes: ["source.julia.console", "entity.name.function.julia"] },
+            { value: "(", scopes: ["source.julia.console", "meta.bracket.julia"] },
+            { value: "x", scopes: ["source.julia.console"] },
+            { value: ")", scopes: ["source.julia.console", "meta.bracket.julia"] },
+            { value: "           ", scopes: ["source.julia.console"] },
+            { value: "return", scopes: ["source.julia.console", "keyword.control.julia"] },
+            { value: " x ", scopes: ["source.julia.console"] },
+            { value: "+", scopes: ["source.julia.console", "keyword.operator.arithmetic.julia"] },
+            { value: " ", scopes: ["source.julia.console"] },
+            { value: "1", scopes: ["source.julia.console", "constant.numeric.julia"] },
+            { value: "       ", scopes: ["source.julia.console"] },
+            { value: "end", scopes: ["source.julia.console", "keyword.control.end.julia"] },
+            // output is not Julia code, so it stays unscoped
+            { value: "f (generic function with 1 method)", scopes: ["source.julia.console"] },
+            { value: "", scopes: ["source.julia.console"] },
+            { value: "julia>", scopes: ["source.julia.console", "punctuation.separator.prompt.julia.console"] },
+            { value: " ", scopes: ["source.julia.console"] },
+            { value: "f", scopes: ["source.julia.console", "support.function.julia"] },
+            { value: "(", scopes: ["source.julia.console", "meta.bracket.julia"] },
+            { value: "1", scopes: ["source.julia.console", "constant.numeric.julia"] },
+            { value: ")", scopes: ["source.julia.console", "meta.bracket.julia"] },
+            { value: "2", scopes: ["source.julia.console"] },
         ])
     })
 

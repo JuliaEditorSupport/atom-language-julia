@@ -4,19 +4,18 @@
   "comment": "Not sure what this will be used for... Maybe if we have a REPL someday. We do now...",
   "patterns": [
     {
-      "match": "^(julia>)(\\s+.*(?:\\n\\s{6}\\s+.*)*)",
-      "captures": {
+      "begin": "^(julia>)",
+      "beginCaptures": {
         "1": {
           "name": "punctuation.separator.prompt.julia.console"
-        },
-        "2": {
-          "patterns": [
-            {
-              "include": "source.julia"
-            }
-          ]
         }
-      }
+      },
+      "end": "^(?!\\s{7})",
+      "patterns": [
+        {
+          "include": "source.julia"
+        }
+      ]
     },
     {
       "match": "^(shell>) (.+)$",
