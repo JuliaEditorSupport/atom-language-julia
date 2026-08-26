@@ -6,7 +6,7 @@ patterns: [
     begin: '^(julia>)'
     beginCaptures:
       '1':
-        name: 'punctuation.separator.prompt.julia.console'
+        name: 'entity.name.tag.prompt.julia.console'
     end: '^(?!\\s{7})'
     patterns: [
       {

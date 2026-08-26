@@ -3966,7 +3966,7 @@ julia> begin
         compareTokens(tokens, [
             {
                 value: "julia>",
-                scopes: ["source.julia.console", "punctuation.separator.prompt.julia.console"],
+                scopes: ["source.julia.console", "entity.name.tag.prompt.julia.console"],
             },
             { scopes: [ 'source.julia.console' ], value: ' ' },
             {
@@ -3977,7 +3977,7 @@ julia> begin
             { scopes: [ 'source.julia.console' ], value: '' },
             {
                 value: "julia>",
-                scopes: ["source.julia.console", "punctuation.separator.prompt.julia.console"],
+                scopes: ["source.julia.console", "entity.name.tag.prompt.julia.console"],
             },
             { scopes: [ 'source.julia.console' ], value: ' ' },
             {
@@ -4002,7 +4002,7 @@ julia> f(1)
 2`
         const tokens = tokenize(grammar, src)
         compareTokens(tokens, [
-            { value: "julia>", scopes: ["source.julia.console", "punctuation.separator.prompt.julia.console"] },
+            { value: "julia>", scopes: ["source.julia.console", "entity.name.tag.prompt.julia.console"] },
             { value: " ", scopes: ["source.julia.console"] },
             { value: "function", scopes: ["source.julia.console", "keyword.other.julia"] },
             { value: " ", scopes: ["source.julia.console"] },
@@ -4021,7 +4021,7 @@ julia> f(1)
             // output is not Julia code, so it stays unscoped
             { value: "f (generic function with 1 method)", scopes: ["source.julia.console"] },
             { value: "", scopes: ["source.julia.console"] },
-            { value: "julia>", scopes: ["source.julia.console", "punctuation.separator.prompt.julia.console"] },
+            { value: "julia>", scopes: ["source.julia.console", "entity.name.tag.prompt.julia.console"] },
             { value: " ", scopes: ["source.julia.console"] },
             { value: "f", scopes: ["source.julia.console", "support.function.julia"] },
             { value: "(", scopes: ["source.julia.console", "meta.bracket.julia"] },
