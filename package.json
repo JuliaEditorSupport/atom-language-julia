@@ -21,7 +21,7 @@
     "@fastify/pre-commit": "^2.2",
     "chai": "^6",
     "cson": "^8",
-    "mocha": "^11",
+    "mocha": "^12",
     "vscode-oniguruma": "^2",
     "vscode-textmate": "^9"
   },
